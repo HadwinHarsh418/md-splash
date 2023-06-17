@@ -1,0 +1,67 @@
+<div class="header-data">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)" routerLink="/member"><img
+                    src="https://thllc.splashmd.com/Content/images/new_logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="javascript:void(0)navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item" routerLink="/client/notes">
+                        <a class="nav-link active" aria-current="page" href="javascript:void(0)">NOTES</a>
+                    </li>
+                    <li class="nav-item" routerLink="/client/prp_notes">
+                        <a class="nav-link" href="javascript:void(0)">PRP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">CALENDAR</a>
+                    </li>
+                    <li class="nav-item" (click)="open()">
+                        <a class="nav-link" href="javascript:void(0)">CLIENTS</a>
+                    </li>
+                    <li class="nav-item" routerLink="/client/mail">
+                        <a class="nav-link" href="javascript:void(0)">MAIL</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            MAIL
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:void(0)">Something else here</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                    <div class="drop-login">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="../../../assets/images/help.png" alt="">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="javascript:void(0)" (click)="logOut()">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form> -->
+                <div class="d-flex" role="search">
+                    <div class="drop-login">
+                        <div class="nav-item dropdown">
+                            <a class="anchar-abs" (click)="logOut()"><i class="fa-solid fa-right-from-bracket"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,697 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="suicideRiskForm" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6 d-flex">
+                        <div class="arrow" type="submit" (click)="back()">
+                            <label for="type">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                        </div>
+                        <h1 class="admin-main_heading">Suicide Risk Assessment</h1>
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--## first ##-->
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Client Details</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Name </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-md-12">
+                                        <div class="margin-inputclient"
+                                        [class.has-error]="genForm['StrSessionDate'].dirty && genForm['StrSessionDate'].errors || genForm['StrSessionDate'].touched && genForm['StrSessionDate'].errors">
+                                            <label class="CLIENT-LABEL">Session Date <span class="text-danger">*</span></label>
+                                            <input formControlName="StrSessionDate" type="date" class="client-input">
+                                            <span *ngIf="genForm['StrSessionDate'].dirty && genForm['StrSessionDate'].errors" class="has-error">
+                                                <i *ngIf="genForm['StrSessionDate'].errors?.['required']">
+                                                  Please enter Date of Session.</i>
+                                              </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['ProviderId'].dirty && genForm['ProviderId'].errors || genForm['ProviderId'].touched && genForm['ProviderId'].errors">
+                                                <label class="CLIENT-LABEL">Rendering Provider <span class="text-danger">*</span></label>
+                                                <select class="client-input" formControlName="ProviderId">
+                                                    <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+                                                </select>
+                                                <span *ngIf="genForm['ProviderId'].dirty && genForm['ProviderId'].errors" class="has-error">
+                                                    <i *ngIf="genForm['ProviderId'].errors?.['required']">
+                                                      required.</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Information gathered from </label>
+                                            <input formControlName="InformationGather" type="text" class="client-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                     <!-- ####### second #### -->
+
+                     <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <h6>SUICIDAL DESIRE</h6>
+                                            <p style="    font-size: 14px; position: relative; left: 14px;">Rating Key: 0-None or Unknown; 1-Mild; 2-Moderate; 3-Severe</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <h6>RATING</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">To what extent has the individual...</label></div>
+                                                    <div class="col-md-6"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...been having thoughts of suicide?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesThoughtOfSuicide"  type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...express thoughts of being intolerable?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesThoughtOfInterably" type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...expressed feelings of hopelessness?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesFeelingOfHopeless"  type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...expressed feelings of helplessness?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesFeelingOFHelpless" type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...expressed feelings of being a burden on others?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesFeelingOfBurdenOnOther"  type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...expressed feelings of being trapped?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesFeelingOfTrapped" type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...been experiencing psychological pain?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesPsycholgicalPain" type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...tried coping skills without relief?</label></div>
+                                                    <div class="col-md-6"><input formControlName="DesTriedCopingSkill" type="number" class="client-input" (input)="CheckedValueSucidalDesire($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">Suicidal desire subscale score (0-24)</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="DesSuicideDesireScore" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----####### third #####-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <h6>SUICIDAL CAPABILITY</h6>
+                                            <p style="    font-size: 14px; position: relative; left: 14px;">Rating Key: 0 - No or Unknown; 3 - Yes</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <h6>RATING</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person ever attempted suicide?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapAttemptedSuicide" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person been exposed to someone else's death by suicide?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapExposedDeathOfOther" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Does the person have the avaliable means to hurt him/ herself ?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapHurtToHimself" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Does the person have a history of violence towards others?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapHistoryOfViolence" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person currently intoxicated?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapIntoxicated" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person currently taking substances?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapTakingSubstance" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Does the person have a history of AoD abuse?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapHistoryOfAoDAbuse" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person experiencing acute mental health symptoms?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapExpMentalHealthSymptom" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Does the person seem to be out of touch with reality?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapOutOfTouchWithReality" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person exhibiting increased agitation/rage?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapIncreasedAgitation" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person been experiencing recent dramatic mood swings?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapExpDramaticMoodSwing" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person been experiencing increased anxiety or panic?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapExpIncreasedAnxiety" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person experienced problems sleeping recently?</label></div>
+                                                    <div class="col-md-6"><input formControlName="CapExpProblemsSleeping" type="number" class="client-input" (input)="CheckedValueSucidalCapability($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">Suicidal capability subscale score(0 - 39)</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="CapSuicideCapabilityScore" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---## forth ##-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <h6>SUICIDAL INTENT</h6>
+                                            <p style="    font-size: 14px; position: relative; left: 14px;">Rating Key: 0-No or Unknown; 20 - Yes</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <h6>RATING</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person currently attempting suicide?</label></div>
+                                                    <div class="col-md-6"><input formControlName="IntAttemptingSuicide" type="number" class="client-input" (input)="CheckedValueSucidalIntent($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person actively planning a suicide attempt?</label></div>
+                                                    <div class="col-md-6"><input formControlName="IntPlanningSuicide" type="number" class="client-input" (input)="CheckedValueSucidalIntent($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Has the person been involved in preparing for their death?</label></div>
+                                                    <div class="col-md-6"><input formControlName="IntPreparingForDeath" type="number" class="client-input" (input)="CheckedValueSucidalIntent($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...Is the person currently expressing an intent to die?</label></div>
+                                                    <div class="col-md-6"><input formControlName="IntExpressIntentToDie" type="number" class="client-input" (input)="CheckedValueSucidalIntent($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">Suicidal intent subscale score(0-40)</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="IntSuicideIntentScore" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---## fifth ##-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <h6>PROTECTIVE FACTORS</h6>
+                                            <p style="    font-size: 14px; position: relative; left: 14px;">Rating Key: 0-None or Unknown; 1 - Mild; 3 - Moderate; 5-Strong</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <h6>RATING</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">To what extent does the individual</label></div>
+                                                    <div class="col-md-6"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...have access to immediate support?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProImmediateSupport" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...belong to a social support system?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProSocialSupport" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...have a plan for the future?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProPlanForFuture" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...express ambivalence for dying?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProAmbevalenceForDie" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...express a sense of purpose?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProSenseOfPurpose" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...live by core value or a belief system?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProBelifeSystem" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...engage with the therapist in session?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProTherapistSession" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...verbalize what is keeping them connected?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProVerbalize" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><label class="CLIENT-LABEL">...identify triggers that are different today?</label></div>
+                                                    <div class="col-md-6"><input formControlName="ProIdentityTriggers" type="number" class="client-input" (input)="CheckedValueSucidalProtective($event)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">Protective Factors subscale score (0 - 45)</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="ProFactorScore" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--## sixTh ##-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <h6>SUBSCALE</h6>
+                                           </div>
+                                            <div class="col-md-6">
+                                            <h6>RATING</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">DESIRE</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="lblDesire" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">+CAPABILITY</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="lblCapability" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">+INTENT</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="lblIntent" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">-PROTECTIVE FACTORS</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="lblProtective" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">=SUICIDE RISK SCORE</label></strong></div>
+                                                    <div class="col-md-6"><input formControlName="lblSuicideRiskScore" type="number" class="client-input" readonly style="background-color: #cccccc42;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row margin-inputclient">
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">SUICIDAL RISK SCORE: 0 - 29 = Low; 30 - 50 Moderate; 60 + High</label></strong></div>
+                                                    <div class="col-md-6"><strong><label class="CLIENT-LABEL">{{txt}}</label></strong></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--## seventh ##-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Signatures</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <button class="Sign_btn" >Sign</button>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="margin-inputclient">
+                                                        <input type="text"
+                                                            value="TEST TEST" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="innerSignature">
+                                                        <div class="inner-img-border">
+                                                            <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                            <div class="line"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <button class="Sign_btn">Sign</button>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="margin-inputclient">
+                                                        <select class="client-input">
+                                                            <option 
+                                                                value="">--Select--</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="innerSignature">
+                                                        <div class="inner-img-border">
+                                                            <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                            <div class="line"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

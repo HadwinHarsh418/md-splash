@@ -1,0 +1,491 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="generalForm">
+            <div class="all-tb"> 
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                        <!-- <div class="arrow d-flex">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading ms-2">PRP MONTHLY SUMMARY <small>New</small></h1>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Intial </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient"
+                                        [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors">
+                                            <label class="CLIENT-LABEL">Date of Session<span class="text-danger">*</span></label>
+                                            <input type="date" class="client-input" formControlName="DOS">
+                                            <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors" class="has-error">
+                                                <i *ngIf="genForm['DOS'].errors?.['required']">Date of session is
+                                                    required</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                <input type="time" class="client-input" formControlName="StartTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">End Time</label>
+                                                <input type="time" class="client-input" formControlName="EndTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Duration</label>
+                                                <input type="time" class="client-input" formControlName="TotalTime1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!---2nd#######-->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION DETAILS</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                <label class="CLIENT-LABEL">Rendering Provider<span class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="Rendering_ProviderID">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">Rendering Provider is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient" [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors">
+                                                <label class="CLIENT-LABEL">Procedure Code<span class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors" class="has-error">
+                                                    <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">Procedure Code is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Location</label>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['selectAuthNumber'].dirty && genForm['selectAuthNumber'].errors || genForm['selectAuthNumber'].touched && genForm['selectAuthNumber'].errors">
+                                                <label class="CLIENT-LABEL">Authorization Number<span class="text-danger">*</span></label>
+                                                <select class="client-input" formControlName="selectAuthNumber">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['selectAuthNumber'].dirty && genForm['selectAuthNumber'].errors" class="has-error">
+                                                    <i *ngIf="genForm['selectAuthNumber'].errors?.['required']">Authorization number is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Others Present at Session (List Name(s) and Relationship(s) to the client)</label>
+                                                <input type="date" class="client-input" value="Test Test" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['AdmissionDate'].dirty && genForm['AdmissionDate'].errors || genForm['AdmissionDate'].touched && genForm['AdmissionDate'].errors">
+                                                <label class="CLIENT-LABEL">Admission Date<span class="text-danger">*</span></label>
+                                                <input type="date" class="client-input" formControlName="AdmissionDate">
+                                                <span *ngIf="genForm['AdmissionDate'].dirty && genForm['AdmissionDate'].errors" class="has-error">
+                                                    <i *ngIf="genForm['AdmissionDate'].errors?.['required']">Admission Date is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['DischargeDate'].dirty && genForm['DischargeDate'].errors || genForm['DischargeDate'].touched && genForm['DischargeDate'].errors">
+                                                <label class="CLIENT-LABEL">Discharge Date<span class="text-danger">*</span></label>
+                                                <input type="date" class="client-input" formControlName="DischargeDate">
+                                                <span *ngIf="genForm['DischargeDate'].dirty && genForm['DischargeDate'].errors" class="has-error">
+                                                    <i *ngIf="genForm['DischargeDate'].errors?.['required']">Discharge Date is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">MA#</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Client Address</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">SSN</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Client Phone(s)</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Prognosis at Discharge</label>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Primary Mental Health Diagnoses</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"><strong>Primary Reason(s) for Admission</strong> <br>(Describe the clients presenting problems, psychiatric symptoms & need for community supports at the time of admission) </label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"><strong>Primary Reason(s) for Discharge</strong> <br>(Identify all applicable factors that contributed to client’s discharge from PRP services)</label>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer & provider agree that treatment is complete based upon the individual's current mental health status, service needs, & mutually agreed upon goal attainment.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer or parent/guardian withdrew consumer from care.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer referred and/or admitted to more or less intensive level of care.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer referred to another provider providing similar level of services.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer no longer meets medical necessity criteria consumer no longer eligible for services (no longer has MA / benefits no longer cover services).</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer's lack of participation in the program.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Program's determination to discontinue services because of the consumers actions, the services are not effective or the program is unable to secure the safety and welfare of the consumer and others.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer moved from service area.</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Elopement/AWOL..</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex margin-inputclient">
+                                                <div>
+                                                  <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                </div>
+                                                <div class="mx-3">
+                                                  <label class="CLIENT-LABEL">Consumer deceased.</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="CLIENT-DEMOGRAPHICS1">
+                                                <h6>Was client currently prescribed/taking any medications at time of discharge?</h6>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span class="CLIENT-LABEL text-danger">If YES, specify below</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                    <tr style="background-color: #208fcf; color: #fff; font-size: 14px;">
+                                                        <th>MEDICATION NAME</th>
+                                                        <th>DOSAGE</th>
+                                                        <th>FREQUENCY</th>
+                                                        <th>TAKING AS PRESCRIBED?</th>
+                                                        <th>UNDERSTANDING OF MEDICATION</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td><input class="client-input" type="text" name="" id=""></td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex margin-inputclient">
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                                            </div>
+                                                            <div class="mx-4 margin-inputclient d-flex">
+                                                              <input type="checkbox" name="harmingNo" id="harmingNo" value="no"><label class="CLIENT-LABEL">No</label>
+                                                            </div>
+                                                          </div>
+                                                        </td>
+                                                    </tr>
+                                                   </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

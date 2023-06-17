@@ -1,0 +1,166 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content">
+                            <div class="row">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="pregressNotes">
+                        <div class="row mar-1010 d-flex my-2">
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>EMPLOYMENT</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">6. Is the client currently employed? (see OMS Interview Guide for definition of “employment”)</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="isTheClient" formControlName="isTheClient" name="isTheClient" type="radio" value="1" (change)="showField($event)">
+                                                                <label>No (continue to #7)   </label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="isTheClient" formControlName="isTheClient" name="isTheClient" type="radio" value="2" (change)="showField($event)">
+                                                                <label>Yes (skip to #9) </label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="" *ngIf="show">
+                                                <label class="CLIENT-LABEL">7. Is the client actively looking for work by doing things like filling out applications, or answering ads?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="lookinForWork" formControlName="lookinForWork" name="lookinForWork" type="radio" value="1" >
+                                                                <label>No</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="lookinForWork" formControlName="lookinForWork" name="lookinForWork" type="radio" value="2">
+                                                                <label>Yes</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div> 
+                                            <div class="" *ngIf="show">
+                                                <label class="CLIENT-LABEL">8. Has the client been employed since the last OMS interview date?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="beenEmployed" formControlName="beenEmployed" name="beenEmployed" type="radio" value="1" (change)="showField1($event)">
+                                                                <label>No (skip to #10)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="beenEmployed" formControlName="beenEmployed" name="beenEmployed" type="radio" value="2" (change)="showField1($event)">
+                                                                <label>Yes (continue to #9)</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                                    <div class="CLIENT-DEMOGRAPHICS1">
+                                                        <h6>If the client held more than one job (since last interview date/in the past six months), please answer the following item in terms of the most recent job.</h6>
+                                                    </div>
+                                            </div> 
+                                            <div class="" *ngIf="show1">
+                                                <label class="CLIENT-LABEL">9. Is/Was the client’s job competitive employment or sheltered workshop or agency employment? (see OMS Interview Guide for definition of “competitive” and “sheltered” employment)</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="clientJobCompetetive" formControlName="clientJobCompetetive" name="clientJobCompetetive" type="radio" value="1" >
+                                                                <label>Competitive employment (a job available to anyone regardless of whether he/she has a disability)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="clientJobCompetetive" formControlName="clientJobCompetetive" name="clientJobCompetetive" type="radio" value="2">
+                                                                <label>Sheltered workshop or agency employment (a job only available to someone with a disability)</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SOMATIC HEALTH</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">10. Does the client smoke cigarettes?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="clientSmoke" formControlName="clientSmoke" name="clientSmoke" type="radio" value="1" >
+                                                                <label>No  </label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="clientSmoke" formControlName="clientSmoke" name="clientSmoke" type="radio" value="2">
+                                                                <label>Yes </label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>DEMOGRAPHIC INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span>11. How long has the client been receiving services from this clinic?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="clientRecievingService" formControlName="clientRecievingService" name="clientRecievingService" type="radio" value="1" >
+                                                                <label>Intake</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="clientRecievingService" formControlName="clientRecievingService" name="clientRecievingService" type="radio" value="2">
+                                                                <label>Less than one year</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="clientRecievingService" formControlName="clientRecievingService" name="clientRecievingService" type="radio" value="3" >
+                                                                <label>One year to three years  </label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="clientRecievingService" formControlName="clientRecievingService" name="clientRecievingService" type="radio" value="4">
+                                                                <label>Greater than three years </label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                     </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

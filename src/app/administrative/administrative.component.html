@@ -1,0 +1,143 @@
+<section class="tabs-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="page-header small_fonts">
+                <div class="page-header-content d-flex">
+                        <div class="arrow">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                        </div>
+                    <h1 class="admin-main_heading">ADMINISTRATION</h1>
+                </div>
+            </div>
+            <div class="col-lg-3 my-2">
+                <div class="tabs-admin-left">
+                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+                        <li ngbNavItem="1" (click)="changeTabMain(1)">
+                            <a ngbNavLink>
+                                <p class=" tabs-admin-p">SETTINGS</p>
+                                <p class="tabs-admin-p-1">Manage Globle Settings</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="common-div">
+                                    <ul class="common-div-ul">
+                                        <li (click)="changeTab(1)">
+                                            <a href="javascript:undefined">Company Information</a>
+                                        </li>
+                                        <li (click)="changeTab(2)">
+                                            <a href="javascript:undefined" >Mail (SMTP)</a>
+                                        </li>
+                                        <li (click)="changeTab(3)">
+                                            <a href="javascript:undefined" >Password</a>
+                                        </li>
+                                        <li (click)="changeTab(4)">
+                                            <a href="javascript:undefined" >Calender</a>
+                                        </li>
+                                        <li (click)="changeTab(5)">
+                                            <a href="javascript:undefined">Consumer Support Managers (CSM)</a>
+                                        </li>
+                                        <li (click)="changeTab(6)">
+                                            <a href="javascript:undefined" >Clinical Manager</a>
+                                        </li>
+                                        <li (click)="changeTab(7)">
+                                            <a href="javascript:undefined" >Calendar Visit</a>
+                                        </li>
+                                        <li (click)="changeTab(8)">
+                                            <a href="javascript:undefined" >Documents</a>
+                                        </li>
+                                        <li (click)="changeTab(9)">
+                                            <a href="javascript:undefined" >Intake Documents</a>
+                                        </li>
+                                        <li (click)="changeTab(10)">
+                                            <a href="javascript:undefined" >Ticklers</a>
+                                        </li>
+                                        <li (click)="changeTab(11)">
+                                            <a href="javascript:undefined" >Message</a>
+                                        </li>
+                                        <li (click)="changeTab(12)">
+                                            <a href="javascript:undefined" >Managed Care Organization (MCO)</a>
+                                        </li>
+                                        <li (click)="changeTab(13)">
+                                            <a href="javascript:undefined" >Features</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="2" (click)="changeTabMain(2)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">USERS</p>
+                                <p class="tabs-admin-p-1">Manage User Account</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-users (showSideContent)="showSideContent($event)"></app-administrative-users>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="3" (click)="changeTabMain(3)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">CLIENTS</p>
+                                <p class="tabs-admin-p-1">Manage Client Accounts</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-clients (showTableContent)="showClientContent($event)"></app-administrative-clients>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="4" (click)="changeTabMain(4)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">CLIENTS(GRID)</p>
+                                <p class="tabs-admin-p-1">Manage Client Accounts</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-clients-grid ></app-administrative-clients-grid>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="5" (click)="changeTabMain(5)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">Providers</p>
+                                <p class="tabs-admin-p-1">Ind Provider settings, Pay rates, NPI info, etc.</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-providers (showSideForm)="showSideForm($event)"></app-administrative-providers>
+                            </ng-template>
+                        </li>
+                        
+                        <li ngbNavItem="6" (click)="changeTabMain(6)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">Tracking</p>
+                                <p class="tabs-admin-p-1">View All Edit To Client Account</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-tracking></app-administrative-tracking>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="7" (click)="changeTabMain(7)">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">INCORRECT LOGIN TRACKING</p>
+                                <p class="tabs-admin-p-1">View All Edit To Client Account</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-administrative-incorect-login-tracks></app-administrative-incorect-login-tracks>
+                            </ng-template>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3" [class.col-lg-9]="displayProp">
+                <div class="tabs-admin-middlle">
+                    <div [ngbNavOutlet]="nav" class="ms-mar"></div>
+                </div>
+            </div>
+            <div class="col-lg-6" [class.disable_prop]="displayProp" *ngIf="currentTab > 0 || currentTabMain == 2||currentTabMain == 3 || currentTabMain == 4 || currentTabMain == 5 ||currentTabMain == 6 || currentTabMain == 7">
+                <div class="tabs-admin-right">
+                    <app-right-content [CurrentTab]="currentTab"></app-right-content>
+                    <app-administrative-user-info *ngIf="currentTabMain == 2 && ShowContentUsers"></app-administrative-user-info>
+                    <app-administrative-clients-info *ngIf="currentTabMain == 3 && showClientInfo"></app-administrative-clients-info>
+                    <app-provider-user-form *ngIf="currentTabMain == 5 && ShowFormProviders"></app-provider-user-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

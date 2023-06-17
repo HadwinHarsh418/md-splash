@@ -1,0 +1,369 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="demographicDataForm">
+                <div class="all-tb">
+                    <div class="row mar-1010">
+                        <div class="col-lg-6">
+                            <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="save-bt rem-abs" style="float:right;">
+                                <button class="NEW-SAVE" (click)="submitForm()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PATIENT DEMOGRAPHICS</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Last Name </label>
+                                            <input type="text" class="client-input" formControlName="Last_Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">First Name </label>
+                                            <input type="text" class="client-input" formControlName="First_Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">MI </label>
+                                            <input type="text" class="client-input" formControlName="Middle_Initials">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Preferred Name </label>
+                                        <input type="tel" class="client-input" formControlName="txtPreferredName">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Date of Birth </label>
+                                            <input type="date" class="client-input" formControlName="DOB" (change)="getDate()">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Age </label>
+                                            <input type="text" class="client-input" formControlName="age">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Gender </label>
+                                            <select class="client-input" formControlName="Gender">
+                                                <option *ngFor="let item of genderData" value="{{item.Value}}">{{item.Text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Social Security Number</label>
+                                        <input type="number" class="client-input" formControlName="SSN">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Race</label>
+                                        <select class="client-input" formControlName="ddlRace">
+                                            <!-- <option value="" selected>Select</option>
+                                            <option value="0" selected>abc</option> -->
+                                            <option *ngFor="let item of GetRaceOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Home Address, <i>include opt #, if applicable</i>
+                                        </label>
+                                        <input type="text" class="client-input" formControlName="HomeAddressStreet">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="margin-inputclient"
+                                            [class.has-error]="f['City'].dirty && f['City'].errors || f['City'].touched && f['City'].errors">
+                                            <label class="CLIENT-LABEL">City <span class="text-dander">*</span></label>
+                                            <input type="text" class="client-input" formControlName="City">
+                                            <span *ngIf="f['City'].dirty && f['City'].errors" class="has-error">
+                                                <i *ngIf="f['City'].errors?.['required']">City is
+                                                    required</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="margin-inputclient"
+                                            [class.has-error]="f['State'].dirty && f['State'].errors || f['State'].touched && f['State'].errors">
+                                            <label class="CLIENT-LABEL">State <span class="text-dander">*</span></label>
+                                            <input type="text" class="client-input" formControlName="State">
+                                            <span *ngIf="f['State'].dirty && f['State'].errors" class="has-error">
+                                                <i *ngIf="f['State'].errors?.['required']">State is
+                                                    required</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Zip </label>
+                                            <input type="text" class="client-input" formControlName="ZipCode" (change)="onSelectZip()">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">+4 </label>
+                                            <input type="text" maxlength="4" class="client-input"
+                                                formControlName="txtPlus">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Marital Status </label>
+                                            <select class="client-input" formControlName="Ddl_MaritalStatus">
+                                                <option *ngFor="let item of getAllMaritialStatus" value="{{item.Value}}">{{item.Text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Employment Status </label>
+                                            <select class="client-input" formControlName="Employment_details">
+                                                <option *ngFor="let item of GetEmploymentOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Name of Employer <i>if employed</i> </label>
+                                        <input type="text" class="client-input" formControlName="txtEmployer">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Assigned To </label>
+                                            <select class="client-input" formControlName="ddl_AssignedTo">
+                                                <option *ngFor="let item of GetClinicianManagerOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">CSM </label>
+                                            <select class="client-input" formControlName="CSM">
+                                                <!-- <option value="" selected>Select</option> -->
+                                                <!-- <option>Select 1</option>
+                                                <option>Select 2</option>
+                                                <option>Select 3</option> -->
+                                                <option *ngFor="let item of CsmData" value="{{item.Value}}">{{item.Text}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PATIENT CONTACT</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Home Telephone </label>
+                                            <input type="tel" class="client-input" formControlName="Phone_Home">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Work Telephone </label>
+                                            <input type="tel" class="client-input" formControlName="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Mobile Telephone </label>
+                                            <input type="tel" class="client-input" formControlName="Mobile_Phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Other Telephone </label>
+                                            <input type="tel" class="client-input" formControlName="OtherContact_Phone">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Primary Email </label>
+                                            <input type="email" class="client-input" formControlName="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Secondary Email </label>
+                                            <input type="email" class="client-input" formControlName="Email_Secondary">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row card">
+                                    <div class="row">
+                                        <h4 class="CLIENT-LABEL p-2"><strong>Billing Address</strong> </h4>
+                                        <div class="single-label">
+                                            <ul class="input-ul" [class.disabledCheck]="editBilling">
+                                                <li><input type="checkbox"  formControlName="billingCheck"  (change)="checkAddress($event)"><label for="">Same as contact info</label></li>
+                                            </ul>
+                                    </div>
+                                        <div class="margin-inputclient">
+                                            <input type="text" class="client-input"
+                                                formControlName="BillingHomeAddressStreet"  [class.disabledField]="editBilling" [readonly]="editBilling">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">City </label>
+                                                <input type="text" class="client-input"  [class.disabledField]="editBilling" [readonly]="editBilling" formControlName="BillingCity">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">State </label>
+                                                <input type="text" class="client-input"  [class.disabledField]="editBilling" [readonly]="editBilling" formControlName="BillingState">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Zip </label>
+                                                <input type="text" class="client-input"
+                                                    formControlName="BillingZipCode"  [class.disabledField]="editBilling" [readonly]="editBilling"  (change)="onSelectZip()">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">+4 </label>
+                                                <input type="text" maxlength="4" class="client-input"
+                                                    formControlName="BillingZipCodePlus"  [class.disabledField]="editBilling" [readonly]="editBilling">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="p-3">
+                                            <button style="float: right;" class="btn btn-success" (click)="editBilling = !editBilling">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="d-flex">
+                                        <button class="NEW-SAVE">Client Face Sheet</button>
+                                        <button class="NEW-SAVE Cont">Guardian Pin and Sig</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row ">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>Services</h6>
+                                </div>
+                                <ul class="input-ul">
+                                    <li class="view_btn"><label for="">Outpatient Therapy
+                                            Services</label><input type="radio" name="service_Check" formControlName="service_Check"
+                                            value="Outpatient Therapy Services"></li>
+                                    <li class="view_btn"><label for="">Psychiatric</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="Psychiatric">
+                                    </li>
+                                    <li class="view_btn"><label for="">Psychiatric
+                                            Rehabilitation (PRP)</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check"
+                                            value="Psychiatric Rehabilitation (PRP)">
+                                    </li>
+                                    <li class="view_btn"><label for="">PRP and Outpatient Therapy</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="PRP and Therapy">
+                                    </li>
+                                    <li class="view_btn"><label for="">Mobile Treatment</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="Mobile Treatment">
+                                    </li>
+                                    <li class="view_btn"><label for="">IOP</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="IOP">
+                                    </li>
+                                    <li class="view_btn"><label for="">Therapy and
+                                            Psychiatric</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="Therapy and Psychiatric">
+                                    </li>
+                                    <li class="view_btn"><label for="">All</label>
+                                        <input type="radio" name="service_Check" formControlName="service_Check" value="All">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>Services Location</h6>
+                                </div>
+                                <ul class="input-ul">
+                                <li class="view_btn"><label for="">In Office</label>
+                                <input type="radio" name="ServiceLocation" value="1" formControlName="ServiceLocation" >
+                            </li>
+                            <li class="view_btn"><label for="">In Home</label>
+                                <input type="radio" name="ServiceLocation" value="2" formControlName="ServiceLocation">
+                            </li>
+                        </ul>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="margin-inputclient"
+                                    [class.has-error]="f['ConsumerNeeds'].dirty && f['ConsumerNeeds'].errors || f['ConsumerNeeds'].touched && f['ConsumerNeeds'].errors">
+                                    <label class="CLIENT-LABEL" for=""><b>Notes <span class="text-danger">*</span></b></label>
+                                    <textarea class="client-input client-input-textarea" name=""
+                                        formControlName="ConsumerNeeds" id="" cols="30" rows="10"></textarea>
+                                    <span *ngIf="f['ConsumerNeeds'].dirty && f['ConsumerNeeds'].errors"
+                                        class="has-error">
+                                        <i *ngIf="f['ConsumerNeeds'].errors?.['required']">Notes is
+                                            required</i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

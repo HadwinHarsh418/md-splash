@@ -1,0 +1,214 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Client Details</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient" 
+                                            >
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Phone</label>
+                                                <input formControlName="Phone" type="text" class="client-input">
+                                            </div>
+                                        </div><div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Alternate</label>
+                                                <input formControlName="Alternate" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-md-12">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL"
+                                            [class.has-error]="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors || genForm['DateofBirth'].touched && genForm['DateofBirth'].errors">Date of Transition</label>
+                                            <input type="date" class="client-input">
+                                            <span *ngIf="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors" class="has-error">
+                                                <i *ngIf="genForm['DateofBirth'].errors?.['required']">
+                                                  Date of Transiting is required.</i>
+                                              </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL" 
+                                                        [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors"
+                                                        >Rendering Provider <span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="Rendering_ProviderID">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                        <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                            <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                                 required.</i>
+                                                          </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Location<span
+                                                                class="text-danger"></span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="location_required">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Date Of Admision into Program</label>
+                                                        <input formControlName="Age" type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="row my-4">
+                                                    <div class="col-lg-6 d-flex">
+                                                        <div>
+                                                            <label class="CLIENT-LABEL">Client Transitioning From:</label>
+                                                        </div>
+                                                        <div class="div_checkBox my-2">
+                                                            <ul class="all-li-radio">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>Therapy</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>Psychiatry</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>PRP</label>
+                                                                </li>
+                                                            </ul>       
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex my-2">
+                                                        <div>
+                                                            <label class="CLIENT-LABEL">Client Transitioning To: </label>
+                                                        </div>
+                                                        <div class="div_checkBox">
+                                                            <ul class="all-li-radio">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>Therapy</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>Psychiatry</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo"
+                                                                        value="yes">
+                                                                    <label>PRP</label>
+                                                                </li>
+                                                            </ul>       
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 my-2">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Reason for Admission into Program/Presenting Conditions </label>
+                                                            <textarea  type="text" class="client-input"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Reason for Transition/Transfer </label>
+                                                            <textarea  type="text" class="client-input"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Status of Client at Last Contact </label>
+                                                            <textarea  type="text" class="client-input"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

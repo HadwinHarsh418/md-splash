@@ -1,0 +1,415 @@
+
+
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="treatmentplaniop" (ngSubmit)="save()">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-lg-12 pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                        <div class="TreatmentPlanHeaderDiv"><strong>TREATMENT PLAN</strong> </div>
+                        <div class="col-lg-12">
+                            <label class="CLIENT-LABEL">A. Target Symptoms/Behaviors/Concerns: (Include health/medical issues, e.g. 
+                                hypertension, diabetes, etc.; substance abuse; safety issues):</label>
+                            <textarea name="Complaint" formControlName="targetsymptoms" class="client-input"
+                                id="Complaint"></textarea>
+                        </div><br>
+                        <div class="d-flex pointer">
+                            <img [src]="imagesrc" alt="small" class="addNew">
+                            <a class="CLIENT-LABEL"><small> Click To insert new Target Symptom</small></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12"> 
+                                        <div class="row CommonControlsDiv_main">
+                                            <div class="col-lg-12" >
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> <b>B. Goals, Interventions and Objectives: (must address target behaviors/symptoms and 
+                                                    include medications, recommended evaluations, follow-up
+                                                    and communication with primary care physician, health and safety issues and substance abuse issues)</b></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL col-lg-6"> <b>Goal/Dream (state goal in collaboration with client):</b></label><br><br><br>
+                                                    <label class="CLIENT-LABEL col-lg-6"><b>State desired result(s) in client’s words:</b></label>
+                                                </div> 
+                                            </div> 
+                                            <div class="col-lg-6">
+                                                <div class="margin-inputclient">
+                                                    <textarea type="text" class="client-input col-lg-6" formControlName="textarea1"></textarea> <br>
+                                                    <textarea type="text" class="client-input col-lg-6" formControlName="textarea2"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <!-- ----------------- -->
+                                    <div class="content pd-2" style="margin-left: 10px; margin-bottom: 10px; margin-top: 15px;">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">Name of the Covered Support or Service Needed (Scope)</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">Amount/ Intensity (Units)</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">By When (Duration)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">By Whom (Who Will assist with this goal?)</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">Psychiatric Evalution (Assessment and Evaluation)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">One Visit</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <textarea type="text" formControlName="textarea3" class="client-input"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <textarea type="text" formControlName="textarea4" class="client-input"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL">Objectives of This Service And Support</label>
+                                                        <textarea formControlName="objectivesofthisservice" class="StartSpeechRecoganisation accuratsize gray client-input" class="" cols="20" id="" name="Strengths" rows="4" style="width:100%;"></textarea>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Target Dates</label>
+                                                        <input type="date" formControlName="targetdatesiop" class="client-input3" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="d-flex pointer">
+                                        <img [src]="imagesrc" alt="small" class="addNew">
+                                        <a class="CLIENT-LABEL"><small> Click To insert new Objective</small></a>
+                                    </div>
+                                    <div class="col-md-12 pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                                        <div >
+                                            <label class="CLIENT-LABEL">Medication(s):</label>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-md-12 pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                                        <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                          <thead class="">
+                                            <tr>
+                                              <th >Medication Name</th>
+                                              <th >Dose</th>
+                                              <th >Frequency</th>
+                                              <th >Indication</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>    
+                                              <td><input  type="text" value=""></td>
+                                              <td><input  type="text" value=""></td>
+                                              <td><input  type="text" value=""></td>
+                                              <td><input  type="text" value=""></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                    </div>      
+                                    <div class="d-flex pointer">
+                                        <img [src]="imagesrc" alt="small" class="addNew">
+                                        <a class="CLIENT-LABEL"><small> Click to insert a new medications</small></a>
+                                    </div>
+                                    <div class="col-md-12 pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12 d-flex">
+                                                        <input type="checkbox"><label class="CLIENT-LABEL">Yes</label>
+                                                        <input type="checkbox"><label class="CLIENT-LABEL">No</label>
+                                                        <label class="CLIENT-LABEL">Client was informed of medication dosage, effects, side effects and educated on the risks and benefits of medication, including when to change medication.</label>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="d-flex">
+                                                            <input type="checkbox"><label class="CLIENT-LABEL">Yes</label>
+                                                            <input type="checkbox"><label class="CLIENT-LABEL">No</label>
+                                                            <label class="CLIENT-LABEL">Client was monitored on the current medication dosage, effects and side effects of such medication.</label>
+                                                        </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ----------------- -->
+                                    <div class="pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                                    <div class="col-md-12 my-2">
+                                        <div class="row d-flex">
+                                        <div class="margin-inputclient d-flex">
+                                            <label class="CLIENT-LABEL">Does he/she have medical condition that requires ongoing PCP/Provider/Specialists collaboration:</label>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style=" position: relative; top: 3px; left: 8px;">Yes</label>
+                                            </div>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style="position: relative;top: 3px;left: 8px;">No</label>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                    </div>
+                                    <div class="col-md-12 my-2">
+                                        <div class="row d-flex">
+                                        <div class="margin-inputclient d-flex">
+                                            <label class="CLIENT-LABEL">Have Labs/Medical Hx Reports been ordered:</label>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style=" position: relative; top: 3px; left: 8px;">Yes</label>
+                                            </div>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style="position: relative;top: 3px;left: 8px;">No</label>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                    </div>
+                                    <div class="col-md-12 my-2">
+                                        <div class="row d-flex">
+                                        <div class="margin-inputclient d-flex">
+                                            <label class="CLIENT-LABEL">Based on prescribed medications/dosage; Has an assessment of Abnormal involuntary movements been conducted in order to identify/RuleOut Movement Disorder:</label>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style=" position: relative; top: 3px; left: 8px;">Yes</label>
+                                            </div>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style="position: relative;top: 3px;left: 8px;">No</label>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                    </div>
+                                    <div class="col-md-12 my-2">
+                                        <div class="row d-flex">
+                                        <div class="margin-inputclient d-flex">
+                                            <label class="CLIENT-LABEL">Has there been any Medication Management Errors:</label>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style=" position: relative; top: 3px; left: 8px;">Yes</label>
+                                            </div>
+                                            <div class="mx-5 d-flex">
+                                            <input type="checkbox"  />
+                                            <label class="CLIENT-LABEL" style="position: relative;top: 3px;left: 8px;">No</label>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12"> 
+                                      <div class="row CommonControlsDiv_main">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label class="CLIENT-LABEL2" for="">Indicate which.</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Unauthorized Drug Use</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for=""> Medication Omission</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for=""> Incorrect Timing</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for=""> Dispensing Error</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Incorrect Drug</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Incorrect labeling</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Prescribing Error</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Incorrect Rate/Dosage</label>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <input class="" type="checkbox" name="" id="">
+                                                            <label class="CLIENT-LABEL2"  for="">Incorrect identification of person served</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12 pd-2" style="margin-left: 10px; margin-bottom: 10px;">
+                    <div >
+                        <label class="CLIENT-LABEL">Interventions:</label>
+                        <textarea name="Complaint" class="client-input" id="Complaint"></textarea>
+                    </div>
+                </div><br>
+                <div class="d-flex pointer">
+                    <img [src]="imagesrc" alt="small" class="addNew">
+                    <a class="CLIENT-LABEL"><small> Click To insert new Intervention</small></a>
+                </div>
+            </div>
+    
+            <div class="row my-3">
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL"><strong>Name of the Covered Support or Service Needed (Scope)</strong></label> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL"><strong>Amount/ Intensity</strong> (Units)</label> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL"><strong>By When</strong> (Duration)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL"><strong>By Whom</strong> (Who Will assist with this goal?)</label> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL">Medication Review</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="CLIENT-LABEL">Visit every</label>
+                            <textarea type="text" class="client-input"></textarea>
+                            <p style="width: 60%; ">
+                                <label for="Intensity_Type">
+                                    <input id="Intensity_Type" name="Intensity_Type" type="radio" value="1" spellcheck="true">
+                                    <label class="CLIENT-LABEL">Weeks</label>
+                                </label>
+                                <label>
+                                    <input id="Intensity_Type" name="Intensity_Type" type="radio" value="2" spellcheck="true">
+                                    <label class="CLIENT-LABEL">Month</label>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <textarea type="text" class="client-input"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <textarea type="text" formControlName="textarea5" class="client-input"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>

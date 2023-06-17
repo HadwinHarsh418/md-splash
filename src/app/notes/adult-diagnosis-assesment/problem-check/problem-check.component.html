@@ -1,0 +1,815 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>PROBLEM CHECKLIST INCLUDING FUNCTIONAL DOMAINS</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="col-md-12 justify-content-between">
+                                                    <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                                    <input name="ProblemNutritional" type="hidden" value="false" spellcheck="true">
+                                                    <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                        <tr style="line-height: 3;">
+                                                            <th>Nutritional Screening (Required)</th>
+                                                            <th>Yes</th>
+                                                            <th>No</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1.	Are you on a special diet?</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2.	Have you gained or lost 10 lbs, without trying, in the last 6 months?</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> 3.	Do you have a poor appetite?</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4.	Do you have trouble chewing and swallowing?</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5.	Do you have any food allergies?</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                       </table>
+                                                </div>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label> Pertinent Health Information: (include allergies, head injuries, etc.) </label>
+                                                             <textarea name="Complaint" class="client-input" style="height: 80px;"
+                                                              id="Complaint"></textarea>
+                                                        <div class="col-md-12 ">
+                                                            <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                                            <input name="ProblemNutritional" type="hidden" value="false" spellcheck="true">
+                                                            <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                                <tr style="line-height: 3;">
+                                                                    <th>
+                                                                        Pain Assessment (Required)</th>
+                                                                    <th> </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td> 1. Are you in physical pain?</td>
+                                                                    <th> <input type="radio" name="" id=""> Yes
+                                                                        <input type="radio" name="" id=""> No</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2. If yes, how does your pain interfere with your activities?</td>
+                                                                    <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                        <input name="ProblemPainMildly" type="hidden" value="false" >Mildly    
+                                                                        <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                        <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Moderately
+                                                                        <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                        <input name="ProblemPainSeverely" type="hidden" >Severely      
+                                                                        <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                        <input name="ProblemPainExtremely" type="hidden" value="false">Extremel</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3. What is the source of your pain?</td>
+                                                                    <td><textarea name="Complaint" class="client-input"
+                                                                        id="Complaint"></textarea></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4. How long have you had this pain?</td>
+                                                                    <textarea name="Complaint" class="client-input"
+                                                                      id="Complaint"></textarea>                                                                    
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5. What makes your pain better or worse?</td>
+                                                                    <textarea name="Complaint" class="client-input"
+                                                                       id="Complaint"></textarea>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6. Are you currently in treatment for pain</td>
+                                                                    <th> <input type="radio" name="" id=""> Yes
+                                                                        <input type="radio" name="" id=""> No</th>                                                                   
+                                                                </tr>
+                                                               </table>
+                                                        </div>
+                                                
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint" ></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                <label class="CLIENT-LABEL">Developmental Issues 
+                                                </label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint">
+                                                </textarea>
+                                                <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                <label class="CLIENT-LABEL">Developmental Issues
+                                                </label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint">
+                                                </textarea>
+                                                <div class="col-md-12 justify-content-between">
+                                                    <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                                    <input name="ProblemNutritional" type="hidden" value="false" spellcheck="true">
+                                                    <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                        <tr style="line-height: 3;">
+                                                            <th>Depression</th>
+                                                            <th>Yes</th>
+                                                            <th>No</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Depressed Mood</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Markedly diminished interest or pleasure in all, or almost all activities most of the day, nearly every day	</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Psychomotor agitation or retardation nearly every day.</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fatigue/ No energy/ No motivation</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Low self-esteem/ Feeling of worthlessness/ Excessive guilt</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Recurrent thoughts of death, recurrent suicidal ideation (with or without a plan), suicide attempt</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Isolates self</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                       </table>
+                                                </div> 
+                                                <label class="CLIENT-LABEL">Comments: (include Onset, Frequency, Duration, Intensity) 
+                                                </label>
+                                                <textarea name="Complaint" class="client-input" style="height: 80px;"
+                                                    id="Complaint">
+                                                </textarea>
+                                                <div class="col-md-12 justify-content-between">
+                                                    <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                                    <input name="ProblemNutritional" type="hidden" value="false" spellcheck="true">
+                                                    <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                        <tr style="line-height: 3;">
+                                                            <th>Anxiety</th>
+                                                            <th>Yes</th>
+                                                            <th>No</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nervous, Anxious, On edge</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cannot stop or control worry</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Worrying too much about different things</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Feeling afraid something awful might happen</td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                            <td><input type="radio" name="" id=""></td>
+                                                        </tr>
+                                                       </table>
+                                                </div> 
+                                                <label class="CLIENT-LABEL">Comments: (include Onset, Frequency, Duration, Intensity) 
+                                                </label>
+                                                <textarea name="Complaint" class="client-input" style="height: 80px;"
+                                                    id="Complaint">
+                                                </textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Obsessions/Compulsions</label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                                    <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Traumatic Stress / Losses</label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                                    <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12 justify-content-between">
+                                                <input name="ProblemNutritional" type="hidden" value="false" spellcheck="true">
+                                                <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                    <tr style="line-height: 3;">
+                                                        <th>Oppositional Behaviors</th>
+                                                        <th>Yes</th>
+                                                        <th>No</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Angry/ Irritable Mood</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Argumentative/ Defiant Behavior		</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vindictiveness</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Aggression to People and Animals</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Destruction of Property	</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Deceitfulness or Theft	</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Serious Violations of Rules	</td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                        <td><input type="radio" name="" id=""></td>
+                                                    </tr>
+                                                   </table>
+                                            </div> 
+                                            <label class="CLIENT-LABEL">Comments: (include Onset, Frequency, Duration, Intensity) 
+                                            </label>
+                                            <textarea name="Complaint" class="client-input" style="height: 80px;"
+                                                id="Complaint">
+                                            </textarea>
+                                            <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Impulsive/ Reckless/ Risk Taking Behaviors</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Mood Swings/Hyperactivity</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Disturbed Reality Contact (psychosis)</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Sleep Problems (note any recent changes or links to moods or stressors) </label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Psychosocial Stressors not Already Discussed</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                                <input id="ProblemNutritional" name="ProblemNutritional" type="checkbox" value="true" spellcheck="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Other</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <label class="CKIENT-LABEL">Skills Deficits/Skills Training/Community Support Needs (check all applicable skills deficits, 
+                                            skills training, and/or community support needs identified)</label>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient col-md-12">
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">Client needs symptom and disability management skills</label></div>
+                                                </div>
+                                                    <div class="margin-inputclient col-md-12">
+                                                        <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                            <label class="CLIENT-LABEL">Client needs residential supports to develop skills necessary for community living.</label></div>
+                                                    </div>
+                                                    <div class="margin-inputclient col-md-12">
+                                                            <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                id="harmingNo" value="yes">
+                                                                <label class="CLIENT-LABEL">Client needs education related services to develop skills necessary to enchase academic success.</label></div>
+                                                    </div>
+                                                    <div class="margin-inputclient col-md-12">
+                                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                    <label class="CLIENT-LABEL">Client needs symptom and disability management skills.</label></div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                                <div class="margin-inputclient col-md-12">
+                                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                        <label class="CLIENT-LABEL">Client needs restoration or development of social/personal skills.</label></div>
+                                                                </div>
+                                                                <div class="margin-inputclient col-md-12">
+                                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                        <label class="CLIENT-LABEL">Client needs employment related services to develop skills necessary for successful employment.                                                                            .</label></div>
+                                                                </div>
+                                                                <div class="margin-inputclient col-md-12">
+                                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                        <label class="CLIENT-LABEL">Client needs restoration or development of social support skills and networks including recreational activities.                                                                            .</label></div>
+                                                                </div>
+                                                                <div class="margin-inputclient col-md-12">
+                                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                        <label class="CLIENT-LABEL">Client needs restoration or development of social/personal skills.                                                                            .</label></div>
+                                                                </div>
+                                            </div>
+                                        <div class="col-md-12">
+                                                <div class="margin-inputclient col-md-12">
+                                                    <label class="CLIENT-LABEL">As Evidenced By (describe the specific skill deficits or areas where improvement is needed.)</label>
+                                                        <textarea name="Complaint" class="client-input col-md-6" style="height: 80PX;"
+                                                            id="Complaint"></textarea>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### LETHALITY ASSESSMENT #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LETHALITY ASSESSMENT</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-md-12 d-flex">
+                                                <label class="CLIENT-LABEL"><b>Past attempts to Harm Self or Others</b> </label>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">None Noted </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Self  </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Other </label></div>&nbsp;&nbsp;
+                                            </div>
+                                            <label class="CLIENT-LABEL">Comment:</label>
+                                            <textarea name="Complaint" class="client-input col-md-6" style="margin-bottom: 10px;" id="Complaint"></textarea>
+                                        </div> 
+                                        <div class="col-lg-12">
+                                            <div class="col-md-12 d-flex">
+                                                <label class="CLIENT-LABEL"><b>Current Risk of Harm to Self</b> </label>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">None Noted </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Low    </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Moderate   </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">High </label></div>&nbsp;&nbsp;
+                                            </div>
+                                            <label class="CLIENT-LABEL">Comment:</label>
+                                            <textarea name="Complaint" class="client-input col-md-6" style="margin-bottom: 10px;" id="Complaint"></textarea>
+                                        </div> 
+                                        <div class="col-lg-12">
+                                            <div class="col-md-12 d-flex">
+                                                <label class="CLIENT-LABEL"><b>Current Risk of Harm to Others</b> </label>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">None Noted </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Self  </label></div>&nbsp;&nbsp;
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                <label class="CLIENT-LABEL">Other </label></div>&nbsp;&nbsp;
+                                            </div>
+                                            <label class="CLIENT-LABEL">Comment:</label>
+                                            <textarea name="Complaint" class="client-input col-md-6" style="margin-bottom: 10px;" id="Complaint"></textarea>
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>    
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>MENTAL STATUS EXAM</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                                        <tr style="line-height: 3;">
+                                                                <th>General Observations</th>
+                                                            <th> </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Appearance</td>
+                                                            <td>
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Well Groomed
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Unkempt       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Disheveled</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Build</td>
+                                                            <td>  
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Average 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Thin       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Overweight</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Demeanor</td>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Average
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Hostile      
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Mistrustful     
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Withdrawn 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Preoccupied       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Demanding</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Eye Contact	</td>
+                                                            <td>  
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Average 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Avoidant       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Intense</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Activity</td>
+                                                            <td>   
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Average 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Agitated       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Slow</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Speech</td>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Clear     
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Slurred 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Rapid       
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Pressured</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Thought Content</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Delusions</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported 
+                                                            </td>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Grandiose       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Persecutory      
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Somatic  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Bizarre        
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Nihilistic        
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Religious   </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Other</td>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Autistic      
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Obsessional  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Phobic        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Guilty 
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Ideas of Reference     
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Preoccupied  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Guarded        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Other:
+                                                            </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported
+                                                                </td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-6" style="margin-bottom: 10px;" id="Complaint"></textarea>
+                                                            </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Self Abuse</td>
+                                                            <td></td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported</td>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Suicidal (Assess lethality)     
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Intent  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Plan        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Self - Mutilization</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Aggressive</td>
+                                                            <td></td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported</td>
+                                                            <td>     
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Aggressive(assess lethality) 
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Intent        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Plan</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Perception</b></td>
+                                                            <td></td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Hallucinations</td>
+                                                            <td></td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported</td>
+                                                            <td>
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Auditory       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Visual      
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Olfactory  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Gustatory        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Tactile</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Others</td>
+                                                            <td></td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported</td>
+                                                            <td>    
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Illusions  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Depersonalization        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Derealization</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Thought Process </th>
+                                                            <td>
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Logical        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Circumstantial        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Tangential        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Loose       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Racing       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Incoherent      
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Concrete  
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Blocked        
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Flight of Ideas</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Mood </th>
+                                                            <td>     
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Euthymic        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Depressed        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Anxious       
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Angry   
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Euphoric         
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Irritable</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Affect </th>
+                                                            <td>       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Full         
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Constricted        
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Flat    
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Inappropriate          
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Labile</td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Behavior </th>
+                                                            <td>
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Cooperative         
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Resistant         
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Agitated         
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Impulsive        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Over Sedated       
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Assaultive         
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Aggressive        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Hyperactive        
+                                                                <input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >Restless       
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Loss of Interests   
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Anhedonia         
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Akasthisia 
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Withdrawn   
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Dystonia  
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Tardive Dyskinesian 
+                                                            </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cognition</td>
+                                                            <td> </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Impairment of:</td>
+                                                            <td>    
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Orientation   
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Memory         
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Attention/Concentration        
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Ability to Abstract </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input id="ProblemPainMildly" name="ProblemPainMildly" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainMildly" type="hidden" value="false" >None Reported</td>
+                                                            <td> </td>                                                                  
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Intelligence Estimate</td>
+                                                            <td>    
+                                                                <input id="ProblemPainModerately" name="ProblemPainModerately" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainModerately" type="hidden" value="false" spellcheck="true">Intellectually Disabled   
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Borderline          
+                                                                <input id="ProblemPainSeverely" name="ProblemPainSeverely" type="checkbox" value="true" spellcheck="true">
+                                                                <input name="ProblemPainSeverely" type="hidden" >Average         
+                                                                <input id="ProblemPainExtremely" name="ProblemPainExtremely" type="checkbox" value="true">
+                                                                <input name="ProblemPainExtremely" type="hidden" value="false">Above Average</td>                                                                  
+                                                        </tr>
+                                                       </table>
+                                                </div><br>
+                                                <div class="col-md-12">
+                                                       <label class="CLIENT-LABEL">Insight/Judgment </label>
+                                                       <textarea name="Complaint" class="client-input col-md-12"
+                                                       id="Complaint"></textarea>
+                                                </div><br>    
+                                                <div class="col-md-12">
+                                                       <label class="CLIENT-LABEL">Elaboration of Positive Mental Status Findings </label>
+                                                       <textarea name="Complaint" class="client-input col-md-12"
+                                                       id="Complaint"></textarea>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- #########====== -->       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<form [formGroup]="pregressNotes">
+    <div class="all-tb">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">
+                                    Completed By:</label>
+                                <input formControlName="CompletedBy" type="text" class="client-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Signature; Credentials of Clinician: </label>
+                                <input formControlName="Signature" type="text" class="client-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Name(s) of other team members(s):  </label>
+                                <input formControlName="NameOfOtherTeamMember" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

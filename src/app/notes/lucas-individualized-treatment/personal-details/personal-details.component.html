@@ -1,0 +1,262 @@
+<div class="col-lg-12">
+  <div class="client-tabs">
+    <form [formGroup]="pregressNotes">
+      <div class="all-tb">
+        <div class="row mar-1010 d-flex my-2">
+          <div class="col-lg-12 back_css">
+            <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="CLIENT-DEMOGRAPHICS">
+              <h6>SESSION INFORMATION</h6>
+            </div>
+            <div class="content">
+              <div class="row">
+                <div class="col-lg-8 next_Tab my-2">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">First </label>
+                        <input formControlName="FirstName" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Middle Name </label>
+                        <input formControlName="MiddleName" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL"> Last Name</label>
+                        <input type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Date Of birth</label>
+                        <input formControlName="DateofBirth" type="date" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Age</label>
+                        <input formControlName="Age" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Sex</label>
+                        <select class="client-input" formControlName="Gender">
+                          <option value="0" selected>Female</option>
+                          <option value="1">Male</option>
+                          <option value="2">Transgender</option>
+                          <option value="3">They</option>
+                          <option value="4">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="col-md-12">
+                    <div class="margin-inputclient" [class.has-error]="genForm['DateofSession'].dirty && genForm['DateofSession'].errors || genForm['DateofSession'].touched && genForm['DateofSession'].errors">
+                      <label class="CLIENT-LABEL">Date of Session</label>
+                      <input type="date" class="client-input">
+                      <span *ngIf="genForm['DateofSession'].dirty && genForm['DateofSession'].errors" class="has-error">
+                        <i *ngIf="genForm['DateofSession'].errors?.['required']">
+                           Date of session required</i>
+                    </span>
+                    </div>
+                  </div>
+                  <div class="d-flex my-2">
+                    <div class="col-md-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Start Time</label>
+                        <input type="time" class="client-input" formControlName="StartTime1">
+                      </div>
+                    </div>
+                    <div class="col-md-4 ms-1">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">End Time</label>
+                        <input type="time" class="client-input" formControlName="EndTime1">
+                      </div>
+                    </div>
+                    <div class="col-md-4 ms-1">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Duration</label>
+                        <input type="time" class="client-input" formControlName="TotalTime1">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="margin-inputclient" [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                          <label class="CLIENT-LABEL">Rendering Provider <span class="text-danger">*</span> </label>
+                          <select class="client-input" formControlName="Rendering_ProviderID">
+                            <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                              {{item.Text}}</option>
+
+                          </select>
+                          <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                            <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                               *required</i>
+                        </span>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="margin-inputclient" [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors">
+                          <label class="CLIENT-LABEL">Procedure Code<span class="text-danger">*</span> </label>
+                          <select class="client-input" formControlName="ProcedureCode1">
+                            <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                              {{item.Text}}</option>
+
+                          </select>
+                          <span *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors" class="has-error">
+                            <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">
+                               *required</i>
+                        </span>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="margin-inputclient" [class.has-error]="genForm['location_required'].dirty && genForm['location_required'].errors || genForm['location_required'].touched && genForm['location_required'].errors">
+                          <label class="CLIENT-LABEL">Location<span class="text-danger">*</span> </label>
+                          <select class="client-input" formControlName="location_required">
+                            <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                              {{item.Text}}</option>
+
+                          </select>
+                          <span *ngIf="genForm['location_required'].dirty && genForm['location_required'].errors" class="has-error">
+                            <i *ngIf="genForm['location_required'].errors?.['required']">
+                               *required</i>
+                        </span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Assessor Name/Credentials:</label>
+                          <input type="text" class="client-input" formControlName="Assessor_Name">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">DSM Diagnosis:</label>
+                          <input type="text" class="client-input" formControlName="DSM_Diagnosis">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Therapist Name/Credentials:</label>
+                          <input type="text" class="client-input" formControlName="Therapist_Name">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">QMHS/ Case Manager/ Credentials:</label>
+                          <input type="text" class="client-input" formControlName="QMHS">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Date of Dx:</label>
+                          <input type="text" class="client-input" formControlName="DateofDx">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Additional Provider Name/Credentials:</label>
+                          <input type="text" class="client-input" formControlName="AdditionalProvider">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Updated Dx:</label>
+                          <input type="text" class="client-input" formControlName="UpDateofDx">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Education History</label>
+                          </div>
+                        <div class="col-lg-12 my-3">
+                          <ul class="all-li-radio und_line">
+                            <li class="col-md-2">
+                              <input type="checkbox" formControlName="XDA" name="harmingNo" id="harmingNo" value="yes">
+                              <label>X DA </label>
+                            </li>
+                            <li class="col-md-2">
+                              <input type="checkbox" formControlName="DA_Update" name="harmingNo" id="harmingNo" value="yes">
+                              <label>DA update</label>
+                            </li>
+                            <li class="col-md-3">
+                              <input type="checkbox" formControlName="Psychiatric_Evaluation" name="harmingNo" id="harmingNo" value="yes">
+                              <label>Psychiatric Evaluation</label>
+                            </li>
+                            <li class="col-md-3">
+                              <input type="checkbox" formControlName="Referral_Document" name="harmingNo" id="harmingNo" value="yes">
+                              <label>Referral Document</label>
+                            </li> 
+                            <li class="col-md-3">
+                              <input type="checkbox" formControlName="DA_addendum" name="harmingNo" id="harmingNo" value="yes">
+                              <label>DA Addendum</label>
+                            </li> 
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL">Reason for review : </label>
+                        </div>
+                      <div class="col-lg-12 my-3">
+                        <ul class="all-li-radio und_line">
+                          <li class="col-md-2">
+                            <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                            <label>X First ITP</label>
+                          </li>
+                          <li class="col-md-2">
+                            <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                            <label>Update of goals/services</label>
+                          </li>
+                          <li class="col-md-3">
+                            <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                            <label>Initial ITP</label>
+                          </li>
+                          <li class="col-md-3">
+                            <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                            <label>Annual</label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Client Strengths/Abilities:</label>
+                        <textarea class="client-input"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Transition/Discharge Criteria:</label>
+                        <textarea class="client-input"></textarea>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="behaviourHealth" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-8">
+                        <div class="arrow d-flex">
+                            <label for="type ms-2">
+                                <i  (click)="back()" class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading mx-2">BEHAVIORAL HEALTH NURSING ASSESSMENT <small>New</small></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 back_css">
+                        <button class="NEW-SAVE" TYPE="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient" [class.has-error]="f['FirstName'].dirty && f['FirstName'].errors || f['FirstName'].touched && f['FirstName'].errors">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient" [class.has-error]="f['MiddleName'].dirty && f['MiddleName'].errors || f['MiddleName'].touched && f['MiddleName'].errors">
+                                                <label class="CLIENT-LABEL">Middle Name </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"[class.has-error]="f['LastName'].dirty && f['LastName'].errors || f['LastName'].touched && f['LastName'].errors">
+                                                <label class="CLIENT-LABEL"> Last Name</label>
+                                                <input type="text" class="client-input" formControlName="LastName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient" [class.has-error]="f['DateofBirth'].dirty && f['DateofBirth'].errors || f['DateofBirth'].touched && f['DateofBirth'].errors">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient" [class.has-error]="f['Age'].dirty && f['Age'].errors || f['Age'].touched && f['Age'].errors">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Diagnosis</label>
+                                                <input type="text" class="client-input" formControlName="Diagnosis">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Allergies</label>
+                                                <input type="text" class="client-input" formControlName="Allergies">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-md-12">
+                                        <div class="margin-inputclient" [class.has-error]="f['DateOfSession'].dirty && f['DateOfSession'].errors || f['DateOfSession'].touched && f['DateOfSession'].errors">
+                                            <label class="CLIENT-LABEL">Date of Session</label>
+                                            <input type="date" class="client-input" formControlName="DateOfSession">
+                                            <span
+                                                *ngIf="f['DateOfSession'].dirty && f['DateOfSession'].errors"
+                                                class="has-error">
+                                                <i
+                                                    *ngIf="f['DateOfSession'].errors?.['required']">*
+                                                    required</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                <input type="time" class="client-input" formControlName="StartTime">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">End Time</label>
+                                                <input type="time" class="client-input" formControlName="EndTime">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Duration</label>
+                                                <input type="time" class="client-input" formControlName="TotalTime">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION DETAILS</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient" [class.has-error]="f['Rendering_ProviderID'].dirty && f['Rendering_ProviderID'].errors || f['Rendering_ProviderID'].touched && f['Rendering_ProviderID'].errors">
+                                                        <label class="CLIENT-LABEL">Rendering Provider <span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="Rendering_ProviderID">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                        <span
+                                                            *ngIf="f['Rendering_ProviderID'].dirty && f['Rendering_ProviderID'].errors"
+                                                            class="has-error">
+                                                            <i
+                                                                *ngIf="f['Rendering_ProviderID'].errors?.['required']">*
+                                                                required</i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient" [class.has-error]="f['ProcedureCode1'].dirty && f['ProcedureCode1'].errors || f['ProcedureCode1'].touched && f['ProcedureCode1'].errors">
+                                                        <label class="CLIENT-LABEL">Procedure Code<span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input" formControlName="ProcedureCode1">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                        <span
+                                                            *ngIf="f['ProcedureCode1'].dirty && f['ProcedureCode1'].errors"
+                                                            class="has-error">
+                                                            <i
+                                                                *ngIf="f['ProcedureCode1'].errors?.['required']">*
+                                                                required</i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Location<span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="location_required">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Insurance Type<span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input" formControlName="hdnInsuranceType">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Authorization Number <span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input" formControlName="selectAuthNumber">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

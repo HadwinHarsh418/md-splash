@@ -1,0 +1,362 @@
+<div class="row">
+    <div class="col-lg-12 back_css">
+        <button class="NEW-SAVE" type="button" (click)="Save()">SAVE</button>
+    </div>
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="generalForm"  >
+                <div class="all-tb">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content">
+
+                                  <!-- ############### OCCUPATION/EMPLOYMENT INFORMATION ########### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>LEGAL SYSTEM INVOLVEMENT <br>
+                                        </h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL"
+                                                        [class.has-error]="genForm['Independent'].dirty && genForm['Independent'].errors || genForm['Independent'].touched && genForm['Independent'].errors"
+                                                        ><b><span class="text-danger">*</span>39. In the past six months have you been arrested?</b></label>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>No</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>Yes</label>
+                                                        </div>
+                                                        <span *ngIf="genForm['Independent'].dirty && genForm['Independent'].errors" class="has-error">
+                                                            <i *ngIf="genForm['Independent'].errors?.['required']"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL"
+                                                        [class.has-error]="genForm['jailorPrison'].dirty && genForm['jailorPrison'].errors || genForm['jailorPrison'].touched && genForm['jailorPrison'].errors"
+                                                        ><b><span class="text-danger">*</span>40. In the past six months have you been in either jail or prison?  </b></label>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="jailorPrison" formControlName="jailorPrison"  id="jailorPrison" value="1">
+                                                            <label>No</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="jailorPrison" formControlName="jailorPrison"  id="jailorPrison" value="1">
+                                                            <label>Yes</label>
+                                                        </div>
+                                                        <span *ngIf="genForm['jailorPrison'].dirty && genForm['jailorPrison'].errors" class="has-error">
+                                                            <i *ngIf="genForm['jailorPrison'].errors?.['required']"></i>
+                                                        </span>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>EMPLOYMENT</h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label class="CLIENT-LABEL"><b><strong>Now let’s talk a little bit about your work situation.</strong></b></label>
+                                     <div class="col-md-12">
+                                         <label class="CLIENT-LABEL"
+                                         [class.has-error]="genForm['currentlyEmployed'].dirty && genForm['currentlyEmployed'].errors || genForm['currentlyEmployed'].touched && genForm['currentlyEmployed'].errors"
+                                         ><b><span class="text-danger">*</span>41. Are you currently employed?
+                                          </b> (see OMS Interview Guide for definition of “employment”) </label>
+                                          <div class="d-flex">
+                                            <input type="radio" name="currentlyEmployed" formControlName="currentlyEmployed"  id="currentlyEmployed" value="1">
+                                            <label>No (continue to #42)</label>
+                                        </div>
+                                        <div class="d-flex">
+                                            <input type="radio" name="currentlyEmployed" formControlName="currentlyEmployed"  id="currentlyEmployed" value="1">
+                                            <label>Yes (skip to #43)</label>
+                                        </div>
+                                        <span *ngIf="genForm['currentlyEmployed'].dirty && genForm['currentlyEmployed'].errors" class="has-error">
+                                            <i *ngIf="genForm['currentlyEmployed'].errors?.['required']">is
+                                                required</i>
+                                        </span>
+                                     </div>
+                                    </div>
+                                 </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                     <div class="col-md-12">
+                                         <label class="CLIENT-LABEL"
+                                         [class.has-error]="genForm['beenEmployed'].dirty && genForm['beenEmployed'].errors || genForm['beenEmployed'].touched && genForm['beenEmployed'].errors"
+                                         ><b><span class="text-danger">*</span>42. Have you been employed in the past six months?
+                                          </b>  [mandatory only if Question 41 is “No”] </label>
+                                          <div class="d-flex">
+                                            <input type="radio" name="beenEmployed" formControlName="beenEmployed"  id="beenEmployed" value="1">
+                                            <label>No (skip to #45)</label>
+                                        </div>
+                                        <div class="d-flex">
+                                            <input type="radio" name="beenEmployed" formControlName="beenEmployed"  id="beenEmployed" value="1">
+                                            <label>Yes (continue to #43)</label>
+                                        </div>
+                                        <span *ngIf="genForm['beenEmployed'].dirty && genForm['beenEmployed'].errors" class="has-error">
+                                            <i *ngIf="genForm['beenEmployed'].errors?.['required']"></i>
+                                        </span>
+                                     </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12">
+                                    <div class="cnt_divcss">
+                                        <span>
+                                           <B>INTERVIEWER: (do not read aloud) If the person held more than one job (since last interview date/in the past <br> six months), please ask him or her to answer the following questions in terms of the most recent job.</B>
+                                        </span>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+                                     <div class="col-md-12">
+                                         <div class="row">
+                                          <div class="col-md-12">
+                                              <label class="CLIENT-LABEL"><b>43. How many hours a week (do/did) you usually work
+                                               </b>  </label>
+                                               <div class="d-flex">
+                                                 <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                 <label>1-10 hours</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                 <label>11-20 hours</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                 <label>21-30 hours</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                 <label>31-40 hours</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                 <label>40+ hours</label>
+                                             </div>
+                                          </div>
+                                         </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <label class="CLIENT-LABEL" ><b><strong>(INTERVIEWER: Read the following answer options to the client)</strong></b></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                     <div class="col-md-12">
+                                         <div class="row">
+                                          <div class="col-md-12"
+                                          [class.has-error]="genForm['satisftWithJob'].dirty && genForm['satisftWithJob'].errors || genForm['satisftWithJob'].touched && genForm['satisftWithJob'].errors"
+                                          >
+                                              <label class="CLIENT-LABEL"><b><span class="text-danger">*</span>44. In general, how satisfied (are/were) you with this job?
+                                               </b>  </label>
+                                               <div class="d-flex">
+                                                 <input type="radio" name="satisftWithJob" formControlName="satisftWithJob"  id="satisftWithJob" value="1">
+                                                 <label>Not at all</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="satisftWithJob" formControlName="satisftWithJob"  id="satisftWithJob" value="1">
+                                                 <label>A little bit</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="satisftWithJob" formControlName="satisftWithJob"  id="satisftWithJob" value="1">
+                                                 <label>Somewhat</label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="satisftWithJob" formControlName="satisftWithJob"  id="satisftWithJob" value="1">
+                                                 <label>Quite a bit
+                                                </label>
+                                             </div>
+                                             <div class="d-flex">
+                                                 <input type="radio" name="satisftWithJob" formControlName="satisftWithJob"  id="satisftWithJob" value="1">
+                                                 <label>Very much</label>
+                                             </div>
+                                             <span *ngIf="genForm['satisftWithJob'].dirty && genForm['satisftWithJob'].errors" class="has-error">
+                                                <i *ngIf="genForm['satisftWithJob'].errors?.['required']"></i>
+                                            </span>
+                                          </div>
+                                         </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>SOMATIC HEALTH <br>
+                                        </h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL"
+                                                        [class.has-error]="genForm['doYouSmoke'].dirty && genForm['doYouSmoke'].errors || genForm['doYouSmoke'].touched && genForm['doYouSmoke'].errors"
+                                                        ><b><span class="text-danger">*</span>45. Do you smoke cigarettes?</b></label>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="doYouSmoke" formControlName="doYouSmoke"  id="doYouSmoke" value="1">
+                                                            <label>No (skip to #47)</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="doYouSmoke" formControlName="doYouSmoke"  id="doYouSmoke" value="1">
+                                                            <label>Yes (continue to #46)</label>
+                                                        </div>
+                                                        <span *ngIf="genForm['doYouSmoke'].dirty && genForm['doYouSmoke'].errors" class="has-error">
+                                                            <i *ngIf="genForm['doYouSmoke'].errors?.['required']">is
+                                                                required</i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL"><b>46. How many cigarettes do you smoke per day?</b> [one pack = 20 cigarettes]</label>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>Do not smoke every day</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>1-10</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>211-20
+                                                                1-30 hours</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>21-30</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>30+</label>
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="cnt_divcss">
+                                                        <span>
+                                                            <b>(INTERVIEWER: Read the following answer options to the consumer)</b>
+                                                        </span>
+                                                    </div>
+                                                    <div class="CLIENT-LABEL">
+                                                        (INTERVIEWER: Read all the answer options to the client and check all that apply)
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="CLIENT-LABEL"
+                                                    [class.has-error]="genForm['followingTobaccoProduct'].dirty && genForm['followingTobaccoProduct'].errors || genForm['followingTobaccoProduct'].touched && genForm['followingTobaccoProduct'].errors"
+                                                    ><b><span class="text-danger">*</span>47. In the past month did you use any of the following tobacco products?</b></label>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>Cigars (e.g., cigarillos, little cigars)</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>Smokeless tobacco (e.g., chewing tobacco, dip, snuff)?</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>Electronic-cigarettes (e.g., e-cigarettes, vaporizer cigarettes, vapes)?</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>Pipes (e.g., hookah, water pipes)?</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>Other tobacco product (e.g., bidis, kreteks, clove cigarettes)?</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="followingTobaccoProduct" formControlName="followingTobaccoProduct"  id="followingTobaccoProduct" value="1">
+                                                        <label>None</label>
+                                                    </div>
+                                                    <div class="CLIENT-LABEL">
+                                                        (INTERVIEWER: Read all the answer options to the client)
+                                                    </div>
+                                                    <span *ngIf="genForm['followingTobaccoProduct'].dirty && genForm['followingTobaccoProduct'].errors" class="has-error">
+                                                        <i *ngIf="genForm['followingTobaccoProduct'].errors?.['required']"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="CLIENT-LABEL"><b>48. Would you say in general your health is:</b></label>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                        <label>Excellent</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                        <label>Very good
+                                                        </label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                        <label>Good</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                        <label>Fair</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                        <label>Poor</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="CLIENT-LABEL"><b>49. How tall are you?</b></label>
+                                                    <div class="d-flex">
+                                                        <div class="col-md-3">
+                                                            <label>Feet:</label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                        <div class="col-md-3" style="margin: auto;">
+                                                            <label>Inch: [please write legibly]
+                                                            </label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="CLIENT-LABEL"><b>50. How much do you currently weigh?</b></label>
+                                                    <div>
+                                                        <div class="col-md-3">
+                                                            <label>pounds [whole numbers only; please write legibly]</label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>Don’t Know</label>
+                                                        </div>
+                                                        <div class="">
+                                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                            <label>Refused</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="CLIENT-LABEL">
+                                                        Clinician’s Notes (Optional)
+                                                    </div>
+                                                    <DIV>
+                                                        <textarea formControlName="ExplainWorkDifficulties" class="client-input" cols="20" id="Strengths" name="Strengths" rows="1" style="height: 200px;"></textarea>
+                                                    </DIV>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>          
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

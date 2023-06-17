@@ -1,0 +1,52 @@
+<div class="page max-width-1000">
+    <div class="row mar-1010 d-flex my-2">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="arrow d-flex">
+                    <label for="type" (click)="back()">
+                        <i class="fa fa-circle-arrow-left mx-2"></i>
+                    </label>
+                    <h1 class="admin-main_heading">MOBILE CRISIS ASSESSMENT FORM <small id="EditNew">New</small></h1>
+                </div>
+            </div>
+            <div class="col-lg-12 back_css">
+                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+            </div>
+        </div>
+
+    </div>
+    <section class="new-client-sec">
+        <div class="col-lg-12">
+            <div class="client-tabs subTabs">
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                    <li [ngbNavItem]="1">
+                        <a ngbNavLink>Session Information</a>
+                        <ng-template ngbNavContent>
+                            <app-session-info></app-session-info>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                        <a ngbNavLink>For Secondary Referrals Source</a>
+                        <ng-template ngbNavContent>
+                            <app-secondary-source></app-secondary-source>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                        <a ngbNavLink>Questions</a>
+                        <ng-template ngbNavContent>
+                            <app-questions></app-questions>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="4">
+                        <a ngbNavLink>Disclaimer</a>
+                        <ng-template ngbNavContent>
+                            <app-disclaimer></app-disclaimer>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav" class="mt-2"></div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,808 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="generalForm">
+                <div class="all-tb">
+                    <div class="row back_css">
+                        <div class="col-lg-12 back_css">
+                            <div class="save-bt rem-abs">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>IDENTIFYING INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First </label>
+                                                    <input formControlName="First_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">MI </label>
+                                                    <input formControlName="Middle_Initial" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Last </label>
+                                                    <input formControlName="Last_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Home Address (include apt#, if applicable)</label>
+                                                    <input formControlName="Address" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">City </label>
+                                                    <input formControlName="City" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">State</label>
+                                                    <input formControlName="State" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">ZipCode</label>
+                                                    <input formControlName="Zip_code" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Home Phone</label>
+                                                    <input formControlName="HomePhone" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Cell/Other Phone</label>
+                                                    <input formControlName="CellPhone" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!-- ####### second #### -->
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="GenderId">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DOB" type="date" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Is it Ok to contact you at home?</label>
+                                                    <input type="checkbox" formControlName="ContactMe">Yes
+                                                    <input type="checkbox" formControlName="ContactMe">No
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Ok to leave message</label>
+                                                    <input type="checkbox" formControlName="LeaveMessageMe">Yes
+                                                    <input type="checkbox" formControlName="LeaveMessageMe">No
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Special calling instructions?</label>
+                                                    <textarea formControlName="SpecialCallingInst" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="6" style="width:100%;"></textarea>                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>SESSION INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors || genForm['DateOfSession'].touched && genForm['DateOfSession'].errors">
+                                                                <label class="CLIENT-LABEL">Date of Session <span class="text-danger">*</span></label>
+                                                                <input type="date" class="client-input" formControlName="DateOfSession">
+                                                                <span *ngIf="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['DateOfSession'].errors?.['required']">
+                                                                        Please enter Date of Session.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                                <input type="time" class="client-input" formControlName="StartTime">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">End Time</label>
+                                                                <input type="time" class="client-input" formControlName="EndTime">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Duration</label>
+                                                                <input type="time" class="client-input" formControlName="Duration">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Procedure code</label>
+                                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                                    <option value="0" selected>90791 - Psychiatric Assessment with Medication</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                                <label class="CLIENT-LABEL">Rendering Provider <span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="Rendering_ProviderID">
+                                                                    <option value="0" disabled selected>select</option>
+                                                                    <option value="Anderline Noutai">Anderline Noutai</option>
+                                                                    <option value="Monica Boddie">Monica Boddie</option>
+                                                                    <option value="test test">test test</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                                        Rendering Provider is Required.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Location</label>
+                                                                <select class="client-input" formControlName="Location">
+                                                                    <option value="11 Office" selected>11 Office</option>
+                                                                    <option value="01 Pharmacy Noutai">01 Pharmacy Noutai</option>
+                                                                    <option value="09 Prison/Correctional Facility">09 Prison/Correctional Facility</option>
+                                                                    <option value="19 Off Campus-Outpatient Hospital">19 Off Campus-Outpatient Hospital</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                
+                                                </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>PRESENTING PROBLEMS</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Please, briefly describe the problems you are experiencing .</label>
+                                                                <textarea formControlName="PresentingProblemDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">What do you consider to be the other stressors in your life?</label>
+                                                                <textarea formControlName="OtherStressDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ##### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>HISTORY OF THE PROBLEM</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">When did you first start experiencing the problem(s) that brought you to the clinic?</label>                                                                    
+                                                                <textarea formControlName="HistoryOfProblem" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">How often does the problem occur?</label>
+                                                                <textarea formControlName="ProblemOccurrence" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">How long does it last?</label>
+                                                                <textarea formControlName="ProblemLongLasting" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Do you currently have thoughts of harming yourself?</label>
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>No</label>
+                                                                <input type="radio" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="no" (change)="onSelectionChanged($event)">
+                                                                <textarea formControlName="DescHarmingYourself" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                              
+                                                                <label class="CLIENT-LABEL">Do you currently have urges to hurt, harm, or kill someone else?</label>     
+                                                                <input type="radio" name="HarmingUrgeNo" id="HarmingUrgeNo" formControlName="HarmingUrgeNo" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                
+                                                                <input type="radio" name="HarmingUrgeNo" id="HarmingUrgeNo" formControlName="HarmingUrgeNo" value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No</label> If yes, who?
+                                                                <textarea formControlName="WhomToHarm" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Do you currently have thoughts of wishing you were dead?</label>
+                                                                <input type="radio" name="WishingDeadNo" id="WishingDeadNo"  value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="WishingDeadNo" id="WishingDeadNo"  value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No, </label> If yes, who?
+                                                                <textarea formControlName="WishingDeadExplanation" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Have you ever seriously considered suicide or felt like harming someone else?</label>
+                                                                <input type="radio" name="HarmOthersNo" id="HarmOthersNo"  value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="HarmOthersNo" id="HarmOthersNo"  value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No,</label> If If yes, explain
+                                                                <textarea formControlName="WhyHarmOthers" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Have you received previous therapy/ counseling (sp) services of any kind</label>
+                                                                <input type="radio" name="PreviousTherapyCounsellingNo" id="PreviousTherapyCounsellingNo"  value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="PreviousTherapyCounsellingNo" id="PreviousTherapyCounsellingNo"  value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No</label>If yes, when and for how long?
+                                                                <textarea formControlName="HowLongTherapyCounselling" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <label class="CLIENT-LABEL">Have you ever been hospitalized for emotional problems?</label>
+                                                                    <input type="radio" name="HospitalizedForEmotionalNo" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                    <label>Yes</label>
+                                                                    <input type="radio" name="HospitalizedForEmotionalNo" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                    <label>No</label>
+                                                                </div>
+                                                                <textarea formControlName="Desc_EmotionalproblemHospitalized" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Were any of your previous treatment experiences helpful?</label>
+                                                                <input type="radio" name="IsTreatmentHelpfulNo" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="IsTreatmentHelpfulNo" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No</label><span>If yes, explain how benefited or did not benefit from previous treatment</span> 
+                                                                <textarea formControlName="TreatmentBenifitDetails" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">If yes to either of the above, when, where, and for how long were you hospitalized?</label>
+                                                                
+                                                                <textarea formControlName="EmotionalHospitalizedDetails" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">What medication(s), if any, have you found helpful in managing your emotional problems?</label>
+                                                                
+                                                                <textarea formControlName="MedicationDetails" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Have you ever been hospitalized for substance abuse problems?</label>
+                                                                <input type="radio" name="HospitalizedForAbuseYes" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="HospitalizedForAbuseYes" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No</label><span></span> 
+                                                                <textarea formControlName="Desc_SubstanceAbusedProblem" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label  class="margin-inptclient">Do you have any problem with any of the following?</label>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Overspending</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Yelling</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for=""> Throwing/ breaking things</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for=""> Hitting, shoving, choking, or hurting others</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for=""> Food Binging</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Stealing</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Internet overuse or misuse</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Intentional Vomiting</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Risk Taking/Endangering</label>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <input class="" type="checkbox" name="" id="">
+                                                                            <label class="CLIENT-LABEL2"  for="">Sexual Feelings/behaviors</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">If yes to either of the above, when, where, and for how long were you hospitalized?</label>
+                                                                <textarea formControlName="HospitalizedDetails" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>UNKNOWN</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                   <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL"><strong>RACE/ETHNICITY </strong></label>                                                                    
+                                                            <select class="full-width client-input" id="RaceEthnicity" name="RaceEthnicity" formControlName="RaceEthnicity">
+                                                                <option value="">Select....</option>
+                                                                <option value="European-American">European-American</option>
+                                                                <option value="African-American">African-American</option>
+                                                                <option value="Hispanic-American">Hispanic-American</option>
+                                                                <option value="Native-American">Native-American</option>
+                                                                <option value="Asian">Asian</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL"><strong>MARITAL STATUS</strong></label>                                                                    
+                                                            <select class="full-width client-input" id="MaritalStatus" name="MaritalStatus" formControlName="MaritalStatus">
+                                                                <option value="">Select....</option>
+                                                                <option value="Divorced">Divorced</option>
+                                                                <option value="Married">Married</option>
+                                                                <option value="Other">Other</option>
+                                                                <option value="Single">Single</option>
+                                                                <option value="Unknown">Unknown</option>
+                                                                <option value="Widow">Widow</option>
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL"><strong>RELIGIOUS AFFILIATION</strong></label>                                                                    
+                                                            <select class="full-width client-input" id="ReligiousAffiliation" name="ReligiousAffiliation" formControlName="ReligiousAffiliation">
+                                                                <option value="">Select....</option>
+                                                                <option value="Catholic">Catholic</option>
+                                                                <option value="Jewish">Jewish</option>
+                                                                <option value="Muslim">Muslim</option>
+                                                                <option value="Protestant">Protestant</option>
+                                                                <option value="None">None</option>
+                                                                <option value="Other">Other</option>
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Number of years currently married?</label>                                                                    
+                                                            <input type="text" class="client-input" formControlName="NoOfMarriedYears">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If previously married, please provide dates of Marriage(s)</label>                                                                    
+                                                            <textarea formControlName="MarriageDatesDetails" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                        </div>
+                                                    </div>                                                        
+                                                        <div class="col-md-12">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <label class="CLIENT-LABEL">Are you experiencing any problems/stresses in your current marriage/relationship?</label>  
+                                                                    <input type="radio" name="ProblemInCurrentRelationshipYes" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                    <label>Yes</label>
+                                                                    <input type="radio" name="ProblemInCurrentRelationshipYes" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                    <label>No</label>
+                                                                </div>  
+                                                                <textarea formControlName="IsProblemInCurrentRelationship" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <label class="CLIENT-LABEL">Did you experience any problems/stressors in your previous marriage/relationship?</label>  
+                                                                    <input type="radio" name="ISstressInPreviousMarriage_Yes" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                    <label>Yes</label>
+                                                                    <input type="radio" name="ISstressInPreviousMarriage_Yes" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                    <label>No</label>
+                                                                </div>  
+                                                                <textarea formControlName="StressInPreviousMarriage" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <label class="CLIENT-LABEL">Comments regarding stresses in current or previous marriage(s)/relationship(s):</label>  
+                                                                    <input type="radio" name="ProblemInPreviousRelationshipYes" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                    <label>Yes</label>
+                                                                    <input type="radio" name="ProblemInPreviousRelationshipYes" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                    <label>No</label>
+                                                                </div>  
+                                                                <textarea formControlName="CommentsRegardingRelationship" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <label class="CLIENT-LABEL">If you have had problems in the past what do you think caused those relationships to end?</label>  
+                                                                </div>  
+                                                                <textarea formControlName="PastProblems" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                                
+                                        
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ############### education########### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>Education</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Last grade completed in school/college is/was?</label>   
+                                                            <input formControlName="Grade" type="text" class="client-input" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Degree</label>                                                                    
+                                                            <input formControlName="Degree" type="text" class="client-input" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label class="CLIENT-LABEL">Do you have any special training, skills, or certification?</label>  
+                                                            <input type="checkbox" name="" id="">
+                                                            <label>No</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Reading</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Writing</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Both Reading and Writing</label>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Are you currently enrolled in school?</label>  
+                                                            <div class="d-flex">
+                                                                <input type="radio" name="EnrolledYes" id="" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>Yes</label>
+                                                                <input type="radio" name="EnrolledYes" id="" value="no" (change)="onSelectionChanged($event)"> 
+                                                                <label>No</label><span>What is your major/focus?</span>       
+                                                            </div>  
+                                                            <textarea formControlName="MajorFocus" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Do you have any difficulty understanding (check all that apply)</label>  
+                                                            <input type="checkbox" name="" id="">
+                                                            <label>Spoken Instructions</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Written Instructions</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Demonstrated Instructions</label>                                
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">How do you learn best?</label>                                                                    
+                                                        <textarea formControlName="LearnMethod" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">What was school like for you?</label>                                                                    
+                                                        <textarea formControlName="LikeSchool" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Describe any difficulties or problems you had/have in school (IEP, 504 plan, suspension, and truancy):</label>                                                                    
+                                                        <textarea formControlName="SchoolProblemDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                  <!-- ############### OCCUPATION/EMPLOYMENT INFORMATION ########### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>OCCUPATION/EMPLOYMENT INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Check all that apply</label>   
+                                                            <input type="checkbox" name="" id="">
+                                                            <label>EMPLOYED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>RETIRED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>DISABLED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <br>
+                                                            <label>STUDENT</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>HOMEMAKER</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>UNEMPLOYED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                        </div>
+                                                        <label>Current Employer</label>
+                                                        <textarea formArrayName="CurrentEmployer" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Are you currently having difficulties on the job because of
+                                                                    (check if yes)</label>   
+                                                                <input type="checkbox" name="" id="">
+                                                                <label> Emotional Problems?</label>
+                                                                <br>
+                                                                <input type="checkbox" name="" id=""> 
+                                                                <label>Substance Abuse?
+                                                                    If yes to any of the above, please explain
+                                                                </label>
+                                                            </div>
+                                                            <textarea formControlName="ExplainWorkDifficulties" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                   
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If/When employed, what type of work do you do?</label>   
+                                                            <textarea formControlName="Worktype" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Years of Current job</label>
+                                                            <input formControlName="YearsOnCurrentJob" type="text" class="client-input" >
+                                                            <label class="CLIENT-LABEL">Have you ever had difficulties at work because of (check if yes)</label>
+                                                            <input type="checkbox" name="" id="">
+                                                            <label> Emotional Problems</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Substance Abuse</label>
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ######################### MILITARY ############### -->
+
+
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>MILITARY</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Ever in Military Services</label>   
+                                                                <input type="checkbox" name="" id="">
+                                                                <label> Yes</label>
+                                                                <input type="checkbox" name="" id=""> 
+                                                                <label>No</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Currently in Military</label>   
+                                                                <input type="checkbox" name="" id="">
+                                                                <label> Yes</label>
+                                                                <input type="checkbox" name="" id=""> 
+                                                                <label>No</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Type of Discharge</label>   
+                                                            <textarea formArrayName="TypeOfDischarge" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Reason for Discharge</label>
+                                                            <textarea formControlName="ReasonOfDischarge" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>   
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Branch</label>   
+                                                            <textarea formArrayName="MilitaryBranch" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If you served in combat when did you serve?</label>
+                                                            <textarea formArrayName="ServedInCombat" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>    
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12"> <label class="CLIENT-LABEL">Specify the timeframe for consumer's military service</label></div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <input formControlName="MilitaryServiceFrom" type="date" placeholder="Date From" class="client-input" id="birthday" name="birthday">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <input formControlName="MilitaryServiceTo" type="date" class="client-input" placeholder="Date To" id="birthday" name="birthday">
+                                                        </div>
+                                                    </div> 
+                                                   </div>
+                                                   
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Would the consumer like to be contacted by the Office of Maryland'sVeterans for purposes of Veteran benefits?</label>
+                                                        <input type="radio" name="" id="">
+                                                        <label>Yes</label>
+                                                        <input type="radio" name="" id="">
+                                                        <label>No</label>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

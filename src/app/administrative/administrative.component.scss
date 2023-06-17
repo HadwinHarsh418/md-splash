@@ -1,0 +1,53 @@
+.nav-link.active {
+    background: #00b578 !important;
+}
+.tabs-admin {
+    padding: 40px 0;
+}
+.nav-pills.nav.flex-column li a p.tabs-admin-p {
+    margin: 0 0 9px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000 !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.nav-pills.nav.flex-column li a p.tabs-admin-p-1 {
+    font-style: italic;
+    font-size: 16px;
+    margin: 0;
+    line-height: 24px;
+    color: #444 !important;
+}
+.nav-pills.nav.flex-column li a {
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    margin: 0 0 15px 0;
+    padding: 20px 15px;
+}
+.nav-pills.nav.flex-column li a.active p{
+    color: #fff !important;
+}
+.common-div-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+.common-div-ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.common-div-ul li:last-child a,.common-div-ul li:last-child a.active {
+    border: none !important;
+}
+.common-div-ul li a:hover {
+    background: #00b578;
+    color: #fff;
+}
+.disable_prop{
+    display: none;
+}

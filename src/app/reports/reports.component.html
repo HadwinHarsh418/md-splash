@@ -1,0 +1,598 @@
+<section class="tabs-admin">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="page-header small_fonts">
+            <div class="page-header-content d-flex">
+                    <div class="arrow">
+                        <label for="type" (click)="back()">
+                            <i class="fa fa-circle-arrow-left"></i>
+                        </label>
+                    </div>
+                <h1 class="admin-main_heading">REPORTS</h1>
+            </div>
+        </div>
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="content">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel" class="accordion-item" [closeOthers]="true"
+              activeIds="static-1">
+              <ngb-panel class="accordion-header" title="CLIENT" id="static-1">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <!-- <p class="acc-p">All CLIENT</p>
+                            <p class="acc-p"> Report of all clients within the clinic</p> -->
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="tabs-admin-left">
+                        <div class="common-mar-1" (click)="changeTab(1)">
+                          <h3><a href="javascript:void(0)">All Clients</a></h3>
+                          <p>Report of all clients within the clinic</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab(2)">
+                          <h3><a href="javascript:void(0)">Client by Zip Code</a></h3>
+                          <p>Reports of all clients sorted by zip code</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab(3)">
+                          <h3><a href="javascript:void(0)">Client by Status</a></h3>
+                          <p>Report of all clients by client status</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab(4)">
+                          <h3><a href="javascript:void(0)">Under Age Status Report</a></h3>
+                          <p>Report of Active Under Age Clients</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab(5)">
+                          <h3><a href="javascript:void(0)">Client by Payor</a></h3>
+                          <p>Report of all clients by Payor</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab(6)">
+                          <h3><a href="javascript:void(0)">Staff Roster</a></h3>
+                          <p>Staff roster details</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel class="accordion-header" title="SESSION" id="static-2">
+                <ng-template ngbPanelContent class="accordion-body">
+                    <!-- <p class="acc-p">All CLIENT</p>
+                    <p class="acc-p"> Report of all clients within the clinic</p> -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tabs-admin-left">
+                                
+                            </div>
+
+                            <div class="common-mar-1" 
+                            (click)="changeTab(7)"
+                            >
+                                <h3><a href="javascript:void(0)">Session</a></h3>
+                                <p>Report sessions rendered within a date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(8)">
+                                <h3><a href="javascript:void(0)">Session Count By Week</a></h3>
+                                <p>Report count of Sessions Received By Week</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(9)">
+                                <h3><a href="javascript:void(0)">Session Count By Week</a></h3>
+                                <p>Report count of Sessions Entered By Week</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(10)">
+                                <h3><a href="javascript:void(0)">Session Received</a></h3>
+                                <p>Report sessions received within a date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(11)">
+                                <h3><a href="javascript:void(0)">Calendar Session</a></h3>
+                                <p>Report sessions calendar rendered within a date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(12)">
+                                <h3><a href="javascript:void(0)">PRP Session</a></h3>
+                                <p>Report PRP sessions rendered within a date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(13)">
+                                <h3><a href="javascript:void(0)">PRP Session Count</a></h3>
+                                <p>PRP sessions count report rendered monthly</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab(14)">
+                                <h3><a href="javascript:void(0)">PRP Session Billing</a></h3>
+                                <p>PRP sessions billing report rendered monthly</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </ng-template>
+            </ngb-panel>
+              <ngb-panel class="accordion-header" title="CSM" id="static-3">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <!-- <p class="acc-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p class="acc-p">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="tabs-admin-left">
+                        <div class="row">
+                            <div class="col-lg-12">
+                              <div class="tabs-admin-left">
+                                <div class="common-mar-1" (click)="changeTab1(15)">
+                                  <h3><a href="javascript:void(0)">CSM</a></h3>
+                                  <p>Report of Consumer Support Managers</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(16)">
+                                  <h3><a href="javascript:void(0)">CSM Treatment Plan</a></h3>
+                                  <p>Report that shows treatment plans created based on treatment plans</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(17)">
+                                  <h3><a href="javascript:void(0)">CSM Mobile Treatment Plan</a></h3>
+                                  <p>Report that shows mobile treatment plans created based on mobile treatment plans</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(18)">
+                                  <h3><a href="javascript:void(0)">CSM IOP Plan</a></h3>
+                                  <p>Report that shows IOP plans created based on iop plans</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(19)">
+                                  <h3><a href="javascript:void(0)">Referral Sources</a></h3>
+                                  <p>Report that shows the clients received by individual Referrel Sources</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(20)">
+                                  <h3><a href="javascript:void(0)">Intake tracker</a></h3>
+                                  <p>Intake tracker display</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel class="accordion-header" title="PROVIDER" id="static-4">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="tabs-admin-left">
+                        <div class="row">
+                            <div class="col-lg-12">
+                              <div class="tabs-admin-left">
+                                <div class="common-mar-1" (click)="changeTab1(21)">
+                                  <h3><a href="javascript:void(0)">Assignments</a></h3>
+                                  <p>Report of all assignments of clinicians</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(22)">
+                                  <h3><a href="javascript:void(0)">PRP Assignments</a></h3>
+                                  <p>Report of all PRP assignments of clinicians</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(23)">
+                                  <h3><a href="javascript:void(0)">MOBILE TREATMENT Assignments</a></h3>
+                                  <p>Report of all MOBILE TREATMENT assignments of clinicians</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel class="accordion-header" title="PAYROLL" id="static-5">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="tabs-admin-left">
+                        <div class="row">
+                            <div class="col-lg-12">
+                              <div class="tabs-admin-left">
+                                <div class="common-mar-1" (click)="changeTab1(24)">
+                                  <h3><a href="javascript:void(0)">Session Received/Entered with pay</a></h3>
+                                  <p>Report of all Sessions Received/Entered Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(25)">
+                                  <h3><a href="javascript:void(0)">Session Count</a></h3>
+                                  <p>Report count of Sessions Received/Entered Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(26)">
+                                  <h3><a href="javascript:void(0)">Annual Session Count</a></h3>
+                                  <p>Report count of Sessions Received/Entered Within a designated year</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(27)">
+                                  <h3><a href="javascript:void(0)">Annual Session Count Pay</a></h3>
+                                  <p>Report count of Sessions Received/Entered Within selected Dates</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(28)">
+                                  <h3><a href="javascript:void(0)">MOBILE TREATMENT Session Received with pay</a></h3>
+                                  <p>Report of all MOBILE TREATMENT Sessions Received/Entered Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(29)">
+                                  <h3><a href="javascript:void(0)">MOBILE TREATMENT Session Count</a></h3>
+                                  <p>Report count of MOBILE TREATMENT Sessions Received/Entered Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(30)">
+                                  <h3><a href="javascript:void(0)">MOBILE TREATMENT Annual Session Count</a></h3>
+                                  <p>Report count of MOBILE TREATMENT Sessions Received/Entered Within a designated year</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(31)">
+                                  <h3><a href="javascript:void(0)">IOP Session Received with pay</a></h3>
+                                  <p>Report of all IOP Sessions Received Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(32)">
+                                  <h3><a href="javascript:void(0)">IOP Session Count</a></h3>
+                                  <p>Report count of IOP Sessions Received Within a designated date range</p>
+                                </div>
+                                <div class="common-mar-1" (click)="changeTab1(33)">
+                                  <h3><a href="javascript:void(0)">IOP Annual Session Count</a></h3>
+                                  <p>Report count of IOP Sessions Received Within a designated year</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel class="accordion-header" title="MANAGEMENT" id="static-6">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="tabs-admin-left">
+                        <div class="common-mar-1" (click)="changeTab1(34)">
+                          <h3><a href="javascript:void(0)">Clients Intake</a></h3>
+                          <p>Report of New Clients added to the Clinic</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(35)">
+                          <h3><a href="javascript:void(0)">Expiring Assessments</a></h3>
+                          <p>Report of all Psychosocial Assessments that are expiring</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(36)">
+                          <h3><a href="javascript:void(0)">Expiring Authorizations</a></h3>
+                          <p>Report of all Authorizations Rendered Within a designated date range</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(37)">
+                          <h3><a href="javascript:void(0)">PRP Expiring Authorizations</a></h3>
+                          <p>Report of all PRP Authorizations Rendered Within a designated date range</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(38)">
+                          <h3><a href="javascript:void(0)">MOBILE TREATMENT Expiring Authorizations</a></h3>
+                          <p>Report of all MOBILE TREATMENT Authorizations Rendered Within a designated date range</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(39)">
+                          <h3><a href="javascript:void(0)">IOP Expiring Authorizations</a></h3>
+                          <p>Report of all IOP Authorizations Rendered Within a designated date range</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(40)">
+                          <h3><a href="javascript:void(0)">Locked Accounts</a></h3>
+                          <p>Report of all locked accounts</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(41)">
+                          <h3><a href="javascript:void(0)">Users Account</a></h3>
+                          <p>Report of all users account</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(42)">
+                          <h3><a href="javascript:void(0)">Upcoming Treatment plans</a></h3>
+                          <p>Report of all Treatment plans that are upcoming</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(43)">
+                          <h3><a href="javascript:void(0)">Upcoming MOBILE TREATMENT plans</a></h3>
+                          <p>Report of all MOBILE TREATMENT plans that are upcoming</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(44)">
+                          <h3><a href="javascript:void(0)">Upcoming IOP plans</a></h3>
+                          <p>Report of all IOP plans that are upcoming</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(45)">
+                          <h3><a href="javascript:void(0)">Upcoming IRP</a></h3>
+                          <p>Report of all upcoming IRP</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(46)">
+                          <h3><a href="javascript:void(0)">Supervisor Assignments</a></h3>
+                          <p>Report of Supervisor with their Clinician</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(47)">
+                          <h3><a href="javascript:void(0)">Client Services</a></h3>
+                          <p>Report of Client Services</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(48)">
+                          <h3><a href="javascript:void(0)">Service Count Report</a></h3>
+                          <p>Report of Services Count</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(49)">
+                          <h3><a href="javascript:void(0)">Flags By Supervisor</a></h3>
+                          <p>Report of flagged notes by supervisor</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(50)">
+                          <h3><a href="javascript:void(0)">PRP Flags By Supervisor</a></h3>
+                          <p>Report of PRP flagged notes by supervisor</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(51)">
+                          <h3><a href="javascript:void(0)">MOBILE TREATMENT Flags By Supervisor</a></h3>
+                          <p>Report of MOBILE TREATMENT flagged notes by supervisor</p>
+                        </div>
+                        <div class="common-mar-1" (click)="changeTab1(52)">
+                          <h3><a href="javascript:void(0)">IOP Flags By Supervisor</a></h3>
+                          <p>Report of IOP flagged notes by supervisor</p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel class="accordion-header" title="COMPLIANCE" id="static-7">
+                <ng-template ngbPanelContent class="accordion-body">
+                  <!-- <p class="acc-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p class="acc-p">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-admin-left">
+                            <div class="common-mar-1" (click)="changeTab1(53)">
+                              <h3><a href="javascript:void(0)">Treatment plans past due</a></h3>
+                              <p>Report of all Treatment plans that are past due</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(54)">
+                              <h3><a href="javascript:void(0)">IRP/Treatment plans past due</a></h3>
+                              <p>Report of all IRP/Treatment plans that are past due</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(55)">
+                              <h3><a href="javascript:void(0)">MOBILE TREATMENT plans past due</a></h3>
+                              <p>Report of all MOBILE TREATMENT plans that are past due</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(56)">
+                              <h3><a href="javascript:void(0)">IOP plans past due</a></h3>
+                              <p>Report of all IOP plans that are past due</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(57)">
+                              <h3><a href="javascript:void(0)">Unsigned Notes</a></h3>
+                              <p>Report of all notes not signed in the application</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(58)">
+                              <h3><a href="javascript:void(0)">Unsigned MOBILE TREATMENT Notes</a></h3>
+                              <p>Report of all MOBILE TREATMENT notes not signed in the application</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(59)">
+                              <h3><a href="javascript:void(0)">Unsigned IOP Notes</a></h3>
+                              <p>Report of all IOP notes not signed in the application</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(60)">
+                              <h3><a href="javascript:void(0)">Unsigned Session Received</a></h3>
+                              <p>Report of all Sessions Received Within a designated date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(61)">
+                              <h3><a href="javascript:void(0)">Unsigned MOBILE TREATMENT Session Received</a></h3>
+                              <p>Report of all MOBILE TREATMENT Sessions Received Within a designated date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(62)">
+                              <h3><a href="javascript:void(0)">Unsigned IOP Session Received</a></h3>
+                              <p>Report of all IOP Sessions Received Within a designated date range</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(63)">
+                              <h3><a href="javascript:void(0)">Unsigned Notes By Supervisor</a></h3>
+                              <p>Notes signed by clinician but not signed by supervisor</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(64)">
+                              <h3><a href="javascript:void(0)">PRP Unsigned Notes By Clinician</a></h3>
+                              <p>Report of all notes not signed in the application</p>
+                            </div>
+                            <div class="common-mar-1" (click)="changeTab1(65)">
+                              <h3><a href="javascript:void(0)">PRP Unsigned Notes By Supervisor</a></h3>
+                              <p>PRP Notes signed by clinician but not signed by supervisor</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </div>
+        </div>
+      </div>
+
+      <!---------------------Client Content---------------------->
+      <div class="col-lg-8" *ngIf="currentTab == 1">
+        <app-report-all-client></app-report-all-client>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 2">
+        <app-report-client-zip></app-report-client-zip>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 3">
+        <app-report-client-status></app-report-client-status>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 4">
+        <app-reportunder-age-status></app-reportunder-age-status>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 5">
+        <app-report-client-payor></app-report-client-payor>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 6">
+        <app-report-staff-roster></app-report-staff-roster>
+      </div>
+
+      
+    <!-- --session -->
+
+    <div class="col-lg-8" *ngIf="currentTab == 7" >
+      <app-report-session ></app-report-session>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 8">
+      <app-report-session-by-week></app-report-session-by-week>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 9">
+      <app-report-session-by-week2></app-report-session-by-week2>
+  </div>
+  <div class="col-lg-8" *ngIf="currentTab == 10" >
+      <app-report-session-recieved></app-report-session-recieved>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 11">
+      <app-report-calender-session></app-report-calender-session>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 12">
+      <app-report-prp-session></app-report-prp-session>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 13">
+      <app-report-prp-session-count></app-report-prp-session-count>
+  </div>
+  <div class="col-lg-8"  *ngIf="currentTab == 14">
+      <app-report-prp-session-billing></app-report-prp-session-billing>
+  </div>
+
+      <!----------------CSM Content--------------->
+      <div class="col-lg-8" *ngIf="currentTab == 15">
+        <app-csm-detail></app-csm-detail>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 16">
+        <app-csm-treatment></app-csm-treatment>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 17">
+        <app-csm-mobile-treatment></app-csm-mobile-treatment>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 18">
+        <app-csm-iop></app-csm-iop>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 19">
+        <app-referal-resource></app-referal-resource>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 20">
+        <app-intake-tracker></app-intake-tracker>
+      </div>
+
+      <!----------------------Providers------------------->
+      <div class="col-lg-8" *ngIf="currentTab == 21">
+        <app-assignment></app-assignment>
+      </div><div class="col-lg-8" *ngIf="currentTab == 22">
+        <app-prp-assignment></app-prp-assignment>
+      </div>
+      <div class="col-lg-8" *ngIf="currentTab == 23">
+        <app-mobile-treatment-assignment></app-mobile-treatment-assignment>
+      </div>
+
+      <!------------------------Payroll-------------------------->
+      <div class="col-lg-8" *ngIf="currentTab == 24">
+        <app-session-recieved></app-session-recieved>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 25">
+        <app-session-count></app-session-count>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 26">
+        <app-annual-session-count></app-annual-session-count>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 27">
+        <app-annual-session-count-pay></app-annual-session-count-pay>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 28">
+        <app-mobile-treatment-session-recieved></app-mobile-treatment-session-recieved>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 29">
+        <app-mobile-treatment-session-count></app-mobile-treatment-session-count>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 30">
+        <app-mobile-treatment-annual-session-count></app-mobile-treatment-annual-session-count>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 31">
+        <app-iop-session-received></app-iop-session-received>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 32">
+        <app-iop-session-count></app-iop-session-count>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 33">
+        <app-iop-annual-session-count></app-iop-annual-session-count>
+      </div>
+
+      <!--------------------Management---------------------------->
+      <div class="col-lg-8" *ngIf="currentTab == 34">
+        <app-client-intake></app-client-intake>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 35">
+        <app-expiring-assessments></app-expiring-assessments>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 36">
+        <app-expiring-authorizations></app-expiring-authorizations>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 37">
+        <app-prp-expiring-authorizations></app-prp-expiring-authorizations>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 38">
+        <app-mobile-treatment-expiring-authorizations></app-mobile-treatment-expiring-authorizations>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 39">
+        <app-iop-expiring-authorizations></app-iop-expiring-authorizations>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 40">
+        <app-locked-accounts></app-locked-accounts>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 41">
+        <app-user-account></app-user-account>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 42">
+        <app-upcoming-treatment-plan></app-upcoming-treatment-plan>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 43">
+        <app-upcoming-mobile-treatment-plan></app-upcoming-mobile-treatment-plan>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 44">
+        <app-upcoming-iop-plan></app-upcoming-iop-plan>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 45">
+        <app-upcoming-irp></app-upcoming-irp>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 46">
+        <app-supervisor-assessments></app-supervisor-assessments>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 47">
+        <app-client-service></app-client-service>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 48">
+        <app-service-count-report></app-service-count-report>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 49">
+        <app-flags-by-supervisor></app-flags-by-supervisor>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 50">
+        <app-pro-flags-by-supervisor></app-pro-flags-by-supervisor>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 51">
+        <app-mobile-flags-by-supervisor></app-mobile-flags-by-supervisor>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 52">
+        <app-iop-flags-by-supervisor></app-iop-flags-by-supervisor>
+      </div> 
+
+      <!--------------------------Complience------------------------->
+      <div class="col-lg-8" *ngIf="currentTab == 53">
+        <app-treatment-plans-past></app-treatment-plans-past>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 54">
+        <app-irp-treatment-plans-past></app-irp-treatment-plans-past>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 55">
+        <app-mobile-treatment-plans-past></app-mobile-treatment-plans-past>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 56">
+        <app-iop-plans-past></app-iop-plans-past>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 57">
+        <app-unsigned-notes></app-unsigned-notes>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 58">
+        <app-unsigned-mobile-treatment></app-unsigned-mobile-treatment>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 59">
+        <app-unsigned-iop-notes></app-unsigned-iop-notes>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 60">
+        <app-unsigned-sesssion-received></app-unsigned-sesssion-received>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 61">
+        <app-unsigned-mobile-treatment-sesssion-received></app-unsigned-mobile-treatment-sesssion-received>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 62">
+        <app-unsigned-iop-sesssion-received></app-unsigned-iop-sesssion-received>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 63">
+        <app-unsigned-notes-by-supervisor></app-unsigned-notes-by-supervisor>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 64">
+        <app-prp-unsigned-notes-by-clinician></app-prp-unsigned-notes-by-clinician>
+      </div> 
+      <div class="col-lg-8" *ngIf="currentTab == 65">
+        <app-prp-unsigned-notes-by-supervisor></app-prp-unsigned-notes-by-supervisor>
+      </div> 
+
+    </div>
+  </div>
+</section>

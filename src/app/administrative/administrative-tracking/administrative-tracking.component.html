@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-lg-4 margin-inputclient">
+        <label class="CLIENT-LABEL">Search Client</label>
+        <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+    </div>
+    <div class="col-lg-2 margin-inputclient">
+        <br>
+        <button class="NEW-SAVE" (click)="search()"><i class="fa fa-search" style="padding-right: 5px;"></i>Search</button>
+    </div>
+    <div class="col-lg-3">
+        <ul class="common-div-ul">
+            <li>
+                <span class="list_css ms-1">Client Name:</span>
+                <span>dataaaaa</span>
+            </li>
+            <li>
+                <span class="list_css ms-1">Client Address:</span>
+                <span>dataaaaa</span>
+            </li>
+            <li>
+                <span class="list_css ms-1">City, State, Zip:</span>
+                <span>dataaaaa</span>
+            </li>
+        </ul> 
+    </div>
+    <div class="col-lg-3">
+        <ul class="common-div-ul">
+            <li>
+                <span class="list_css ms-1">Cell Phone:</span>
+                <span>dataaaaa</span>
+            </li>
+            <li>
+                <span class="list_css ms-1">Home Phone:</span>
+                <span>dataaaaa</span>
+            </li>
+            <li>
+                <span class="list_css ms-1">Cell Phone:</span>
+                <span>dataaaaa</span>
+            </li>
+        </ul> 
+    </div>
+</div>
+<div class="col-lg-12" *ngIf="searchValue">
+    <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="rows" [columnMode]="'force'"
+        [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [externalPaging]="false">
+
+        <ngx-datatable-column name="User Name" prop="UserName" [width]="20">
+            <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row" ngx-datatable-cell-template>
+                <a href="javascript:void(0)">{{
+                    AuthValue }}</a>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Password" prop="password" [width]="20">
+            <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                {{ Payor }}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="IP Password" prop="IPPassword" [width]="20">
+            <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                {{ Payor}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Login Time" prop="LoginTime" [width]="20">
+            <ng-template let-TerminationDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                {{ TerminationDate}}
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Browser" prop="Browser" [width]="20">
+            <ng-template let-TerminationDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                {{ TerminationDate}}
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+</div>

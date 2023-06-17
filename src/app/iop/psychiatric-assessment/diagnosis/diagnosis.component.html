@@ -1,0 +1,42 @@
+<div class="all-tb">
+    <div class="row">
+        <form [formGroup]="diagnosisiop">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <label class="CLIENT-LABEL">DSM – IV DIAGNOSIS (Codes must be specific up to the 5th digit if necessary. Indicate principal diagnosis with a ‘P’)</label>
+                    </div>
+                    <div class="col-lg-2 back_css">
+                    <button  class="NEW-SAVE">Change</button>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-6 d-flex">
+                        <div class="col-2">
+                            <label class="CLIENT-LABEL">Axis I</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="margin-inputclient">
+                                <input type="text" formControlName="axis1" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex">
+                        <div class="col-2">
+                            <label class="CLIENT-LABEL">Description</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="margin-inputclient">
+                                <input type="text" formControlName="description" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex pointer">
+                    <label class="CLIENT-LABEL">Add new</label>
+                    <img [src]="imagesrc" alt="small" class="addNew">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

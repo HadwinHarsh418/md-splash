@@ -1,0 +1,577 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>LEGAL HISTORY</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Legal Guardian/Custodian Name and Address of Legal Guardian/Custodian 
+                                                 </label>
+                                                 <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>None Reported Phone No. </label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Current Legal Status 
+                                                 </label>
+                                                 <ul class="all-li-radio und_line">
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>None Reported </label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label> On Probation</label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Detention </label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>On Parole</label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Awaiting Charge </label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>AoD Related Legal Problems</label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Conditional Releas</label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Outpatient Commitment</label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Court Ordered Treatment </label>
+                                                    </li>
+                                                    <li class="col-md-2">
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        <label>Others/Comments:</label>
+                                                    </li> 
+                                                </ul>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">History of Legal Charges 
+                                                 </label>
+                                                 <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>None Reported Juvenile </label>
+                                                    <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                    Yes
+                                                    <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                    No  
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label >If yes:
+                                                 </label>
+                                                 <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Status Offense (e.g., Unruly) </label>
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                    <label >Delinquency
+                                                </label>    
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label >Adult
+                                                 </label>
+                                                 <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                 Yes
+                                                 <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                 no
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label >If yes:
+                                                 </label>
+                                                 <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Misdemeanor </label>
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                    <label >Felony
+                                                </label>    
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Charges and Convictions</label>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Incarcerations</label>
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Name and Phone No. of Probation/Parole Officer (if applicable)</label>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Civil Proceedings</label>
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">	Domestic Relations Court Problems (i.e., custody, protective services, restraining order)</label>
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Juvenile Court Involvement (related to child abuse, neglect, or dependency)
+                                                    Current</label>
+                                                    <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                 Yes
+                                                 <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                 no Comments
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Past:</label>
+                                                    <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                 Yes
+                                                 <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                 no Comments
+                                                <textarea name="Complaint" class="client-input col-md-6"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient col-md-12 d-flex">
+                                                <label class="CLIENT-LABEL">Child Support Enforcement Orders</label>&nbsp;
+                                                 <input  type="checkbox" >
+                                                 None Reported 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Children’s Protective Services Involvement with Family</label>
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient col-md-12">
+                                                <label class="CLIENT-LABEL">Name of Children’s Protective Service Caseworker(s) Assigned</label>
+                                                <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">
+                                                        <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>MENTAL HEALTH AND AOD TREATMENT HISTORY</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient d-flex">
+                                                        <label class="CLIENT-LABEL">Outpatient Mental Health/AoD Treatment</label>
+                                                        <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                        </div>
+                                                    </div>
+                                                            
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                            <table style="width:100%">
+                                                                <tr>
+                                                                  <th>Agency</th>
+                                                                  <th>Current</th>
+                                                                  <th>Date of Service</th>
+                                                                  <th>Clinician Name</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                            id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                
+                                                              </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 d-flex">
+                                                       <label class="CLIENT-LABEL">Psychiatric Hospitalizations </label>&nbsp;&nbsp;
+                                                       <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                           id="harmingNo" value="yes">&nbsp;
+                                                               <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                </div>    
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                            <table style="width:100%">
+                                                                <tr>
+                                                                  <th>Hospital</th>
+                                                                  <th>Date of Service</th>
+                                                                  <th>	Reason (suicidal, depressed, etc.)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td> 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>     
+                                                                </tr>
+                                                                
+                                                              </table>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-md-12 d-flex">
+                                                    <label class="CLIENT-LABEL">AOD Levels of </label>
+                                                </div>   
+                                                <div class="col-md-12 d-flex">
+                                                    <label class="CLIENT-LABEL">Past </label>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Outpatient (OP) </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Residential </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Hospital </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL"> Detox  </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Other </label></div>&nbsp;&nbsp;
+                                                </div>     
+                                                <div class="col-md-12 d-flex">
+                                                    <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                                </div> 
+                                                <div class="col-md-12 d-flex">
+                                                    <label class="CLIENT-LABEL">Current </label>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Outpatient (OP) </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Residential </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Hospital </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL"> Detox  </label></div>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">Other </label></div>&nbsp;&nbsp;
+                                                </div> 
+                                                <div class="col-md-12 d-flex">
+                                                    <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                                </div> 
+                                                <div class="col-md-12 d-flex">
+                                                    <label class="CLIENT-LABEL">Other Comments Regarding Mental Health or AOD Treatment History </label>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">No Comments </label></div>
+                                                </div>
+                                                <div class="col-md-12 d-flex">
+                                                    <textarea name="Complaint" class="client-input col-md-12"
+                                                    id="Complaint"></textarea>
+                                                </div>  
+                                                <div class="col-md-12 d-flex">
+                                                    <label class="CLIENT-LABEL">
+                                                        Current Medication Information –Psychotropic and Other Medical (prescription/OTC/herbal)</label>&nbsp;&nbsp;
+                                                    <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                    <label class="CLIENT-LABEL">No Comments </label></div>
+                                                </div>
+                                                <div class="margin-inputclient">
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                          <th>Rationale</th>
+                                                          <th>Current</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>      
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>    
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>     
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>      
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>     
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>      
+                                                        </tr>
+                                                        
+                                                      </table>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Date of Last Physical Exam</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Primary Care Physician (name, phone no., and address)</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Other Prescribing Physician(s)</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient col-md-12 d-flex">
+                                                        <label class="CLIENT-LABEL">Past Psychotropic Medications</label>
+                                                        <div class="d-flex"><input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" value="yes">
+                                                                <label class="CLIENT-LABEL">None Reported Comments:</label></div>
+                                                    </div>
+                                                </div>
+                                                <div class="margin-inputclient">
+                                                    <table style="width:100%">
+                                                        <tr>
+                                                          <th>Psychotropic Medications</th>
+                                                          <th>Reason for Discontinuation</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>    
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>     
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>      
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>     
+                                                        </tr>
+                                                        <tr>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>
+                                                            <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                id="Complaint"></textarea></td>      
+                                                        </tr>
+                                                        
+                                                      </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- #########====== -->       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

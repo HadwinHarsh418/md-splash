@@ -1,0 +1,340 @@
+<div class="page max-width-1000">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="pregressNotes">
+                <div class="all-tb">
+                    <div class="row mar-1010 d-flex my-2">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="arrow d-flex">
+                                    <label for="type" (click)="back()">
+                                        <i class="fa fa-circle-arrow-left mx-2"></i>
+                                    </label>
+                                    <h1 class="admin-main_heading">MRT SAFETY PLAN<small
+                                            id="EditNew">New</small></h1>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-8 next_Tab my-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First Name </label>
+                                                    <input formControlName="FirstName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Middle Name </label>
+                                                    <input formControlName="MiddleName" type="text"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> Last Name</label>
+                                                    <input formControlName="LastName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors || genForm['DateofBirth'].touched && genForm['DateofBirth'].errors">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DateofBirth" type="date"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['DateofBirth'].errors?.['required']">
+                                                            DOB is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="Gender">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient"
+                                                [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors">
+                                                <label class="CLIENT-LABEL">Date of Service</label>
+                                                <input type="date" formControlName="DOS" class="client-input">
+                                                <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors"
+                                                    class="has-error">
+                                                    <i *ngIf="genForm['DOS'].errors?.['required']">
+                                                        Date of session is required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Start Time</label>
+                                                    <input type="time" formControlName="StartTime1"
+                                                        class="client-input">
+                                                    <!-- <select class="client-input" formControlName="StartTime1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">End Time</label>
+                                                    <input type="time" formControlName="EndTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="EndTime1">
+                                                        <option *ngFor="let item of EndTime1" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Duration</label>
+                                                    <input type="time" formControlName="TotalTime1"
+                                                        class="client-input">
+                                                    <!-- <select class="client-input" formControlName="TotalTime1">
+                                                        <option *ngFor="let item of TotalTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ####### second #### -->
+
+                            <div class="col-lg-12">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>SESSION DETAILS</h6>
+                                </div>
+                                <div class="content">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Rendering Provider</label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option value="">Select</option>
+                                                        <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ProcedureCodes'].dirty && genForm['ProcedureCodes'].errors || genForm['ProcedureCodes'].touched && genForm['ProcedureCodes'].errors">
+                                                    <label class="CLIENT-LABEL">Procedure Code<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="ProcedureCodes">
+                                                        <option value="">Select</option>
+                                                        <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+
+                                                    </select>
+                                                    <span
+                                                        *ngIf="genForm['ProcedureCodes'].dirty && genForm['ProcedureCodes'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ProcedureCodes'].errors?.['required']">
+                                                            Procedure Codes is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['NameEmail'].dirty && genForm['NameEmail'].errors || genForm['NameEmail'].touched && genForm['NameEmail'].errors">
+                                                    <label class="CLIENT-LABEL">Name of Participant and Email Address<span
+                                                            class="text-danger">*</span></label>
+                                                            <input formControlName="NameEmail" type="text"
+                                                            class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['NameEmail'].dirty && genForm['NameEmail'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['NameEmail'].errors?.['required']">
+                                                            Procedure Codes is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['Date'].dirty && genForm['Date'].errors || genForm['Date'].touched && genForm['Date'].errors">
+                                                    <label class="CLIENT-LABEL">Date<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="Date" type="date"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['Date'].dirty && genForm['Date'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['Date'].errors?.['required']">
+                                                            Participant is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ThreeInternalCopyStrategies'].dirty && genForm['ThreeInternalCopyStrategies'].errors || genForm['ThreeInternalCopyStrategies'].touched && genForm['ThreeInternalCopyStrategies'].errors">
+                                                    <label class="CLIENT-LABEL">List at least 3 internal coping stategies (things I do to take my mind off problem without contact someone else, i.e. positive self-talk, meditation, breathing exercises, physical activity). 
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="ThreeInternalCopyStrategies"
+                                                        formControlName="ThreeInternalCopyStrategies" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ThreeInternalCopyStrategies'].dirty && genForm['ThreeInternalCopyStrategies'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ThreeInternalCopyStrategies'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['FourPeoplePlaces'].dirty && genForm['FourPeoplePlaces'].errors || genForm['FourPeoplePlaces'].touched && genForm['FourPeoplePlaces'].errors">
+                                                    <label class="CLIENT-LABEL">List at least 4 people or places that provide healthy distractions
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="FourPeoplePlaces"
+                                                        formControlName="FourPeoplePlaces" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['FourPeoplePlaces'].dirty && genForm['FourPeoplePlaces'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['FourPeoplePlaces'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ThreeWarningSign'].dirty && genForm['ThreeWarningSign'].errors || genForm['ThreeWarningSign'].touched && genForm['ThreeWarningSign'].errors">
+                                                    <label class="CLIENT-LABEL">Please list three warning signs (thoughts, images, mood, situation, behaviors) that a crisis may be developing
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="ThreeWarningSign"
+                                                        formControlName="ThreeWarningSign" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ThreeWarningSign'].dirty && genForm['ThreeWarningSign'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ThreeWarningSign'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ICanAskForHelp'].dirty && genForm['ICanAskForHelp'].errors || genForm['ICanAskForHelp'].touched && genForm['ICanAskForHelp'].errors">
+                                                    <label class="CLIENT-LABEL">People I can ask for help and how I will reach out to them (include phone numbers)
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="ICanAskForHelp"
+                                                        formControlName="ICanAskForHelp" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ICanAskForHelp'].dirty && genForm['ICanAskForHelp'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ICanAskForHelp'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ProfessionalAgencies'].dirty && genForm['ProfessionalAgencies'].errors || genForm['ProfessionalAgencies'].touched && genForm['ProfessionalAgencies'].errors">
+                                                    <label class="CLIENT-LABEL">Professionals or agencies I can contact during a crisis and their phone number… Suicide Prevention Lifeline Phone is 1-800-273-TALK (8255)
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="ProfessionalAgencies"
+                                                        formControlName="ProfessionalAgencies" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ProfessionalAgencies'].dirty && genForm['ProfessionalAgencies'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ProfessionalAgencies'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['TwoThingMakeEnvironmntSafe'].dirty && genForm['TwoThingMakeEnvironmntSafe'].errors || genForm['TwoThingMakeEnvironmntSafe'].touched && genForm['TwoThingMakeEnvironmntSafe'].errors">
+                                                    <label class="CLIENT-LABEL">Two things I can do to make my environment safe
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="TwoThingMakeEnvironmntSafe"
+                                                        formControlName="TwoThingMakeEnvironmntSafe" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['TwoThingMakeEnvironmntSafe'].dirty && genForm['TwoThingMakeEnvironmntSafe'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['TwoThingMakeEnvironmntSafe'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['OneThingMostImportantToMe'].dirty && genForm['OneThingMostImportantToMe'].errors || genForm['OneThingMostImportantToMe'].touched && genForm['OneThingMostImportantToMe'].errors">
+                                                    <label class="CLIENT-LABEL">What is the one thing that is most important to me and worth living for?
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="OneThingMostImportantToMe"
+                                                        formControlName="OneThingMostImportantToMe" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['OneThingMostImportantToMe'].dirty && genForm['OneThingMostImportantToMe'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['OneThingMostImportantToMe'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="CLIENT-LABEL">I understand that electronically signing and submitting any document(s) binds me in the same manner as if I had signed in a non-electronic form.
+                                                </label>
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['Signature'].dirty && genForm['Signature'].errors || genForm['Signature'].touched && genForm['Signature'].errors">
+                                                    <label class="CLIENT-LABEL">Signature of Participant and MCT Staff
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="Signature"
+                                                        formControlName="Signature" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['Signature'].dirty && genForm['Signature'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['Signature'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

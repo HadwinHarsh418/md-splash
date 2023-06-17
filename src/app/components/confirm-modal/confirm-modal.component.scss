@@ -1,0 +1,17 @@
+.modal-header {
+    border-bottom: 0;
+    button {
+        outline: none!important;
+    }
+    .modal-title {
+        font-size: 18px;
+    }
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+.head-color {
+    background: var(--mdxP-color-primary-l1);
+}

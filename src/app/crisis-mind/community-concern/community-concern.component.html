@@ -1,0 +1,950 @@
+
+<div class="page max-width-1000">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="pregressNotes" >
+                <div class="all-tb">
+                    <div class="row mar-1010 d-flex my-2">
+                        
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="arrow d-flex">
+                        <label for="type" (click)="back()">
+                            <i class="fa fa-circle-arrow-left mx-2"></i>
+                        </label>
+                        <h1 class="admin-main_heading">COMMUNITY CONCERN REQUEST <small id="EditNew">New</small></h1>
+                    </div>
+                </div>
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-8 next_Tab my-2">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First Name </label>
+                                                    <input formControlName="FirstName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Middle Name </label>
+                                                    <input formControlName="MiddleName" type="text" class="client-input">                                               
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> Last Name</label>
+                                                    <input formControlName="LastName" type="text" class="client-input">                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient"
+                                                [class.has-error]="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors || genForm['DateofBirth'].touched && genForm['DateofBirth'].errors">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DateofBirth" type="date" class="client-input">
+                                                    <span *ngIf="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors" class="has-error">
+                                                        <i *ngIf="genForm['DateofBirth'].errors?.['required']">
+                                                            Date Of birth is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="Gender">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors">
+                                                <label class="CLIENT-LABEL">Date of Service</label>
+                                                <input type="date" formControlName="DOS" class="client-input">
+                                                <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors" class="has-error">
+                                                    <i *ngIf="genForm['DOS'].errors?.['required']">
+                                                       Please enter Date of session is required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Start Time</label>
+                                                    <input type="time" formControlName="StartTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="StartTime1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">End Time</label>
+                                                    <input type="time" formControlName="EndTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="EndTime1">
+                                                        <option *ngFor="let item of EndTime1" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Duration</label>
+                                                    <input type="time" formControlName="TotalTime1" class="client-input">                                                   
+                                                    <!-- <select class="client-input" formControlName="TotalTime1">
+                                                        <option *ngFor="let item of TotalTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- ####### second #### -->
+    
+                            <div class="col-md-12">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>SESSION DETAILS</h6>
+                                </div>
+                                <div class="content">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Rendering Provider</label>
+                                                            <select class="client-input"
+                                                                formControlName="Rendering_ProviderID">
+                                                                <option value="">Select</option>
+                                                                <option value="option1">Name</option>
+                                                                <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+    
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"                                                    
+                                                        [class.has-error]="genForm['date'].dirty && genForm['date'].errors || genForm['date'].touched && genForm['date'].errors">
+                                                            <label class="CLIENT-LABEL">Created Date <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="date" type="date" class="client-input">                                                        
+                                                            <span *ngIf="genForm['date'].dirty && genForm['date'].errors" class="has-error">
+                                                                <i *ngIf="genForm['date'].errors?.['required']">
+                                                                    Date Of Call is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Procedure Code</label>
+                                                                <select class="client-input"
+                                                                    formControlName="Rendering_ProviderID">
+                                                                    <option value="">Select</option>
+                                                                    <option value="option1">Name</option>
+                                                                    <!-- <option *ngFor="let item of StartTimer"
+                                                                        value="{{item.Value}}">
+                                                                        {{item.Text}}</option> -->
+        
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"                                                   
+                                                        [class.has-error]="genForm['time'].dirty && genForm['time'].errors || genForm['time'].touched && genForm['time'].errors">
+                                                            <label class="CLIENT-LABEL">Date Of Original Call <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="time" type="date" class="client-input">
+                                                            <span *ngIf="genForm['time'].dirty && genForm['time'].errors" class="has-error">
+                                                                <i *ngIf="genForm['time'].errors?.['required']">
+                                                                    Time Of Call is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"                                                                                                  
+                                                        [class.has-error]="genForm['personCalling'].dirty && genForm['personCalling'].errors || genForm['personCalling'].touched && genForm['personCalling'].errors">
+                                                            <label class="CLIENT-LABEL">Time Of Call <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="personCalling" type="time" class="client-input">
+                                                            <span *ngIf="genForm['personCalling'].dirty && genForm['personCalling'].errors" class="has-error">
+                                                                <i *ngIf="genForm['personCalling'].errors?.['required']">
+                                                                    Name of Person is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['PhoneNo'].dirty && genForm['PhoneNo'].errors || genForm['PhoneNo'].touched && genForm['PhoneNo'].errors">
+                                                            <label class="CLIENT-LABEL">First and LastName Concerned Caller <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="PhoneNo" type="text" class="client-input">
+                                                            <span *ngIf="genForm['PhoneNo'].dirty && genForm['PhoneNo'].errors" class="has-error">
+                                                                <i *ngIf="genForm['PhoneNo'].errors?.['required']">
+                                                                    Phone number is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Contact Information of Concerned Caller
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="PhoneNo" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">What Is Caller Concern?
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="crisScene" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Date Of MCT Response
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="crisLeave" type="date" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Time of MCT Arrival
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="ParticipantName" type="time" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">MCT Team Responsing
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="ParticipantAge1" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Name of Participant
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="ParticipantAge2" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Participant Address
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="ParticipantAge3" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Participant Date of Birth
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="ParticipantAge4" type="date" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Was Contact Made With Participant
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <br>
+                                                            <input class="radio1" id="Suicide" name="Suicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input class="radio2" id="Suicide" name="Suicide" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputclient">
+                                                            <label>Ethnicity
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAmericanIndian field is required." id="EthnicityAmericanIndian" name="EthnicityAmericanIndian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAmericanIndian" type="hidden" value="false" spellcheck="true"> American Indian or Alaskan Native <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAsian field is required." id="EthnicityAsian" name="EthnicityAsian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAsian" type="hidden" value="false" spellcheck="true"> Asian <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityBlack field is required." id="EthnicityBlack" name="EthnicityBlack" type="checkbox" value="true" spellcheck="true"><input name="EthnicityBlack" type="hidden" value="false" spellcheck="true"> Black or African American <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityNative field is required." id="EthnicityNative" name="EthnicityNative" type="checkbox" value="true" spellcheck="true"><input name="EthnicityNative" type="hidden" value="false" spellcheck="true"> Native Hawaiian or Other Pacific Islander <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityLatinx field is required." id="EthnicityLatinx" name="EthnicityLatinx" type="checkbox" value="true" spellcheck="true"><input name="EthnicityLatinx" type="hidden" value="false" spellcheck="true"> Latinx <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityWhite field is required." id="EthnicityWhite" name="EthnicityWhite" type="checkbox" value="true" spellcheck="true"><input name="EthnicityWhite" type="hidden" value="false" spellcheck="true"> White <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAmericanIndian field is required." id="EthnicityAmericanIndian" name="EthnicityAmericanIndian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAmericanIndian" type="hidden" value="false" spellcheck="true"> Other <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAsian field is required." id="EthnicityAsian" name="EthnicityAsian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAsian" type="hidden" value="false" spellcheck="true"> No Contect Made With Participant <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityBlack field is required." id="EthnicityBlack" name="EthnicityBlack" type="checkbox" value="true" spellcheck="true"><input name="EthnicityBlack" type="hidden" value="false" spellcheck="true"> Adult Psychiatric Emergency <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityNative field is required." id="EthnicityNative" name="EthnicityNative" type="checkbox" value="true" spellcheck="true"><input name="EthnicityNative" type="hidden" value="false" spellcheck="true"> Child Psychiatric Emergency <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityLatinx field is required." id="EthnicityLatinx" name="EthnicityLatinx" type="checkbox" value="true" spellcheck="true"><input name="EthnicityLatinx" type="hidden" value="false" spellcheck="true"> Domestic Violence <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityWhite field is required." id="EthnicityWhite" name="EthnicityWhite" type="checkbox" value="true" spellcheck="true"><input name="EthnicityWhite" type="hidden" value="false" spellcheck="true"> Abuse Neglect Child Under 18 <br>                                                            
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAmericanIndian field is required." id="EthnicityAmericanIndian" name="EthnicityAmericanIndian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAmericanIndian" type="hidden" value="false" spellcheck="true"> Abuse Neglect Elder Over 65 <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAsian field is required." id="EthnicityAsian" name="EthnicityAsian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAsian" type="hidden" value="false" spellcheck="true"> Homelessness <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityBlack field is required." id="EthnicityBlack" name="EthnicityBlack" type="checkbox" value="true" spellcheck="true"><input name="EthnicityBlack" type="hidden" value="false" spellcheck="true"> Verbal Conflict <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityNative field is required." id="EthnicityNative" name="EthnicityNative" type="checkbox" value="true" spellcheck="true"><input name="EthnicityNative" type="hidden" value="false" spellcheck="true"> Suicidal Ideation <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityLatinx field is required." id="EthnicityLatinx" name="EthnicityLatinx" type="checkbox" value="true" spellcheck="true"><input name="EthnicityLatinx" type="hidden" value="false" spellcheck="true"> Homicidal Idention <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityWhite field is required." id="EthnicityWhite" name="EthnicityWhite" type="checkbox" value="true" spellcheck="true"><input name="EthnicityWhite" type="hidden" value="false" spellcheck="true"> Violent Crime <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAmericanIndian field is required." id="EthnicityAmericanIndian" name="EthnicityAmericanIndian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAmericanIndian" type="hidden" value="false" spellcheck="true"> Natural Disaster <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityAsian field is required." id="EthnicityAsian" name="EthnicityAsian" type="checkbox" value="true" spellcheck="true"><input name="EthnicityAsian" type="hidden" value="false" spellcheck="true"> Sudden Death <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityBlack field is required." id="EthnicityBlack" name="EthnicityBlack" type="checkbox" value="true" spellcheck="true"><input name="EthnicityBlack" type="hidden" value="false" spellcheck="true"> Substance Intoxcation <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityNative field is required." id="EthnicityNative" name="EthnicityNative" type="checkbox" value="true" spellcheck="true"><input name="EthnicityNative" type="hidden" value="false" spellcheck="true"> Behavioral Emergency <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityLatinx field is required." id="EthnicityLatinx" name="EthnicityLatinx" type="checkbox" value="true" spellcheck="true"><input name="EthnicityLatinx" type="hidden" value="false" spellcheck="true"> Self Injury <br>
+                                                            <input class="check" data-val="true" data-val-required="The EthnicityWhite field is required." id="EthnicityWhite" name="EthnicityWhite" type="checkbox" value="true" spellcheck="true"><input name="EthnicityWhite" type="hidden" value="false" spellcheck="true"> No Contect Made With Participant <br>
+                                                        </div>
+                                                    </div>
+    
+                                                    <!-- <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">What is the address or location of the participant?</label>
+                                                            <textarea name="Complaint" class="client-input"
+                                                                id="Complaint" style="height:80px;"></textarea>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Please Provide the Nature of the Crisis. Select All that Apply.
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The CrisisAdult field is required." id="CrisisAdult" name="CrisisAdult" type="checkbox" value="true" spellcheck="true"><input name="CrisisAdult" type="hidden" value="false" spellcheck="true"> Adult Psychiatric Emergency <br>
+                                                            <input data-val="true" data-val-required="The CrisisChild field is required." id="CrisisChild" name="CrisisChild" type="checkbox" value="true" spellcheck="true"><input name="CrisisChild" type="hidden" value="false" spellcheck="true"> Child Psychiatric Emergency <br>
+                                                            <input data-val="true" data-val-required="The CrisisDomestic field is required." id="CrisisDomestic" name="CrisisDomestic" type="checkbox" value="true" spellcheck="true"><input name="CrisisDomestic" type="hidden" value="false" spellcheck="true"> Domestic Violence <br>
+                                                            <input data-val="true" data-val-required="The CrisisAbuse18 field is required." id="CrisisAbuse18" name="CrisisAbuse18" type="checkbox" value="true" spellcheck="true"><input name="CrisisAbuse18" type="hidden" value="false" spellcheck="true"> Abuse or neglect for child under 18 <br>
+                                                            <input data-val="true" data-val-required="The CrisisAbuse65 field is required." id="CrisisAbuse65" name="CrisisAbuse65" type="checkbox" value="true" spellcheck="true"><input name="CrisisAbuse65" type="hidden" value="false" spellcheck="true"> Abuse or neglect for elder over 65 <br>
+                                                            <input data-val="true" data-val-required="The CrisisHomless field is required." id="CrisisHomless" name="CrisisHomless" type="checkbox" value="true" spellcheck="true"><input name="CrisisHomless" type="hidden" value="false" spellcheck="true"> Homelessness <br>
+                                                            <input data-val="true" data-val-required="The CrisisVerbal field is required." id="CrisisVerbal" name="CrisisVerbal" type="checkbox" value="true" spellcheck="true"><input name="CrisisVerbal" type="hidden" value="false" spellcheck="true"> Verbal Conflict <br>
+                                                            <input data-val="true" data-val-required="The CrisisSuicidal field is required." id="CrisisSuicidal" name="CrisisSuicidal" type="checkbox" value="true" spellcheck="true"><input name="CrisisSuicidal" type="hidden" value="false" spellcheck="true"> Suicidal Ideation <br>
+                                                            <input data-val="true" data-val-required="The CrisisHomicidal field is required." id="CrisisHomicidal" name="CrisisHomicidal" type="checkbox" value="true" spellcheck="true"><input name="CrisisHomicidal" type="hidden" value="false" spellcheck="true"> Homicidal ideation <br>
+                                                            <input data-val="true" data-val-required="The CrisisViolent field is required." id="CrisisViolent" name="CrisisViolent" type="checkbox" value="true" spellcheck="true"><input name="CrisisViolent" type="hidden" value="false" spellcheck="true"> Violent Crime <br>
+                                                            <input data-val="true" data-val-required="The CrisisNature field is required." id="CrisisNature" name="CrisisNature" type="checkbox" value="true" spellcheck="true"><input name="CrisisNature" type="hidden" value="false" spellcheck="true"> Natural Disaster <br>
+                                                            <input data-val="true" data-val-required="The CrisisSudden field is required." id="CrisisSudden" name="CrisisSudden" type="checkbox" value="true" spellcheck="true"><input name="CrisisSudden" type="hidden" value="false" spellcheck="true"> Sudden Death <br>
+                                                            <input data-val="true" data-val-required="The CrisisSubstance field is required." id="CrisisSubstance" name="CrisisSubstance" type="checkbox" value="true" spellcheck="true"><input name="CrisisSubstance" type="hidden" value="false" spellcheck="true"> Substance Intoxication <br>
+                                                            <input data-val="true" data-val-required="The CrisisBehavioral field is required." id="CrisisBehavioral" name="CrisisBehavioral" type="checkbox" value="true" spellcheck="true"><input name="CrisisBehavioral" type="hidden" value="false" spellcheck="true"> Behavioral Emergency <br>
+                                                            <input data-val="true" data-val-required="The CrisisSelfInjury field is required." id="CrisisSelfInjury" name="CrisisSelfInjury" type="checkbox" value="true" spellcheck="true"><input name="CrisisSelfInjury" type="hidden" value="false" spellcheck="true"> Self-injury <br>
+                                                            <input data-val="true" data-val-required="The CrisisSelfInjury field is required." id="CrisisSelfInjury" name="CrisisSelfInjury" type="checkbox" value="true" spellcheck="true"><input name="CrisisSelfInjury" type="hidden" value="false" spellcheck="true"> No Contect Made With Participant<br>
+
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Is the participant currently experiencing thoughts of suicide?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Is the participant currently experiencing thoughts of homicide?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Does the participant have an active plan to harm themselves?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Does the participant have an active plan to harm someone else?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Does the participant have any history of attempting to harm themselves or others?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> Unknown
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Does the participant appear to be under the influence of alcohol or other drugs?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Is the participant currently aggressive or violent?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Is the participant in current possession of any weapons?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Is anyone currently sick or had known exposure to Covid 19 in the last 7 days?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Does the participant have any pertinent medical conditions?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> Unknown
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <label>Please Provide the Nature of the Crisis. Select All that Apply.
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The InterventionsActive field is required." id="InterventionsActive" name="InterventionsActive" type="checkbox" value="true" spellcheck="true"><input name="InterventionsActive" type="hidden" value="false" spellcheck="true"> Active Listening <br>
+                                                            <input data-val="true" data-val-required="The InterventionsSummar field is required." id="InterventionsSummar" name="InterventionsSummar" type="checkbox" value="true" spellcheck="true"><input name="InterventionsSummar" type="hidden" value="false" spellcheck="true"> Summarizing <br>
+                                                            <input data-val="true" data-val-required="The InterventionsProviding field is required." id="InterventionsProviding" name="InterventionsProviding" type="checkbox" value="true" spellcheck="true"><input name="InterventionsProviding" type="hidden" value="false" spellcheck="true"> Providing Empathy <br>
+                                                            <input data-val="true" data-val-required="The InterventionsBreathing field is required." id="InterventionsBreathing" name="InterventionsBreathing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsBreathing" type="hidden" value="false" spellcheck="true"> Breathing Techniques <br>
+                                                            <input data-val="true" data-val-required="The InterventionsGrounding field is required." id="InterventionsGrounding" name="InterventionsGrounding" type="checkbox" value="true" spellcheck="true"><input name="InterventionsGrounding" type="hidden" value="false" spellcheck="true"> Grounding <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUnconditional field is required." id="InterventionsUnconditional" name="InterventionsUnconditional" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUnconditional" type="hidden" value="false" spellcheck="true"> Unconditional Positive Regard <br>
+                                                            <input data-val="true" data-val-required="The InterventionsReframing field is required." id="InterventionsReframing" name="InterventionsReframing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsReframing" type="hidden" value="false" spellcheck="true"> Reframing <br>
+                                                            <input data-val="true" data-val-required="The InterventionsSupportive field is required." id="InterventionsSupportive" name="InterventionsSupportive" type="checkbox" value="true" spellcheck="true"><input name="InterventionsSupportive" type="hidden" value="false" spellcheck="true"> Supportive Outreach <br>
+                                                            <input data-val="true" data-val-required="The InterventionsPsycho field is required." id="InterventionsPsycho" name="InterventionsPsycho" type="checkbox" value="true" spellcheck="true"><input name="InterventionsPsycho" type="hidden" value="false" spellcheck="true"> Psychoeducation <br>
+                                                            <input data-val="true" data-val-required="The InterventionsTeaching field is required." id="InterventionsTeaching" name="InterventionsTeaching" type="checkbox" value="true" spellcheck="true"><input name="InterventionsTeaching" type="hidden" value="false" spellcheck="true"> Teaching Coping Skills <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUtilizing field is required." id="InterventionsUtilizing" name="InterventionsUtilizing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUtilizing" type="hidden" value="false" spellcheck="true"> Utilizing Silence <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUtilizing field is required." id="InterventionsUtilizing" name="InterventionsUtilizing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUtilizing" type="hidden" value="false" spellcheck="true"> No Contect Made With Participant <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">What was the participants' response to the utilized stabilization interventions? Type N/A if no contact was made with the participant.
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember1" type="text" class="client-input">
+                                                        </div>
+                                                    </div> 
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Were police or medical personnel dispatched to the scene?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>What referrals were provided to the participant? Select all that apply.
+                                                                <span class="text-danger">*</span> 
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> iMind Behavioral Health <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Emergency Petition <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Hospital <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Primary Care Doctor/Urgent Care <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Community Resources <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Domestic Violence or Homeless Shelter <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> National Hotline <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Child Protective Services <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true"> Adult Protective Services <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsGovernment field is required." id="ParticipantsGovernment" name="ParticipantsGovernment" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsGovernment" type="hidden" value="false" spellcheck="true"> Government Resources <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsSpiritual field is required." id="ParticipantsSpiritual" name="ParticipantsSpiritual" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsSpiritual" type="hidden" value="false" spellcheck="true"> Spiritual Support <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsSpiritual field is required." id="ParticipantsSpiritual" name="ParticipantsSpiritual" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsSpiritual" type="hidden" value="false" spellcheck="true"> No Contact Participant <br>
+                                                            <input data-val="true" data-val-required="The Participantsother1 field is required." id="Participantsother1" name="Participantsother1" type="checkbox" value="true" spellcheck="true"><input name="Participantsother1" type="hidden" value="false" spellcheck="true"> Other: <textarea cols="20" id="Participantsother2" name="Participantsother2" rows="2" style="display: none;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If other, what referrals and resources were provided?
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember2" type="text" class="client-input">
+                                                        </div>
+                                                    </div> 
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>How was the participant's speech? Select all that apply.
+                                                                <span class="text-danger">*</span> 
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> Articulate <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Incoherent <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Slurred <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Rapid <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Rambling <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Talkative <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Mute <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Erratic <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">No Contact Made Participants <br>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>How were the participant's emotions? Select all that apply.
+                                                                <span class="text-danger">*</span> 
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> Angry <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Calm <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Guarded <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Irritable <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Sorrowful <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Excited <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Sad <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Flat <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">Detached <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Happy <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> IllTempered <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">No Contact Made Participants <br>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>How was the participant's appearance.
+                                                                <span class="text-danger">*</span> 
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> Well Groomed <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Disheveled <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Underweight <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Overweight <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Sorrowful <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Bruised <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Sick <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Pregnent <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">Appropriate Clothing <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> No Contact with Participant <br>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>How was the participants behavior?
+                                                                <span class="text-danger">*</span> 
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> Attentive <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Impulsive <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Normal <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Inattentive <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Calm <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Catatonic <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Bizarre <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Paranoid <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">Aggressive <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true">Violent <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> Delusional <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Friendly <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true">Hyperactive <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true">No Contact with Participant
+                                                            <br>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputcliente">
+                                            
+                                                            <label>Was Assistance Offered Accepted or rejected?
+                                                                <span class="text-danger">*</span>
+                                                            </label> 
+                                                            <br>
+                                                            <input class="radio3" id="Homicide" name="Homicide" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio4" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="Homicide" name="Homicide" type="radio" value="No" spellcheck="true"> No contact made with participant
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Narrative of Visit (Provide specific details about what occurred when on scene. If no contact was made with participant, please describe efforts made). 
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember3" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Please provide the safety plan that was developed with the participant. Safety Plan should specifically address the concerns raised above. Type N/A if no contact was made with the participant. 
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember4" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Please upload any photographs that show scene if participant was not present. (Please do not upload any photographs of any people).
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember5" type="file" class="client-input">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">What time did MCT leave the scene?
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember6" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Team Member Completing Report.
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <input formControlName="teamMember7" type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <!-- <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Does the participant have an active plan to harm themselves?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input class="radio5" id="HarmThemselve" name="HarmThemselve" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio6" id="HarmThemselve" name="HarmThemselve" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Does the participant have an active plan to harm someone else?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input class="radio7" id="HarmElse" name="HarmElse" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" class="radio8" id="HarmElse" name="HarmElse" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Does the participant have any history of attempting to harm themselves or others</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="History" name="History" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="History" name="History" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input id="History" name="History" type="radio" value="Unknown" spellcheck="true"> Unknown
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Does the participant appear to be under the influence of alcohol or other drugs?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Drugs" name="Drugs" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Drugs" name="Drugs" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Is the participant currently aggressive or violent?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Violent" name="Violent" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Violent" name="Violent" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Is the participant in current possession of any weapons?</label><em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Weapons" name="Weapons" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Weapons" name="Weapons" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If any, what kind of weapon(s):</label>
+                                                            <textarea name="Complaint" class="client-input" rows="2"
+                                                                id="Complaint" style="height:80px;">No</textarea>
+                                                        </div>
+                                                    </div>   
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Are there any animals on the premises?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Premises" name="Premises" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Premises" name="Premises" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Is anyone currently sick or had known exposure to Covid 19 in the last 7 days?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Covid19Last7" name="Covid19Last7" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Covid19Last7" name="Covid19Last7" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                            
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputcliente">
+                                                            <label>Does the participant have any pertinent medical conditions? </label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="MedCond" name="MedCond" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="MedCond" name="MedCond" type="radio" value="No" spellcheck="true"> No
+                                                            <br>
+                                                            <input id="MedCond" name="MedCond" type="radio" value="Unknown" spellcheck="true"> Unknown
+                                                        </div>
+                                                    </div> -->
+                                            
+                                                   
+    
+                                                    
+                                                   
+    
+                                                    <!-- <div class="col-lg-6">
+                                                        <div class="margin-inputclient">
+                                                            <label>Please Provide the Nature of the Crisis. Select All that Apply.
+                                                                <span class="text-danger">*</span>
+                                                            </label>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The InterventionsActive field is required." id="InterventionsActive" name="InterventionsActive" type="checkbox" value="true" spellcheck="true"><input name="InterventionsActive" type="hidden" value="false" spellcheck="true"> Active Listening <br>
+                                                            <input data-val="true" data-val-required="The InterventionsSummar field is required." id="InterventionsSummar" name="InterventionsSummar" type="checkbox" value="true" spellcheck="true"><input name="InterventionsSummar" type="hidden" value="false" spellcheck="true"> Summarizing <br>
+                                                            <input data-val="true" data-val-required="The InterventionsProviding field is required." id="InterventionsProviding" name="InterventionsProviding" type="checkbox" value="true" spellcheck="true"><input name="InterventionsProviding" type="hidden" value="false" spellcheck="true"> Providing Empathy <br>
+                                                            <input data-val="true" data-val-required="The InterventionsBreathing field is required." id="InterventionsBreathing" name="InterventionsBreathing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsBreathing" type="hidden" value="false" spellcheck="true"> Breathing Techniques <br>
+                                                            <input data-val="true" data-val-required="The InterventionsGrounding field is required." id="InterventionsGrounding" name="InterventionsGrounding" type="checkbox" value="true" spellcheck="true"><input name="InterventionsGrounding" type="hidden" value="false" spellcheck="true"> Grounding <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUnconditional field is required." id="InterventionsUnconditional" name="InterventionsUnconditional" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUnconditional" type="hidden" value="false" spellcheck="true"> Unconditional Positive Regard <br>
+                                                            <input data-val="true" data-val-required="The InterventionsReframing field is required." id="InterventionsReframing" name="InterventionsReframing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsReframing" type="hidden" value="false" spellcheck="true"> Reframing <br>
+                                                            <input data-val="true" data-val-required="The InterventionsSupportive field is required." id="InterventionsSupportive" name="InterventionsSupportive" type="checkbox" value="true" spellcheck="true"><input name="InterventionsSupportive" type="hidden" value="false" spellcheck="true"> Supportive Outreach <br>
+                                                            <input data-val="true" data-val-required="The InterventionsPsycho field is required." id="InterventionsPsycho" name="InterventionsPsycho" type="checkbox" value="true" spellcheck="true"><input name="InterventionsPsycho" type="hidden" value="false" spellcheck="true"> Psychoeducation <br>
+                                                            <input data-val="true" data-val-required="The InterventionsTeaching field is required." id="InterventionsTeaching" name="InterventionsTeaching" type="checkbox" value="true" spellcheck="true"><input name="InterventionsTeaching" type="hidden" value="false" spellcheck="true"> Teaching Coping Skills <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUtilizing field is required." id="InterventionsUtilizing" name="InterventionsUtilizing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUtilizing" type="hidden" value="false" spellcheck="true"> Utilizing Silence <br>
+                                                            <input data-val="true" data-val-required="The InterventionsUtilizing field is required." id="InterventionsUtilizing" name="InterventionsUtilizing" type="checkbox" value="true" spellcheck="true"><input name="InterventionsUtilizing" type="hidden" value="false" spellcheck="true"> No Contect Made With Participant <br>
+                                                        </div>
+                                                    </div> -->
+    
+                                                    <!-- <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">What was the participants' response to the utilized stabilization interventions?</label>
+                                                            <textarea name="Complaint" class="client-input" rows="2"
+                                                                id="Complaint" style="height:80px;">No</textarea>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-lg-6">
+                                                        <div class="margin-inputclient">
+                                                            <label>Were police, fire or EMS dispatched to the scene?</label>  <em>(Mark only one oval.)</em>
+                                                            <br>
+                                                            <input id="Police" name="Police" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="Police" name="Police" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">  
+                                                                If police, fire, or EMS were dispatched to the scene, please provide specific details
+                                                                to include which entity was dispatched and what the nature and outcome of the
+                                                                involvement was. If no entity was dispatched to the scene, please type N/A.</label>
+                                                            <textarea name="Complaint" class="client-input" rows="2"
+                                                                id="Complaint" style="height:80px;">No</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="bottom-space">
+                                                            <label>What referrals were provided to the participant? Select all that apply.</label><em>(Check all that apply.)</em>
+                                                            <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsiMind field is required." id="ParticipantsiMind" name="ParticipantsiMind" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsiMind" type="hidden" value="false" spellcheck="true"> iMind Behavioral Health <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsEmergency field is required." id="ParticipantsEmergency" name="ParticipantsEmergency" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsEmergency" type="hidden" value="false" spellcheck="true"> Emergency Petition <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsHospital field is required." id="ParticipantsHospital" name="ParticipantsHospital" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsHospital" type="hidden" value="false" spellcheck="true"> Hospital <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsPrimary field is required." id="ParticipantsPrimary" name="ParticipantsPrimary" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsPrimary" type="hidden" value="false" spellcheck="true"> Primary Care Doctor/Urgent Care <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsCommunity field is required." id="ParticipantsCommunity" name="ParticipantsCommunity" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsCommunity" type="hidden" value="false" spellcheck="true"> Community Resources <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsDomestic field is required." id="ParticipantsDomestic" name="ParticipantsDomestic" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsDomestic" type="hidden" value="false" spellcheck="true"> Domestic Violence or Homeless Shelter <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsNational field is required." id="ParticipantsNational" name="ParticipantsNational" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsNational" type="hidden" value="false" spellcheck="true"> National Hotline <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsChild field is required." id="ParticipantsChild" name="ParticipantsChild" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsChild" type="hidden" value="false" spellcheck="true"> Child Protective Services <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsAdult field is required." id="ParticipantsAdult" name="ParticipantsAdult" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsAdult" type="hidden" value="false" spellcheck="true"> Adult Protective Services <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsGovernment field is required." id="ParticipantsGovernment" name="ParticipantsGovernment" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsGovernment" type="hidden" value="false" spellcheck="true"> Government Resources <br>
+                                                            <input data-val="true" data-val-required="The ParticipantsSpiritual field is required." id="ParticipantsSpiritual" name="ParticipantsSpiritual" type="checkbox" value="true" spellcheck="true"><input name="ParticipantsSpiritual" type="hidden" value="false" spellcheck="true"> Spiritual Support <br>
+                                                            <input data-val="true" data-val-required="The Participantsother1 field is required." id="Participantsother1" name="Participantsother1" type="checkbox" value="true" spellcheck="true"><input name="Participantsother1" type="hidden" value="false" spellcheck="true"> Other: <textarea cols="20" id="Participantsother2" name="Participantsother2" rows="2" style="display: none;"></textarea>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">  
+                                                                If other was selected above, please provide specific details. Otherwise, type N/A.</label>
+                                                            <textarea name="Complaint" class="client-input" rows="2"
+                                                                id="Complaint" style="height:80px;">No</textarea>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <label>
+                                                                Was an Emergency Petition or Mental Health Referral utilized? If an emergency
+                                                                petition was utilized, details should have been provided under Police, Fire and EMS
+                                                                section.  <em>(Mark only one oval.)</em>
+                                                            </label>
+                                                            <br>
+                                                            <input id="EmergencyPetition" name="EmergencyPetition" type="radio" value="Yes" spellcheck="true"> Yes
+                                                            <br>
+                                                            <input checked="checked" id="EmergencyPetition" name="EmergencyPetition" type="radio" value="No" spellcheck="true"> No
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">  
+                                                                Please provide the safety plan that was developed with the participant. This safety
+                                                                plan should specifically reflect the concerns that initiated the call.
+                                                            </label>
+                                                            <textarea name="Complaint" class="client-input" rows="2"
+                                                                id="Complaint" style="height:80px;">No</textarea>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Name of Team Member completing report</label>
+                                                            <input formControlName="teamMember" type="text" class="client-input">
+                                                        </div>
+                                                    </div>                                       -->
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,31 @@
+<section class="notes-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="notes-td" >
+                <img (click)="backClicked()" [src]="imagesrc" alt="">
+                <p>Maps</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="cleint-left">
+                    <div class="col-md-12">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Clincian</label>
+                            <select class="client-input">
+                                <option>--select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div #mapContainer id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

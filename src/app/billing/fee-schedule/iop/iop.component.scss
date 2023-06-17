@@ -1,0 +1,41 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .feeCode {
+    float: left;
+    /* border-left: 1px solid #7DCCF4; */
+    width: 60%;
+    padding: 10px;
+    border:solid white
+}
+.feeScheduleButton {
+    width: 10%;
+    float: left;
+}
+.SubmitClass_new {
+    /* background: url(/Content/images/SaveIcon.png) no-repeat; */
+    float: right;
+    height: 30px !important;
+    min-width: 80px !important;
+    border: none !important;
+    
+    color: white;
+    padding: 0 10px !important;
+    color: #fff !important;
+    border-radius: 6px;
+    background: #00b372 !important;
+}
+.SubmitClass_new1 {
+    /* background: url(/Content/images/SaveIcon.png) no-repeat; */
+    float: right;
+    height: 30px !important;
+    min-width: 80px !important;
+    border: none !important;
+    
+    color: white;
+    padding: 0 10px !important;
+    color: #fff !important;
+    border-radius: 6px;
+    background-color: #0784de !important;
+}

@@ -1,0 +1,198 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row mar-1010 d-flex my-2">
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <label class="CLIENT-LABEL"><b>*Primary Behavioral Diagnoses*</b></label>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diagnostic Category 1</label>
+                                            <input type="text" class="client-input">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diag. Code 1</label>
+                                            <select class="client-input" formControlName="diagcode">
+                                                <option value="502">F40.241,Acrophobia</option>
+                                                <option value="503">F43.0,Acute stress reaction</option>
+                                                <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Description</label>
+                                            <input type="text" class="client-input" style="height: 80px;">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diagnostic Category 2</label>
+                                            <input type="text" class="client-input">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diag. Code 2</label>
+                                            <select class="client-input" formControlName="diagcode">
+                                                <option value="502">F40.241,Acrophobia</option>
+                                                <option value="503">F43.0,Acute stress reaction</option>
+                                                <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Description</label>
+                                            <input type="text" class="client-input" style="height: 80px;">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diagnostic Category 3</label>
+                                            <input type="text" class="client-input">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diag. Code 3</label>
+                                            <select class="client-input" formControlName="diagcode">
+                                                <option value="502">F40.241,Acrophobia</option>
+                                                <option value="503">F43.0,Acute stress reaction</option>
+                                                <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Description</label>
+                                            <input type="text" class="client-input" style="height: 80px;">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <label class="CLIENT-LABEL"><b>*Primary Medical Diagnoses*</b></label>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diagnostic Category 4</label>
+                                            <input type="text" class="client-input">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diag. Code 4</label>
+                                            <select class="client-input" formControlName="diagcode">
+                                                <option value="502">F40.241,Acrophobia</option>
+                                                <option value="503">F43.0,Acute stress reaction</option>
+                                                <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Description</label>
+                                            <input type="text" class="client-input" style="height: 80px;">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diagnostic Category 5</label>
+                                            <input type="text" class="client-input">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Diag. Code 5</label>
+                                            <select class="client-input" formControlName="diagcode">
+                                                <option value="502">F40.241,Acrophobia</option>
+                                                <option value="503">F43.0,Acute stress reaction</option>
+                                                <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Description</label>
+                                            <input type="text" class="client-input" style="height: 80px;">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">DX. Clinician Name:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">Phone:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">Date Of Most Recent Diagnosis:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">Email:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label class="CLIENT-LABEL">DX. Clinician Address:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="CLIENT-LABEL">Client Currently Actively Participating in Mental Health Therapy</label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient d-flex">
+                                                        <input formControlName="FirstName" value="1" type="radio" class="client-input mx-2">Yes
+                                                        <input formControlName="FirstName" value="2" type="radio" class="client-input mx-2">No
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">DX. Clinician Name:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">Phone:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="CLIENT-LABEL">Email:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="CLIENT-LABEL">TX Clinician Address:</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

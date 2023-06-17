@@ -1,0 +1,875 @@
+<div class="col-lg-12">
+  <div class="client-tabs">
+    <form [formGroup]="pregressNotes">
+      <div class="all-tb">
+        <div class="row mar-1010 d-flex my-2">
+          <div class="col-lg-6 d-flex">
+            <div class="arrow" (click)="back()">
+              <label for="type">
+                <i class="fa fa-circle-arrow-left"></i>
+              </label>
+            </div>
+            <h1 class="admin-main_heading">Psychiatric Progress Note</h1>
+          </div>
+          <div class="col-lg-6 back_css">
+            <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="CLIENT-DEMOGRAPHICS">
+              <h6>SESSION INFORMATION</h6>
+            </div>
+            <div class="content">
+              <div class="row">
+                <div class="col-lg-8 next_Tab my-2">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">First </label>
+                        <input formControlName="FirstName" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Middle Name </label>
+                        <input formControlName="MiddleName" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Last Name</label>
+                        <input formControlName="LastName" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Date Of birth</label>
+                        <input formControlName="DateofBirth" type="date" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Age</label>
+                        <input formControlName="Age" type="text" class="client-input">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Sex</label>
+                        <select class="client-input" formControlName="Gender">
+                          <option value="0" selected>Female</option>
+                          <option value="1">Male</option>
+                          <option value="2">Transgender</option>
+                          <option value="3">They</option>
+                          <option value="4">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="col-lg-12">
+                    <div class="margin-inputclient"
+                      [class.has-error]="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors || genForm['DateOfSession'].touched && genForm['DateOfSession'].errors">
+                      <label class="CLIENT-LABEL">Date of Session<span class="text-danger">*</span></label>
+                      <input formControlName="DateofBirth" type="date" class="client-input">
+                      <span *ngIf="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors" class="has-error">
+                        <i *ngIf="genForm['DateOfSession'].errors?.['required']">
+                          Please enter Date of Session.</i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="d-flex my-2">
+                    <div class="col-lg-4">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Start Time</label>
+                        <input type="time" class="client-input" formControlName="StartTime1">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 ms-1">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">End Time</label>
+                        <input type="time" class="client-input" formControlName="EndTime1">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 ms-1">
+                      <div class="margin-inputclient">
+                        <label class="CLIENT-LABEL">Duration</label>
+                        <input type="time" class="client-input" formControlName="TotalTime1">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ####### second #### -->
+
+            <div class="col-lg-12">
+              <div class="CLIENT-DEMOGRAPHICS">
+                <h6>SESSION DETAIL</h6>
+              </div>
+              <div class="content">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient"
+                          [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                            <label class="CLIENT-LABEL">Rendering Provider <span class="text-danger">*</span> </label>
+                            <select class="client-input" formControlName="Rendering_ProviderID">
+                              <option>--Select--</option>
+                            </select>
+                            <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                  Rendering Provider is Required.</i>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient"
+                          [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors">
+                            <label class="CLIENT-LABEL">Procedure Code<span class="text-danger">*</span> </label>
+                            <select class="client-input" formControlName="ProcedureCode1">
+                                <option>--Select--</option>
+                            </select>
+                            <span *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors" class="has-error">
+                                <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">
+                                  Please enter Date of Session.</i>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Location </label>
+                            <select class="client-input" formControlName="location_required">
+                                <option>--Select--</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL"> E/M Code </label>
+                            <select class="client-input" formControlName="ProcedureEMCode">
+                                <option>--Select--</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient" *ngIf="show">
+                            <label class="CLIENT-LABEL">Insurance Type</label>
+                            <select class="client-input" formControlName="selectInsuranceType">
+                                <option>--Select--</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="margin-inputclient" *ngIf="show">
+                            <label class="CLIENT-LABEL">Authorization Number </label>
+                            <select class="client-input" formControlName="selectAuthNumber">
+                                <option>--Select--</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL"><label>Others Present at Session (List name(s) and
+                                relationship(s) to the client)</label></label>
+                            <textarea formControlName="OtherPresentSessions" class="client-input" rows="4"
+                              cols="20"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3#########====== -->
+            <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                  <h6>Vitals</h6>
+                </div>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <h4 class="text-center CLIENT-LABEL">BLOOD PRESSURE</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12 text-center">
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Height</label>
+                            <input type="text" class="client-input" formControlName="Height">
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Weight</label>
+                            <input type="text" class="client-input" formControlName="Weight">
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Sit</label>
+                            <input type="text" class="client-input" formControlName="BP_Sit">
+                          </div>
+                        </div>
+                        <div class="col-lg-1">
+                          <div class="margin-inputclient slash">
+                            <label class="CLIENT-LABEL">/</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Stand</label>
+                            <input type="text" class="client-input" formControlName="BP_Stand">
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Temp.F</label>
+                            <input type="text" class="client-input" formControlName="Temp_F">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--4######################------->
+              <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                  <h6>MENTAL STATUS EXAM</h6>
+                </div>
+                <div class="content">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Appearance</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Neatly Groomed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Appropriately Dressed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Disheveled</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Inappropriately Dressed</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Neatly Groomed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Appropriately Dressed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Disheveled</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Inappropriately Dressed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Good Hygiene</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Underweight</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Overweight</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Behavior </label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Pleasant</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Cooperative</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Easily Engaged</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Good Eye Contact</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Pleasant</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Cooperative</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Easily Engaged</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Good Eye Contact</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Irritable</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Guarded</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Evasive</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Fidgety</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Speech</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Regular Rate</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Regular Rhythm</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Regular Tone</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Pressured</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Regular Rate</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Regular Rhythm</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Regular Tone</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Pressured</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Slowed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Paucity of Speech</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Monotone</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Incohrent</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Mood</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Euthymic</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Depressed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Anxious</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Cheerful</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Euthymic</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Depressed</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Anxious</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Cheerful</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Irritable</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Euphonic</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Apathetic</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Angry</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Affect</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Mood Congruent</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Mood InCongruent</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Full Range</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Constricted</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Mood Congruent</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Mood InCongruent</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Full Range</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Constricted</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Blunted</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Flat</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Attention and Concentration </label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Intact</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Impaired</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Intact</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Impaired</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Througt Process</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Linear and Logical</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Circumstantial</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Tangential</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Losses of Association</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Linear and Logical</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Circumstantial</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Tangential</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Losses of Association</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Flight Ideas</label></li>
+                            <li><input type="checkbox" name="" id=""><label>Other</label><input type="text" name="" id="" class="client-input" style="width: 50%; margin-left: 6px;"></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="margin-inputclient">
+                          <label class="CLIENT-LABEL1">Cognition</label>
+                          <ul class="input-ul list" *ngIf="show">
+                            <li><input type="checkbox" name="" id=""><label>Not Intact As Evidence By</label><input type="text" name="" id="" class="client-input" style="width: 48%; margin-left: 4px;"></li>
+                            <li><input type="checkbox" name="" id=""><label>Grossly Intact</label></li>
+                          </ul>
+                          <ul class="input-ul list1" *ngIf="!show">
+                            <li><input type="checkbox" name="" id=""><label>Not Intact As Evidence By</label><input type="text" name="" id="" class="client-input" style="width: 48%; margin-left: 4px;"></li>
+                            <li><input type="checkbox" name="" id=""><label>Grossly Intact</label></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="d-flex row CLIENT-LABEL1">
+                            <div class="col-lg-6">Insight and Judgment</div>
+                            <div class="col-lg-6">Thought Content</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <ul class="input-ul">
+                              <li><input type="checkbox" name="" id=""><label>Is Cooperative</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Impaired</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Other</label><br><input type="text" name="" id="" class="client-input" style="width: 50%;margin-left: 12px;"></li>
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <ul class="input-ul" *ngIf="show">
+                              <li><input type="checkbox" name="" id=""><label>Future Orientation</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Suicidal Ideation</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Intact</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Death Wishes</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Homicidal Ideation</label></li>
+                            </ul>
+                            <ul class="input-ul" *ngIf="!show">
+                              <li><input type="checkbox" name="" id=""><label>Future Orientation</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Suicidal Ideation</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Intact</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Death Wishes</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Homicidal Ideation</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Homicidal with Plan</label></li>
+                              <li><input type="checkbox" name="" id=""><label>No Future Orientations</label></li>
+                              <li><input type="checkbox" name="" id=""><label>No Auditory, Vishal or Tactile Hallucinations</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Hallucinations or Illusion</label></li>
+                              <li><input type="checkbox" name="" id=""><label>No Obsessive Thinking/Obsessions Present</label></li>
+                              <li><input type="checkbox" name="" id=""><label>No Delusions Elicited/Delusional Thinking Present</label></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="d-flex row CLIENT-LABEL1">
+                            <div class="col-lg-6">Suicidal</div>
+                            <div class="col-lg-6">Homicidal</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <ul class="input-ul" *ngIf="show">
+                              <li><input type="checkbox" name="" id=""><label>Consumer denies current thoughts and
+                                  is future-oriented</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Active Recurrent Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Making Threats</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Actionable Plans</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Attempts in Family History</label>
+                              </li>
+                            </ul>
+                            <ul class="input-ul" *ngIf="!show">
+                              <li><input type="checkbox" name="" id=""><label>Consumer denies current thoughts and is future-oriented</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Active Recurrent Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Making Threats</mark></label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Actionable Plans</mark></label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Available Means</mark></label>
+                              <li><input type="checkbox" name="" id=""><label><mark>Currently Attempted</mark></label>
+                              <li><input type="checkbox" name="" id=""><label>Attempts in Family History</label>
+                              <li><input type="checkbox" name="" id=""><label>If, Parent, Please indicate</label>
+                              <li><input type="checkbox" name="" id=""><label>The Parent's attempt was successful</label>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <ul class="input-ul" *ngIf="show">
+                              <li><input type="checkbox" name="" id=""><label>Consumer denies current thoughts of
+                                  other- directed harm at this time</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Active Recurrent Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Making Threats</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Actionable Plans</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Available Means</label></li>
+                            </ul>
+                            <ul class="input-ul" *ngIf="!show">
+                              <li><input type="checkbox" name="" id=""><label>Consumer denies current thoughts of
+                                  other- directed harm at this time</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Passive Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Active Recurrent Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Making Threats</mark></label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Actionable Plans</mark></label></li>
+                              <li><input type="checkbox" name="" id=""><label><mark>Available Means</mark></label></li>
+                              <li><input type="checkbox" name="" id=""><label>History of Violence</label></li>
+                              <li><input type="checkbox" name="" id=""><label>History of Family Violence</label></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="d-flex row CLIENT-LABEL1">
+                          <div class="col-lg-6">
+                            Suicide
+                          </div>
+                          <div class="col-lg-6">
+                            Aggression
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <ul class="input-ul ">
+                              <li><input type="checkbox" name="" id=""><label>N/A</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Plans</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Attempts-How Many</label></li>
+                              <li><input type="text" name="" id="" class="client-input"></li>
+                            </ul>
+                          </div>
+                          <div class="col-lg-6">
+                            <ul class="input-ul ">
+                              <li><input type="checkbox" name="" id=""><label>N/A</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Thoughts</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Plans</label></li>
+                              <li><input type="checkbox" name="" id=""><label>Attempts-How Many</label></li>
+                              <li><input type="text" name="" id="" class="client-input"></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5##### -->
+              <div class="col-lg-12">
+                <div class="content">
+                    <div class="row">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL"><label>Note:</label></label>
+                            <textarea formControlName="Notes" class="client-input" rows="4"
+                              cols="20"></textarea>
+                          </div>
+                    </div>
+                </div>
+              </div>
+
+              <!----6#######################-->
+              <div class="col-lg-12">
+                <div class="row d-flex">
+                    <div class="col-sm-6">
+                        <label for=""><strong>Medication(s):</strong></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-info">Load From Previous Note</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Medication Name</label>
+                                    <input formControlName="Medications" type="text" class="client-input">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Dose</label>
+                                    <input formControlName="Dose1" type="text" class="client-input">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Frequency</label>
+                                    <input formControlName="Frequency1" type="text" class="client-input">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Indication</label>
+                                    <input formControlName="Indication1" type="text" class="client-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <button class="btn btn-success mb-3">Add Another Medication</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <div class="margin-inputclient"><input type="checkbox" name="" id="">Yes</div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No <label class="mx-4">Client was informed of medication dosage, effects, side effects and educated on the risks and benefits of medication, including when to change medication.</label></div>
+                    </div>
+                </div>
+                
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <div class="margin-inputclient"><input type="checkbox" name="" id="">Yes</div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No <label class="mx-4">Client was monitored on the current medication dosage, effects and side effects of such medication.</label></div>
+                    </div>
+                </div>
+                
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <label class="">Does he/she have medical condition that requires ongoing PCP/Provider/Specialists collaboration</label>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No </div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">Yes. Indicate which.</div>
+                    </div>
+                    <textarea formControlName="DescriptionRequiresOngoingPCP" class="client-input" rows="4"
+                          cols="20"></textarea>
+                </div>
+                
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <label class="">Have Labs/Medical Hx Reports been ordered</label>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No </div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">Yes. Indicate which.</div>
+                    </div>
+                    <textarea formControlName="DescriptionLabOrder" class="client-input" rows="4"
+                          cols="20"></textarea>
+                </div>
+                
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <label class="">Based on prescribed medications/dosage; Has an assessment of Abnormal involuntary movements been conducted in order to identify/RuleOut Movement Disorder</label>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No </div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">Yes. Indicate which.</div>
+                    </div>
+                    <textarea formControlName="DescriptionAbnormalInvoluntaryMovements" class="client-input" rows="4"
+                          cols="20"></textarea>
+                </div>
+                <div class="row my-4">
+                    <div class="col-lg-12 d-flex">
+                        <label class="">Has there been any Medication Management Errors</label>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">No </div>
+                        <div class="mx-2 margin-inputclient"><input type="checkbox" name="" id="">Yes.</div>
+                    </div>
+                    <div class="CommonControlsDiv_main">
+                      <div class="col-lg-12">
+                        <div class="row">
+                          <div class="col-lg-3">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <label class="CLIENT-LABEL2" for="">Indicate which.</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Unauthorized Drug Use</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for=""> Medication Omission</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for=""> Incorrect Timing</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for=""> Dispensing Error</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Incorrect Drug</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Incorrect labeling</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3">
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Prescribing Error</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Incorrect Rate/Dosage</label>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <input class="" type="checkbox" name="" id="">
+                                      <label class="CLIENT-LABEL2"  for="">Incorrect identification of person served</label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+
+              </div>
+              
+              <!----7############################---->
+
+            <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                  <h6>Diagnosis</h6>
+                </div>
+                <div class="content">
+                    <h5 class="CLIENT-LABEL">
+                        DSM – IV DIAGNOSIS (Codes must be specific up to the 5th digit if necessary. Indicate principal diagnosis with a ‘P’)
+                    </h5>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL"><strong>Axis I</strong></label>
+                                        <select class="client-input">
+                                            <option value="">F33.2</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Description</label>
+                                        <textarea formControlName="Axis1Code1_Description" class="client-input" rows="4"
+                                        cols="20"></textarea>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="d-flex pointer">
+                                <img [src]="imagesrc" alt="small" class="addNew">
+                                <a class="CLIENT-LABEL"><small> Add New</small></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="CLIENT-LABEL">
+                            <strong>Goals, Interventions and Objectives:</strong> (must address <strong>target behaviors/symptoms</strong> and include <strong>medications,</strong> recommended <strong>evaluations,</strong> follow-up and communication with <strong>primary care physician, health and safety</strong> issues and <strong>substance abuse</strong> issues)
+                        </h5>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="CLIENT-LABEL">Goal/Dream (state goal in collaboration with client):</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <textarea formControlName="Goal" class="client-input" rows="4"
+                                    cols="20"></textarea>
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-lg-6">
+                                    <label class="CLIENT-LABEL">State desired result(s) in client’s words:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <textarea formControlName="DesiredResults" class="client-input" rows="4"
+                                    cols="20"></textarea>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!--------8####################---------->
+                <!-- <div class="col-lg-12">
+                          <p class="CLIENT-LABEL">Signature of Rendering Provider</p>
+                <div class="CLIENT-DEMOGRAPHICS">
+                  <h6>Signatures</h6>
+                </div> -->
+                <!-- <div class="content">
+                    <div class="col-lg-12">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-1"><button type="submit" class="btn btn-success">SIGN</button></div>
+                            <div class="col-sm-3">
+                                <select class="client-input">
+                                    <option value="">Anderline Noutai</option>
+                                    <option value="">Monica Boddie</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center p-4">
+                            <div class="col-lg-3 card">
+                                <img src="" alt="iimgSignature" width="420px" class="p-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Received Date</label>
+                                    <input formControlName="RecievedDateNote" type="date" class="client-input" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Entered By</label>
+                                    <input formControlName="EnteredByName" type="text" class="client-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-------------2nd Sign---------->
+                <p class="CLIENT-LABEL">Signature of second Rendering Provider</p>
+                <div class="CLIENT-DEMOGRAPHICS">
+                  <h6>Signatures</h6>
+                </div>
+                <div class="content">
+                    <div class="col-lg-12 my-2">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-1"><button type="submit" class="btn btn-success">SIGN</button></div>
+                            <div class="col-sm-3">
+                                <select class="client-input">
+                                    <option value="">Anderline Noutai</option>
+                                    <option value="">Monica Boddie</option>
+                                </select>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 nxtTab justify-content-center">
+                          <img src="" alt="iimgSignature" class="p-4">
+                      </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Received Date</label>
+                                    <input formControlName="RecievedDateNote" type="date" class="client-input" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Entered By</label>
+                                    <input formControlName="EnteredByName" type="text" class="client-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            
+              
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

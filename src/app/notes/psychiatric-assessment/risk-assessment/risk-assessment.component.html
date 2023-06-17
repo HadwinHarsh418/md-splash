@@ -1,0 +1,834 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row"> 
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Name </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> Last Name</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-md-12">
+                                        <div class="margin-inputclient"
+                                        [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors">
+                                            <label class="CLIENT-LABEL">Date of Session</label>
+                                            <input type="date" formControlName="DOS" class="client-input">
+                                            <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors" class="has-error">
+                                                <i *ngIf="genForm['DOS'].errors?.['required']">
+                                                   Please enter Date of session required</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                <input type="time" class="client-input" formControlName="StartTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">End Time</label>
+                                                <input type="time" class="client-input" formControlName="EndTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Duration</label>
+                                                <input type="time" class="client-input" formControlName="TotalTime1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION DETAILS</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                        <label class="CLIENT-LABEL">Rendering Provider <span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="Rendering_ProviderID">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                        <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                            <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                               Date of session required</i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Procedure Code<span
+                                                                class="text-danger"></span> </label>
+                                                        <select class="client-input" formControlName="ProcedureCode1">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Location<span
+                                                                class="text-danger"></span> </label>
+                                                        <select class="client-input"
+                                                            formControlName="location_required">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Insurance Type<span
+                                                                class="text-danger"></span> </label>
+                                                        <select class="client-input" formControlName="hdnInsuranceType">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Authorization Number <span
+                                                                class="text-danger"></span> </label>
+                                                        <select class="client-input" formControlName="selectAuthNumber">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="margin-inputclient">
+                                                        <!-- <label class="CLIENT-LABEL">Policy Number <span
+                                                                class="text-danger">*</span> </label>
+                                                        <select class="client-input" formControlName="txtInsNumber">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select> -->
+                                                        <p class="CLIENT-LABEL">
+                                                            E/M THX Add-on code cannot be used if patient saw therapist on the same day
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Others Present at Session (List
+                                                            Name(s) and Relationship(s) to the client)</label>
+                                                        <select class="client-input" formControlName="OtherPresentName">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Chief Complaint (Individual’s word
+                                                            regarding why he or she is being seen), Current
+                                                            Condition/Observations:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- #########====== -->
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>RISK ASSESSMENT</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <label class="CLIENT-LABEL" for=""> <span class="">CURRENT
+                                                            STATUS:</span> Check all that apply. <span>Bold and
+                                                            highlighted</span> items are highly significant for
+                                                        hospitalization</label>
+                                                    <div class="col-lg-12 d-flex my-3 ContentUl">
+                                                        <div class="col-md-2">
+                                                            <label class="CLIENT-LABEL_ContentUl">Suicidal:</label>
+                                                        </div>
+                                                        <div class="col-md-10 div_checkBox" style="margin-left: 10px;">
+                                                            <ul class="all-li-radio und_line">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Consumer denies current thoughts and is
+                                                                        future-oriented </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Passive Thoughts</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Active Recurrent Thoughts</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Making Threats</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Actionable Plans</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Available Means</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Currently Attempted</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-lg-12 d-flex my-3 ContentUl">
+                                                        <div class="col-md-2">
+                                                            <label class="CLIENT-LABEL_ContentUl">Homicidal:</label>
+                                                        </div>
+                                                        <div class="col-md-10 div_checkBox" style="margin-left: 10px;">
+                                                            <ul class="all-li-radio und_line">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Consumer denies current thoughts of other-
+                                                                        directed harm at this time</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Passive Thoughts </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Active Recurrent Thoughts
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Making Threats</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Actionable Plans</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Available Means</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>History of Violence</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>History of Family Violence</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-lg-12 d-flex my-3 ContentUl">
+                                                        <div class="col-md-2">
+                                                            <label class="CLIENT-LABEL_ContentUl">Suicide:</label>
+                                                        </div>
+                                                        <div class="col-md-10 div_checkBox" style="margin-left: 10px;">
+                                                            <ul class="all-li-radio und_line">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>N/A</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Thoughts</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Plans
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Attempts-How Many</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12 d-flex my-3 ContentUl">
+                                                        <div class="col-md-2">
+                                                            <label class="CLIENT-LABEL_ContentUl">Aggression:</label>
+                                                        </div>
+                                                        <div class="col-md-10 div_checkBox" style="margin-left: 10px;">
+                                                            <ul class="all-li-radio und_line">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>N/A</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Thoughts</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Plans
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Attempts-How Many</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex my-3 ContentUl">
+                                                        <div class="col-md-2">
+                                                            <label class="CLIENT-LABEL_ContentUl">Other
+                                                                Factors:</label>
+                                                        </div>
+                                                        <div class="col-md-10 div_checkBox" style="margin-left: 10px;">
+                                                            <ul class="all-li-radio und_line">
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Lack of Support</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Recent Loss</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Unstable living Arrangement
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Medical/ Health Risks</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Current Substance Abuse</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Fear of Losing Control</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Marked or Severe</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Fear of being Control</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes">
+                                                                    <label>Command Hallucinations</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12 CLIENT-DEMOGRAPHICS my-3">
+                                                            <h6 class="lable_ul">Danger to:</h6>
+                                                            <ul class="all-li-radio">
+                                                                <div class="col-md-3">
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Self</label>
+                                                                    </li>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Others</label>
+                                                                    </li>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Inability to Care For Self</label>
+                                                                    </li>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Inability to recognize need for
+                                                                            TX</label>
+                                                                    </li>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-12 CLIENT-DEMOGRAPHICS my-3">
+                                                            <h6 class="lable_ul">RISK ACTION STEPS FOR STAFF</h6>
+                                                            <div class="col-lg-12 div_checkBox">
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Increase Intensity of
+                                                                                service/contacts to:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <textarea name="Complaint" class="client-input"
+                                                                            id="Complaint"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Increase level of care to:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <textarea name="Complaint" class="client-input"
+                                                                            id="Complaint"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Risk Assessment Daily for:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Days
+                                                                                    </label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Monitor
+                                                                                        for: </label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Last
+                                                                                        Name</label>
+                                                                                    <input formControlName="LastName"
+                                                                                        type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Risk Assessment Weekly for:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label
+                                                                                        class="CLIENT-LABEL">Weeks</label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Monitor
+                                                                                        for: </label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Report
+                                                                                        to:</label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Risk Assessment Monthly for:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Months
+                                                                                    </label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Monitor
+                                                                                        for:</label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="margin-inputclient">
+                                                                                    <label class="CLIENT-LABEL">Report
+                                                                                        to:</label>
+                                                                                    <input type="text"
+                                                                                        class="client-input">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>Other Action Step(s):</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <textarea name="Complaint" class="client-input"
+                                                                            id="Complaint"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes">
+                                                                            <label>History of Present Illness/History of
+                                                                                Past Illness/History of Medical
+                                                                                Conditions/History of Family Medical
+                                                                                Conditions:</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <textarea name="Complaint" class="client-input"
+                                                                            id="Complaint"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-3">
+                                                                    <ul class="all-li-radio und_line">
+                                                                        <li>
+                                                                            <label for="Allergies:">Allergies:</label>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                                id="harmingNo" value="yes"
+                                                                                style="margin-left: 10px;">
+                                                                            <label>NKA</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="col-lg-12">
+                                                                        <textarea name="Complaint" class="client-input"
+                                                                            id="Complaint"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <label class="CLIENT-LABEL"> <b> Medication(s):</b></label>
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Medication Name </label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Dose</label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Frequency</label>
+                                                                    <input type="text" class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Indication</label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <label class="CLIENT-LABEL">List any Current Medication & Medication Effects, Side Effects / Risk & Benefits of Medication:</label>
+                                                            <textarea name="Complaint" class="client-input"
+                                                                id="Complaint"></textarea>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <label class="CLIENT-LABEL">List any Past Medication & Medication Effects, Side Effects/History of Adjustment to previous medications:</label>
+                                                            <textarea name="Complaint" class="client-input"
+                                                                id="Complaint"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <label class="CLIENT-LABEL"> <b>PRN Medications:</b></label>
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Medication Name </label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Dose</label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Frequency</label>
+                                                                    <input type="text" class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Indication</label>
+                                                                    <input  type="text"
+                                                                        class="client-input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12 my-3">
+                                                            <div class="col-lg-12 my-3">
+                                                                <label class="CLIENT-LABEL"><b>Medical History:</b> (check one or all that apply)</label>
+                                                                <ul class="all-li-radio und_line">
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Sleep History (include sleep apnea)</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>appetite/weight loss</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>appetite/weight gain</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Past surgeries</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Past medication and response</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Hypertension</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Diabetes</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Seizures</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Liver Disease</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Head Injury</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Surgeries</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Hospitalizations</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">
+                                                                        <label>Others</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <textarea name="Complaint" class="client-input"
+                                                                    id="Complaint"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

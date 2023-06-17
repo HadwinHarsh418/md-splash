@@ -1,0 +1,62 @@
+<section class="new-client-sec">
+    <div class="container-fluid">
+        <div class="row">
+        <!-- ####-----------form section-------------------############ -->
+            <div class="col-lg-12">
+                <div class="page-header small_fonts">
+                    <div class="page-header-content d-flex">
+                            <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        <h1 class="admin-main_heading">ADULT DIAGNOSTIC ASSESSMENT <small>New</small></h1>
+                    </div>
+                </div>
+                <div class="partition-1">
+                    <div class="part-2">
+                        <form >
+                            <div class="client-tabs">
+                                <div class="client-tabs subTabs">
+                                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                        <li [ngbNavItem]="1">
+                                            <a ngbNavLink>Current Supports</a>
+                                            <ng-template ngbNavContent>
+                                                <app-current-support></app-current-support>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="2">
+                                            <a ngbNavLink>Legal History</a>
+                                            <ng-template ngbNavContent>
+                                                <app-legal-history></app-legal-history>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="3">
+                                            <a ngbNavLink>Alcohol/Drug Use</a>
+                                            <ng-template ngbNavContent>
+                                                <app-alchol-use></app-alchol-use>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="4">
+                                            <a ngbNavLink>Problem Checklist</a>
+                                            <ng-template ngbNavContent>
+                                                <app-problem-check></app-problem-check>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="5">
+                                            <a ngbNavLink>Clinical Summary</a>
+                                            <ng-template ngbNavContent>
+                                                <app-clinical-summary></app-clinical-summary>
+                                            </ng-template>
+                                        </li>
+                                    </ul>
+                                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

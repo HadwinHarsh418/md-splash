@@ -1,0 +1,172 @@
+<div class="col-lg-12">
+    <form [formGroup]="mobileprogressnotecsr">
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="margin-inputclient">
+                        <label>Community Support Specialist</label>
+                        <input type="text" class="client-input" formControlName="CommunitySupportSpecialist">
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="margin-inputclient d-flex">
+                        <label>1. Do you have a birth certificate, social security card or State ID?</label>
+                        <ul class="all-li-radio">
+                            <li>
+                                <input type="radio" name="chkIsIdentification" formControlName="chkIsIdentification" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="chkIsIdentification" formControlName="chkIsIdentification" id="harmingNo" value="no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="margin-inputclient d-flex">
+                        <label>2. Has the client been assisted financially with rent or utilities before? If yes by whom
+                            and when?</label>
+                        <ul class="all-li-radio">
+                            <li>
+                                <input type="radio" name="chkIsHousing" formControlName="chkIsHousing" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="chkIsHousing" formControlName="chkIsHousing" id="harmingNo" value="no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="margin-inputclient">
+                        <label>Housing By</label>
+                        <input type="text" class="client-input" formControlName="HousingBy">
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="margin-inputclient">
+                        <label>Housing Date</label>
+                        <input type="text" class="client-input" formControlName="HousingDate">
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="margin-inputclient">
+                        <label>Monthly Income</label>
+                        <input type="text" class="client-input" formControlName="MonthlyIncome">
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="margin-inputclient">
+                        <label>Monthly Benifits</label>
+                        <input type="text" class="client-input" formControlName="MonthlyBenifits">
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="margin-inputclient d-flex">
+                        <label>3. Does Client have a representative payee?</label>
+                        <ul class="all-li-radio">
+                            <li>
+                                <input type="radio" formControlName="IsRepresentativePayee" name="IsRepresentativePayee" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsRepresentativePayee" name="IsRepresentativePayee" id="harmingNo" value="no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="margin-inputclient">
+                        <label>4. Is Client in need of assistance with any of the following?</label>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Clothing</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedClothing" name="IsClientNeedClothing" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedClothing" name="IsClientNeedClothing" id="harmingNo" value="no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Food</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedFood" name="IsClientNeedFood" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedFood" name="IsClientNeedFood" id="harmingNo" value="no">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Employment</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedEmployment" name="IsClientNeedEmployment" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedEmployment" name="IsClientNeedEmployment" id="harmingNo" value="yes">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Transportation</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedTransportation" name="IsClientNeedTransportation" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedTransportation" name="IsClientNeedTransportation" id="harmingNo" value="yes">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Day Program</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedDayProgram" name="IsClientNeedDayProgram" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedDayProgram" name="IsClientNeedDayProgram" id="harmingNo" value="yes">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>Substance Abuse Treatment</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedSubstanceAbuseTreatment" name="IsClientNeedSubstanceAbuseTreatment" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedSubstanceAbuseTreatment" name="IsClientNeedSubstanceAbuseTreatment" id="harmingNo" value="yes">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                        <ul class="all-li-radio my-2">
+                            <label class="label_set"><b>ADL</b></label>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedADL" name="IsClientNeedADL" id="harmingNo" value="yes">
+                                <label>Yes</label>
+                            </li>
+                            <li>
+                                <input type="radio" formControlName="IsClientNeedADL" name="IsClientNeedADL" id="harmingNo" value="yes">
+                                <label>No</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

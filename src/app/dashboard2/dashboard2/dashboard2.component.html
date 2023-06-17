@@ -1,0 +1,272 @@
+<div class="">
+  <div class="col-lg-12">
+    <div class="client-tabs">
+      <form>
+        <div class="all-tb">
+          <div class="row mar-1010 d-flex my-2">
+            <div class="col-lg-6 d-flex">
+              <div class="arrow" (click)="back()">
+                <label for="type">
+                  <i class="fa fa-circle-arrow-left"></i>
+                </label>
+              </div>
+              <h1 class="admin-main_heading">DASHBOARD</h1>
+            </div>
+            <div class="col-lg-6 back_css">
+              <!-- <button class="NEW-SAVE" (click)="Save()">SAVE</button> -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="CLIENT-DEMOGRAPHICS">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row bodr-box">
+                        <div class="col-md-6">
+                          <p>My Therapy Clients</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p>Total Clients:</p>
+                          <button type="submit" class="btn btn-info">Hide</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content">
+                <div class="row bodr-box">
+                  <div class="col-md-12">
+                    <div class="my-2">
+                      <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="row"
+                        [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                        [externalPaging]="false">
+
+                        <ngx-datatable-column name="Client Name" prop="InsuranceType" [width]="80">
+                          <ng-template let-InsuranceType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ InsuranceType }}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="D.O.B" prop="PolicyType" [width]="80">
+                          <ng-template let-PolicyType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ PolicyType }}
+                          </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Telephone" prop="Payor" [width]="80">
+                          <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ Payor }}
+                          </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Address" prop="TerminationDate" [width]="100">
+                          <ng-template let-TerminationDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ TerminationDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="City" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="State" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Zip" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Intake Date" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Assignment Date" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="TX Plan Due Date" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Status" prop="EffectiveDate" [width]="80">
+                          <ng-template let-EffectiveDate="value" let-expanded="expanded" ngx-datatable-cell-template>
+                            {{ EffectiveDate | date: 'mediumDate'}}
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                      </ngx-datatable>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-5">
+            <div class="content">
+              <div class="row bodr-box">
+                <h6>My PRP Clients</h6>
+                <div class="col-md-12">
+                  <div class="CLIENT-DEMOGRAPHICS1">
+                    <h6 style="text-align: center;">You are not assigned any clients</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>Client Sessions</h6>
+                            </div>
+                              <div class="row box">
+                                <div class="col-md-6 right-brdr">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Session Received by Week</label>
+                                        <select class="client-input">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="my-2">
+                                            <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="row"
+                                              [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                              [externalPaging]="false">
+                      
+                                              <ngx-datatable-column name="Code" prop="InsuranceType" [width]="80">
+                                                <ng-template let-InsuranceType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ InsuranceType }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+                      
+                                              <ngx-datatable-column name="# of Sessions" prop="PolicyType" [width]="80">
+                                                <ng-template let-PolicyType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ PolicyType }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+
+                                              <ngx-datatable-column name="Session Earnings" prop="Payor" [width]="80">
+                                                <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ Payor }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+                      
+                                            </ngx-datatable>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Session Received by Semi-Month</label>
+                                        <select class="client-input">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="my-2">
+                                            <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="row"
+                                              [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                              [externalPaging]="false">
+                      
+                                              <ngx-datatable-column name="Code" prop="InsuranceType" [width]="80">
+                                                <ng-template let-InsuranceType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ InsuranceType }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+                      
+                                              <ngx-datatable-column name="# of Sessions" prop="PolicyType" [width]="80">
+                                                <ng-template let-PolicyType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ PolicyType }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+
+                                              <ngx-datatable-column name="Session Earnings" prop="Payor" [width]="80">
+                                                <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                                  {{ Payor }}
+                                                </ng-template>
+                                              </ngx-datatable-column>
+                      
+                                            </ngx-datatable>
+                                          </div>
+                                    </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>Unsigned Notes</h6>
+                              </div>
+                              <div class="row box">
+                                <div class="margin-inputclient">
+                                    <label class="CLIENT-LABEL">Session Received by Semi-Month</label>
+                                    <select class="client-input">
+                                        <option>--Select--</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="my-2">
+                                        <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="row"
+                                          [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                          [externalPaging]="false">
+                  
+                                          <ngx-datatable-column name="Client First Name" prop="InsuranceType" [width]="80">
+                                            <ng-template let-InsuranceType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                              {{ InsuranceType }}
+                                            </ng-template>
+                                          </ngx-datatable-column>
+                  
+                                          <ngx-datatable-column name="Client Last Name" prop="PolicyType" [width]="80">
+                                            <ng-template let-PolicyType="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                              {{ PolicyType }}
+                                            </ng-template>
+                                          </ngx-datatable-column>
+
+                                          <ngx-datatable-column name="Date of Session" prop="Payor" [width]="80">
+                                            <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                              {{ Payor }}
+                                            </ng-template>
+                                          </ngx-datatable-column>
+
+                                          <ngx-datatable-column name="Code" prop="Payor" [width]="80">
+                                            <ng-template let-Payor="value" let-expanded="expanded" ngx-datatable-cell-template>
+                                              {{ Payor }}
+                                            </ng-template>
+                                          </ngx-datatable-column>
+                  
+                                        </ngx-datatable>
+                                      </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

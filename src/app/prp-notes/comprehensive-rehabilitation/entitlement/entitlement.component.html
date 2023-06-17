@@ -1,0 +1,397 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>ENTITLEMENT IDENTIFICATION/MAINTENANCE /ACQUISITION</h6>
+                        </div>
+                        <!-- ############### -->
+                        <div class="col-lg-12">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label class="CLIENT-DEMOGRAPHICS2">CLIENT CURRENTLY HAS/MAINTAINS THE FOLLOWING ACTIVE ENTITLEMENTS: </label>
+                                        <div class="margin-inputclient" style="margin: auto; padding: 10px;">
+                                            <div class="row">
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Medical Assist</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Food Stamps</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Cash Assist.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL"> Housing Assist.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSI</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSDI</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Unemployment.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Survivor Benefits.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Child Support</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Spousal Support</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Veterans Benefits.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Other.</label>
+                                                        <input type="text" class="client-input4">
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">$</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <!-- ----------------------------- -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label class="CLIENT-DEMOGRAPHICS2">CLIENT CURRENTLY HAS APPLICATION(S) PENDING FOR THE FOLLOWING ENTITLEMENTS:</label>
+                                        <div class="margin-inputclient" style="margin: auto; padding: 10px;">
+                                            <div class="row">
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Medical Assist</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Food Stamps</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Cash Assist.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL"> Housing Assist.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSI</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSDI</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Unemployment.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Survivor Benefits.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Child Support</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Spousal Support</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Veterans Benefits.</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Other.</label>
+                                                        <input type="text" class="client-input4">
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <label class="CLIENT-LABEL">App. Date:  </label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <!-- ----------------------------- -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label class="CLIENT-DEMOGRAPHICS2">CLIENT CURRENTLY HAS APPLICATION(S) PENDING FOR THE FOLLOWING ENTITLEMENTS:</label>
+                                        <div class="margin-inputclient" style="margin: auto; padding: 10px;">
+                                            <div class="row">
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Medical Assist</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Food Stamps</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Cash Assist.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL"> Housing Assist.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSI</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">SSDI</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Unemployment.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Survivor Benefits.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Child Support</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" 
+                                                        >
+                                                        <label class="CLIENT-LABEL">Spousal Support</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Veterans Benefits.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" >
+                                                        <label class="CLIENT-LABEL">Other.</label>
+                                                        <input type="text" class="client-input4">
+                                                    </div>
+                                                </div>
+                                                <!-- ----------------------------- -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="login-custom">
+	<img class="abs-bottom" src="assets/images/features-bg-min.png" alt="">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<a href="" class="back-home">Back To Home</a>
+				<div class="login-center">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="mb-3">
+								<img src="assets/images/SRS-Logo-Solo.png" class="SRS-Logo-Solo-login" alt="">
+								<p class="ac-pera">Register Your Account </p>
+							</div>
+						</div>
+                        <form [formGroup]="RegisterForm" (ngSubmit)="Register()">
+						<div class="col-lg-12">
+							<div class="form-outline mb-4" [class.has-error]="f['user_nice_name'].dirty && f['user_nice_name'].errors || f['user_nice_name'].touched && f['user_nice_name'].errors">
+								<input type="text" class="form-control form-custom" placeholder="First Name" formControlName="user_nice_name" autocomplete="new-userName" class="form-control form-control-lg">
+                                <span *ngIf="f['user_nice_name'].dirty && f['user_nice_name'].errors" class="has-error">
+                                    <i *ngIf="f['user_nice_name'].errors?.['required']">First Name required</i>
+                                </span>
+							</div>
+						</div>
+						
+						<div class="col-lg-12">
+							<div class="form-outline mb-4" [class.has-error]="f['Last_name'].dirty && f['Last_name'].errors || f['Last_name'].touched && f['Last_name'].errors">
+								<input type="text" class="form-control form-custom" placeholder="Last_name" formControlName="Last_name" autocomplete="new-userName" class="form-control form-control-lg">
+                                <span *ngIf="f['Last_name'].dirty && f['Last_name'].errors" class="has-error">
+                                    <i *ngIf="f['Last_name'].errors?.['required']">Last_name</i>
+                                </span>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-outline mb-4" [class.has-error]="f['user_email'].dirty && f['user_email'].errors || f['user_email'].touched && f['user_email'].errors">
+								<input type="email" class="form-control form-custom" placeholder="Email" formControlName="user_email" autocomplete="new-userName" class="form-control form-control-lg">
+                                <span *ngIf="f['user_email'].dirty && f['user_email'].errors" class="has-error">
+                                    <i *ngIf="f['user_email'].errors?.['required']">Email is required</i>
+                                    <i *ngIf="f['user_email'].errors?.['pattern']">Email is should be eamil formet</i>
+								
+                                </span>
+							</div>
+						</div>
+						<div class="col-lg-12 ">
+							<div class="form-outline mb-5" [class.has-error]="f['user_pass'].dirty&& f['user_pass'].errors || f['user_pass'].touched && f['user_pass'].errors" style="position: relative;">
+								<input [type]="passwordTextType ? 'text' : 'password'" id="passwordId" placeholder="Password"  formControlName="user_pass" class="form-control form-custom form-control-lg">
+                                <i class="fa icon-size" [ngClass]="{'fa-eye' : passwordTextType, 'fa-eye-slash' : !passwordTextType}" (click)="togglePasswordTextType()" style="position: absolute; right: 24px; top: 15px;"></i>
+								<span  *ngIf="!f['user_pass'].hasError('required')">
+									<i class="fa" [class.fa-times-circle]="f['user_pass'].hasError('minlength')" 
+									[class.green-color]="!f['user_pass'].hasError('minlength')"
+									[class.fa-check-circle]="!f['user_pass'].hasError('minlength')"> <span class="fonterrorset">Must have at least 8 characters!</span>
+									</i> <br>
+									<i class="fa"
+										[class.fa-times-circle]="f['user_pass'].hasError('hasCapitalCase')"
+										[class.green-color]="!f['user_pass'].hasError('hasCapitalCase')"
+										[class.fa-check-circle]="!f['user_pass'].hasError('hasCapitalCase')"> <span class="fonterrorset">Must contain at least 1 in Capital Case!</span>
+										
+									</i> <br>
+									<i class="fa"
+										[class.fa-times-circle]="f['user_pass'].hasError('hasSmallCase')"
+										[class.green-color]="!f['user_pass'].hasError('hasSmallCase')"
+										[class.fa-check-circle]="!f['user_pass'].hasError('hasSmallCase')"> <span class="fonterrorset">Must contain at least 1 Letter in Small Case!</span>
+									
+									</i> <br>
+									<i class="fa"
+										[class.fa-times-circle]="f['user_pass'].hasError('hasNumber')"
+										[class.green-color]="!f['user_pass'].hasError('hasNumber')"
+										[class.fa-check-circle]="!f['user_pass'].hasError('hasNumber')"><span class="fonterrorset">Must contain at least 1 number!</span>
+										
+									</i> <br>
+									<i class="fa"
+										[class.fa-times-circle]="f['user_pass'].hasError('hasSpecialCharacters')"
+										[class.green-color]="!f['user_pass'].hasError('hasSpecialCharacters')"
+										[class.fa-check-circle]="!f['user_pass'].hasError('hasSpecialCharacters')"> <span class="fonterrorset">Must contain at least 1 Special Character!</span>
+										
+									</i> <br>
+							</span>
+							
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-outline mb-5" [class.has-error]="f['confirm_password'].dirty&& f['confirm_password'].errors || f['confirm_password'].touched && f['confirm_password'].errors" style="position: relative;">
+								<!-- <input id="passwordId" placeholder=" confirm password"  formControlName="confirm_password" class="form-control form-custom form-control-lg"> -->
+								<input [type]="passwordTextType ? 'text' : 'password'" id="passwordId" placeholder="Password"  formControlName="confirm_password" class="form-control form-custom form-control-lg">
+								<i class="fa icon-size" [ngClass]="{'fa-eye' : passwordTextType, 'fa-eye-slash' : !passwordTextType}"  style="position: absolute; right: 24px; top: 15px;"></i>
+                                <span *ngIf="f['confirm_password'].dirty && f['confirm_password'].errors" class="has-error">
+                                    <i *ngIf="f['confirm_password'].errors?.['required']">Confirm Password is required</i>
+                                    <i *ngIf="f['confirm_password'].errors?.['pattern']">Confirm Password is  must match with password</i>
+                                </span>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3">
+								<button type="submit" class="Login-bt">Register</button>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3 m-0">
+								<p class="">Already have an account ?  <a [routerLink]="['/login']">Login</a></p>                       
+							</div>
+						</div>
+                        </form>
+                         
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+  <div class="copy-right-section text-center p-3 border-top">
+    <p>c&m sign post © 2022 | designed by advantage media partners</p>
+</div>

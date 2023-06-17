@@ -1,0 +1,231 @@
+<div class="row">
+    <div class="container">
+        <div class="CLIENT-LABEL"><b>Annual Session Pay</b></div>
+        <div class="CLIENT-LABEL">Session Received by Semi-Month</div>
+        <div class="clo-lg-12">
+            <div class="row">
+                <div id="Report-Content">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Report Type</label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                    <option value="1">Breona Rogers</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Month </label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                    <option value="1">Breona Rogers</option>
+                                </select>
+                            </div>
+                            <div class="report-frm col-lg-3">
+                                <button type="button" class="btn-cls" id="btnGetdetails" (click)="getDetail()">Get Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="showTable">
+                        <div class="row">
+                            <div class="my-2">
+                                <ngx-datatable #tablesss style="width: auto; overflow: auto;"
+                                    class="bootstrap core-bootstrap sz-1000" [rows]="UpcomingAppointments"
+                                    [columnMode]="'force'"
+                            [headerHeight]="50"
+                            [scrollbarV]="true"
+                            [scrollbarH]="true"
+                            [footerHeight]="50"
+                            [rowHeight]="50">
+                    
+                                    <ngx-datatable-column name="  First Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="  Last Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name=" Jan1-Jan15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Feb1-Feb15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    <ngx-datatable-column name="Feb16-Feb29" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Mar1-Mar15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Mar16-Mar31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Apr1-Apr15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Apr16-Apr30" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="May1-May15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="May16-May31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="June1-June15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="June16-June30" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="July1-July15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="July16-July31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Aug1-Aug15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Aug16-Aug31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Sep1-Sep15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Sep16-Sep30" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Oct1-Oct15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Oct16-Oct31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Nov1-Nov15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Nov16-Nov30" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Dec1-Dec15" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Dec16-Dec31" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Total Earnings" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                </ngx-datatable>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+.login-md {
+    background: url("/assets/images/LoginBackground.jpg");
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: top;
+}
+.center-login {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 6px;
+    padding: 50px 40px;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #c7ced5;
+}
+.lable-md {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 5px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.md-input {
+    display: block;
+    margin: 0;
+    letter-spacing: -.01px;
+    height: 50px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #d9e1ec;
+    padding: 0 15px;
+    width: 100%;
+    color: #a1a7c4;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: Poppins;
+}
+.margin-login {
+    margin: 0 0 15px 0;
+}
+.bottom-ul-md {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Forgot-Password {
+    margin: 0;
+    display: block;
+    color: #3399cc;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+}
+.Login-md {
+    background: #49afcd;
+    border: none;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    min-width: 110px;
+    transition: .2s!important;
+    transition-timing-function: ease-in-out!important;
+    -webkit-transition: .2s!important;
+    -webkit-transition-timing-function: ease-in-out!important;
+    font-weight: 600;
+}
+.Login-md i {
+    position: relative;
+    top: 1px;
+    margin: 0 2px 0 0;
+}
+.Welcome-p {
+    margin: 0;
+    display: block;
+    color: #3399cc;
+    font-family: Poppins,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+.md-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.border-effect {
+    position: relative;
+}
+.Login-md:hover {
+    transform: scale(1.07);
+}
+.m-00{
+    margin: 0 0 0 0;
+}
+.md-input ~ .focus-border:before,
+.md-input ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 50%; width: 0; height: 2px; background-color: #3399cc; transition: 0.4s;}
+.md-input ~ .focus-border:after{top: auto; bottom: 0;}
+.md-input ~ .focus-border i:before,
+.md-input ~ .focus-border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color: #3399cc; transition: 0.6s;}
+.md-input ~ .focus-border i:after{left: auto; right: 0;}
+.md-input:focus ~ .focus-border:before,
+.md-input:focus ~ .focus-border:after{left: 0; width: 100%; transition: 0.4s;}
+.md-input:focus ~ .focus-border i:before,
+.md-input:focus ~ .focus-border i:after{top: 0; height: 100%; transition: 0.6s;}
+
+.has-error{
+    input {
+        border: 1px solid #f00606!important;
+    }
+    i {
+        color: red;
+        font-size: 14px;
+    }
+}
+
+
+@media(max-width: 767px){
+    .center-login{
+        padding: 30px 20px;
+    }
+}

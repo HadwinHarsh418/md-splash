@@ -1,0 +1,272 @@
+<section class="notes-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+
+                <div class="notes-td" (click)="backClicked()">
+                    <img [src]="imagesrc" alt="">
+                    <p>Notes</p>
+                </div>
+                <div class="right-border">
+                    <div class="note-search-bx-1">
+                        <div class="note-search-bx">
+                            <label>search client</label>
+                            <div class="note-search-input">
+                                <input type="text" id="txt_Autocomplete" style="width: auto;" [(ngModel)]="clientName" (input)="searchValue($event)" spellcheck="true"
+                                    class="ui-autocomplete-input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="note-search-bx" *ngIf="showStatus">
+                            <label>Status:</label>
+                            <div class="note-search-input">
+                                <label class="CLIENT-LABEL INTAKE_cls" >INTAKE-No Authorization</label>
+                            </div>
+                        </div>
+                        <div class="item-search" *ngIf="showUserDetails">
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let item of UserDetails" (click)="onClientClick(item)" >{{item.FirstName}} {{item.LastName}},{{item.DateOfBirth | date: 'dd/MM/yyyy'}}</li>
+                            </ul> 
+                        </div>
+                    </div>
+                    
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block ">
+                            <div class="cleint-left col-lg-9">
+                                <div class="main-form">
+                                    <div class="form-left col-lg-6">Client Name:</div>
+                                    <div class="form-right col-lg-6" id="Client_Name">
+                                        {{clickedUser?.FirstName}} {{clickedUser?.LastName}}
+                                    </div>
+                                </div>
+                                <div class="main-form" id="Main_AddressDiv">
+                                    <div class="form-left col-lg-6">Client Address:</div>
+                                    <div class="form-right col-lg-6" id="Client_Address">{{clickedUser?.Address}}</div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left col-lg-6">City, State, Zip:</div>
+                                    <div class="form-right col-lg-6" id="Client_Name">{{clickedUser?.City}}{{clickedUser?.State}}{{clickedUser?.ZipCode}}</div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left col-lg-6">Date of Birth:</div>
+                                    <div class="form-right col-lg-6" id="Client_Name">{{clickedUser?.DateOfBirth | date:'dd-MM-yyyy'}}
+                                    </div>
+                                </div>
+                                <div class="main-form" id="Main_HomePhone_Div">
+                                    <div class="form-left col-lg-6">Home Phone:</div>
+                                    <div class="form-right col-lg-6" id="Client_Phone">{{clickedUser?.HomePhone}}</div>
+                                </div>
+                                <div class="main-form" id="Main_CellPhone">
+                                    <div class="form-left col-lg-6">Cell Phone:</div>
+                                    <div class="form-right col-lg-6" id="Client_MobilePhone">{{clickedUser?.MobilePhone}}</div>
+                                </div>
+                            </div>
+                            <div class="client-right col-lg-3" *ngIf="showStatus">
+                                <div class="client-info-block">
+                                    <input type="button" (click)="navigate()" value="Client Info" id="BtnNavigateClientinfo" spellcheck="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="note-search-bx-1">
+                        <label>Client Memo</label>
+                        <div class=" note-search-input">
+                            <input type="text" id="txt_Autocomplete" class="form-control" style="width: auto;"
+                                spellcheck="true" class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block " style="height: 100px;">
+                            <ul>
+                                <li *ngFor="let checkClientMemo of clientMemo">
+                                    {{checkClientMemo.ReasonPhrase}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <div>
+                            <p>Previous Notes</p>
+                        </div>
+                        <div class="" *ngIf="showStatus">
+                            <input type="button" class="printbtn" id="Batchprintbtn" value="Batch print" spellcheck="true">
+                        </div>
+                    </div>
+                    <div id="PreviousDocumentDiv" class="previousdocumentdiv-tbl" *ngIf="showStatus">
+                        <table class="table table-striped" width="100" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <th>Date</th> 
+                                    <th>Document Type</th>
+                                    <th>CPT Code</th>
+                                    <th>Provider</th>
+                                </tr>
+                                <tr *ngFor="let user of getByclient">
+                                    <td>
+                                        <!-- 1/19/2023 -->
+                                        {{user.DateofVisit | date:'dd-MM-yyyy'}}
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)">{{user.Document_Type}}</a>
+                                    </td>
+                                    <td>
+                                        {{user.ProcedureCode}}
+                                    </td>
+                                    <td>
+                                        {{user.Rendering_Provider}}
+                                        <!-- Adaora Nnanna -->
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>
+                                        1/3/2023	
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)">Discharge Summary</a>
+                                    </td>
+                                    <td>
+                                        90889	
+                                    </td>
+                                    <td>
+                                        Michael Wright
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="note-right1 note-right-full-block">
+
+                    <div class="common-mar-1" (click)="onClickTab()">
+                        <h3><a href="javascript:void(0)">Intake Documents</a></h3>
+                        <p>Client Intake Forms</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="PsychiatricAssessment"><a href="javascript:void(0)">Psychiatric Assessment</a></h3>
+                        <p>Enter New Psychiatric Assessment</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="psychosocial-assessment1"><a href="javascript:void(0)">Psychosocial Assessment</a></h3>
+                        <p>Enter New Assessment For Medical Assistance Clients</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="commercialassessment"><a href="javascript:void(0)">Psychosocial Assessment- Commercial</a></h3>
+                        <p>Enter New Assessment For Commercial Clients, The Shortened Form.</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="progressNotes"><a href="javascript:void(0)"> Progress note</a></h3>
+                        <p>Enter Notes For Each Session With Clients </p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="psychiatricProgressNotes/0"><a href="javascript:void(0)"> Psychiatric Progress Note</a></h3>
+                        <p>Enter Session Note by Psychiatrist</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="GapNotes"><a href="javascript:void(0)">Gap Note</a></h3>
+                        <p>Enter Notes For Appointments Missed</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="GroupNotes"><a href="javascript:void(0)">Group Note</a></h3>
+                        <p>Enter Notes For Multiple Clients</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="IndivisualTreatment/0"><a href="javascript:void(0)">Individual Treatment Plan</a></h3>
+                        <p>Enter Treatment Plan By 3rd Session For Medical Assistance Clients</p>
+                    </div>
+                    <div class="common-mar-1" (click)="show =! show ;this.show1 = false">
+                        <h3><a href="javascript:void(0)">Substance Abuse Forms</a></h3>
+                        <p>All Substance abuses</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="DischargedSummary"><a href="javascript:void(0)"> Discharge Summary</a></h3>
+                        <p>Complete This Form When Discharging A Client From The Program</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="Transition"><a href="javascript:void(0)">Transition Summary</a></h3>
+                        <p>Complete This Form When Transiting A Client From The Program</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="SuicideRiskAssessment"><a href="javascript:void(0)">Suicide Risk Assessment</a></h3>
+                        <p>Enter New Suicide Risk Assessment</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="criticalincidentreport"><a href="javascript:void(0)">Critical Incident Report</a></h3>
+                        <p>Enter New Critical Incident Report</p>
+                    </div>
+                    <div class="common-mar-1" (click)="show1 =! show1; this.show = true">
+                        <h3><a href="javascript:void(0)">OMS Questionnaires</a></h3>
+                        <p>All OMS Questionnaires</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="casemanagementprogressnote"><a href="javascript:void(0)">Case Management Progress Note</a></h3>
+                        <p>Case Management Progress Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="adultdiagnosisassessment"><a href="javascript:void(0)">Adult Diagnostic Assessment</a></h3>
+                        <p> Adult Diagnostic Assessment Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="therapistcounselor"><a href="javascript:void(0)">Therapist/Counselor Individual Progress Note</a></h3>
+                        <p> Therapist/Counselor Individual Progress Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="LucasIndividualizedTreatment"><a href="javascript:void(0)">Lucas Individualized Treatment Plan</a></h3>
+                        <p> Lucas Individualized Treatment Plan</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="Childandadolescentdischarge"><a href="javascript:void(0)">Chid & Adolescent Discharge</a></h3>
+                        <p> Child & Adolescent Discharge</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="childadolescentdiagnostic"><a href="javascript:void(0)">Child/Adolescent Diagnostic Assessment</a></h3>
+                        <p> Child/Adolescent Diagnostic Assessment</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3" *ngIf="!show || show1">
+                <div class="note-right1 note-right-full-block col-lg-12" *ngIf="!show">
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="cageAid">Cage Aid</a></h3>
+                        <p>Complete This Form With Each Assessment For Substance Abuse Ratings</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="dast">Dast</a></h3>
+                        <p>Complete This Form With Each Assessment For Substance Abuse Ratings</p>
+                    </div>
+                </div>
+
+                <div class="note-right1 note-right-full-block col-lg-12" *ngIf="show1">
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="childAdolescentQues">Child and Adolescent
+                                Questionnaire</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="adultQues">Adult Questionnaire</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="adultDischargeForm">Adult Discharge</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="Childandadolescentdischarge">Child & Adolescent
+                                Discharge</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="dischargeInfoSheet">Discharge Information Sheet</a>
+                        </h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

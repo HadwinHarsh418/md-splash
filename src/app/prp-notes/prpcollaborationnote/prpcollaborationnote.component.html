@@ -1,0 +1,607 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" (ngSubmit)="Save()">
+            <div class="all-tb">
+                <div class="page-header-content d-flex">
+                    <div class="arrow">
+                        <label for="type" (click)="back()">
+                            <i class="fa fa-circle-arrow-left"></i>
+                        </label>
+                    </div>
+                <h1 class="admin-main_heading">PRP COLLABORATION NOTES <small id="EditNew">EDIT</small></h1>
+            </div>
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>PRPC PROOF OF CLINICIAN COLLABORATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">PRPC NAME: </label>
+                                                <input formControlName="PrpcName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">COLLAB DATE: </label>
+                                                <input formControlName="CollaborationDate" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">COLLAB METHOD </label>
+                                                <select class="client-input" id="CollaborationMethod" formControlName="CollaborationMethod" name="CollaborationMethod"><option value="1">Phone</option>
+                                                    <option value="2">Email</option>
+                                                    <option value="3">Virtual</option>
+                                                    <option value="4">Face to face</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">CLIENT NAME: </label>
+                                                <input formControlName="ClientName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">CLIENT DOB: </label>
+                                                <input formControlName="ClientDOB" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">ICD 10(s): </label>
+                                                <input formControlName="sameinput" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">THERAPIST NAME:</label>
+                                                <select id="RenderingProviderID" formControlName="RenderingProviderID" name="RenderingProviderID" class="client-input">
+                                                    <option value="0">--Select--</option>
+                                                    <option value="7">Arneisha Woods</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                    <option value="19">Kelly Rice</option>
+                                                    <option value="38">Keyya Simons</option>
+                                                    <option value="9">Melanie Bowen</option>
+                                                    <option value="6">Monica Boddie</option>
+                                                    <option value="14">Renee Stokes</option>
+                                                    <option value="13">Shereen Ghori</option>
+                                                    <option value="34">test test</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">PHONE: </label>
+                                                <input formControlName="TherapistPhone" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">CREDENTIALS: </label>
+                                                <select class="client-input" id="Credentials" formControlName="Credentials" name="Credentials"><option value="1">LGPC</option>
+                                                    <option value="2">LPC</option>
+                                                    <option value="3">LCPC</option>
+                                                    <option value="4">LGSW</option>
+                                                    <option value="5">LMSW</option>
+                                                    <option value="6">LCSW</option>
+                                                    <option value="7">LCSWC</option>
+                                                    <option value="8">PSY.D</option>
+                                                    <option value="9">PHD</option>
+                                                    <option value="10">MD</option>
+                                                    <option value="11">INTERN</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">THERAPIST EMAIL: </label>
+                                                <input formControlName="TherapistEmail" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">THERAPIST AGENCY: </label>
+                                                <input formControlName="TherapistAgency" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS col-md-4">
+                                <h6>PSYCHOTHERAPY DETAILS</h6>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">VISIT FREQUENCY: </label>
+                                                <select class="client-input" formControlName="PsychotherapyVisitFrequency"  id="PsychotherapyVisitFrequency" name="PsychotherapyVisitFrequency"><option value="1">1X Weekly</option>
+                                                    <option value="2">2X Weekly</option>
+                                                    <option value="3">3X Weekly</option>
+                                                    <option value="4">BI-Weekly</option>
+                                                    <option value="5">Every 3 Weeks</option>
+                                                    <option value="6">1X Monthly</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">TX DURATION: </label>
+                                                <select class="client-input" formControlName="PsychotherapyTxDuration"  id="PsychotherapyTxDuration" name="PsychotherapyTxDuration"><option value="1">0-1 Month</option>
+                                                    <option value="2">1-3 Months</option>
+                                                    <option value="3">3-6  Months</option>
+                                                    <option value="4">6-9 Months</option>
+                                                    <option value="5">9-12 Months</option>
+                                                    <option value="6">12-18 Months</option>
+                                                    <option value="7">18-24 Months</option>
+                                                    <option value="8">2+ Years</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">TX COMPLIANCE: </label>
+                                                <select class="client-input" formControlName="PsychotherapyTxCompliance"  id="PsychotherapyTxCompliance" name="PsychotherapyTxCompliance"><option value="1">Fully Compliant</option>
+                                                    <option value="2">Has Improved</option>
+                                                    <option value="3">Needs Improvements</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="CLIENT-DEMOGRAPHICS col-md-4">
+                                <h6>PSYCHIATRY DETAILS</h6>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">CLIENT ON MEDICATION: </label>
+                                                <select class="client-input"  formControlName="PsychiatryClientMedication" id="PsychotherapyVisitFrequency" name="PsychotherapyVisitFrequency">
+                                                    <option value="2">Yes</option>
+                                                    <option value="3">No</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">COMPLIANT W/ MEDS: </label>
+                                                <select class="client-input"  formControlName="PsychiatryCompliant"  id="PrimaryCareVisitFrequecy" name="PrimaryCareVisitFrequecy">
+                                                    <option value="2">2X Weekly</option>
+                                                    <option value="3">3X Weekly</option>
+                                                    <option value="4">BI-Weekly</option>
+                                                    <option value="5">Every 3 Weeks</option>
+                                                    <option value="6">1X Monthly</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">VISIT FREQUENCY:</label>
+                                                <select class="client-input"  formControlName="PsychiatryVisitFrequency"  id="PrimaryCareVisitFrequecy" name="PrimaryCareVisitFrequecy">
+                                                    <option value="2">2X Weekly</option>
+                                                    <option value="3">3X Weekly</option>
+                                                    <option value="4">BI-Weekly</option>
+                                                    <option value="5">Every 3 Weeks</option>
+                                                    <option value="6">1X Monthly</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="CLIENT-DEMOGRAPHICS col-md-4">
+                                <h6>PSYCHIATRY DETAILS</h6>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">CLIENT ON MEDICATION: </label>
+                                                <select class="client-input"  formControlName="PrimaryCareMedication" id="PsychotherapyVisitFrequency" name="PsychotherapyVisitFrequency">
+                                                    <option value="1">Yes</option>
+                                                    <option value="2">No</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">COMPLIANT W/ MEDS: </label>
+                                                <select class="client-input"  formControlName="PrimaryCareCompliant"  id="PrimaryCareVisitFrequecy" name="PrimaryCareVisitFrequecy">
+                                                    <option value="2">2X Weekly</option>
+                                                    <option value="3">3X Weekly</option>
+                                                    <option value="4">BI-Weekly</option>
+                                                    <option value="5">Every 3 Weeks</option>
+                                                    <option value="6">1X Monthly</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">VISIT FREQUENCY:</label>
+                                                <select class="client-input"  formControlName="PrimaryCareVisitFrequecy" id="PrimaryCareVisitFrequecy" name="PrimaryCareVisitFrequecy">
+                                                    <option value="2">2X Weekly</option>
+                                                    <option value="3">3X Weekly</option>
+                                                    <option value="4">BI-Weekly</option>
+                                                    <option value="5">Every 3 Weeks</option>
+                                                    <option value="6">1X Monthly</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                        
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>CURRENT PRP DOMAINS BEING ADDRESSED IN SESSIONS </h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="col-md-12">
+                                        <div class="content row">
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpSelfCare" name="PrpSelfCare" id="PrpSelfCare"
+                                                            value="yes">
+                                                        <label>SELF CARE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpEntitlement" name="PrpEntitlement" id="PrpEntitlement"
+                                                            value="yes">
+                                                        <label>ENTITLEMENTS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpSocialSkills" name="PrpSocialSkills" id="PrpSocialSkills"
+                                                            value="yes">
+                                                        <label>SOCIAL SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpMedMgmt" name="PrpMedMgmt" id="PrpMedMgmt"
+                                                            value="yes">
+                                                        <label>MED MGMNT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpAlcoholUse" name="PrpAlcoholUse" id="PrpAlcoholUse"
+                                                            value="yes">
+                                                        <label>ALCOHOL USE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpOther" name="PrpOther" id="PrpOther"
+                                                            value="yes">
+                                                        <label>OTHER</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpIndependentLivingSkills" name="PrpIndependentLivingSkills" id="PrpIndependentLivingSkills"
+                                                            value="yes">
+                                                        <label>INDEPENDENT LIVING SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpEducational" name="PrpEducational" id="PrpEducational"
+                                                            value="yes">
+                                                        <label>EDUCATIONAL / VOCATIONAL</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpCopyingSkill" name="PrpCopyingSkill" id="PrpCopyingSkill"
+                                                            value="yes">
+                                                        <label>PSYCHOED/ COPING SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpHealthMgmt" name="PrpHealthMgmt" id="PrpHealthMgmt"
+                                                            value="yes">
+                                                        <label>HEALTH MANAGEMENT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpSubstanceUse" name="PrpSubstanceUse" id="PrpSubstanceUse"
+                                                            value="yes">
+                                                        <label>SUBSTANCE USE</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpFinanceMgt" name="PrpFinanceMgt" id="PrpFinanceMgt"
+                                                            value="yes">
+                                                        <label>FINANCE MGMNT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpEmployement" name="PrpEmployement" id="PrpEmployement"
+                                                            value="yes">
+                                                        <label>EMPLOYMENT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpSafety" name="PrpSafety" id="PrpSafety"
+                                                            value="yes">
+                                                        <label>SAFETY</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpTxCompliance" name="PrpTxCompliance" id="PrpTxCompliance"
+                                                            value="yes">
+                                                        <label> TX COMPLIANCE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpGambling" name="PrpGambling" id="PrpGambling"
+                                                            value="yes">
+                                                        <label>GAMBLING</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpHousing" name="PrpHousing" id="PrpHousing"
+                                                            value="yes">
+                                                        <label>HOUSING</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpTransportation" name="PrpTransportation" id="PrpTransportation"
+                                                            value="yes">
+                                                        <label>TRANSPORTATION</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpCommunityAware" name="PrpCommunityAware" id="PrpCommunityAware"
+                                                            value="yes">
+                                                        <label>COMMUNITY AWARENES</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpLegalCompliance" name="PrpLegalCompliance" id="PrpLegalCompliance"
+                                                            value="yes">
+                                                        <label>LEGAL COMPLIANCE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="PrpDomesticViolence" name="PrpDomesticViolence" id="PrpDomesticViolence"
+                                                            value="yes">
+                                                        <label>DOMESTIC VIOLENCE</label>
+                                                    </li>
+                                                </ul>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ----------------------------- -->
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>THERAPIST RECOMMENDED DOMAINS TO BE ADDRESSED IN FUTURE SESSIONS </h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="col-md-12">
+                                        <div class="content row">
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistSelfCare" name="TherapistSelfCare" id="TherapistSelfCare"
+                                                            value="yes">
+                                                        <label>SELF CARE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistEntitlement" name="TherapistEntitlement" id="TherapistEntitlement"
+                                                            value="yes">
+                                                        <label>ENTITLEMENTS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistSocialSkills" name="TherapistSocialSkills" id="TherapistSocialSkills"
+                                                            value="yes">
+                                                        <label>SOCIAL SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistMedMgmt" name="TherapistMedMgmt" id="TherapistMedMgmt"
+                                                            value="yes">
+                                                        <label>MED MGMNT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistAlcoholUse" name="TherapistAlcoholUse" id="TherapistAlcoholUse"
+                                                            value="yes">
+                                                        <label>ALCOHOL USE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistOther" name="TherapistOther" id="TherapistOther"
+                                                            value="yes">
+                                                        <label>OTHER</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistIndependentLivingSkills" name="TherapistIndependentLivingSkills" id="TherapistIndependentLivingSkills"
+                                                            value="yes">
+                                                        <label>INDEPENDENT LIVING SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistEducational" name="TherapistEducational" id="TherapistEducational"
+                                                            value="yes">
+                                                        <label>EDUCATIONAL / VOCATIONAL</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistCopyingSkill" name="TherapistCopyingSkill" id="TherapistCopyingSkill"
+                                                            value="yes">
+                                                        <label>PSYCHOED/ COPING SKILLS</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistHealthMgmt" name="TherapistHealthMgmt" id="TherapistHealthMgmt"
+                                                            value="yes">
+                                                        <label>HEALTH MANAGEMENT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistSubstanceUse" name="TherapistSubstanceUse" id="TherapistSubstanceUse"
+                                                            value="yes">
+                                                        <label>SUBSTANCE USE</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistFinanceMgt" name="TherapistFinanceMgt" id="TherapistFinanceMgt"
+                                                            value="yes">
+                                                        <label>FINANCE MGMNT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistEmployement" name="TherapistEmployement" id="TherapistEmployement"
+                                                            value="yes">
+                                                        <label>EMPLOYMENT</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistSafety" name="TherapistSafety" id="TherapistSafety"
+                                                            value="yes">
+                                                        <label>SAFETY</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistTxCompliance" name="TherapistTxCompliance" id="TherapistTxCompliance"
+                                                            value="yes">
+                                                        <label> TX COMPLIANCE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistGambling" name="TherapistGambling" id="TherapistGambling"
+                                                            value="yes">
+                                                        <label>GAMBLING</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="all-li-radio und_line row">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistHousing" name="TherapistHousing" id="TherapistHousing"
+                                                            value="yes">
+                                                        <label>HOUSING</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistTransportation" name="TherapistTransportation" id="TherapistTransportation"
+                                                            value="yes">
+                                                        <label>TRANSPORTATION</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistCommunityAware" name="TherapistCommunityAware" id="TherapistCommunityAware"
+                                                            value="yes">
+                                                        <label>COMMUNITY AWARENES</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistLegalCompliance" name="TherapistLegalCompliance" id="TherapistLegalCompliance"
+                                                            value="yes">
+                                                        <label>LEGAL COMPLIANCE</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="TherapistDomesticViolence" name="TherapistDomesticViolence" id="TherapistDomesticViolence"
+                                                            value="yes">
+                                                        <label>DOMESTIC VIOLENCE</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">THERAPIST COMMENTS:</label>
+                                                    <textarea class="client-input client-input-textarea" style="height: 80PX;" name=""
+                                                        formControlName="TherapistComment"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">PRPC NOTES:</label>
+                                                    <textarea class="client-input client-input-textarea" style="height: 80PX;" name=""
+                                                        formControlName="PrpcComment"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="col-md-12 ContentUl">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <button class="Sign_btn">Sign</button>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <div class="margin-inputclient">
+                                                                <input formControlName="Rendering_Provider" type="text"
+                                                                    value="TEST TEST" class="client-input">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="innerSignature">
+                                                                <div class="inner-img-border">
+                                                                    <img class="img-class" src="assets/images/no_sign.jpg" alt="Sign">
+                                                                    <div class="line"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <button class="Sign_btn">Sign</button>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <div class="margin-inputclient">
+                                                                <select id="ProcedureCode2" name="ProcedureCode2"  class="client-input"><option value="0">--Select--</option>
+                                                                    <option value="34">test test,</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="innerSignature">
+                                                                <div class="inner-img-border">
+                                                                    <img class="img-class" src="assets/images/no_sign.jpg" alt="Sign">
+                                                                    <div class="line"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

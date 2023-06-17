@@ -1,0 +1,468 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="progressForm" >
+                <div class="all-tb">
+                    <div class="row back_css">
+                        <div class="col-lg-12 back_css">
+                            <div class="save-bt rem-abs">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SERVICES PROVIDED Check all that apply. If any is selcted, include the frequency and duration</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div >
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Clinician </label>
+                                                    <!-- <input formControlName="First_Name" type="text" class="client-input" > -->
+                                                    <div class="margin-inputclient">
+                                                        <!-- <label class="CLIENT-LABEL">Thought
+                                                            Process/Orientation<span
+                                                                class="text-danger">*</span> </label> -->
+                                                        <select class="client-input"
+                                                            formControlName="First_Name" placeholder="All">
+                                                            <!-- <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option> -->
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 ">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Frequency </label>
+                                                    <!-- <input formControlName="Middle_Initial" type="text" class="client-input" > -->
+                                                    <select class="client-input"
+                                                            formControlName="Middle_Initial">
+                                                            <!-- <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option> -->
+
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 ">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Duration </label>
+                                                    <!-- <input formControlName="Last_Name" type="text" class="client-input" > -->
+                                                    <select class="client-input"
+                                                            formControlName="Last_Name">
+                                                            <!-- <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option> -->
+                                                        </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="yes" >
+                                                    Individual Therapy
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="FamilyTherapy" id="FamilyTherapy" formControlName="FamilyTherapy" value="yes" >Family Therapy
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="GroupTherapy" id="GroupTherapy" formControlName="GroupTherapy" value="yes" >Group Therapy
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="MedicationManagement" id="MedicationManagement" formControlName="MedicationManagement" value="yes" >
+                                                    Medication Management
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="PsychiatricServices" id="PsychiatricServices" formControlName="PsychiatricServices" value="yes" >
+                                                    Psychiatric Services
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="PsychiatricRehabilitationServices" id="PsychiatricRehabilitationServices" formControlName="PsychiatricRehabilitationServices" value="yes" >
+                                                    Psychiatric Rehabilitation Services
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="SubstanceAbuseTreatment" id="SubstanceAbuseTreatment" formControlName="SubstanceAbuseTreatment" value="yes" >
+                                                    Substance Abuse Treatment
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="margin-inputclient" >
+                                                    <input type="checkbox" name="CaseManagement" id="CaseManagement" formControlName="CaseManagement" value="yes" >
+                                                    Case Management
+                                                </div>
+                                            </div>
+                                       </div>
+                                    <hr>
+                                    <!-- ------checkboxes---- -->
+                                    <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>PROGRESS</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal1'].dirty && genForm['longtermgoal1'].errors || genForm['longtermgoal1'].touched && genForm['longtermgoal1'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 1<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal1">
+
+                                                            <span *ngIf="genForm['longtermgoal1'].dirty && genForm['longtermgoal1'].errors" class="has-error">
+                                                                <i *ngIf="genForm['longtermgoal1'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal1progress'].dirty && genForm['longtermgoal1progress'].errors || genForm['longtermgoal1progress'].touched && genForm['longtermgoal1progress'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 1 progress<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal1progress">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal1progress'].dirty && genForm['longtermgoal1progress'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal1progress'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+        
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal2'].dirty && genForm['longtermgoal2'].errors || genForm['longtermgoal2'].touched && genForm['longtermgoal2'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 2<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal2">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal2'].dirty && genForm['longtermgoal2'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal2'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+        
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal1'].dirty && genForm['longtermgoal1'].errors || genForm['longtermgoal1'].touched && genForm['longtermgoal1'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 2 progress<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal2progress">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal1progress'].dirty && genForm['longtermgoal1progress'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal1progress'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+        
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal3'].dirty && genForm['longtermgoal3'].errors || genForm['longtermgoal3'].touched && genForm['longtermgoal3'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 3<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal3">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal3'].dirty && genForm['longtermgoal3'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal3'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+        
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal3progress'].dirty && genForm['longtermgoal3progress'].errors || genForm['longtermgoal3progress'].touched && genForm['longtermgoal3progress'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 3 progress<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal3progress">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal3progress'].dirty && genForm['longtermgoal3progress'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal3progress'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+        
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal4'].dirty && genForm['longtermgoal4'].errors || genForm['longtermgoal4'].touched && genForm['longtermgoal4'].errors" >
+                                                            <label class="CLIENT-LABEL">Long Term Goal 4<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal4">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal4'].dirty && genForm['longtermgoal4'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal4'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+                                                           
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['longtermgoal4progress'].dirty && genForm['longtermgoal4progress'].errors || genForm['longtermgoal4progress'].touched && genForm['longtermgoal4progress'].errors">
+                                                            <label class="CLIENT-LABEL">Long Term Goal 4 progress<span
+                                                                    class="text-danger"></span> </label>
+                                                            <input class="client-input" formControlName="longtermgoal4progress">
+                                                                <!-- <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+                                                                    <span *ngIf="genForm['longtermgoal4progress'].dirty && genForm['longtermgoal4progress'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['longtermgoal4progress'].errors?.['required']">
+                                                                            required</i>
+                                                                    </span>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                        <!-- ####### second #### -->
+                                </div>
+                                <!-- <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>DISCHARGE  INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+
+                                                <div class="col-lg-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]=" genForm['DateOfSession'].errors || genForm['DateOfSession'].touched && genForm['DateOfSession'].errors">
+                                                                <label class="CLIENT-LABEL">Date of Discharge <span class="text-danger">*</span></label>
+                                                                <input type="date" class="client-input" formControlName="DateOfSession">
+                                                                <span *ngIf="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['DateOfSession'].errors?.['required']">
+                                                                        Please enter Date of Discharge.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                                <label class="CLIENT-LABEL">Discharging Provider <span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="Rendering_ProviderID">
+                                                                    <option value="0" disabled selected>select</option>
+                                                                    <option value="Anderline Noutai">Anderline Noutai</option>
+                                                                    <option value="Monica Boddie">Monica Boddie</option>
+                                                                    <option value="test test">test test</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                                        Discharging Provider is Required.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Procedure code</label>
+                                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                                    <option value="0" selected>90791 - Psychiatric Assessment with Medication</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                                                <select class="client-input" formControlName="divInsuranceType">
+                                                                    <option value="0" selected>Primary</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors || genForm['divAuthNumber'].touched && genForm['divAuthNumber'].errors">
+                                                                <label class="CLIENT-LABEL">Authorization Number<span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="divAuthNumber">
+                                                                    <option value="0" selected>Auth No: A20221218910  Visits Remaining: 976</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['divAuthNumber'].errors?.['required']">
+                                                                        Please select Authorization Number.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>ADMISSION PROBLEMS</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Reason for Admission</label>
+                                                                <textarea formControlName="PresentingProblemDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%; height: 80px;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Date of Admission</label>
+                                                                <textarea formControlName="OtherStressDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- ##### -->
+                                <!-- <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>REASON FOR DISCHARGE</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient" >
+                                                                <input type="checkbox" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="yes" >Customer or parent/guardian withdrew customer from care
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                
+                                                                <input type="checkbox" name="HarmingUrgeNo" id="harmingNo" formControlName="HarmingUrgeNo" value="yes" >Customer moved from services' area
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="WishingDeadNo" id="harmingNo" formControlName="WishingDeadNo" value="yes" >
+                                                                Customer referred to less intensive level of care
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="HarmOthersNo" id="harmingNo" formControlName="HarmOthersNo" value="yes">
+                                                                Consumer is hospitalized-physchatric
+                                                                 </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">     
+                                                                <input type="radio" name="PreviousTherapyCounsellingNo" id="PreviousTherapyCounsellingNo" formControlName="PreviousTherapyCounsellingNo" value="yes" (change)="onSelectionChanged($event)">
+                                                                
+                                                                Customer referred to more intensive level of care                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="radio" name="IsTreatmentHelpfulNo" id="IsTreatmentHelpfulNo" formControlName="IsTreatmentHelpfulNo" value="yes" >
+                                                                Consumer is hospitalized-Somtic
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="HospitalizedForAbuseYes" id="HospitalizedForAbuseYes" formControlName="HospitalizedForAbuseYes"  value="no" >
+                                                                Customer referred to another provider providing simmilar level of services
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                
+                                                                <input type="checkbox" name="Customerisinjailorprison" id="Customerisinjailorprison" formControlName="Customerisinjailorprison"  value="yes" >
+                                                                Customer is in jail or Prison
+                                                             </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    " name="Customernolongermeetsnecessarymedicalcriteria" id="Customernolongermeetsnecessarymedicalcriteria" value="yes" formControlName="Customernolongermeetsnecessarymedicalcriteria">
+                                                                    Customer no longer meets necessary medical criteria
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Customerdeceased" id="Customerdeceased" value="yes" formControlName="Customerdeceased">
+                                                                Customer deceased
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input  type="checkbox" formControlName=" Customernolongermeetsnecessarymedicalcriteria" >
+                                                                Customer no longer meets necessary medical criteria
+                                                            </div>
+                                                           
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" formControlName="Consumerlackofparticipationinprogram"  >
+                                                                Consumer's lack of participation in program
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Customerisnolongereligibleforservices" id="Customerisnolongereligibleforservices" formControlName="Customerisnolongereligibleforservices" value="no" >
+                                                                Customer is no longer eligible for services (no longer has MA, no longer meets uninsured criteria, or benefits no longer cover services)</div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="margin-inputclient">
+                                                                    <input type="checkbox" name="Dischargereasonunknown" id="Dischargereasonunknown" formControlName="Dischargereasonunknown">
+                                                                     Discharge reason unknown 
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Programsdeterminationtodiscontinueservices" id="Programsdeterminationtodiscontinueservices" formControlName="Programsdeterminationtodiscontinueservices">
+                                                                Program's determination to discontinue services (because of the customer's actions,
+                                                                 the services are not effective or the program is unable to secure the safety and welfare of the consumers and others)
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                    </div>
+                </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

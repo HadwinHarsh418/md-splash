@@ -1,0 +1,44 @@
+
+.header-data .navbar-nav.me-auto.mb-2.mb-lg-0 {
+    justify-content: center;
+    width: 100%;
+}
+.header-data .navbar.navbar-expand-lg.bg-light {
+    background: #07417b !important;
+    padding: 15px 0px;
+}
+.header-data .navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+.header-data .navbar.navbar-expand-lg.bg-light a.nav-link {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px 0px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 0px !important;
+    background: transparent !important;
+}
+.header-data .navbar.navbar-expand-lg.bg-light li.nav-item {
+    background: transparent;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 1px !important;
+}
+.drop-login a.nav-link.dropdown-toggle {
+    padding: 0 !important;
+}
+.drop-login .nav-link.dropdown-toggle img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: #fff;
+}
+.drop-login ul.dropdown-menu.show {
+    left: auto !important;
+    right: 0;
+}

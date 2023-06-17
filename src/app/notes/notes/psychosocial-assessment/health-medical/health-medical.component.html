@@ -1,0 +1,737 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="healthMedForm">
+                <div class="all-tb">
+                    <div class="row mar-1010">
+                        <div class="col-lg-6">
+                            <!-- <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div> -->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="save-bt rem-abs" style="float:right;">
+                                <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>HEALTH MEDICAL INFORMATION</h6>
+                            </div> 
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-2 margin-inputclient">
+                                            <label class="CLIENT-LABEL">Primary Care Physician</label>
+                                            <input class="client-input" type="text" formControlName="Fname">
+                                        </div>
+                                        <div class="col-lg-2 margin-inputclient">
+                                            <label class="CLIENT-LABEL">Address</label>
+                                            <textarea formControlName="PhysicianAddress" class="client-input StartSpeechRecoganisation accuratsize" cols="2" id="Strengths" name="Strengths" rows="2" style="width:100%;"></textarea>                              
+                                        </div>
+                                        <div class="col-lg-2 margin-inputclient">
+                                            <label class="CLIENT-LABEL">City</label>
+                                            <input class="client-input" type="text" formControlName="HM_City">
+                                        </div>
+                                        <div class="col-lg-2 margin-inputclient">
+                                            <label class="CLIENT-LABEL">State</label>
+                                            <select class="client-input" id="select" formControlName="HM_State">
+                                                <option value="">--select State--</option>
+                                                <option value="dog">AK</option>
+                                                <option value="cat">AL</option>
+                                                <option value="hamster">AR</option>
+                                                <option value="parrot">AZ</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 margin-inputclient">
+                                            <label class="CLIENT-LABEL">Zip</label>
+                                            <input formControlName="HM_Zipcode" class="client-input" type="text" name="" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Telephone No.</label>
+                                            <input formControlName="Telephone" class="client-input" type="text">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Fax No.</label>
+                                            <input formControlName="HM_Fax" class="client-input" type="text">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="CLIENT-LABEL">Approximate date of the last visit</label>
+                                            <input formControlName="ApproxLastVisitDate" class="client-input" type="date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient" *ngIf="!conditionDetail">
+                                                <label class="CLIENT-LABEL">Special calling instructions?</label>
+                                                <textarea formControlName="MedicalProblemsDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                            <div class="margin-inputclient" *ngIf="conditionDetail">
+                                                <label class="CLIENT-LABEL">Please list significant Medical Problem/conditions, and indicate if you are receiving treatment for them</label>
+                                                <textarea  class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                <label class="CLIENT-LABEL">Do any of the these problems effect every day life? </label>
+                                                    <input type="radio" name="ProblemEffect" id="ProblemEffect" formControlName="ProblemEffect" value="yes" (change)="onSelectionChanged($event)"> 
+                                                    <label>Yes</label>
+                                                    <input type="radio" name="ProblemEffect" id="ProblemEffect" formControlName="ProblemEffect" value="no" (change)="onSelectionChanged($event)"> 
+                                                    <label>No</label>
+                                                    <label class="CLIENT-LABEL" for=""> If yes, how so?</label>
+                                                </div>
+                                                <textarea formControlName="ProblemEffectDesciption" class="client-input StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Briefly describe any surgeries or hospitalization of serious illness or injuries (what, where, why, etc).</label>
+                                                <textarea formControlName="SurgeryDecription" class="StartSpeechRecoganisation accuratsize client-input" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Have you ever had a serious head injury? </label>
+                                                        <input type="radio" name="HeadInjury" id="" formArrayName="HeadInjury" value="yes" (change)="onSelectionChanged($event)"> 
+                                                        <label>Yes</label>
+                                                        <input type="radio" name="HeadInjury" id="" formArrayName="HeadInjury" value="no" (change)="onSelectionChanged($event)"> 
+                                                        <label>No</label>
+                                                </div>
+                                                <textarea formControlName="HeadInjuryDescription" class="client-input StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mr">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Are you allergic to any medications? </label>
+                                                        <input type="radio" name="AllergicMedication" id="" formControlName="AllergicMedication" value="yes" (change)="onSelectionChanged($event)"> 
+                                                        <label>Yes</label>
+                                                        <input type="radio" name="AllergicMedication" id="" formControlName="AllergicMedication" value="no" (change)="onSelectionChanged($event)"> 
+                                                        <label>No</label>
+                                                        <label class="CLIENT-LABEL" for=""> If yes, how so?</label>
+                                                </div>
+                                                <textarea formControlName="AllergicMedicationDescription" class="client-input StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="3" style="width:100%;"></textarea>                              
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="CLIENT-LABEL">Medication Name</label>
+                                            <input class="client-input" type="text" formControlName="Medication1">
+                                        </div>
+                                       <div class="col-md-3">
+                                            <label class="CLIENT-LABEL">Dose</label>
+                                            <input class="client-input" type="text" formControlName="Dosage1">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="CLIENT-LABEL">Frequency</label>
+                                            <input class="client-input" type="text" formControlName="Frequency1">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="CLIENT-LABEL">Indication</label>
+                                            <input class="client-input" type="text" formControlName="Reason1">
+                                        </div>
+                                        <div class="d-flex pointer">
+                                            <img [src]="imagesrc" alt="small" >
+                                            <!-- <a>Add new Drug</a> -->
+                                            <label >Add new Drug</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="CLIENT-LABEL">Have you had or do you now have a problem with any of the following? (Check all that appply):</label>
+                                        </div>
+                                        <label class="CLIENT-LABEL"><strong>GENERAL</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Recent Fever/Chills</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Cancer</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Alcohol Use</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Insomnia or sleep problems</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Diabetes</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Tobacco Use</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Night Sweats</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Allergies</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Cigarette Smoking</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Frequent or Terrifying Nightmares</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Emotional Problems</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Chronic Pain</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Chronic Fatigue</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Drug Reaction</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Drug Use</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Exposure to Trauma (type)</label>
+                                                    <textarea class="StartSpeechRecoganisation accuratsize" cols="20" id="TraumaType" name="TraumaType" rows="2"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input class="" type="checkbox" name="" id="">
+                                            <label class="CLIENT-LABEL2"  for="">Others</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        
+                                        <label class="CLIENT-LABEL"><strong>GASTROINTESTINAL/HEPATIC/ENDOCRINE</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Nausea</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Constipation</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Rectal Bleeding</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Anemia</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Pancreatitis</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Gastritis</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Hepatitis</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Change in Appetite</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Vomiting Blood</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Swollen Glands</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Allergies</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Weight Loss/Gaining</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">UIcers</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Colitis</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Always Thirsty</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Jaundice</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Diarrhea</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Thyroid Problems</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Gall Bladder/Stones</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Liver Problems</label>
+                                                    <!-- <textarea class="StartSpeechRecoganisation accuratsize" cols="20" id="TraumaType" name="TraumaType" rows="2"></textarea> -->
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Hemorrhoids</label>
+                                                    <!-- <textarea class="StartSpeechRecoganisation accuratsize" cols="20" id="TraumaType" name="TraumaType" rows="2"></textarea> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>MUSCULOSKELETAL</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Broken Back</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Joint Pain</label>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Bad back</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Arthritis</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Herniated</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Gout</label>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Muscles Weakness</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>CARDIOVASCULAR</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Angina</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">High Bloodpressure</label>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Fainting</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Low Bloodpressure</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Light Headedness</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Rheumatic Fever</label>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Irregular Heartbeat</label>
+                                                </div>   
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Heart Valve Problems</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>PULMONARY</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Chest Pain</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Tuberculosis</label>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Shortness of Breath/Pressure </label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Pneumonia</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Wheezing/Asthma</label>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Coughing Blood</label>
+                                                </div>   
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>NEUROLOGICAL</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Headaches</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Stroke</label>
+                                                </div>  
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Memory Loss</label>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Migraine</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Paralysis</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Unsteady Gait</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Skull Fracture</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">History of Injury</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Epilepsy</label>
+                                                </div>   
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Double Vision</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>URINARY/GENERAL</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Frequent Urination</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Urinary Tract Infection</label>
+                                                </div>  
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Menstrual Difficulties</label>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Burning During Urination</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Blood in Urine</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Sexual Difficulties</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Weak Urinary System</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Kidney Infection</label>
+                                                </div>   
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">STD</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Incontinence</label>
+                                                </div>   
+                                                <div class="col-lg-12">
+                                                    <div class="d-flex">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Penis or</label>
+
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Vaginal</label>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="row">
+                                       
+                                        <label class="CLIENT-LABEL"><strong>SKIN/SENSORY SYSTEM</strong></label> 
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2" for="">Sores/Abscesses</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Ringing in Ears</label>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Skin Rash</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Perforated Septum</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Eye Trouble</label>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Nose Bleeds</label>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Hearing Loss</label>
+                                                </div>   
+                                                <div class="col-lg-12">
+                                                    <input class="" type="checkbox" name="" id="">
+                                                    <label class="CLIENT-LABEL2"  for="">Gum Bleeding</label>
+                                                </div>   
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+                

@@ -1,0 +1,556 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="rehabForm" (ngSubmit)="Save()">
+            <div class="all-tb"> 
+              <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-6">
+                    <!-- <div class="arrow d-flex">
+                        <label for="type" (click)="back()">
+                            <i class="fa fa-circle-arrow-left"></i>
+                        </label>
+                        <h1 class="admin-main_heading ms-2">PRP MONTHLY SUMMARY <small>New</small></h1>
+                    </div> -->
+                </div>
+                <div class="col-lg-6 back_css">
+                    <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>REHABILITATIVE SERVICES PROVIDED</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Entitlement Acquisition</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Entitlement Application Completion</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Entitlement Application Follow-Up</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Entitlement Reactivation</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Entitlement Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Entitlement Programs</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Independent Living Skills</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Dietary / Food Prep Education/Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Finance Management/Budgeting Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Organizational Skills Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Maintenance of Personal Space Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Time Management Skills Assistance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Self-Care Skills</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Personal Hygiene / Grooming Education & Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Weight / Health Management Education & Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Health Groups</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Somatic Care Physician/Dentist/Surgeon</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Somatic Illness Education & Resource Linkage</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Housing / Residential</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Housing Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Completion/Follow-Up of Housing Application Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Housing Selection/Inspection Education /Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance Transitioning to Alternative Housing</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Termination of Lease/Housing Assistance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Educational/Vocational</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to School Based Academic Progress Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Academic Progress</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Resources Assistance with Establishment of Study Skills</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance w/development of Appropriate Classroom Skills</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Vocational/Training Program</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Employment</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Employment Support</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Application Completion/Resume Creation Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Employment Search Education/Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Appropriate Interview Skills/Attire Education/Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Employment resignation/transition Education / Assistance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Transportation & Mobility</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance/Education w/ Public Transportation Utilization</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assist. w/ Driver’s License/Permit acquisition/reinstatement</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Mobility/Transport. Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with direction sense & directions to/from home</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with identification/memory of home address</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Adaptive Equipment & Resources</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Adaptive Equip Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to School/Job Based Adaptive Equip Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Application for Adaptive Equip/Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance/Education for utilizing Adaptive Equip/Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance w/ purchase/return of Adaptive Equip/Resources</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Medication Management / TX Compliance</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Medication purpose, dosage, effect education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Independent medication administration education/assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Independent medication maintenance/refill assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Collaboration/Participation in Outpatient Treatment Appts</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Appointment Scheduling & Attending Education/Assistance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Psychoeducation & Symptom Management</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Psychoeducation Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to School Based Psychoeducation Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Electronic Psychoeducation Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Education of Diagnoses, Symptoms, & Available Tx</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Additional/Alternative Mental Health Services</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Social Skills</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Conflict Resolution Skills Assistance/Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Problem Solving Skills Assistance/Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Appropriate Boundaries Assistance & Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Friendship Facilitation/Maintenance Assistance & Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Family Relationship Maintenance Assistance & Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Processing of Positive & Negative Feedback Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Social Setting Interaction &Etiquette Assistance& Education </label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Approp. Communication of Thoughts & Feelings Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Identification of Behavior Triggers Assistance & Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Identification of Coping Skills Assistance & Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Approp. Response to Authority Assistance & Education</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Leisure Activities</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Leisure Activities</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to School Based Leisure Activities</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Religious Activities</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Cultural Activities</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Sports Activities</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Facilitation of Community Based Leisure Activity</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Facilitation of Community Based Group Activity</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Advocacy/Support while participating in Leisure Activity</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assist. with Application to participate in Leisure Activity</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Constructive Use of Structured/Unstructured Time Education</label>
+                                                    </li>
+                                                    <li>
+                                                        <div class="margin-inputclient my-1">
+                                                            <label class="CLIENT-LABEL">Other</label>
+                                                            <input type="text" class="client-input" >
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Alcohol/Substance Use/Abuse Recovery</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Support Group(s)</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Outpatient Treatment</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Inpatient Treatment</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Education regarding Addiction & Consequences</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Community Monitoring Compliance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>Legal & Forensic Assistance/Advocacy</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Legal Aid</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Completion of Legal Documents</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Advocacy/Support during Legal Proceeding(s)</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Community Monitoring Compliance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Assistance with Post Release Re-Integration</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <h6 style="text-align: center;">Personal & Community Safety</h6>
+                                        <div class="col-lg-6">
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>General Community Safety Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Self-Defense Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Linkage to Community Based Anti-Bullying Resources</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Anti-Bullying Education / Assistance</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Appropriate Interaction with Law Enforcement Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Appro. Physical/Social Boundaries in Community Education</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Identification of Emergency Personnel Location Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Self-Harm Triggers & Results Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Property Destruction Triggers & Results Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Illegal Behavior(s) & Consequences Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Conflict Intervention in the Community Education</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Truancy/Curfew Education Assistance</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

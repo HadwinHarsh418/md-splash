@@ -1,0 +1,276 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="cageForm">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6 d-flex">
+                        <div class="arrow" type="submit" (click)="back()">
+                            <label for="type">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                        </div>
+                        <h1 class="admin-main_heading">CAGEAID <small>New</small></h1>
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-LABEL">
+                            <h4><strong>Each affirmative response earns one point. One point indicates a possible problem.</strong></h4>
+                            <h4>Two points indicate a probable problem.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Client Details</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Name </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                <label class="CLIENT-LABEL">Rendering Provider <span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input"
+                                                    formControlName="Rendering_ProviderID">
+                                                    <option *ngFor="let item of StartTimer"
+                                                        value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+                                                </select>
+                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                        required.</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['dos'].dirty && genForm['dos'].errors || genForm['dos'].touched && genForm['dos'].errors">
+                                                <label class="CLIENT-LABEL">Date of Service</label>
+                                                <input type="date" formControlName="dos" class="client-input">
+                                                <span *ngIf="genForm['dos'].dirty && genForm['dos'].errors" class="has-error">
+                                                    <i *ngIf="genForm['dos'].errors?.['required']">
+                                                        required.</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors">
+                                                <label class="CLIENT-LABEL">Procedure Code<span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                    <option *ngFor="let item of StartTimer"
+                                                        value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+
+                                                </select>
+                                                <span *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors" class="has-error">
+                                                    <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">
+                                                        Procedure Code is required.</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!---2nd#######-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS p-3">
+                            <!-- <h6>Client Details</h6> -->
+                            <hr>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                       <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                    <h4><strong>When thinking about drug use, include illegal drug use and the use of prescription drugs other than as prescribed.</strong></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">1. In the last three months, have you felt you should cut down or stop drinking or using drugs? </label>
+                                                            <ul class="input-ul d-flex">
+                                                                <li><input type="radio" value="yes">
+                                                                    <label for="">Yes</label></li>
+                                                            <li class="mx-2"><input type="radio"name value="no">
+                                                                <label for="">No</label></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">2. In the last three months, has anyone annoyed you or gotten on your nerves by telling you to cut down or stop drinking or using drugs?
+                                                            </label>
+                                                              <ul class="input-ul d-flex">
+                                                                <li><input type="radio" value="yes">
+                                                                    <label for="">Yes</label></li>
+                                                            <li class="mx-2"><input type="radio"name value="no">
+                                                                <label for="">No</label></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">3. In the last three months, have you felt guilty or bad about how much you drink or use drugs?</label>
+                                                              <ul class="input-ul d-flex">
+                                                                <li><input type="radio" value="yes">
+                                                                    <label for="">Yes</label></li>
+                                                            <li class="mx-2"><input type="radio"name value="no">
+                                                                <label for="">No</label></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">4. In the last three months, have you been waking up wanting to have an alcoholic drink or use drugs?</label>
+                                                              <ul class="input-ul d-flex">
+                                                                <li><input type="radio" value="yes">
+                                                                    <label for="">Yes</label></li>
+                                                            <li class="mx-2"><input type="radio"name value="no">
+                                                                <label for="">No</label></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-----3rd##############-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Signatures</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <button class="Sign_btn" >Sign</button>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="margin-inputclient">
+                                                        <input type="text"
+                                                            value="TEST TEST" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="innerSignature">
+                                                        <div class="inner-img-border">
+                                                            <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                            <div class="line"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <button class="Sign_btn">Sign</button>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="margin-inputclient">
+                                                        <select class="client-input">
+                                                            <option 
+                                                                value="">--Select--</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="innerSignature">
+                                                        <div class="inner-img-border">
+                                                            <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                            <div class="line"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Received Date </label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Entered By </label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

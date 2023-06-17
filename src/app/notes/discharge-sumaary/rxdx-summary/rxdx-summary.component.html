@@ -1,0 +1,165 @@
+<form [formGroup]="pregressNotes" (ngSubmit)="Save()">
+    <div class="all-tb">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="col-md-12">
+                    <div class="content">
+                        <div class="content">
+                            <div class="col-md-12">
+                                <div class="content">
+                                    <div class="row my-4">
+                                        <div class="row">
+                                            <div class="col-md-6 d-flex">
+                                                <div class="col-2">
+                                                    <label class="CLIENT-LABEL">Axis I<span
+                                                            class="text-danger"></span> </label>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="margin-inputclient">
+                                                        <input formControlName="Axis" type="text"
+                                                            value="TEST TEST" class="client-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          <div class="col-md-6 d-flex">
+                                            <div class="col-2">
+                                                <label class="CLIENT-LABEL">Description<span
+                                                        class="text-danger">s</span> </label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <input formControlName="Description" type="text"
+                                                        value="TEST TEST" class="client-input">
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -----table-- -->
+                            <div class="col-lg-12 my-2">
+                                <h3>
+                                    Medications:
+                                </h3>
+                                    <div class="ui-jqgrid-title"> 
+                                      <h3>
+                                        <small>Report List</small>
+                                      </h3>
+                                    </div>
+                                <ngx-datatable class="bootstrap core-bootstrap sz-1000"
+                                        [rows]="rows"[columnMode]="'force'"
+                                        [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                        [externalPaging]="false">
+
+                                        <ngx-datatable-column name="Date Prescribed"
+                                            prop="AuthNo" [width]="80">       
+                                            <ng-template let-AuthValue="value"       
+                                                let-expanded="expanded" let-row ="row"       
+                                                ngx-datatable-cell-template>       
+                                                <a href="javascript:void(0)">{{       
+                                                    AuthValue }}</a>       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+
+                                        <ngx-datatable-column name="Medication Name"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Dose"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Frequency"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Indication"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                </ngx-datatable>
+                            </div><br>
+                            <div class="col-lg-12 my-2">
+                                <h3>
+                                    PRN Medications:
+                                </h3>
+                                    <div class="ui-jqgrid-title"> 
+                                      <h3>
+                                        <small>Report List</small>
+                                      </h3>
+                                    </div>
+                                <ngx-datatable class="bootstrap core-bootstrap sz-1000"
+                                        [rows]="rows"[columnMode]="'force'"
+                                        [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                        [externalPaging]="false">
+
+                                        <ngx-datatable-column name="Date Prescribed"
+                                            prop="AuthNo" [width]="80">       
+                                            <ng-template let-AuthValue="value"       
+                                                let-expanded="expanded" let-row ="row"       
+                                                ngx-datatable-cell-template>       
+                                                <a href="javascript:void(0)">{{       
+                                                    AuthValue }}</a>       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+
+                                        <ngx-datatable-column name="Medication Name"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Dose"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Frequency"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                        <ngx-datatable-column name="Indication"       
+                                            prop="Payor" [width]="80">       
+                                            <ng-template let-Payor="value"       
+                                                let-expanded="expanded"       
+                                                ngx-datatable-cell-template>       
+                                                {{ Payor }}       
+                                            </ng-template>       
+                                        </ngx-datatable-column>       
+                                </ngx-datatable>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</form>

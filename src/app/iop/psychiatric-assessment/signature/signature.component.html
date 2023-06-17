@@ -1,0 +1,72 @@
+<form [formGroup]="signature" >
+    <div class="col-md-12">
+    <div class="CLIENT-DEMOGRAPHICS text-center">
+        <h6>Doctor's Signature</h6>
+    </div>
+    <div class="content">
+        <div class="col-lg-6 d-flex Set_content">
+            <button class="Sign_btn">Sign</button>
+            <!-- <input name="signinput1" type="text" value="TEST TEST" class="client-input"> -->
+            <select class="client-input" formControlName="testtest7" name="signinput1">
+                <option  value="TEST TEST" >TEST TEST</option>
+            </select>
+        </div>
+        <div class="col-lg-6 Set_content">
+            <div class="innerSignature">
+                <div class="inner-img-border">
+                    <img class="img-class" src="" alt="Sign">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-lg-6 Set_content my-3">
+            <div class="col-lg-6">
+                <label class="CLIENT-LABEL">Received
+                    Date:</label>
+                <input type="text" class="client-input" disabled>
+            </div>
+            <div class="col-lg-6">
+                <label class="CLIENT-LABEL">Entered
+                    By:</label>
+                <input type="text" class="client-input" disabled>
+                <input type="text" class="client-input my-1" disabled>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-12">
+    <div class="CLIENT-DEMOGRAPHICS text-center">
+        <h6>Second Doctor's Signature</h6>
+    </div>
+    <div class="content">
+        <div class="col-lg-6 d-flex Set_content">
+            <button class="Sign_btn">Sign</button>
+            <!-- <input name="signinput1" type="text" value="TEST TEST" class="client-input"> -->
+            <select class="client-input" name="signinput1">
+                <option  value="TEST TEST">TEST TEST</option>
+            </select>
+        </div>
+        <div class="col-lg-6 Set_content">
+            <div class="innerSignature">
+                <div class="inner-img-border">
+                    <img class="img-class" src="" alt="Sign">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-lg-6 Set_content my-3">
+            <div class="col-lg-6">
+                <label class="CLIENT-LABEL">Received
+                    Date:</label>
+                <input type="text" class="client-input" disabled>
+            </div>
+            <div class="col-lg-6">
+                <label class="CLIENT-LABEL">Entered
+                    By:</label>
+                <input type="text" class="client-input" disabled>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>

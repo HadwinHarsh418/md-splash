@@ -1,0 +1,549 @@
+<div class="page max-width-1000">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="pregressNotes">
+                <div class="all-tb">
+                    <div class="row mar-1010 d-flex my-2">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="arrow d-flex">
+                                    <label for="type" (click)="back()">
+                                        <i class="fa fa-circle-arrow-left mx-2"></i>
+                                    </label>
+                                    <h1 class="admin-main_heading">CRISIS FOLLOW UP REPORT<small
+                                            id="EditNew">New</small></h1>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-8 next_Tab my-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First Name </label>
+                                                    <input formControlName="FirstName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Middle Name </label>
+                                                    <input formControlName="MiddleName" type="text"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> Last Name</label>
+                                                    <input formControlName="LastName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors || genForm['DateofBirth'].touched && genForm['DateofBirth'].errors">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DateofBirth" type="date"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['DateofBirth'].dirty && genForm['DateofBirth'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['DateofBirth'].errors?.['required']">
+                                                            DOB is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="Gender">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient"
+                                                [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors">
+                                                <label class="CLIENT-LABEL">Date of Service</label>
+                                                <input type="date" formControlName="DOS" class="client-input">
+                                                <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors"
+                                                    class="has-error">
+                                                    <i *ngIf="genForm['DOS'].errors?.['required']">
+                                                        Date of session is required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Start Time</label>
+                                                    <input type="time" formControlName="StartTime1"
+                                                        class="client-input">
+                                                    <!-- <select class="client-input" formControlName="StartTime1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">End Time</label>
+                                                    <input type="time" formControlName="EndTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="EndTime1">
+                                                        <option *ngFor="let item of EndTime1" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Duration</label>
+                                                    <input type="time" formControlName="TotalTime1"
+                                                        class="client-input">
+                                                    <!-- <select class="client-input" formControlName="TotalTime1">
+                                                        <option *ngFor="let item of TotalTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ####### second #### -->
+
+                            <div class="col-lg-12">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>SESSION DETAILS</h6>
+                                </div>
+                                <div class="content">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Rendering Provider</label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option value="">Select</option>
+                                                        <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ProcedureCodes'].dirty && genForm['ProcedureCodes'].errors || genForm['ProcedureCodes'].touched && genForm['ProcedureCodes'].errors">
+                                                    <label class="CLIENT-LABEL">Procedure Code<span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="ProcedureCodes">
+                                                        <option value="">Select</option>
+                                                        <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+
+                                                    </select>
+                                                    <span
+                                                        *ngIf="genForm['ProcedureCodes'].dirty && genForm['ProcedureCodes'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ProcedureCodes'].errors?.['required']">
+                                                            Procedure Codes is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['NameParticipant'].dirty && genForm['NameParticipant'].errors || genForm['NameParticipant'].touched && genForm['NameParticipant'].errors">
+                                                    <label class="CLIENT-LABEL">Name Of Participant<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="NameParticipant" type="text"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['NameParticipant'].dirty && genForm['NameParticipant'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['NameParticipant'].errors?.['required']">
+                                                            Participant is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ParticipantContectNo'].dirty && genForm['ParticipantContectNo'].errors || genForm['ParticipantContectNo'].touched && genForm['ParticipantContectNo'].errors">
+                                                    <label class="CLIENT-LABEL">Participant's contact number
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="ParticipantContectNo"
+                                                        formControlName="ParticipantContectNo" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ParticipantContectNo'].dirty && genForm['ParticipantContectNo'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ParticipantContectNo'].errors?.['required']">
+                                                            Participant contact is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['NatureOriginalCall'].dirty && genForm['NatureOriginalCall'].errors || genForm['NatureOriginalCall'].touched && genForm['NatureOriginalCall'].errors">
+                                                    <label class="CLIENT-LABEL">Briefly describe the nature of
+                                                        original call<span class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="NatureOriginalCall">
+                                                        <option value="">Select</option>
+                                                        <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+
+                                                    </select>
+                                                    <span
+                                                        *ngIf="genForm['NatureOriginalCall'].dirty && genForm['NatureOriginalCall'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['NatureOriginalCall'].errors?.['required']">
+                                                            Location is required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['DateFollowUpCall'].dirty && genForm['DateFollowUpCall'].errors || genForm['DateFollowUpCall'].touched && genForm['DateFollowUpCall'].errors">
+                                                    <label class="CLIENT-LABEL">Date of follow-up call<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="DateFollowUpCall" type="text"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['DateFollowUpCall'].dirty && genForm['DateFollowUpCall'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['DateFollowUpCall'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 my-2">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['FollowUpConductedInPerson'].dirty && genForm['FollowUpConductedInPerson'].errors || genForm['FollowUpConductedInPerson'].touched && genForm['FollowUpConductedInPerson'].errors">
+                                                    <label class="CLIENT-LABEL">Was follow-up conducted in
+                                                        person or via phone?<span class="text-danger">*</span></label>
+                                                    <ul class="all-li-radio">
+                                                        <li>
+                                                            <input type="checkbox" name="FollowUpConductedInPerson"
+                                                                formControlName="FollowUpConductedInPerson"
+                                                                id="FollowUpConductedInPerson">
+                                                            <label>conducted in-person</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="FollowUpConductedInPerson"
+                                                                formControlName="FollowUpConductedInPerson"
+                                                                id="FollowUpConductedInPerson">
+                                                            <label>conducted via phone</label>
+                                                        </li>
+                                                    </ul>
+                                                    <span
+                                                        *ngIf="genForm['FollowUpConductedInPerson'].dirty && genForm['FollowUpConductedInPerson'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['FollowUpConductedInPerson'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['YourName'].dirty && genForm['YourName'].errors || genForm['YourName'].touched && genForm['YourName'].errors">
+                                                    <label class="CLIENT-LABEL">What's your name?<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="YourName" type="text" class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['YourName'].dirty && genForm['YourName'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['YourName'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['WhatHappened'].dirty && genForm['WhatHappened'].errors || genForm['WhatHappened'].touched && genForm['WhatHappened'].errors">
+                                                    <label class="CLIENT-LABEL">Tell me what happened<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="WhatHappened" type="text"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['WhatHappened'].dirty && genForm['WhatHappened'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['WhatHappened'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient d-flex"
+                                                    [class.has-error]="genForm['AreYouAtThatLocation'].dirty && genForm['AreYouAtThatLocation'].errors || genForm['AreYouAtThatLocation'].touched && genForm['AreYouAtThatLocation'].errors">
+                                                    <label class="CLIENT-LABEL">Are you at that location now?
+                                                        <span class="text-danger">*</span></label>
+                                                    <ul class="all-li-radio">
+                                                        <li>
+                                                            <input type="radio" name="AreYouAtThatLocation"
+                                                                formControlName="AreYouAtThatLocation"
+                                                                id="AreYouAtThatLocation" value="yes">
+                                                            <label>Yes</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="AreYouAtThatLocation"
+                                                                formControlName="AreYouAtThatLocation"
+                                                                id="AreYouAtThatLocation" value="no">
+                                                            <label>NO</label>
+                                                        </li>
+                                                    </ul>
+                                                    <span
+                                                        *ngIf="genForm['AreYouAtThatLocation'].dirty && genForm['AreYouAtThatLocation'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['AreYouAtThatLocation'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['WhenDidThisHappen'].dirty && genForm['WhenDidThisHappen'].errors || genForm['WhenDidThisHappen'].touched && genForm['WhenDidThisHappen'].errors">
+                                                    <label class="CLIENT-LABEL">When did this happen?<span
+                                                            class="text-danger">*</span> </label>
+                                                    <input formControlName="WhenDidThisHappen" type="text"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['WhenDidThisHappen'].dirty && genForm['WhenDidThisHappen'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['WhenDidThisHappen'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['IsIMindBehavioralHealth'].dirty && genForm['IsIMindBehavioralHealth'].errors || genForm['IsIMindBehavioralHealth'].touched && genForm['IsIMindBehavioralHealth'].errors">
+                                                    <label class="CLIENT-LABEL">Provided Referrals and
+                                                        Resources<span class="text-danger"> *</span></label>
+                                                    <ul class="all-li-radio d-block">
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>iMind Behavioral Health</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Emergency Petition (EP)</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Hospital</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Primary Care Doctor or Urgent Care</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>National Hotline</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Child Protective Services</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Adult Protective Services</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Government Resources</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Spiritual Support</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Basic Needs (food, medication, clothing,
+                                                                etc.)</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="IsIMindBehavioralHealth"
+                                                                formControlName="IsIMindBehavioralHealth"
+                                                                id="IsIMindBehavioralHealth">
+                                                            <label>Other:</label>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="col-lg-12">
+                                                        <input formControlName="IfOther" type="text"
+                                                            class="client-input">
+                                                    </div>
+                                                    <span
+                                                        *ngIf="genForm['IsIMindBehavioralHealth'].dirty && genForm['IsIMindBehavioralHealth'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['IsIMindBehavioralHealth'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="CLIENT-LABEL">Others</label>
+                                                <div class="margin-inputclient d-flex"
+                                                    [class.has-error]="genForm['AcceptReferralsResources'].dirty && genForm['AcceptReferralsResources'].errors || genForm['AcceptReferralsResources'].touched && genForm['AcceptReferralsResources'].errors">
+                                                    <label class="CLIENT-LABEL">Did the participant accept
+                                                        referrals or resources? <span class="text-danger">
+                                                            *</span></label>
+                                                    <ul class="all-li-radio">
+                                                        <li>
+                                                            <input type="radio" name="AcceptReferralsResources"
+                                                                formControlName="AcceptReferralsResources"
+                                                                id="AcceptReferralsResources1" value="1">
+                                                            <label>Yes</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="AcceptReferralsResources"
+                                                                formControlName="AcceptReferralsResources"
+                                                                id="AcceptReferralsResources" value="2">
+                                                            <label>NO</label>
+                                                        </li>
+                                                    </ul>
+                                                    <span
+                                                        *ngIf="genForm['AcceptReferralsResources'].dirty && genForm['AcceptReferralsResources'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['AcceptReferralsResources'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['RefferalResourcesProvided'].dirty && genForm['RefferalResourcesProvided'].errors || genForm['RefferalResourcesProvided'].touched && genForm['RefferalResourcesProvided'].errors">
+                                                    <label class="CLIENT-LABEL">Referral/resources provided?
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="text" formControlName="RefferalResourcesProvided"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['RefferalResourcesProvided'].dirty && genForm['RefferalResourcesProvided'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['RefferalResourcesProvided'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ProvideBriefSummery'].dirty && genForm['ProvideBriefSummery'].errors || genForm['ProvideBriefSummery'].touched && genForm['ProvideBriefSummery'].errors">
+                                                    <label class="CLIENT-LABEL">Please provide a brief summary
+                                                        of the call regardless of whether or not the participant
+                                                        answered the phone.<span class="text-danger">*</span></label>
+                                                    <input type="text" formControlName="ProvideBriefSummery"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['ProvideBriefSummery'].dirty && genForm['ProvideBriefSummery'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ProvideBriefSummery'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['PositiveChangesParticipant'].dirty && genForm['PositiveChangesParticipant'].errors || genForm['PositiveChangesParticipant'].touched && genForm['PositiveChangesParticipant'].errors">
+                                                    <label class="CLIENT-LABEL">What positive changes can be
+                                                        noted in the participant that are an improvement from
+                                                        the time of crisis?<span class="text-danger">*</span></label>
+                                                    <input type="text" formControlName="PositiveChangesParticipant"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['PositiveChangesParticipant'].dirty && genForm['PositiveChangesParticipant'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['PositiveChangesParticipant'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['DescribeOriginalSafetyPlan'].dirty && genForm['DescribeOriginalSafetyPlan'].errors || genForm['DescribeOriginalSafetyPlan'].touched && genForm['DescribeOriginalSafetyPlan'].errors">
+                                                    <label class="CLIENT-LABEL">Describe original Safety Plan
+                                                        and any changes made<span class="text-danger">*</span></label>
+                                                    <input type="text" formControlName="DescribeOriginalSafetyPlan"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['DescribeOriginalSafetyPlan'].dirty && genForm['DescribeOriginalSafetyPlan'].errors"
+                                                        class="has-error">
+                                                        <i
+                                                            *ngIf="genForm['DescribeOriginalSafetyPlan'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['TeamMemberFollowUp'].dirty && genForm['TeamMemberFollowUp'].errors || genForm['TeamMemberFollowUp'].touched && genForm['TeamMemberFollowUp'].errors">
+                                                    <label class="CLIENT-LABEL">Team Members Completing
+                                                        Follow-up, name below<span class="text-danger">*</span></label>
+                                                    <input type="text" formControlName="TeamMemberFollowUp"
+                                                        class="client-input">
+                                                    <span
+                                                        *ngIf="genForm['TeamMemberFollowUp'].dirty && genForm['TeamMemberFollowUp'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['TeamMemberFollowUp'].errors?.['required']">
+                                                            *required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

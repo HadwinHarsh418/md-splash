@@ -1,0 +1,751 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form >
+                <div class="all-tb">
+                    <div class="row mar-1010">
+                        <div class="col-lg-6">
+                            <div class="save-bt rem-abs" style="float:right;">
+                                <!-- <button class="NEW-SAVE" (click)="submitForm()">SAVE</button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>DIAGNOSIS</h6>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL"><strong>Axis I</strong></label>
+                                                        <div class="d-flex">
+                                                            <label class="CLIENT-LABEL">Primary</label>
+                                                            <input type="checkbox">
+                                                        </div>
+                                                        <!-- <button>add new</button> -->
+                                                        <!-- <div class="d-flex pointer">
+                                                            <img [src]="imagesrc" alt="small" >
+                                                            <a  >Add new</a>
+                                                        </div> -->
+                                                        <div class="d-flex pointer">
+                                                            <img [src]="imagesrc" alt="small" class="addNew" >
+                                                            <!-- <a>Add new Drug</a> -->
+                                                            <label >Add new</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Code</label>
+                                                        <!-- select start -->
+                                                        <div >
+                                                            <select id="Axis1" name="Axis1" class="client-input" ><option value="">--Select--</option>
+                                                                    <option value="502">F40.241,Acrophobia</option>
+                                                                    <option value="503">F43.0,Acute stress reaction</option>
+                                                                    <option value="504">F43.22,Adjustment disorder with anxiety</option>
+                                                                    <option value="505">F43.21,Adjustment disorder with depressed mood</option>
+                                                                    <option value="506">F43.24,Adjustment disorder with disturbance of conduct</option>
+                                                                    <option value="507">F43.23,Adjustment disorder with mixed anxiety and depressed mood</option>
+                                                                    <option value="508">F43.25,Adjustment disorder with mixed disturbance of emotions and conduct</option>
+                                                                    <option value="509">F43.29,Adjustment disorder with other symptoms</option>
+                                                                    <option value="510">F43.20,Adjustment disorder, unspecified</option>
+                                                                    <option value="511">F40.01,Agoraphobia with panic disorder</option>
+                                                                    <option value="512">F40.02,Agoraphobia without panic disorder</option>
+                                                                    <option value="513">F40.00,Agoraphobia, unspecified</option>
+                                                                    <option value="514">F40.290,Androphobia</option>
+                                                                    <option value="515">F50.02,Anorexia nervosa, binge eating/purging type</option>
+                                                                    <option value="516">F50.01,Anorexia nervosa, restricting type</option>
+                                                                    <option value="517">F50.00,Anorexia nervosa, unspecified</option>
+                                                                    <option value="518">F41.9,Anxiety disorder, unspecified</option>
+                                                                    <option value="519">F40.210,Arachnophobia</option>
+                                                                    <option value="520">F90.2,Attention-deficit hyperactivity disorder, combined type</option>
+                                                                    <option value="521">F90.8,Attention-deficit hyperactivity disorder, other type</option>
+                                                                    <option value="522">F90.1,Attention-deficit hyperactivity disorder, predominantly hyperactive type</option>
+                                                                    <option value="523">F90.0,Attention-deficit hyperactivity disorder, predominantly inattentive type</option>
+                                                                    <option value="524">F90.9,Attention-deficit hyperactivity disorder, unspecified type</option>
+                                                                    <option value="525">F60.6,Avoidant personality disorder</option>
+                                                                    <option value="526">F31.31,Bipolar disorder, current episode depressed, mild</option>
+                                                                    <option value="527">F31.30,Bipolar disorder, current episode depressed, mild or moderate severity, unspecified</option>
+                                                                    <option value="528">F31.32,Bipolar disorder, current episode depressed, moderate</option>
+                                                                    <option value="529">F31.5,Bipolar disorder, current episode depressed, severe, with psychotic features</option>
+                                                                    <option value="530">F31.4,Bipolar disorder, current episode depressed, severe, without psychotic features</option>
+                                                                    <option value="531">F31.0,Bipolar disorder, current episode hypomanic</option>
+                                                                    <option value="532">F31.2,Bipolar disorder, current episode manic severe with psychotic features</option>
+                                                                    <option value="533">F31.11,Bipolar disorder, current episode manic without psychotic features, mild</option>
+                                                                    <option value="534">F31.12,Bipolar disorder, current episode manic without psychotic features, mod</option>
+                                                                    <option value="535">F31.13,Bipolar disorder, current episode manic without psychotic features, severe</option>
+                                                                    <option value="536">F31.10,Bipolar disorder, current episode manic without psychotic features, unspecified</option>
+                                                                    <option value="537">F31.61,Bipolar disorder, current episode mixed, mild</option>
+                                                                    <option value="538">F31.62,Bipolar disorder, current episode mixed, moderate</option>
+                                                                    <option value="539">F31.64,Bipolar disorder, current episode mixed, severe, with psychotic features</option>
+                                                                    <option value="540">F31.63,Bipolar disorder, current episode mixed, severe, without psychotic features</option>
+                                                                    <option value="541">F31.60,Bipolar disorder, current episode mixed, unspecified</option>
+                                                                    <option value="542">F31.70,Bipolar disorder, currently in remission, most recent episode unspecified</option>
+                                                                    <option value="543">F31.76,Bipolar disorder, in full remission, most recent episode depressed</option>
+                                                                    <option value="544">F31.72,Bipolar disorder, in full remission, most recent episode hypomanic</option>
+                                                                    <option value="545">F31.74,Bipolar disorder, in full remission, most recent episode manic</option>
+                                                                    <option value="546">F31.78,Bipolar disorder, in full remission, most recent episode mixed</option>
+                                                                    <option value="547">F31.75,Bipolar disorder, in partial remission, most recent episode depressed</option>
+                                                                    <option value="548">F31.71,Bipolar disorder, in partial remission, most recent episode hypomanic</option>
+                                                                    <option value="549">F31.73,Bipolar disorder, in partial remission, most recent episode manic</option>
+                                                                    <option value="550">F31.77,Bipolar disorder, in partial remission, most recent episode mixed</option>
+                                                                    <option value="551">F31.9,Bipolar disorder, unspecified</option>
+                                                                    <option value="552">F31.81,Bipolar II disorder</option>
+                                                                    <option value="553">F45.22,Body dysmorphic disorder</option>
+                                                                    <option value="554">F60.3,Borderline personality disorder</option>
+                                                                    <option value="555">F23.,Brief psychotic disorder</option>
+                                                                    <option value="556">F50.2,Bulimia nervosa</option>
+                                                                    <option value="557">F20.2,Catatonic schizophrenia</option>
+                                                                    <option value="558">F94.9,Childhood disorder of social functioning, unspecified</option>
+                                                                    <option value="559">F93.9,Childhood emotional disorder, unspecified</option>
+                                                                    <option value="560">F40.240,Claustrophobia</option>
+                                                                    <option value="561">F91.0,Conduct disorder confined to family context</option>
+                                                                    <option value="562">F91.2,Conduct disorder, adolescent-onset type</option>
+                                                                    <option value="563">F91.1,Conduct disorder, childhood-onset type</option>
+                                                                    <option value="564">F91.9,Conduct disorder, unspecified</option>
+                                                                    <option value="565">F44.4,Conversion disorder with motor symptom or deficit</option>
+                                                                    <option value="566">F44.6,Conversion disorder with sensory symptom or deficit</option>
+                                                                    <option value="567">F34.0,Cyclothymic disorder</option>
+                                                                    <option value="568">F22.,Delusional disorders</option>
+                                                                    <option value="569">F60.7,Dependent personality disorder</option>
+                                                                    <option value="570">F48.1,Depersonalization-derealization syndrome</option>
+                                                                    <option value="571">F94.2,Disinhibited attachment disorder of childhood</option>
+                                                                    <option value="572">F20.1,Disorganized schizophrenia</option>
+                                                                    <option value="573">F44.0,Dissociative amnesia</option>
+                                                                    <option value="574">F44.9,Dissociative and conversion disorder, unspecified</option>
+                                                                    <option value="575">F44.1,Dissociative fugue</option>
+                                                                    <option value="576">F44.81,Dissociative identity disorder</option>
+                                                                    <option value="577">F44.2,Dissociative stupor</option>
+                                                                    <option value="578">G24.02,Drug induced acute dystonia</option>
+                                                                    <option value="579">F34.1,Dysthymic disorder</option>
+                                                                    <option value="580">F50.9,Eating disorder, unspecified</option>
+                                                                    <option value="581">F98.1,Encopresis not due to a substance or known physiological condition</option>
+                                                                    <option value="582">F98.0,Enuresis not due to a substance or known physiological condition</option>
+                                                                    <option value="583">F65.2,Exhibitionism</option>
+                                                                    <option value="584">G25.9,Extrapyramidal and movement disorder, unspecified</option>
+                                                                    <option value="585">F68.13,Factitious disorder with combined psychological and physical signs and symptoms</option>
+                                                                    <option value="586">F68.11,Factitious disorder with predominantly psychological signs and symptoms</option>
+                                                                    <option value="587">F40.230,Fear of blood</option>
+                                                                    <option value="588">F40.242,Fear of bridges</option>
+                                                                    <option value="589">F40.243,Fear of flying</option>
+                                                                    <option value="590">F40.231,Fear of injections and transfusions</option>
+                                                                    <option value="591">F40.233,Fear of injury</option>
+                                                                    <option value="592">F40.232,Fear of other medical care</option>
+                                                                    <option value="593">F40.220,Fear of thunderstorms</option>
+                                                                    <option value="594">F65.0,Fetishism</option>
+                                                                    <option value="595">F65.81,Frotteurism</option>
+                                                                    <option value="596">F64.1,Gender identity disorder in adolescence and adulthood</option>
+                                                                    <option value="597">F64.2,Gender identity disorder of childhood</option>
+                                                                    <option value="598">F64.9,Gender identity disorder, unspecified</option>
+                                                                    <option value="599">F41.1,Generalized anxiety disorder</option>
+                                                                    <option value="600">F40.291,Gynephobia</option>
+                                                                    <option value="601">F60.4,Histrionic personality disorder</option>
+                                                                    <option value="602">R45.850,Homicidal ideations</option>
+                                                                    <option value="603">F45.20,Hypochondriacal disorder, unspecified</option>
+                                                                    <option value="604">F45.21,Hypochondriasis</option>
+                                                                    <option value="605">F63.9,Impulse disorder, unspecified</option>
+                                                                    <option value="606">F63.81,Intermittent explosive disorder</option>
+                                                                    <option value="607">F63.2,Kleptomania</option>
+                                                                    <option value="608">F33.2,Major depressive disorder, recurrent severe without psychotic features</option>
+                                                                    <option value="609">F33.42,Major depressive disorder, recurrent, in full remission</option>
+                                                                    <option value="610">F33.41,Major depressive disorder, recurrent, in partial remission</option>
+                                                                    <option value="611">F33.40,Major depressive disorder, recurrent, in remission, unspecified</option>
+                                                                    <option value="612">F33.0,Major depressive disorder, recurrent, mild</option>
+                                                                    <option value="613">F33.1,Major depressive disorder, recurrent, moderate</option>
+                                                                    <option value="614">F33.3,Major depressive disorder, recurrent, severe with psychotic symptoms</option>
+                                                                    <option value="615">F33.9,Major depressive disorder, recurrent, unspecified</option>
+                                                                    <option value="616">F32.5,Major depressive disorder, single episode, in full remission</option>
+                                                                    <option value="617">F32.4,Major depressive disorder, single episode, in partial remission</option>
+                                                                    <option value="618">F32.0,Major depressive disorder, single episode, mild</option>
+                                                                    <option value="619">F32.1,Major depressive disorder, single episode, moderate</option>
+                                                                    <option value="620">F32.3,Major depressive disorder, single episode, severe with psychotic features</option>
+                                                                    <option value="621">F32.2,Major depressive disorder, single episode, severe without psychotic features</option>
+                                                                    <option value="622">F32.9,Major depressive disorder, single episode, unspecified</option>
+                                                                    <option value="623">F30.4,Manic episode in full remission</option>
+                                                                    <option value="624">F30.3,Manic episode in partial remission</option>
+                                                                    <option value="625">F30.11,Manic episode without psychotic symptoms, mild</option>
+                                                                    <option value="626">F30.12,Manic episode without psychotic symptoms, moderate</option>
+                                                                    <option value="627">F30.10,Manic episode without psychotic symptoms, unspecified</option>
+                                                                    <option value="628">F30.2,Manic episode, severe with psychotic symptoms</option>
+                                                                    <option value="629">F30.13,Manic episode, severe, without psychotic symptoms</option>
+                                                                    <option value="630">F30.9,Manic episode, unspecified</option>
+                                                                    <option value="631">F99.,Mental disorder, not otherwise specified</option>
+                                                                    <option value="632">F60.81,Narcissistic personality disorder</option>
+                                                                    <option value="633">G21.11,Neuroleptic induced parkinsonism</option>
+                                                                    <option value="634">F48.9,Nonpsychotic mental disorder, unspecified</option>
+                                                                    <option value="636">F60.5,Obsessive-compulsive personality disorder</option>
+                                                                    <option value="637">F91.3,Oppositional defiant disorder</option>
+                                                                    <option value="638">F40.218,Other animal type phobia</option>
+                                                                    <option value="639">F31.89,Other bipolar disorder</option>
+                                                                    <option value="640">F84.3,Other childhood disintegrative disorder</option>
+                                                                    <option value="641">F94.8,Other childhood disorders of social functioning</option>
+                                                                    <option value="642">F93.8,Other childhood emotional disorders</option>
+                                                                    <option value="643">F91.8,Other conduct disorders</option>
+                                                                    <option value="645">F44.89,Other dissociative and conversion disorders</option>
+                                                                    <option value="647">F64.8,Other gender identity disorders</option>
+                                                                    <option value="648">F45.29,Other hypochondriacal disorders</option>
+                                                                    <option value="649">F30.8,Other manic episodes</option>
+                                                                    <option value="650">O99.344,Other mental disorders complicating childbirth</option>
+                                                                    <option value="651">O99.341,Other mental disorders complicating pregnancy, first trimester</option>
+                                                                    <option value="652">O99.342,Other mental disorders complicating pregnancy, second trimester</option>
+                                                                    <option value="653">O99.343,Other mental disorders complicating pregnancy, third trimester</option>
+                                                                    <option value="654">O99.340,Other mental disorders complicating pregnancy, unspecified trimester</option>
+                                                                    <option value="655">O99.345,Other mental disorders complicating the puerperium</option>
+                                                                    <option value="656">F41.3,Other mixed anxiety disorders</option>
+                                                                    <option value="657">F40.228,Other natural environment type phobia</option>
+                                                                    <option value="658">F65.89,Other paraphilias</option>
+                                                                    <option value="660">F40.8,Other phobic anxiety disorders</option>
+                                                                    <option value="661">F28.,Other psychotic disorder not due to a substance or known physiological condition</option>
+                                                                    <option value="662">F43.8,Other reactions to severe stress</option>
+                                                                    <option value="663">F33.8,Other recurrent depressive disorders</option>
+                                                                    <option value="664">F25.8,Other schizoaffective disorders</option>
+                                                                    <option value="665">F20.89,Other schizophrenia</option>
+                                                                    <option value="666">F66.,Other sexual disorders</option>
+                                                                    <option value="667">F40.248,Other situational type phobia</option>
+                                                                    <option value="668">F45.8,Other somatoform disorders</option>
+                                                                    <option value="669">F60.89,Other specific personality disorders</option>
+                                                                    <option value="670">F41.8,Other specified anxiety disorders</option>
+                                                                    <option value="671">F98.8,Other specified behavioral and emotional disorders with onset usually occurring in childhood and adolescence</option>
+                                                                    <option value="672">F68.8,Other specified disorders of adult personality and behavior</option>
+                                                                    <option value="673">G25.89,Other specified extrapyramidal and movement disorders</option>
+                                                                    <option value="674">F48.8,Other specified nonpsychotic mental disorders</option>
+                                                                    <option value="675">F40.298,Other specified phobia</option>
+                                                                    <option value="676">F45.41,Pain disorder exclusively related to psychological factors</option>
+                                                                    <option value="677">F41.0,Panic disorder without agoraphobia</option>
+                                                                    <option value="678">F60.0,Paranoid personality disorder</option>
+                                                                    <option value="679">F20.0,Paranoid schizophrenia</option>
+                                                                    <option value="680">F65.9,Paraphilia, unspecified</option>
+                                                                    <option value="681">F63.0,Pathological gambling</option>
+                                                                    <option value="682">F65.4,Pedophilia</option>
+                                                                    <option value="683">F34.9,Persistent mood [affective] disorder, unspecified (No longer used)</option>
+                                                                    <option value="684">F60.9,Personality disorder, unspecified</option>
+                                                                    <option value="685">F40.9,Phobic anxiety disorder, unspecified</option>
+                                                                    <option value="686">F43.11,Post-traumatic stress disorder, acute</option>
+                                                                    <option value="687">F43.12,Post-traumatic stress disorder, chronic (No longer used)</option>
+                                                                    <option value="688">F43.10,Post-traumatic stress disorder, unspecified</option>
+                                                                    <option value="689">F53.,Puerperal psychosis</option>
+                                                                    <option value="690">F63.1,Pyromania</option>
+                                                                    <option value="691">F43.9,Reaction to severe stress, unspecified</option>
+                                                                    <option value="692">F94.1,Reactive attachment disorder of childhood</option>
+                                                                    <option value="693">F20.5,Residual schizophrenia</option>
+                                                                    <option value="694">F65.50,Sadomasochism, unspecified</option>
+                                                                    <option value="695">F25.0,Schizoaffective disorder, bipolar type</option>
+                                                                    <option value="696">F25.1,Schizoaffective disorder, depressive type</option>
+                                                                    <option value="697">F25.9,Schizoaffective disorder, unspecified</option>
+                                                                    <option value="698">F60.1,Schizoid personality disorder</option>
+                                                                    <option value="699">F20.9,Schizophrenia, unspecified</option>
+                                                                    <option value="700">F20.81,Schizophreniform disorder</option>
+                                                                    <option value="701">F21.,Schizotypal disorder</option>
+                                                                    <option value="702">F94.0,Selective mutism</option>
+                                                                    <option value="703">F93.0,Separation anxiety disorder of childhood</option>
+                                                                    <option value="704">F65.51,Sexual masochism</option>
+                                                                    <option value="705">F65.52,Sexual sadism</option>
+                                                                    <option value="706">F24.,Shared psychotic disorder</option>
+                                                                    <option value="707">F40.11,Social phobia, generalized</option>
+                                                                    <option value="708">F40.10,Social phobia, unspecified</option>
+                                                                    <option value="709">F45.0,Somatization disorder</option>
+                                                                    <option value="710">F45.9,Somatoform disorder, unspecified</option>
+                                                                    <option value="711">R45.7,State of emotional shock and stress, unspecified</option>
+                                                                    <option value="712">F98.4,Stereotyped movement disorders</option>
+                                                                    <option value="713">R45.851,Suicidal ideations</option>
+                                                                    <option value="714">F65.1,Transvestic fetishism</option>
+                                                                    <option value="715">F63.3,Trichotillomania</option>
+                                                                    <option value="716">F20.3,Undifferentiated schizophrenia</option>
+                                                                    <option value="717">F45.1,Undifferentiated somatoform disorder</option>
+                                                                    <option value="718">F98.9,Unspecified behavioral and emotional disorders with onset usually occurring in childhood and adolescence</option>
+                                                                    <option value="719">F69.,Unspecified disorder of adult personality and behavior</option>
+                                                                    <option value="721">F29.,Unspecified psychosis not due to a substance or known physiological condition</option>
+                                                                    <option value="722">F65.3,Voyeurism</option>
+                                                                    <option value="723">F20.89,Other schizophrenia</option>
+                                                                    <option value="724">F25.9,Schizoaffective disorder, unspecified</option>
+                                                                    <option value="725">F30.10,Manic episode without psychotic symptoms, unspecified</option>
+                                                                    <option value="726">F31.9,Bipolar disorder, unspecified</option>
+                                                                    <option value="727">F31.9,Bipolar disorder, unspecified</option>
+                                                                    <option value="728">F29.,Unspecified psychosis not due to a substance or known physiological condition</option>
+                                                                    <option value="729">F34.1,Dysthymic disorder</option>
+                                                                    <option value="730">F43.21,Adjustment disorder with depressed mood</option>
+                                                                    <option value="731">F43.21,Adjustment disorder with depressed mood</option>
+                                                                    <option value="732">F43.25,Adjustment disorder with mixed disturbance of emotions and conduct</option>
+                                                                    <option value="733">F43.8,Other reactions to severe stress</option>
+                                                                    <option value="734">F43.20,Adjustment disorder, unspecified</option>
+                                                                    <option value="735">F32.9,Major depressive disorder, single episode, unspecified</option>
+                                                                    <option value="736">F90.9,Attention-deficit hyperactivity disorder, unspecified type</option>
+                                                                    <option value="737">F12.20,Cannabis Dependency</option>
+                                                                    <option value="738">F12.20,Cannabis Dependency</option>
+                                                                    <option value="739">F3281,Premenstrual dysphoric disorder</option>
+                                                                    <option value="740">F3289,Other specified depressive episodes</option>
+                                                                    <option value="741">F34.81,Didesruptive mood dysregulation disorder</option>
+                                                                    <option value="742">F3489,Other specified persistent mood disorders</option>
+                                                                    <option value="743">F422,Mixed obsessional thoughts and acts</option>
+                                                                    <option value="744">F423,Hoarding disorder</option>
+                                                                    <option value="745">F424,Excoriation (skin-picking) disorder</option>
+                                                                    <option value="746">F428,Other obsessive compulsive disorder</option>
+                                                                    <option value="747">F429,Obsessive-compulsive disorder, unspecified</option>
+                                                                    <option value="748">F5081,Binge eating disorder</option>
+                                                                    <option value="749">F5089,Other specified eating disorder</option>
+                                                                    <option value="750">F54.0,Psychological and behavioral factors associated with disorders or diseases classified elsewhere</option>
+                                                                    <option value="751">F10,Alcohol related disorders</option>
+                                                                    <option value="752">F10.10,Alcohol abuse</option>
+                                                                    <option value="753">F10.10,uncomplicated</option>
+                                                                    <option value="754">F10.11,in remission</option>
+                                                                    <option value="755">F10.12,Alcohol abuse with intoxication</option>
+                                                                    <option value="756">F10.120,uncomplicated</option>
+                                                                    <option value="757">F10.121,delirium</option>
+                                                                    <option value="758">F10.129,unspecified</option>
+                                                                    <option value="759">F10.14,with alcohol-induced mood disorder</option>
+                                                                    <option value="760">F10.15,Alcohol abuse with alcohol-induced psychotic disorder</option>
+                                                                    <option value="761">F10.150,with delusions</option>
+                                                                    <option value="762">F10.151,with hallucinations</option>
+                                                                    <option value="763">F10.159,unspecified</option>
+                                                                    <option value="764">F10.18,Alcohol abuse with other alcohol-induced disorders</option>
+                                                                    <option value="765">F10.180,Alcohol abuse with alcohol-induced anxiety disorder</option>
+                                                                    <option value="766">F10.181,Alcohol abuse with alcohol-induced sexual dysfunction</option>
+                                                                    <option value="767">F10.182,Alcohol abuse with alcohol-induced sleep disorder</option>
+                                                                    <option value="768">F10.188,Alcohol abuse with other alcohol-induced disorder</option>
+                                                                    <option value="769">F10.19,with unspecified alcohol-induced disorder</option>
+                                                                    <option value="770">F10.2,Alcohol dependence</option>
+                                                                    <option value="771">F10.20,uncomplicated</option>
+                                                                    <option value="772">F10.21,in remission</option>
+                                                                    <option value="773">F10.22,Alcohol dependence with intoxication</option>
+                                                                    <option value="774">F10.220,uncomplicated</option>
+                                                                    <option value="775">F10.221,delirium</option>
+                                                                    <option value="776">F10.229,unspecified</option>
+                                                                    <option value="777">F10.23,Alcohol dependence with withdrawal</option>
+                                                                    <option value="778">F10.230,uncomplicated</option>
+                                                                    <option value="779">F10.231,delirium</option>
+                                                                    <option value="780">F10.232,with perceptual disturbance</option>
+                                                                    <option value="781">F10.239,unspecified</option>
+                                                                    <option value="782">F10.24,with alcohol-induced mood disorder</option>
+                                                                    <option value="783">F10.25,Alcohol dependence with alcohol-induced psychotic disorder</option>
+                                                                    <option value="784">F10.250,with delusions</option>
+                                                                    <option value="785">F10.251,with hallucinations</option>
+                                                                    <option value="786">F10.259,unspecified</option>
+                                                                    <option value="787">F10.26,with alcohol-induced persisting amnestic disorder</option>
+                                                                    <option value="788">F10.27,with alcohol-induced persisting dementia</option>
+                                                                    <option value="789">F10.28,Alcohol dependence with other alcohol-induced disorders</option>
+                                                                    <option value="790">F10.280,Alcohol dependence with alcohol-induced anxiety disorder</option>
+                                                                    <option value="791">F10.281,Alcohol dependence with alcohol-induced sexual dysfunction</option>
+                                                                    <option value="792">F10.282,Alcohol dependence with alcohol-induced sleep disorder</option>
+                                                                    <option value="793">F10.288,Alcohol dependence with other alcohol-induced disorder</option>
+                                                                    <option value="794">F10.29,with unspecified alcohol-induced disorder</option>
+                                                                    <option value="795">F10.9,Alcohol use, unspecified</option>
+                                                                    <option value="796">F10.92,Alcohol use, unspecified with intoxication</option>
+                                                                    <option value="797">F10.920,uncomplicated</option>
+                                                                    <option value="798">F10.921,delirium</option>
+                                                                    <option value="799">F10.929,unspecified</option>
+                                                                    <option value="800">F10.94,with alcohol-induced mood disorder</option>
+                                                                    <option value="801">F10.95,Alcohol use, unspecified with alcohol-induced psychotic disorder</option>
+                                                                    <option value="802">F10.950,with delusions</option>
+                                                                    <option value="803">F10.951,with hallucinations</option>
+                                                                    <option value="804">F10.959,unspecified</option>
+                                                                    <option value="805">F10.96,with alcohol-induced persisting amnestic disorder</option>
+                                                                    <option value="806">F10.97,with alcohol-induced persisting dementia</option>
+                                                                    <option value="807">F10.98,Alcohol use, unspecified with other alcohol-induced disorders</option>
+                                                                    <option value="808">F10.980,Alcohol use, unspecified with alcohol-induced anxiety disorder</option>
+                                                                    <option value="809">F10.981,Alcohol use, unspecified with alcohol-induced sexual dysfunction</option>
+                                                                    <option value="810">F10.982,Alcohol use, unspecified with alcohol-induced sleep disorder</option>
+                                                                    <option value="811">F10.988,Alcohol use, unspecified with other alcohol-induced disorder</option>
+                                                                    <option value="812">F10.99,with unspecified alcohol-induced disorder</option>
+                                                                    <option value="813">F11,Opioid related disorders</option>
+                                                                    <option value="814">F11.1,Opioid abuse</option>
+                                                                    <option value="815">F11.10,Opioid abuse, uncomplicated
+                                                                    </option>
+                                                                    <option value="816">F11.11,Opioid abuse, in remission</option>
+                                                                    <option value="817">F11.12,Opioid abuse with intoxication</option>
+                                                                    <option value="818">F11.120,Opioid abuse with intoxication, uncomplicated</option>
+                                                                    <option value="819">F11.121,Opioid abuse with intoxication delirium</option>
+                                                                    <option value="820">F11.122,Opioid abuse with intoxication with perceptual disturbance</option>
+                                                                    <option value="821">F11.129,Opioid abuse with intoxication, unspecified</option>
+                                                                    <option value="822">F11.14,Opioid abuse with opioid-induced mood disorder</option>
+                                                                    <option value="823">F11.15,Opioid abuse with opioid-induced psychotic disorder</option>
+                                                                    <option value="824">F11.150,Opioid abuse with opioid-induced psychotic disorder with delusions</option>
+                                                                    <option value="825">F11.151,Opioid abuse with opioid-induced psychotic disorder with hallucinations
+                                                                    </option>
+                                                                    <option value="826">F11.159,Opioid abuse with opioid-induced psychotic disorder, unspecified
+                                                                    </option>
+                                                                    <option value="827">F11.18,Opioid abuse with other opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="828">F11.181,Opioid abuse with opioid-induced sexual dysfunction
+                                                                    </option>
+                                                                    <option value="829">F11.182,Opioid abuse with opioid-induced sleep disorder
+                                                                    </option>
+                                                                    <option value="830">F11.188,Opioid abuse with other opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="831">F11.19,Opioid abuse with unspecified opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="832">F11.20,Opioid dependence
+                                                                    </option>
+                                                                    <option value="833">F11.20,Opioid dependence, uncomplicated
+                                                                    </option>
+                                                                    <option value="834">F11.21,Opioid dependence, in remission
+                                                                    </option>
+                                                                    <option value="835">F11.22,Opioid dependence with intoxication
+                                                                    </option>
+                                                                    <option value="836">F11.220,Opioid dependence with intoxication, uncomplicated
+                                                                    </option>
+                                                                    <option value="837">F11.221,Opioid dependence with intoxication delirium
+                                                                    </option>
+                                                                    <option value="838">F11.222,Opioid dependence with intoxication with perceptual disturbance
+                                                                    </option>
+                                                                    <option value="839">F11.229,Opioid dependence with intoxication, unspecified
+                                                                    </option>
+                                                                    <option value="840">F11.23,Opioid dependence with withdrawal
+                                                                    </option>
+                                                                    <option value="841">F11.24,Opioid dependence with opioid-induced mood disorder
+                                                                    </option>
+                                                                    <option value="842">F11.25,Opioid dependence with opioid-induced psychotic disorder
+                                                                    </option>
+                                                                    <option value="843">F11.250,Opioid dependence with opioid-induced psychotic disorder with delusions
+                                                                    </option>
+                                                                    <option value="844">F11.251,Opioid dependence with opioid-induced psychotic disorder with hallucinations
+                                                                    </option>
+                                                                    <option value="845">F11.259,Opioid dependence with opioid-induced psychotic disorder, unspecified
+                                                                    </option>
+                                                                    <option value="846">F11.28,Opioid dependence with other opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="847">F11.281,Opioid dependence with opioid-induced sexual dysfunction
+                                                                    </option>
+                                                                    <option value="848">F11.282,Opioid dependence with opioid-induced sleep disorder
+                                                                    </option>
+                                                                    <option value="849">F11.288,Opioid dependence with other opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="850">F11.29,Opioid dependence with unspecified opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="851">F11.9,Opioid use, unspecified
+                                                                    </option>
+                                                                    <option value="852">F11.90,Opioid use, unspecified, uncomplicated
+                                                                    </option>
+                                                                    <option value="853">F11.92,Opioid use, unspecified with intoxication
+                                                                    </option>
+                                                                    <option value="854">F11.920,Opioid use, unspecified with intoxication, uncomplicated
+                                                                    </option>
+                                                                    <option value="855">F11.921,Opioid use, unspecified with intoxication delirium
+                                                                    </option>
+                                                                    <option value="856">F11.922,Opioid use, unspecified with intoxication with perceptual disturbance
+                                                                    </option>
+                                                                    <option value="857">F11.929,Opioid use, unspecified with intoxication, unspecified
+                                                                    </option>
+                                                                    <option value="858">F11.93,Opioid use, unspecified with withdrawal
+                                                                    </option>
+                                                                    <option value="859">F11.94,Opioid use, unspecified with opioid-induced mood disorder
+                                                                    </option>
+                                                                    <option value="860">F11.95,Opioid use, unspecified with opioid-induced psychotic disorder
+                                                                    </option>
+                                                                    <option value="861">F11.950,Opioid use, unspecified with opioid-induced psychotic disorder with delusions
+                                                                    </option>
+                                                                    <option value="862">F11.951,Opioid use, unspecified with opioid-induced psychotic disorder with hallucinations
+                                                                    </option>
+                                                                    <option value="863">F11.959,Opioid use, unspecified with opioid-induced psychotic disorder, unspecified
+                                                                    </option>
+                                                                    <option value="864">F11.98,Opioid use, unspecified with other specified opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="865">F11.981,Opioid use, unspecified with opioid-induced sexual dysfunction
+                                                                    </option>
+                                                                    <option value="866">F11.982,Opioid use, unspecified with opioid-induced sleep disorder
+                                                                    </option>
+                                                                    <option value="867">F11.988,Opioid use, unspecified with other opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="868">F11.99,Opioid use, unspecified with unspecified opioid-induced disorder
+                                                                    </option>
+                                                                    <option value="869">Z62.820,Parent-Child Relational Problem</option>
+                                                                    <option value="870">Z62.891,Sibling Relational Problem</option>
+                                                                    <option value="871">Z62.29,Upbringing Away From Parents</option>
+                                                                    <option value="872">Z62.898,Child Affected by Parental Relationship Distress</option>
+                                                                    <option value="873">Z63.0,Relationship Distress With Spouse or Intimate Partner</option>
+                                                                    <option value="874">Z63.5,Disruption of Family by Separation or Divorce</option>
+                                                                    <option value="875">Z63.8,High Expressed Emotion Level Within Family</option>
+                                                                    <option value="876">Z63.4,Uncomplicated Bereavement</option>
+                                                                    <option value="877">Z55.9,Academic or Educational Problem</option>
+                                                                    <option value="878">Z56.82,Problem Related to Current Military Deployment Status</option>
+                                                                    <option value="879">Z56.9,Other Problem Related to Employment</option>
+                                                                    <option value="880">Z59.0,Homelessness</option>
+                                                                    <option value="881">Z59.1,Inadequate Housing</option>
+                                                                    <option value="882">Z59.2,Discord With Neighbor, Lodger, or Landlord</option>
+                                                                    <option value="883">Z59.3,Problem Related to Living in a Residential Institution</option>
+                                                                    <option value="884">Z59.4,Lack of Adequate Food or Safe Drinking Water</option>
+                                                                    <option value="885">Z59.5,Extreme Poverty</option>
+                                                                    <option value="886">Z59.6,Low Income</option>
+                                                                    <option value="887">Z59.7,Insufficient Social Insurance or Welfare Support</option>
+                                                                    <option value="888">Z59.9,Unspecified Housing or Economic Problem</option>
+                                                                    <option value="889">Z60.0,Phase of Life Problem</option>
+                                                                    <option value="890">Z60.2,Problem Related to Living Alone</option>
+                                                                    <option value="891">Z60.3,Acculturation Difficulty</option>
+                                                                    <option value="892">Z60.4,Social Exclusion or Rejection</option>
+                                                                    <option value="893">Z60.5,Target of (Perceived) Adverse Discrimination or Persecution</option>
+                                                                    <option value="894">Z60.9,Unspecified Problem Related to Social Environment</option>
+                                                                    <option value="895">Z65.4,Victim of Crime</option>
+                                                                    <option value="896">Z65.0,Conviction in Civil or Criminal Proceedings Without Imprisonment</option>
+                                                                    <option value="897">Z65.1,Imprisonment or Other Incarceration</option>
+                                                                    <option value="898">Z65.2,Problems Related to Release From Prison</option>
+                                                                    <option value="899">Z65.3,Problems Related to Other Legal Circumstances</option>
+                                                                    <option value="900">Z70.9,Sex Counseling</option>
+                                                                    <option value="901">Z71.9,Other Counseling or Consultation</option>
+                                                                    <option value="902">Z65.8,Religious or Spiritual Problem</option>
+                                                                    <option value="903">Z64.0,Problems Related to Unwanted Pregnancy</option>
+                                                                    <option value="904">Z64.1,Problems Related to Multiparity</option>
+                                                                    <option value="905">Z64.4,Discord With Social Service Provider, Including Probation Officer, Case Manager, or Social Services Worker</option>
+                                                                    <option value="906">Z65.4,Victim of Terrorism or Torture</option>
+                                                                    <option value="907">Z65.5,Exposure to Disaster, War, or Other Hostilities</option>
+                                                                    <option value="908">Z65.8,Other Problem Related to Psychosocial Circumstances</option>
+                                                                    <option value="909">Z65.9,Unspecified Problem Related to Unspecified Psychosocial Circumstances</option>
+                                                                    <option value="910">Z91.49,Other Personal History of Psychological Trauma</option>
+                                                                    <option value="911">Z91.5,Personal History of Self-Harm</option>
+                                                                    <option value="912">Z91.82,Personal History of Military Deployment</option>
+                                                                    <option value="913">Z91.89,Other Personal Risk Factors</option>
+                                                                    <option value="914">Z72.9,Problem Related to Lifestyle</option>
+                                                                    <option value="915">Z72.811,Adult Antisocial Behavior</option>
+                                                                    <option value="916">Z72.810,Child or Adolescent Antisocial Behavior</option>
+                                                                    <option value="917">Z75.3,Unavailability or Inaccessibility of Health Care Facilities</option>
+                                                                    <option value="918">Z75.4,Unavailability or Inaccessibility of Other Helping Agencies</option>
+                                                                    <option value="919">Z91.19,Nonadherence to Medical Treatment</option>
+                                                                    <option value="920">E66.9,Overweight or Obesity</option>
+                                                                    <option value="921">Z76.5,Malingering</option>
+                                                                    <option value="922">Z91.83,Wandering Associated With a Mental Disorder</option>
+                                                                    <option value="923">R41.83,Borderline Intellectual Functioning</option>
+                                                                    <option value="924">Z55.0,Illiteracy and low-level literacy</option>
+                                                                    <option value="925">Z55.1,Schooling unavailable and unattainable</option>
+                                                                    <option value="926">Z55.2,Failed examinations</option>
+                                                                    <option value="927">Z55.3,Underachievement in school</option>
+                                                                    <option value="928">Z55.4,Educational maladjustment and discord with teachers and classmates</option>
+                                                                    <option value="929">Z55.8,Other problems related to education and literacy</option>
+                                                                    <option value="930">Z55.9,Problem related to education and literacy, unspecified</option>
+                                                                    <option value="931">Z56.0,Unemployment, unspecified</option>
+                                                                    <option value="932">Z56.1,Change of job</option>
+                                                                    <option value="933">Z56.2,Threat of job loss</option>
+                                                                    <option value="934">Z56.3,Stressful work schedule</option>
+                                                                    <option value="935">Z56.4,Discord with boss and workmates</option>
+                                                                    <option value="936">Z56.5,Uncongenial work Difficult conditions at work</option>
+                                                                    <option value="937">Z56.6,Other physical and mental strain related to work</option>
+                                                                    <option value="938">Z56.7,Other and unspecified problems related to employment</option>
+                                                                    <option value="939">Z59.0,Homelessness</option>
+                                                                    <option value="940">Z59.1,Inadequate housing Lack of heating Restriction of space Technical defects in home preventing adequate care Unsatisfactory surroundings</option>
+                                                                    <option value="941">Z59.2,Discord with neighbours, lodgers and landlord</option>
+                                                                    <option value="942">Z59.3,Problems related to living in residential institution Boarding-school resident</option>
+                                                                    <option value="943">Z59.4,Lack of adequate food</option>
+                                                                    <option value="944">Z59.5,Extreme poverty</option>
+                                                                    <option value="945">Z59.6,Low income</option>
+                                                                    <option value="946">Z59.7,Insufficient social insurance and welfare support</option>
+                                                                    <option value="947">Z59.8,Other problems related to housing and economic circumstances Foreclosure on loan Isolated dwelling Problems with creditors</option>
+                                                                    <option value="948">Z59.9,Problem related to housing and economic circumstances, unspecified</option>
+                                                                    <option value="949">Z60.0,Problems of adjustment to life-cycle transitions Adjustment to retirement [pension] Empty nest syndrome</option>
+                                                                    <option value="950">Z60.1,Atypical parenting situation Problems related to a parenting situation (rearing of children) with a single parent or other than that of two cohabiting biological parents.</option>
+                                                                    <option value="951">Z60.2,Living alone</option>
+                                                                    <option value="952">Z60.3,Acculturation difficulty Migration Social transplantation</option>
+                                                                    <option value="953">Z60.4,Social exclusion and rejection Exclusion and rejection on the basis of personal characteristics, such as unusual physical appearance, illness or behaviour.</option>
+                                                                    <option value="954">Z60.5,Target of perceived adverse discrimination and persecution Persecution or discrimination, perceived or real, on the basis of membership of some group (as defined by skin colour, religion, ethnic origin, etc.) rather than personal characteristics.</option>
+                                                                    <option value="955">Z60.8,Other problems related to social environment</option>
+                                                                    <option value="956">Z60.9,Problem related to social environment, unspecified</option>
+                                                                    <option value="957">T74.12XA,Child Physical Abuse, Confirmed</option>
+                                                                    <option value="958">T76.12XA,Child Physical Abuse, Suspected</option>
+                                                                    <option value="959">Z69.010,Encounter for mental health services for victim of child abuse by parent</option>
+                                                                    <option value="960">Z69.020,Encounter for mental health services for victim of nonparental child abuse</option>
+                                                                    <option value="961">Z62.810,Personal history (past history) of physical abuse in childhood</option>
+                                                                    <option value="962">Z69.011,Encounter for mental health services for perpetrator of parental child abuse</option>
+                                                                    <option value="963">Z69.021,Encounter for mental health services for perpetrator of nonparental child abuse</option>
+                                                                    <option value="964">Z69.010,Encounter for mental health services for victim of child sexual abuse by parent</option>
+                                                                    <option value="965">Z69.020,Encounter for mental health services for victim of nonparental child sexual abuse</option>
+                                                                    <option value="966">Z62.810,Personal history (past history) of sexual abuse in childhood</option>
+                                                                    <option value="967">Z69.011,Encounter for mental health services for perpetrator of parental child sexual abuse</option>
+                                                                    <option value="968">Z69.021,Encounter for mental health services for perpetrator of nonparental child sexual abuse</option>
+                                                                    <option value="969">T74.02XA,Child Neglect, Confirmed</option>
+                                                                    <option value="970">T76.02XA,Child Neglect, Suspected</option>
+                                                                    <option value="971">Z69.010,Encounter for mental health services for victim of child neglect by parent</option>
+                                                                    <option value="972">Z69.020,Encounter for mental health services for victim of nonparental child neglect</option>
+                                                                    <option value="973">Z62.812,Personal history (past history) of neglect in childhood</option>
+                                                                    <option value="974">Z69.011,Encounter for mental health services for perpetrator of parental child neglect</option>
+                                                                    <option value="975">Z69.021,Encounter for mental health services for perpetrator of nonparental child neglect</option>
+                                                                    <option value="976">T74.32XA,Child Psychological Abuse, Confirmed</option>
+                                                                    <option value="977">T76.32XA,Child Psychological Abuse, Suspected</option>
+                                                                    <option value="978">Z69.010,Encounter for mental health services for victim of child psychological abuse by parent</option>
+                                                                    <option value="979">Z69.020,Encounter for mental health services for victim of nonparental child psychological abuse</option>
+                                                                    <option value="980">Z62.811,Personal history (past history) of psychological abuse in childhood</option>
+                                                                    <option value="981">Z69.011,Encounter for mental health services for perpetrator of parental child psychological abuse</option>
+                                                                    <option value="982">Z69.021,Encounter for mental health services for perpetrator of nonparental child psychological abuse</option>
+                                                                    <option value="983">T74.11XA,Spouse or Partner Violence, Physical, Confirmed</option>
+                                                                    <option value="984">T76.11XA,Spouse or Partner Violence, Physical, Suspected</option>
+                                                                    <option value="985">Z69.11,Encounter for mental health services for victim of spouse or partner violence, physical</option>
+                                                                    <option value="986">Z91.410,Personal history (past history) of spouse or partner violence, physical</option>
+                                                                    <option value="987">Z69.12,Encounter for mental health services for perpetrator of spouse or partner violence, physical</option>
+                                                                    <option value="988">T74.21XA,Spouse or Partner Violence, Sexual, Confirmed</option>
+                                                                    <option value="989">T76.21XA,Spouse or Partner Violence, Sexual, Suspected</option>
+                                                                    <option value="990">Z69.81,Encounter for mental health services for victim of spouse or partner violence, sexual</option>
+                                                                    <option value="991">Z91.410,Personal history (past history) of spouse or partner violence, sexual</option>
+                                                                    <option value="992">Z69.12,Encounter for mental health services for perpetrator of spouse or partner violence, sexual</option>
+                                                                    <option value="993">T74.01XA,Spouse or Partner Neglect, Confirmed</option>
+                                                                    <option value="994">T76.01XA,Spouse or Partner Neglect, Suspected</option>
+                                                                    <option value="995">Z69.11,Encounter for mental health services for victim of spouse or partner neglect</option>
+                                                                    <option value="996">Z91.412,Personal history (past history) of spouse or partner neglect</option>
+                                                                    <option value="997">Z69.12,Encounter for mental health services for perpetrator of spouse or partner neglect</option>
+                                                                    <option value="998">T74.31XA,Spouse or Partner Abuse, Psychological, Confirmed</option>
+                                                                    <option value="999">T76.31XA,Spouse or Partner Abuse, Psychological, Suspected</option>
+                                                                    <option value="1000">Z69.11,Encounter for mental health services for victim of spouse or partner psychological abuse</option>
+                                                                    <option value="1001">Z91.411,Personal history (past history) of spouse or partner psychological abuse</option>
+                                                                    <option value="1002">Z69.12,Encounter for mental health services for perpetrator of spouse or partner psychological abuse</option>
+                                                                    <option value="1003">T74.11XA,Adult Physical Abuse by Nonspouse or Nonpartner, Confirmed</option>
+                                                                    <option value="1004">T76.11XA,Adult Physical Abuse by Nonspouse or Nonpartner, Suspected</option>
+                                                                    <option value="1005">Z69.81,Encounter for mental health services for victim of nonspousal or nonpartner adult abuse</option>
+                                                                    <option value="1006">Z69.82,Encounter for mental health services for perpetrator of nonspousal or nonpartner adult abuse</option>
+                                                                    <option value="1007">Z61.0,Loss of love relationship in childhood</option>
+                                                                    <option value="1008">Z61.1,Removal from home in childhood</option>
+                                                                    <option value="1009">Z61.2,Altered pattern of family relationships in childhood</option>
+                                                                    <option value="1010">Z61.3,Events resulting in loss of self-esteem in childhood</option>
+                                                                    <option value="1011">Z61.4,Problems related to alleged sexual abuse of child by person within primary support group</option>
+                                                                    <option value="1012">Z61.5,Problems related to alleged sexual abuse of child by person outside primary support group</option>
+                                                                    <option value="1013">Z61.6,Problems related to alleged physical abuse of child</option>
+                                                                    <option value="1014">Z61.7,Personal frightening experience in childhood</option>
+                                                                    <option value="1015">Z61.8,Other negative life events in childhood</option>
+                                                                    <option value="1016">Z61.9,Negative life event in childhood, unspecified</option>
+                                                                    <option value="1017">Z62.0,Inadequate parental supervision and controlL</option>
+                                                                    <option value="1018">Z62.1,Parental overprotection</option>
+                                                                    <option value="1019">Z62.2,Institutional upbringing</option>
+                                                                    <option value="1020">Z62.3,Hostility towards and scapegoating of child</option>
+                                                                    <option value="1021">Z62.4,Emotional neglect of child</option>
+                                                                    <option value="1022">Z62.5,Other problems related to neglect in upbringing</option>
+                                                                    <option value="1023">Z62.6,Inappropriate parental pressure and other abnormal qualities of upbringing</option>
+                                                                    <option value="1024">Z62.8,Other specified problems related to upbringing</option>
+                                                                    <option value="1025">Z62.9,Problem related to upbringing, unspecified</option>
+                                                                    <option value="1026">Z63.0,Problems in relationship with spouse or partner Discord between partners resulting in severe or prolonged loss of control, in generalization of hostile or critical feelings or in a persisting atmosphere of severe interpersonal violence (hitting or striking).</option>
+                                                                    <option value="1027">Z63.1,Problems in relationship with parents and in-laws</option>
+                                                                    <option value="1028">Z63.2,Inadequate family support</option>
+                                                                    <option value="1029">Z63.3,Absence of family member</option>
+                                                                    <option value="1030">Z63.4,Disappearance and death of family member Assumed death of family member</option>
+                                                                    <option value="1031">Z63.5,Disruption of family by separation and divorce Estrangement</option>
+                                                                    <option value="1032">Z63.6,Dependent relative needing care at home</option>
+                                                                    <option value="1033">Z63.7,Other stressful life events affecting family and household Anxiety (normal) about sick person in family Health problems within family Ill or disturbed family member Isolated family</option>
+                                                                    <option value="1034">Z63.8,Other specified problems related to primary support group Family discord NOS High expressed emotional level within family Inadequate or distorted communication within family </option>
+                                                                    <option value="1035">Z63.9,Problem related to primary support group, unspecified</option>
+                                                                    <option value="1036">Z64.0,Problems related to unwanted pregnancy</option>
+                                                                    <option value="1037">Z64.1,Problems related to multiparity</option>
+                                                                    <option value="1038">Z64.2,Seeking and accepting physical, nutritional and chemical interventions known to be hazardous and harmful</option>
+                                                                    <option value="1039">Z64.3,Seeking and accepting behavioural and psychological interventions known to be hazardous and harmful</option>
+                                                                    <option value="1040">Z64.4,Discord with counsellors Discord with: probation officer or social worker</option>
+                                                                    <option value="1041">Z65.0,Conviction in civil and criminal proceedings without imprisonment</option>
+                                                                    <option value="1042">Z65.1,Imprisonment and other incarceration</option>
+                                                                    <option value="1043">Z65.2,Problems related to release from prison</option>
+                                                                    <option value="1044">Z65.3,Problems related to other legal circumstances Arrest Child custody or support proceedings Litigation Prosecution</option>
+                                                                    <option value="1045">Z65.4,Victim of crime and terrorism Victim of torture</option>
+                                                                    <option value="1046">Z65.5,Exposure to disaster, war and other hostilities</option>
+                                                                    <option value="1047">Z65.8,Other specified problems related to psychosocial circumstances</option>
+                                                                    <option value="1048">Z65.9,Problem related to unspecified psychosocial circumstances</option>
+                                                                    <option value="1049">F43.81,Prolonged grief disorder</option>
+                                                            </select>
+                        
+                                                        </div>
+                                                        <!-- <input type="text" class="client-input" > -->
+                                                        <!-- ########## select end -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Description</label>
+                                                        <textarea class="StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>RATIONAL FOR DIAGNOSIS AND RECOMMENDATIONS</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <textarea class="StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>OBJECTIVE OF TREATMENT</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <textarea class="StartSpeechRecoganisation accuratsize" cols="10" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ####signatures#### -->
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS_SIGN">
+                                            <h6>Signatures</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                   <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-4" >
+                                                                    <input class="input-sign" id="btnsign" type="button" value="SIGN"  spellcheck="true">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                     <input type="text" class="client-input" value="Test-Test" disabled>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="innerSignature">
+                                                                        <div class="inner-img-border">
+                                                                            <img class="img-class" src="" alt="Sign" >
+                                                                            <div class="line"></div>
+                                                                        </div>
+                                                                    </div>    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-4" >
+                                                                    <input class="input-sign" id="btnsign" type="button" value="SIGN"  spellcheck="true">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <select data-val="true" class="client-input" data-val-number="The field Signature_ID must be a number." data-val-required="The Signature_ID field is required." id="Signature_ID" name="Signature_ID"  class="valid">
+                                                                        <option selected="selected" value="0">--Select--</option>
+                                                                        <option value="6">Monica Boddie,LCSW-C</option>
+                                                                        <option value="34">test test,</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="innerSignature">
+                                                                        <div class="inner-img-border">
+                                                                            <img class="img-class" src="" alt="Sign" >
+                                                                            <div class="line"></div>
+                                                                        </div>
+                                                                    </div>           
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="CLIENT-LABEL">Received Date:</label>
+                                                                    <input type="text" class="client-input"  disabled>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="CLIENT-LABEL">Entered By</label>
+                                                                    <input type="text" class="client-input" >
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+                

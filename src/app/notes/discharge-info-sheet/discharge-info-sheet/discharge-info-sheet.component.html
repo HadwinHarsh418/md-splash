@@ -1,0 +1,376 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="generalForm">
+                <div class="all-tb">
+                    <div class="row mar-1010 d-flex my-2">
+                        <div class="col-lg-6 d-flex">
+                          <div class="arrow" (click)="back()">
+                            <label for="type">
+                              <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                          </div>
+                          <h1 class="admin-main_heading">Discharge Information Sheet New
+                        </h1>
+                        </div>
+                        <div class="col-lg-6 back_css">
+                          <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS2">
+                                <h6>An asterisk (*) denotes a question that is mandatory for submission</h6>
+                            </div>
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>Discharge Information</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Client First Name: </label>
+                                                    <input formControlName="First_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Client Last Name </label>
+                                                    <input formControlName="Middle_Initial" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Interviewer Name </label>
+                                                    <input formControlName="Last_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!-- ####### second #### -->
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient"
+                                                [class.has-error]="genForm['DischargeDate'].dirty && genForm['DischargeDate'].errors || genForm['DischargeDate'].touched && genForm['DischargeDate'].errors">
+                                                    <label class="CLIENT-LABEL">Discharge Date</label>
+                                                    <input formControlName="DischargeDate" type="text" class="client-input" >
+                                                    <span *ngIf="genForm['DischargeDate'].dirty && genForm['DischargeDate'].errors" class="has-error">
+                                                        <i *ngIf="genForm['DischargeDate'].errors?.['required']">
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Discharging Provider</label>
+                                                    <input formControlName="DischargingProvider" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" style="margin-bottom: 10px;">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"><b>D1b. Discharge Condition</b></label>
+                                                    <label style="float: left; width: auto; margin: 0 10px 0 0;">
+                                                    <input id="DischargeCondition" name="DischargeCondition" type="radio" value="1" spellcheck="true">
+                                                    <label for="Improved">Improved</label></label>
+                                                    <label style="float: left; width: auto; margin: 0 10px 0 0;">
+                                                    <input id="DischargeCondition" name="DischargeCondition" type="radio" value="2" spellcheck="true">
+                                                    <label for="No_Change">No Change</label></label>
+                                                    <label style="float: left; width: auto; margin: 0 10px 0 0;">
+                                                    <input id="DischargeCondition" name="DischargeCondition" type="radio" value="3" spellcheck="true">
+                                                    <label for="Worse">Worse</label></label>
+                                                    <label style="float: left; width: auto; margin: 0 10px 0 0;">
+                                                    <input id="DischargeCondition" name="DischargeCondition" type="radio" value="4" spellcheck="true">
+                                                    <label for="Unknown">Unknown</label>
+                                                </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>OMS Discharge Data</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['datetolast'].dirty && genForm['datetolast'].errors || genForm['datetolast'].touched && genForm['datetolast'].errors"
+                                                            >
+                                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D2a. Date of last contact with consumer</b></label>
+                                                                <input type="text" class="client-input" formControlName="datetolast">
+                                                                <span *ngIf="genForm['datetolast'].dirty && genForm['datetolast'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['datetolast'].errors?.['required']"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['fprmComplete'].dirty && genForm['fprmComplete'].errors || genForm['fprmComplete'].touched && genForm['fprmComplete'].errors"
+                                                            >
+                                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D2b. Date OMS Discharge Form completed</b></label>
+                                                                <input type="text" class="client-input" formControlName="fprmComplete">
+                                                                <span *ngIf="genForm['fprmComplete'].dirty && genForm['fprmComplete'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['fprmComplete'].errors?.['required']"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['dischagePlan'].dirty && genForm['dischagePlan'].errors || genForm['dischagePlan'].touched && genForm['dischagePlan'].errors"
+                                                            >
+                                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D3. Was this discharge planned?</b></label><label>Yes</label>
+                                                                <input type="radio" name="dischagePlan" id="dischagePlan" formControlName="dischagePlan" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>No</label>
+                                                                <input type="radio" name="dischagePlan" id="dischagePlan" formControlName="dischagePlan" value="no" (change)="onSelectionChanged($event)">
+                                                                
+                                                            </div>
+                                                            <span *ngIf="genForm['dischagePlan'].dirty && genForm['dischagePlan'].errors" class="has-error">
+                                                                <i *ngIf="genForm['dischagePlan'].errors?.['required']"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['dischageAgainst'].dirty && genForm['dischageAgainst'].errors || genForm['dischageAgainst'].touched && genForm['dischageAgainst'].errors"
+                                                            >
+                                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D4. Was this discharge Against Medical Advice?</b></label><label>Yes</label>
+                                                                <input type="radio" name="dischageAgainst" id="dischageAgainst" formControlName="dischageAgainst" value="yes" (change)="onSelectionChanged($event)">
+                                                                <label>No</label>
+                                                                <input type="radio" name="dischageAgainst" id="dischageAgainst" formControlName="dischageAgainst" value="no" (change)="onSelectionChanged($event)">
+                                                                
+                                                            </div>
+                                                            <span *ngIf="genForm['dischageAgainst'].dirty && genForm['dischageAgainst'].errors" class="has-error">
+                                                                <i *ngIf="genForm['dischageAgainst'].errors?.['required']"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['D5'].dirty && genForm['D5'].errors || genForm['D5'].touched && genForm['D5'].errors"
+                                                            >
+                                                                <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D5. Reason(s) for Discharge (check all that apply):
+                                                                </b></label>
+                                                                <div class="col-md-12 div_checkBox">
+                                                                    <ul class="all-li-radio d-block">
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer and provider agree that treatment is complete based upon the individual’s current status, service needs, and mutually agreed upon goal attainment. </label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer or parent/guardian withdrew consumer from care</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer referred to less intensive level of care</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer referred to more intensive level of care</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer referred to another provider providing similar level of servicess</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label> Consumer no longer meets medical necessity criteria</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer no longer eligible for services (no longer has MA/no longer
+                                                                                 meets uninsured criteria/benefits no longer cover services)</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer’s lack of participation in program</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Program’s determination to discontinue services (because of the consumer’s actions, the services are not 
+                                                                                effective or the 
+                                                                                program is unable to secure the safety and welfare of the consumer or others)</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer moved from service area</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer is hospitalized – psychiatric</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer is hospitalized – somatic</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer is in jail or prison</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Consumer deceased</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="checkbox" name="D5"
+                                                                                id="D5" formControlName="D5" value="yes">
+                                                                            <label>Discharge reason unknown</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <span *ngIf="genForm['D5'].dirty && genForm['D5'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['D5'].errors?.['required']"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="margin-inputclient"
+                                                                [class.has-error]="genForm['participation'].dirty && genForm['participation'].errors || genForm['participation'].touched && genForm['participation'].errors"
+                                                                >
+                                                                    <label class="CLIENT-LABEL"><span class="text-danger">*</span><b>D6. Consumer or Child/Adolescent/Caregiver participation:</b></label>
+                                                                    <div class="d-flex">
+                                                                        <input type="radio" name="participation" formControlName="participation" id="participation">
+                                                                        <label>Client or child/adolescent/caregiver present or participating by phone – in addition to this Discharge Information 
+                                                                            Sheet, you should conduct an OMS interview with the consumer or child/adolescent/caregiver using the appropriate 
+                                                                            questionnaire (either Adult or Child and Adolescent version)</label>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                            
+                                                                            <input type="radio" name="participation" formControlName="participation" id="participation">
+                                                                            <label>Client or child/adolescent/caregiver not present (not participating by phone) – in addition to this Discharge 
+                                                                                Information Sheet, you should complete the appropriate OMS Discharge Form 
+                                                                                (either Adult or Child and Adolescent version).</label>
+                                                                    </div>
+                                                                    <span *ngIf="genForm['participation'].dirty && genForm['participation'].errors" class="has-error">
+                                                                        <i *ngIf="genForm['participation'].errors?.['required']"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                  <!-- ############### OCCUPATION/EMPLOYMENT INFORMATION ########### -->
+                                <div class="col-md-12" *ngIf="showContent">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>OCCUPATION/EMPLOYMENT INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Check all that apply</label>   
+                                                            <input type="checkbox" name="" id="">
+                                                            <label>EMPLOYED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>RETIRED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>DISABLED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <br>
+                                                            <label>STUDENT</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>HOMEMAKER</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>UNEMPLOYED</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                        </div>
+                                                        <label>Current Employer</label>
+                                                        <textarea formControlName="CurrentEmployer" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Are you currently having difficulties on the job because of
+                                                                    (check if yes)</label>   
+                                                                <input type="checkbox" name="" id="">
+                                                                <label> Emotional Problems?</label>
+                                                                <br>
+                                                                <input type="checkbox" name="" id=""> 
+                                                                <label>Substance Abuse?
+                                                                    If yes to any of the above, please explain
+                                                                </label>
+                                                            </div>
+                                                            <textarea formControlName="ExplainWorkDifficulties" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="1" style="width:100%;"></textarea>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                   
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">If/When employed, what type of work do you do?</label>   
+                                                            <textarea formControlName="Worktype" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Years of Current job</label>
+                                                            <input formControlName="YearsOnCurrentJob" type="text" class="client-input" >
+                                                            <label class="CLIENT-LABEL">Have you ever had difficulties at work because of (check if yes)</label>
+                                                            <input type="checkbox" name="" id="">
+                                                            <label> Emotional Problems</label>
+                                                            <input type="checkbox" name="" id=""> 
+                                                            <label>Substance Abuse</label>
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

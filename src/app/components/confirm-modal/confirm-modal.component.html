@@ -1,0 +1,15 @@
+<!-- <div class="modal"> -->
+<div class="modal-header head-color">
+    <h4 class="modal-title text-white" id="myModalLabel1">{{ modalData?.title || ''}}</h4>
+    <button type="button" class="close me text-white " (click)="activeModal.close(false)" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>
+<div class="modal-body text-center" tabindex="0">
+    <p [innerHtml]="modalData?.subtitle || ''"></p>
+</div>
+<div class="modal-footer d-flex justify-content-{{!modalData?.cancelBtnTxt ? 'right' : 'between'}}">
+    <button *ngIf="modalData?.cancelBtnTxt" class="btn btn-{{modalData?.cancelColor || 'success'}}" (click)="activeModal.close(false)">{{modalData?.cancelBtnTxt || ''}}</button>
+    <button class="btn btn-{{modalData?.confirmlColor || 'danger'}}" (click)="activeModal.close(true)">{{modalData?.confirmBtnTxt || ''}}</button>
+</div>
+<!-- </div> -->

@@ -1,0 +1,1006 @@
+<form [formGroup]="pregressNotes">
+    <div class="all-tb">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                    <h6>FOR SECONDARY REFERRALS SOURCE</h6>
+                </div>
+                <div class="content">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <label class="CLIENT-LABEL">Who made the call for Mobile Crisis Services?</label>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Name</label>
+                                        <input formControlName="Name" type="text" class="client-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Address</label>
+                                        <input formControlName="Address" type="text" class="client-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Phone</label>
+                                        <input formControlName="Phone" type="text" class="client-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 my-2">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Relationship to Consumer</label>
+                                        <ul class="all-li-radio d-block">
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Family Member</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Friend</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>School</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Guardian/Conservator</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Child Protective Services</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Neighbor</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Employer</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Court</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Shelter</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Adult Protective Services</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="RelationshipToConsumer"
+                                                    formControlName="RelationshipToConsumer"
+                                                    id="RelationshipToConsumer">
+                                                <label>Others</label>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Describe what led to the call?</label>
+                                        <input type="text"
+                                            formControlName="DescribeWhatLedToCall" class="client-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Nature of the Crisis(Check all that apply)</label>
+                                        <ul class="all-li-radio d-block">
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Adult Psychiatric Emergency(21+)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Child Psychiatric Emergency(younger than 16 years)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Transitional Aged Youth Emergency (16-21)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Behavioral Emergency</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Weather-related incident</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Suicidal thoughts/ideation</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Homicidal Ideation</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Death of loved-one</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>School-related issue</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Sudden Death</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Self - injury</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Argument</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Fight(Physical altercation)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Assault</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Witnessed violence/crime</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Substance Intoxication</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Motor Vehicle Accident</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Suspected Child Abuse</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Suspected Adult Abuse</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label> Suspected Child Neglect</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Suspected Elder Neglect</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Community-driven event</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Financial Crisis</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Family Crisis</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Reported Child Abuse</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Reported Elder Abuse</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="IsAdultPsychiatricEmergency"
+                                                    formControlName="IsAdultPsychiatricEmergency"
+                                                    id="IsAdultPsychiatricEmergency">
+                                                <label>Others</label>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Others</label>
+                                        <input formControlName="IfOther2" type="text" class="client-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                    <h6>MENTAL STATUS-OBSERVATIONS</h6>
+                </div>
+                <div class="content">
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Appearence:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Appearance"
+                                        formControlName="Appearance"
+                                        id="Appearance">
+                                    <label>Neat</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Appearance"
+                                        formControlName="Appearance"
+                                        id="Appearance">
+                                    <label>Disheveled</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Appearance"
+                                        formControlName="Appearance"
+                                        id="Appearance">
+                                    <label>Inappropriate</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Appearance"
+                                        formControlName="Appearance"
+                                        id="Appearance">
+                                    <label>Bizarre</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Appearance"
+                                        formControlName="Appearance"
+                                        id="Appearance">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Others</label>
+                                <input formControlName="AppearanceOther" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Speech:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Speech"
+                                        formControlName="Speech"
+                                        id="Speech">
+                                    <label>Normal</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Speech"
+                                        formControlName="Speech"
+                                        id="Speech">
+                                    <label>Tangential</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Speech"
+                                        formControlName="Speech"
+                                        id="Speech">
+                                    <label>Pressured</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Speech"
+                                        formControlName="Speech"
+                                        id="Speech">
+                                    <label>Impoverished</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Speech"
+                                        formControlName="Speech"
+                                        id="Speech">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Others</label>
+                                <input formControlName="SpeechOther" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Eye Contact:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="EyeContact"
+                                        formControlName="EyeContact"
+                                        id="EyeContact">
+                                    <label>Normal</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="EyeContact"
+                                        formControlName="EyeContact"
+                                        id="EyeContact">
+                                    <label>Intense</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="EyeContact"
+                                        formControlName="EyeContact"
+                                        id="EyeContact">
+                                    <label>Avoidant</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="EyeContact"
+                                        formControlName="EyeContact"
+                                        id="EyeContact">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Others</label>
+                                <input formControlName="EyeContactOther" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Motor Activity:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="MotorActivity"
+                                        formControlName="MotorActivity"
+                                        id="MotorActivity">
+                                    <label>Normal</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MotorActivity"
+                                        formControlName="MotorActivity"
+                                        id="MotorActivity">
+                                    <label>Restless</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MotorActivity"
+                                        formControlName="MotorActivity"
+                                        id="MotorActivity">
+                                    <label>Tics</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MotorActivity"
+                                        formControlName="MotorActivity"
+                                        id="MotorActivity">
+                                    <label>Slowed</label>
+                                </li>
+                            </ul>
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Others</label>
+                                <input formControlName="MotorActivityOther" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Affect:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Affect"
+                                        formControlName="Affect"
+                                        id="Affect">
+                                    <label>Blunted</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Affect"
+                                        formControlName="Affect"
+                                        id="Affect">
+                                    <label>Flat</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Affect"
+                                        formControlName="Affect"
+                                        id="Affect">
+                                    <label>Inappropriate</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Affect"
+                                        formControlName="Affect"
+                                        id="Affect">
+                                    <label>Labile</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Affect"
+                                        formControlName="Affect"
+                                        id="Affect">
+                                    <label>Restricted/Constricted</label>
+                                </li>
+                            </ul>
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Comments</label>
+                                <input formControlName="AffectComments" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>Mood:</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Mood:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Euthymic</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Anxious</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Angry</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Depressed</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Euphoric</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Irritable</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Mood"
+                                        formControlName="Mood"
+                                        id="Mood">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>COGNITION:</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Orientation Impairment:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="OrientationImpairment"
+                                        formControlName="OrientationImpairment"
+                                        id="OrientationImpairment">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="OrientationImpairment"
+                                        formControlName="OrientationImpairment"
+                                        id="OrientationImpairment">
+                                    <label>Time</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="OrientationImpairment"
+                                        formControlName="OrientationImpairment"
+                                        id="OrientationImpairment">
+                                    <label>Place</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="OrientationImpairment"
+                                        formControlName="OrientationImpairment"
+                                        id="OrientationImpairment">
+                                    <label>Person</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Memory Impairment:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="MemoryImpairment"
+                                        formControlName="MemoryImpairment"
+                                        id="MemoryImpairment">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MemoryImpairment"
+                                        formControlName="MemoryImpairment"
+                                        id="MemoryImpairment">
+                                    <label>Short-Term</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MemoryImpairment"
+                                        formControlName="MemoryImpairment"
+                                        id="MemoryImpairment">
+                                    <label>Long-Term</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="MemoryImpairment"
+                                        formControlName="MemoryImpairment"
+                                        id="MemoryImpairment">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Others</label>
+                            <input formControlName="MemoryImpairmentOther" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Attention:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Attention"
+                                        formControlName="Attention"
+                                        id="Attention">
+                                    <label>Normal</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Attention"
+                                        formControlName="Attention"
+                                        id="Attention">
+                                    <label>Distracted</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Attention"
+                                        formControlName="Attention"
+                                        id="Attention">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Others</label>
+                            <input formControlName="AttentionOther" type="text" class="client-input">
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="AttentionComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>PERCEPTION</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Hallucinations:</label>
+                            <ul class="all-li-radio d-block">
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Geometric</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Mood-congruent</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Olfactory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Tactile</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Auditory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Gustatory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Mood-incongruent</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Somatic</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Hallucinations"
+                                        formControlName="Hallucinations"
+                                        id="Hallucinations">
+                                    <label>Visual</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Others:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Derealization"
+                                        formControlName="Derealization"
+                                        id="Derealization">
+                                    <label>Derealization</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Depersonalization"
+                                        formControlName="Depersonalization"
+                                        id="Depersonalization">
+                                    <label>Depersonalization</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Detachment"
+                                        formControlName="Detachment"
+                                        id="Detachment">
+                                    <label>Detachment</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="OtherComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>THOUGHTS:</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Suicidality:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Suicidality"
+                                        formControlName="Suicidality"
+                                        id="Suicidality">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Suicidality"
+                                        formControlName="Suicidality"
+                                        id="Suicidality">
+                                    <label>Auditory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Suicidality"
+                                        formControlName="Suicidality"
+                                        id="Suicidality">
+                                    <label>Geometric</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Suicidality"
+                                        formControlName="Suicidality"
+                                        id="Suicidality">
+                                    <label>Gustatory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Suicidality"
+                                        formControlName="Suicidality"
+                                        id="Suicidality">
+                                    <label>Mood-congruent</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Homicidal:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Homicidal"
+                                        formControlName="Homicidal"
+                                        id="Homicidal">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Homicidal"
+                                        formControlName="Homicidal"
+                                        id="Homicidal">
+                                    <label>Aggressive</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Homicidal"
+                                        formControlName="Homicidal"
+                                        id="Homicidal">
+                                    <label>Intent</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Homicidal"
+                                        formControlName="Homicidal"
+                                        id="Homicidal">
+                                    <label>Plan</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Delusional:</label>
+                            <ul class="all-li-radio d-block">
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>None</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Grandiose</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Paranoid</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Persecutory</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Others</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Bizarre</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Erotomanic</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Somatic</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Delusional"
+                                        formControlName="Delusional"
+                                        id="Delusional">
+                                    <label>Mixed type</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="AffectComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>Behaviour:</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Behaviour:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Cooperative</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Hyperactive</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Paranoid</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Aggressive</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Withdrawn</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Guarded</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Agitated</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Stereotyped</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Bizarre</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Behaviour"
+                                        formControlName="Behaviour"
+                                        id="Behaviour">
+                                    <label>Others</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Others</label>
+                            <input formControlName="BehaviourComments" type="text" class="client-input">
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="BehaviourComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>INSIGHT</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">INSIGHT:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="Insight"
+                                        formControlName="Insight"
+                                        id="Insight">
+                                    <label>Good</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Insight"
+                                        formControlName="Insight"
+                                        id="Insight">
+                                    <label>Fair</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Insight"
+                                        formControlName="Insight"
+                                        id="Insight">
+                                    <label>Poor</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="InsightComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <label class="CLIENT-LABEL"><b>JUDGEMENT:</b></label>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">JUDGEMENT:</label>
+                            <ul class="all-li-radio">
+                                <li>
+                                    <input type="checkbox" name="JUDGEMENT"
+                                        formControlName="JUDGEMENT"
+                                        id="JUDGEMENT">
+                                    <label>Good</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="JUDGEMENT"
+                                        formControlName="JUDGEMENT"
+                                        id="JUDGEMENT">
+                                    <label>Fair</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="JUDGEMENT"
+                                        formControlName="JUDGEMENT"
+                                        id="JUDGEMENT">
+                                    <label>Poor</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Comments</label>
+                            <input formControlName="JUDGEMENTComments" type="text" class="client-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>

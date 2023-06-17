@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-12">
+        <div class="client-tabs mt-3 card p-2">
+            <div class="card-content">
+                <div class="UPCOMING-APPOINTMENTS">
+                    <h6>Medications</h6>
+                </div>
+                <div class="col-12 client-tabs-ui mt-2">
+                <div class="my-2">
+                    <ngx-datatable #tablesss
+                        class="bootstrap core-bootstrap sz-1000" [rows]="UpcomingAppointments"
+                        [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="50" rowHeight="auto"
+                        [externalPaging]="false">
+
+                        <ngx-datatable-column name="Date Prescribed" prop="InsuranceType" [width]="80">
+                            <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ InsuranceType }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Medication Name" prop="PolicyType"
+                            [width]="80">
+                            <ng-template let-PolicyType="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ PolicyType }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Dose" prop="Payor"
+                            [width]="80">
+                            <ng-template let-Payor="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ Payor }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Frequency" prop="TerminationDate" [width]="100">
+                            <ng-template let-TerminationDate="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ TerminationDate | date: 'mediumDate'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Indication" prop="EffectiveDate"
+                            [width]="80">
+                            <ng-template let-EffectiveDate="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ EffectiveDate | date: 'mediumDate'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                    </ngx-datatable>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="client-tabs mt-3 card p-2 mb-3">
+            <div class="card-content">
+                <div class="UPCOMING-APPOINTMENTS">
+                    <h6>PRN Medications</h6>
+                </div>
+                <div class="col-12 client-tabs-ui mt-2">
+                <div class="my-2">
+                    <ngx-datatable #tablesss
+                        class="bootstrap core-bootstrap sz-1000" [rows]="PastAppointmentsDetails"
+                        [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="50" rowHeight="auto"
+                        [externalPaging]="false">
+
+                        <ngx-datatable-column name="Date Prescribed" prop="InsuranceType" [width]="80">
+                            <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ InsuranceType }}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Medication Name" prop="PolicyType"
+                            [width]="80">
+                            <ng-template let-PolicyType="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ PolicyType }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Dose" prop="Payor"
+                            [width]="80">
+                            <ng-template let-Payor="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ Payor }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Frequency" prop="TerminationDate" [width]="100">
+                            <ng-template let-TerminationDate="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ TerminationDate | date: 'mediumDate'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Indication" prop="EffectiveDate"
+                            [width]="80">
+                            <ng-template let-EffectiveDate="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ EffectiveDate | date: 'mediumDate'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+
+                    </ngx-datatable>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div>

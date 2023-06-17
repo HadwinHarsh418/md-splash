@@ -1,0 +1,315 @@
+<div class="col-lg-12">
+    <div class="col-lg-12">
+        <label  class="CLIENT-LABEL"><b>Aging Detail</b></label>
+    </div>
+    <div class="row">
+        <div class="d-flex">
+            <div class="col-lg-2 mx-2">
+                <label class="CLIENT-LABEL">Year </label>
+                <select class="client-input" role="select" id="1_ProcedureCode" name="ProcedureCode" size="1">
+                    <option role="option" value="42">All</option></select>
+            </div>
+            <div class="col-lg-2 mx-2">
+                <label class="CLIENT-LABEL">Batch Type</label>
+                <select class="client-input" role="select" id="1_ProcedureCode" name="ProcedureCode" size="1">
+                    <option role="option" value="42">All</option></select>
+            </div>
+            <div class="col-lg-4">
+                <label class="CLIENT-LABEL">Include Calendar payments</label>
+                <input type="checkbox" class="">
+            </div>
+            <div class="col-lg-2 mx-2">
+                <button class="btn-save-2" (click)="getDetail()">Get Details</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+<div class="col-lg-12" *ngIf="showTable">
+    <div class="row">
+        <div class="my-2" class="table-responsive">
+            <span class="ui-jqgrid-title">Reports List</span>
+            <table id="customers" >
+                <thead>
+                  <tr>
+                     <th ></th>
+                     <th colspan="2">January</th>
+                     <th colspan="2">February</th>
+                     <th colspan="2">May</th>
+                     <th colspan="2">April</th>
+                     <th colspan="2">May</th>
+                     <th colspan="2">June</th>
+                     <th colspan="2">July</th>
+                     <th colspan="2">August</th>
+                     <th colspan="2">September </th>
+                     <th colspan="2">October</th>
+                     <th colspan="2">November</th>
+                     <th colspan="2">December</th>
+                  </tr>
+                  <tr>
+                    <th>Btch Type</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                    <th>Billed</th>
+                    <th>Paid</th>
+                  </tr>
+                </thead>
+                <tbody id="rows">
+                  <tr>
+                    <td>
+                        Therapy
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        PRP	
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        Total		
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                    <td>
+                      Five
+                    </td>
+                    <td>
+                      Six
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+</div>

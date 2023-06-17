@@ -1,0 +1,44 @@
+<section class="new-client-sec">
+    <div class="container-fluid">
+        <div class="row">
+        <!-- ####-----------form section-------------------############ -->
+            <div class="col-lg-12">
+                <div class="page-header small_fonts">
+                    <div class="page-header-content d-flex">
+                            <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        <h1 class="admin-main_heading">Adult Discharge <small id="EditNew">New</small></h1>
+                    </div>
+                </div>
+                <div class="partition-1">
+                    <div class="part-2">
+                        <form >
+                            <div class="client-tabs">
+                                <div class="client-tabs subTabs">
+                                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                        <li [ngbNavItem]="1">
+                                            <a ngbNavLink>General</a>
+                                            <ng-template ngbNavContent>
+                                               <app-general></app-general>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="2">
+                                            <a ngbNavLink >Continue</a>
+                                            <ng-template ngbNavContent>
+                                                <app-continue></app-continue>
+                                            </ng-template>
+                                        </li>
+                                    </ul>
+                                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

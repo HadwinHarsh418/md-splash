@@ -1,0 +1,17 @@
+<div class="main_Div">
+    <div>
+        <ul class="totalElements" *ngIf="numberOfPages > 1" style="color: #a5a2a2;">
+            <li class="page-item"><a class="page-link" style="cursor: pointer" >{{totalElemnt}} totals</a></li>
+        </ul>
+    </div>
+    <div class="pagination_element">
+        <ul class="pagination" *ngIf="numberOfPages > 1">
+            <li class="page-item" [class.disabled]="activePg <= 1"><a class="page-link" style="cursor: pointer" (click)="changePage(1)"><i class="fa-solid fa-backward-step"></i></a></li>
+            <li class="page-item" [class.disabled]=""><a class="page-link" style="cursor: pointer" (click)="changepageDec()"><i class="fa-solid fa-chevron-left"></i></a></li>
+            <li class="page-item" [class.actives]="activePg == page" *ngFor="let page of pagesNumbers"><a class="page-link" style="cursor: pointer" (click)="changePage(page)">{{page}}</a></li>
+            <li class="page-item" [class.disabled]=""><a class="page-link" style="cursor: pointer" (click)="changepageInc()"><i class="fa-solid fa-chevron-right"></i></a></li>
+            <li class="page-item" [class.disabled]="activePg >= pagesArray.length"><a class="page-link" style="cursor: pointer" (click)="changePage(pagesArray.length)"><i class="fa-solid fa-forward-step"></i></a></li>
+        </ul>
+    </div>
+
+</div>

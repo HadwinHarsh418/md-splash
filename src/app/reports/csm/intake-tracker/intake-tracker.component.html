@@ -1,0 +1,159 @@
+<div class="row">
+    <div class="container">
+        <div class="CLIENT-LABEL"><b>CSM IOP Plan</b></div>
+        <div class="clo-lg-12">
+            <div class="row">
+                <div id="Report-Content">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Start Date</label>
+                                <input type="date" name="" id="" class="client-input">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">End Date</label>
+                                <input type="date" name="" id="" class="client-input">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">CSM</label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                    <option value="1">Breona Rogers</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                    <option value="1">Medicaid</option>
+                                    <option value="2">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Assigned Clincian</label>
+                                <select id="ddlAssignedClinician" name="ddlAssignedClinician" class="client-input">
+                                    <option value="">ALL</option>
+                                    <option value="6214"> Nji Fru</option>
+                                    <option value="6245">Adaora Nnanna </option>
+                                    <option value="6247">Amanda Clark</option>
+                                    <option value="30">amit Kamal</option>
+                                    <option value="6218">Cholet Josue MD</option>
+                                    <option value="6229">Desiree Gibson</option>
+                                    <option value="6239">Eileen Diener</option>
+                                    <option value="6225">Jacqueline Parrish</option>
+                                    <option value="6286">Jennifer Prioleau</option>
+                                    <option value="6216">Michael Wright </option>
+                                    <option value="6251">Mohammed Javaid</option>
+                                    <option value="20">Nji Fru</option>
+                                    <option value="6271">Rosa Bangura</option>
+                                    <option value="6262">Shantel Assata</option>
+                                    <option value="6279">Terrence Woodbury</option>
+                                    <option value="16">testuser2</option>
+                                    <option value="6206">Willie Omisakin</option>
+                                    <option value="6278">Yolanda Gales</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Status</label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                    <option value="1">Inactive</option>
+                                    <option value="2">Active</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="CLIENT-LABEL">Procedure Code</label>
+                                <input type="text" name="" id="" class="client-input" value="H0040-52" placeholder="H0040-52">
+                            </div>
+                            <div class="report-frm col-lg-3">
+                                <button type="button" class="btn-cls" id="btnGetdetails" (click)="getDetail()">Get Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="showTable">
+                        <div class="row">
+                            <div class="my-2">
+                                <ngx-datatable #tablesss style="width: auto; overflow: auto;"
+                                    class="bootstrap core-bootstrap sz-1000" [rows]="UpcomingAppointments"
+                                    [columnMode]="'force'"
+                            [headerHeight]="50"
+                            [scrollbarV]="true"
+                            [scrollbarH]="true"
+                            [footerHeight]="50"
+                            [rowHeight]="50">
+                    
+                                    <ngx-datatable-column name="First Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Last Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Date Of Birth" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Insurance Type" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    <ngx-datatable-column name="Organization" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="CSM" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Assigned Clincian" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    <ngx-datatable-column name="Status" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    <ngx-datatable-column name="Date Of Intake" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    <ngx-datatable-column name="Treatment Plan Date" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                </ngx-datatable>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

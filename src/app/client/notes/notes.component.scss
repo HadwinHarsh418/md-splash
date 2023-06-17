@@ -1,0 +1,57 @@
+.NEW-INTAKE {
+    background: #49afcd;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    min-width: 110px;
+    transition: 0.2s !important;
+    transition-timing-function: ease-in-out !important;
+    -webkit-transition: 0.2s !important;
+    -webkit-transition-timing-function: ease-in-out !important;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+}
+.NEW-INTAKE i {
+    margin: 0 5px 0 0;
+}
+.NEW-SAVE {
+    background: #0065a7;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    min-width: 110px;
+    transition: 0.2s !important;
+    transition-timing-function: ease-in-out !important;
+    margin: 0 11px 3px 0;
+    font-weight: normal !important;
+}
+.back-bt {
+    display: flex;
+    justify-content: space-between;
+}
+.new-client-sec {
+    padding: 30px 0;
+    background: #d8d8d8;
+    min-height: 100vh;
+}
+.NEW-INTAKE:hover {
+    transform: scale(1.07);
+}
+.NEW-SAVE:hover {
+    transform: scale(1.07);
+}
+
+.UPCOMING-APPOINTMENTS h6 {
+    background: #07417b;
+    color: #fff;
+    padding: 7px 15px;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-family: Poppins;
+}

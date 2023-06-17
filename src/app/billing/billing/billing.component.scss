@@ -1,0 +1,138 @@
+.nav-link.active {
+    background: #00b578 !important;
+}
+.tabs-admin {
+    padding: 40px 0;
+}
+.nav-pills.nav.flex-column li a p.tabs-admin-p {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgb(157, 148, 148) !important;
+}
+.nav-pills.nav.flex-column li a p.tabs-admin-p-1 {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 24px;
+    color: #000 !important;
+}
+.nav-pills.nav.flex-column li a {
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    margin: 0 0 15px 0;
+    padding: 20px 15px;
+}
+.nav-pills.nav.flex-column li a.active p{
+    color: #fff !important;
+}
+.common-div-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+.common-div-ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.common-div-ul li:last-child a,.common-div-ul li:last-child a.active {
+    border: none !important;
+}
+.common-div-ul li a:hover {
+    background: #00b578;
+    color: #fff;
+}
+.tabs-admin-right-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.tabs-admin-right-ul li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+}
+.tabs-admin-right-ul li p {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 24px;
+    color: #000 !important;
+}
+// Accordisn
+.accordian-custom {
+    position: relative;
+    background-size: cover;
+
+}
+.accordian-custom .acc-img-2 {
+    width: 100%;
+    max-width: 457px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.accordian-custom .acc-img-1 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.accordian-custom .accordion {
+    max-width: 751px;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+}
+.accordian-custom .accor-cus {
+    display: flex;
+}
+.accordian-custom .accordion-button {
+    color: #989898 !important;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    border: 1px solid #e6e6e6 !important;
+    background: #e6e6e6 !important;
+    background-blend-mode: normal;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+.accordian-custom .acc-p {
+    color: #989898;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.accordian-custom .accordion-collapse {
+    background: #fff;
+    border-radius: 12px !important;
+    margin: 0px 0 0 0;
+    border: 1px solid #fff !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-top: 0 !important;
+}
+.accordian-custom .accordion-item {
+    border: none !important;
+    margin: 0 0 15px 0;
+    border-radius: 12px;
+    background: transparent !important;
+}
+.accordian-custom .accordion-button[aria-expanded="true"] {
+    border-bottom: 0 !important;
+    background-color: #e6e6e6 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}

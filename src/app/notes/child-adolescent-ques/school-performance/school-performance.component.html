@@ -1,0 +1,419 @@
+<div class="col-lg-12">
+    <div class="row mar-1010 d-flex my-2">
+        <div class="col-lg-12 back_css">
+            <button class="NEW-SAVE" type="button" (click)="Save()">SAVE</button>
+        </div>
+    </div>
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS1">
+                                <h6>Next let’s talk about school.</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="">
+                                        <label class="CLIENT-LABEL"
+                                        [class.has-error]="genForm['doAttendSchool'].dirty && genForm['doAttendSchool'].errors || genForm['doAttendSchool'].touched && genForm['doAttendSchool'].errors"
+                                        ><span class="text-danger">*</span> 31. Do (you/your child) attend school when it is in session, including home schooling?</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio" >
+                                                    <li class="col-md-12">
+                                                        <input id="doAttendSchool" formControlName="doAttendSchool" name="doAttendSchool" type="radio" value="1" >
+                                                        <label>No</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="doAttendSchool" formControlName="doAttendSchool" name="doAttendSchool" type="radio" value="2">
+                                                        <label>Yes</label>
+                                                    </li><br>
+                                                </ul> 
+                                                <span *ngIf="genForm['doAttendSchool'].dirty && genForm['doAttendSchool'].errors" class="has-error">
+                                                    <i *ngIf="genForm['doAttendSchool'].errors?.['required']">
+                                                        </i>
+                                                </span>      
+                                            </div>
+                                    </div>
+                                    <div class="">
+                                        <label class="CLIENT-LABEL"
+                                        [class.has-error]="genForm['inTHePast'].dirty && genForm['inTHePast'].errors || genForm['inTHePast'].touched && genForm['inTHePast'].errors"
+                                        ><span class="text-danger">*</span>32. In the past six months have (you/your child) had problems with school attendance?</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="inTHePast" formControlName="inTHePast" name="inTHePast" type="radio" value="1" >
+                                                        <label>No (skip to #34)</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="inTHePast" formControlName="inTHePast" name="inTHePast" type="radio" value="2">
+                                                        <label>Yes (continue to #33)</label>
+                                                    </li><br>
+                                                </ul>    
+                                                <span *ngIf="genForm['inTHePast'].dirty && genForm['inTHePast'].errors" class="has-error">
+                                                    <i *ngIf="genForm['inTHePast'].errors?.['required']">
+                                                        </i>
+                                                </span>   
+                                            </div><br>
+                                    </div>
+                                    <div class="">
+                                        <label class="CLIENT-LABEL"
+                                        [class.has-error]="genForm['sinceLastInterview'].dirty && genForm['sinceLastInterview'].errors || genForm['sinceLastInterview'].touched && genForm['sinceLastInterview'].errors"
+                                        ><span class="text-danger">*</span>33. Since last interview date or in the past six months, would you say you/your child’s problems with school attendance have increased, stayed the same, or decreased?
+                                            [mandatory only if Question 32 is “Yes”]</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="sinceLastInterview" formControlName="sinceLastInterview" name="sinceLastInterview" type="radio" value="1" >
+                                                        <label>Increased</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="sinceLastInterview" formControlName="sinceLastInterview" name="sinceLastInterview" type="radio" value="2">
+                                                        <label>Stayed the same</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="sinceLastInterview" formControlName="sinceLastInterview" name="sinceLastInterview" type="radio" value="2">
+                                                        <label>Decreased</label>
+                                                    </li><br>
+                                                </ul>       
+                                                <span *ngIf="genForm['sinceLastInterview'].dirty && genForm['sinceLastInterview'].errors" class="has-error">
+                                                    <i *ngIf="genForm['sinceLastInterview'].errors?.['required']">
+                                                        </i>
+                                                </span>
+                                            </div><br>
+                                    </div>
+                                    <div class="">
+                                        <label class="CLIENT-LABEL"
+                                        [class.has-error]="genForm['inthepastsixmonths'].dirty && genForm['inthepastsixmonths'].errors || genForm['inthepastsixmonths'].touched && genForm['inthepastsixmonths'].errors"
+                                        ><span class="text-danger">*</span>34. In the past six months were you/your child suspended from school? This includes in and out-of-school suspensions.</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="inthepastsixmonths" formControlName="inthepastsixmonths" name="inthepastsixmonths" type="radio" value="1" >
+                                                        <label>No</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="inthepastsixmonths" formControlName="inthepastsixmonths" name="inthepastsixmonths" type="radio" value="2">
+                                                        <label>Yes</label>
+                                                    </li><br>
+                                                </ul>       
+                                                <span *ngIf="genForm['inthepastsixmonths'].dirty && genForm['inthepastsixmonths'].errors" class="has-error">
+                                                    <i *ngIf="genForm['inthepastsixmonths'].errors?.['required']">
+                                                        </i>
+                                                </span>
+                                            </div><br>
+                                    </div>
+                                    <div class="">
+                                        <label class="CLIENT-LABEL"
+                                        [class.has-error]="genForm['childExpelledFromSchool'].dirty && genForm['childExpelledFromSchool'].errors || genForm['childExpelledFromSchool'].touched && genForm['childExpelledFromSchool'].errors"
+                                        ><span class="text-danger">*</span>35. In the past six months were you/your child expelled from school?</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="childExpelledFromSchool" formControlName="childExpelledFromSchool" name="childExpelledFromSchool" type="radio" value="1" >
+                                                        <label>No</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="childExpelledFromSchool" formControlName="childExpelledFromSchool" name="childExpelledFromSchool" type="radio" value="2">
+                                                        <label>Yes</label>
+                                                    </li><br>
+                                                </ul>   
+                                                <span *ngIf="genForm['childExpelledFromSchool'].dirty && genForm['childExpelledFromSchool'].errors" class="has-error">
+                                                    <i *ngIf="genForm['childExpelledFromSchool'].errors?.['required']">
+                                                        </i>
+                                                </span>    
+                                            </div><br>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <!---2##########-->
+                    
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SOMATIC HEALTH</h6>
+                        </div>
+                        <div class="row CLIENT-DEMOGRAPHICS1">
+                            <h6><strong>(INTERVIEWER: Read the following answer options to the respondent)</strong></h6>
+                            </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">36. Would you say in general your/your child’s health is?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>Excellent </label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Very good</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Good</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Fair</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Poor</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div>
+                                                    <div class="row CLIENT-DEMOGRAPHICS2">
+                                                        <h6>
+                                                            <label class="CLIENT-LABEL">INTERVIEWER: (do not read aloud) Is child/adolescent 11 years or older?</label>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>Yes </label>
+                                                            </li>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>No</label>
+                                                            </li>
+                                                        </ul>       
+                                                    </div>
+                                                        </h6>
+                                                        </div>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL"><span class="text-danger"
+                                                    [class.has-error]="genForm['childSmokeCigarettes'].dirty && genForm['childSmokeCigarettes'].errors || genForm['childSmokeCigarettes'].touched && genForm['childSmokeCigarettes'].errors"
+                                                    >*</span>37. Do you/your child smoke cigarettes?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="childSmokeCigarettes"  name="childSmokeCigarettes" type="radio" value="1" >
+                                                                <label>No (skip to #39)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childSmokeCigarettes" formControlName="childSmokeCigarettes" name="childSmokeCigarettes" type="radio" value="2">
+                                                                <label>Yes (continue to #38)</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                        <span *ngIf="genForm['childSmokeCigarettes'].dirty && genForm['childSmokeCigarettes'].errors" class="has-error">
+                                                            <i *ngIf="genForm['childSmokeCigarettes'].errors?.['required']">
+                                                                </i>
+                                                        </span>
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">38. How many cigarettes do you/your child smoke per day? [One pack = 20 cigarettes]</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>Do not smoke every day</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>1-10</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>11-20</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>21-30</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>30+</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL"
+                                                [class.has-error]="genForm['childUseAnyTobacco'].dirty && genForm['childUseAnyTobacco'].errors || genForm['childUseAnyTobacco'].touched && genForm['childUseAnyTobacco'].errors"
+                                                ><span class="text-danger">*</span>39. In the past month did you/your child use any of the following tobacco products?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="1" >
+                                                                <label>Cigars (e.g., cigarillos, little cigars)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="2">
+                                                                <label>Smokeless tobacco (e.g., chewing tobacco, dip, snuff)?</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="2">
+                                                                <label>Electronic-cigarettes (e.g., e-cigarettes, vaporizer cigarettes, vapes)?</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="2">
+                                                                <label>Pipes (e.g., hookah, water pipes)?</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="2">
+                                                                <label>Other tobacco product (e.g., bidis, kreteks, clove cigarettes)?</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childUseAnyTobacco" formControlName="childUseAnyTobacco" name="childUseAnyTobacco" type="radio" value="2">
+                                                                <label>None</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                        <span *ngIf="genForm['childUseAnyTobacco'].dirty && genForm['childUseAnyTobacco'].errors" class="has-error">
+                                                            <i *ngIf="genForm['childUseAnyTobacco'].errors?.['required']">
+                                                                </i>
+                                                        </span>
+                                                    </div><br>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!---3#############-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>LEGAL SYSTEM INVOLVEMENT</h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL"
+                                                [class.has-error]="genForm['childBeenArrested'].dirty && genForm['childBeenArrested'].errors || genForm['childBeenArrested'].touched && genForm['childBeenArrested'].errors"
+                                                ><span class="text-danger">*</span>40. In the past six months have you/your child been arrested?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="childBeenArrested" formControlName="childBeenArrested" name="childBeenArrested" type="radio" value="1" >
+                                                                <label>No </label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="childBeenArrested" formControlName="childBeenArrested" name="childBeenArrested" type="radio" value="2">
+                                                                <label>Yes</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                        <span *ngIf="genForm['childBeenArrested'].dirty && genForm['childBeenArrested'].errors" class="has-error">
+                                                            <i *ngIf="genForm['childBeenArrested'].errors?.['required']">
+                                                                </i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!---4#######-->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>ALCOHOL AND SUBSTANCE USE 2</h6>
+                        </div>
+                        <div class="row ">
+                            <h6>During the PAST SIX MONTHS, did you:</h6>
+                            </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                        <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                            <th>Please note that Questions 41-43 are all <br>(Client/Caregiver Opinion Only)</th>
+                                            <th>No</th>
+                                            <th>Yes</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>41.</b> Drink any alcohol (more than a few sips)?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>42.</b> Smoke any marijuana or hashish?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>43.</b> Use anything else to get high?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row CLIENT-DEMOGRAPHICS2">
+                                    <h6>
+                                        <label class="CLIENT-LABEL">INTERVIEWER: (do not read aloud) If the respondent answered NO to ALL (#41, 42, 43), ask only #44 and skip to gray box after #49. If the respondent answered YES to ANY (#41, 42, 43), ask #44-49.</label>
+                                    </h6>
+                                    </div>
+                            </div>
+                                
+                            <div class="row ">
+                                    <h6>During the PAST SIX MONTHS, did you:</h6>
+                            </div>
+
+                            <div class="content">
+                                <div class="row">
+                                    <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                        <tr style="background-color: #208fcf;color: #fff;">
+                                            <th>Please note that Questions 44-49 are all <br> (Client/Caregiver Opinion Only)</th>
+                                            <th>No</th>
+                                            <th>Yes</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>44.</b> Have you ridden in a car driven by someone (including yourself) who was high or had been using alcohol or drugs??</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>45.</b> Did you use alcohol or drugs to relax, feel better about yourself, or fit in?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>46.</b> Did you use alcohol or drugs while you were by yourself (alone)?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>47.</b> Did you forget things you did while using alcohol or drugs?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>48.</b> Did your family or friends tell you that you should cut down on your drinking or drug use?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>49.</b> Have you gotten into trouble while you were using alcohol or drugs?</td>
+                                            <td><input type="radio" name="" id=""></td>
+                                            <td><input type="radio" name="" id=""></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,230 @@
+
+<div class="page max-width-1000">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="pregressNotes" >
+                <div class="all-tb">
+                    <div class="row mar-1010 d-flex my-2">
+                        
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="arrow d-flex">
+                        <label for="type" (click)="back()">
+                            <i class="fa fa-circle-arrow-left mx-2"></i>
+                        </label>
+                        <h1 class="admin-main_heading">END OF SHIFT REPORT <small id="EditNew">New</small></h1>
+                    </div>
+                </div>
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-8 next_Tab my-2">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First Name </label>
+                                                    <input formControlName="FirstName" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Middle Name </label>
+                                                    <input formControlName="MiddleName" type="text" class="client-input">                                               
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> Last Name</label>
+                                                    <input formControlName="LastName" type="text" class="client-input">                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DateofBirth" type="date" class="client-input">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="Gender">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date of Service</label>
+                                                <input type="date" formControlName="DOS" class="client-input">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="d-flex my-2">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Start Time</label>
+                                                    <input type="time" formControlName="StartTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="StartTime1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">End Time</label>
+                                                    <input type="time" formControlName="EndTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="EndTime1">
+                                                        <option *ngFor="let item of EndTime1" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 ms-1">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Duration</label>
+                                                    <input type="time" formControlName="TotalTime1" class="client-input">
+                                                    <!-- <select class="client-input" formControlName="TotalTime1">
+                                                        <option *ngFor="let item of TotalTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- ####### second #### -->
+    
+                            <div class="col-md-12">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>SESSION DETAILS</h6>
+                                </div>
+                                <div class="content">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Rendering Provider</label>
+                                                            <select class="client-input"
+                                                                formControlName="Rendering_ProviderID">
+                                                                <option value="">Select</option>
+                                                                <option value="option1">Name</option>
+                                                                <!-- <option *ngFor="let item of StartTimer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+    
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL"
+                                                            [class.has-error]="genForm['Procedure'].dirty && genForm['Procedure'].errors || genForm['Procedure'].touched && genForm['Procedure'].errors"
+                                                            >Procedure Code</label>
+                                                            <select class="client-input"
+                                                                formControlName="Procedure">
+                                                                <option value="">Select</option>
+                                                                <option value="option1">Name</option>
+                                                                <!-- <option *ngFor="let item of StartProcedurer"
+                                                                    value="{{item.Value}}">
+                                                                    {{item.Text}}</option> -->
+    
+                                                            </select>
+                                                            <span *ngIf="genForm['Procedure'].dirty && genForm['Procedure'].errors" class="has-error">
+                                                                <i *ngIf="genForm['Procedure'].errors?.['required']">
+                                                                     is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"                                                   
+                                                        [class.has-error]="genForm['time'].dirty && genForm['time'].errors || genForm['time'].touched && genForm['time'].errors">
+                                                            <label class="CLIENT-LABEL">Date:<span
+                                                                class="text-danger">*</span> </label>
+                                                                <input type="date" formControlName="DOS" class="client-input">
+                                                            <span *ngIf="genForm['time'].dirty && genForm['time'].errors" class="has-error">
+                                                                <i *ngIf="genForm['time'].errors?.['required']">
+                                                                    Date is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"                                                                                                  
+                                                        [class.has-error]="genForm['Whatisyourshift'].dirty && genForm['Whatisyourshift'].errors || genForm['Whatisyourshift'].touched && genForm['Whatisyourshift'].errors">
+                                                            <label class="CLIENT-LABEL">What is your shift? (ex. 8am-4pm, 9am-5pm, 11am-7pm) <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="Whatisyourshift" type="text" class="client-input">
+                                                            <span *ngIf="genForm['Whatisyourshift'].dirty && genForm['Whatisyourshift'].errors" class="has-error">
+                                                                <i *ngIf="genForm['Whatisyourshift'].errors?.['required']">
+                                                                      is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['participantsdidseeinyour'].dirty && genForm['participantsdidseeinyour'].errors || genForm['participantsdidseeinyour'].touched && genForm['participantsdidseeinyour'].errors">
+                                                            <label class="CLIENT-LABEL">How many participants did see in your shift? <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="participantsdidseeinyour" type="text" class="client-input">
+                                                            <span *ngIf="genForm['participantsdidseeinyour'].dirty && genForm['participantsdidseeinyour'].errors" class="has-error">
+                                                                <i *ngIf="genForm['participantsdidseeinyour'].errors?.['required']">
+                                                                      is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="genForm['PhoneNo'].dirty && genForm['PhoneNo'].errors || genForm['PhoneNo'].touched && genForm['PhoneNo'].errors">
+                                                            <label class="CLIENT-LABEL">Name(s) of the participant's seen during your shift <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input formControlName="PhoneNo" type="text" class="client-input">
+                                                            <span *ngIf="genForm['PhoneNo'].dirty && genForm['PhoneNo'].errors" class="has-error">
+                                                                <i *ngIf="genForm['PhoneNo'].errors?.['required']">
+                                                                      is required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,261 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="substanceAssesmentform">
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="CKIENT-LABEL my-2" style="text-decoration: underline;">
+                                        SUBSTANCE USE ASSESSMENT
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="row">      
+                                                    <div class="col-lg-6">
+                                                        <label class="CLIENT-LABEL">Current Substance Use Patterns:</label>
+                                                    </div>                                              
+                                                    <div class="col-lg-6">
+                                                        <textarea type="text" formControlName="CurrentSubstance" class="client-input" style="height: 80px;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label class="CLIENT-LABEL">Prior Substance Use Treatment for Individual / Family:</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <textarea type="text" formControlName="PriorSubstance" class="client-input" style="height: 80px;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class="table table-striped  table-sm " cellspacing="0"width="100%">
+                                              <thead class="">
+                                                <tr>
+                                                  <th >Drug</th>
+                                                  <th >Method</th>
+                                                  <th >Age 1st used</th>
+                                                  <th >Age last used</th>
+                                                  <th >Onset of heavy use</th>
+                                                  <th ># days used in last 30</th>
+                                                  <th >Amt. used in past 48 hrs.</th>
+                                                  <th >1st as RX?</th>
+                                                  <th >Last used when?</th>
+                                                  <th >Amt. used daily/weekly</th>
+                                                  <th >Drug of Choice?</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>    
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                               
+                                                  <td>
+                                                      <ul class="mr-bt-ul ">
+                                                          <li class="d-flex">
+                                                              <input type="radio" name="" id="">
+                                                              <label for="">Yes</label>
+                                                          </li>
+                                                          <li class="d-flex">
+                                                              <input type="radio" name="" id="" >
+                                                              <label for="">No</label> 
+                                                          </li>
+                                                      </ul>
+                                                  </td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td><input  type="text" value="12345"></td>
+                                                  <td> 
+                                                      <ul class="mr-bt-ul">
+                                                      <li class="d-flex">
+                                                          <input type="radio" name="" id="">
+                                                          <label for="">Yes</label>
+                                                      </li>
+                                                      <li class="d-flex">
+                                                          <input type="radio" name="" id="" >
+                                                          <label for="">No</label> 
+                                                      </li>
+                                                      </ul>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="d-flex pointer">
+                                                <a class="CLIENT-LABEL"><small> Add new Drug</small></a>
+                                                <img [src]="imagesrc" alt="small" class="addNew">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Comments:</label>
+                                                <textarea type="text" formControlName="comments" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Any changes in patterns of use over time?</label>
+                                                <textarea type="text" formControlName="Anychanges" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Comments</label>
+                                                <textarea type="text" class="client-input" formControlName="Comments2" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Does individual ever drink or drug more than he/she intends?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" name="value" (change)="disableVal($event)" value="1" type="radio" ><label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" name="value" value="2" (change)="disableVal($event)" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea formControlName="doesindividualdrink" type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Has individual experienced an increase in the amount he/she can use to get the same effect?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="Hasindividual" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="Hasindividual" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="Hasindividual2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Is there a history of overdose?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="historyofoverdose" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="historyofoverdose" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="historyofoverdose2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Is there a history of seizures?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="historyofseizures" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="historyofseizures" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="historyofseizures2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Is there a history of blackouts?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="historyofbalackout" value="1" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="historyofbalackout" value="2" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="historyofbalackout2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Has individual ever used medications to either get high or come down from being high?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="individualeverusedmedications" value="1"  type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="individualeverusedmedications" value="2"  type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="individualeverusedmedications2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">With whom does individual usually use?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="Withwhomdoesindividual" value="1" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="Withwhomdoesindividual" value="2" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="Withwhomdoesindividual2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Has individual had previous substance abuse treatment?</label>
+                                                    <ul class="input-ul d-flex ms-2">
+                                                        <li><input class="" formControlName="Hasindividualhadprevious" value="1" type="radio" ><label for="">Yes</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="" formControlName="Hasindividualhadprevious" value="2" type="radio"><label for="">No</label>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                                <textarea type="text" formControlName="Hasindividualhadprevious2" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Diagnostic Impressions for this section:</label>
+                                                <textarea type="text" formControlName="DiagnosticImpressions" class="client-input" style="height: 80px;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

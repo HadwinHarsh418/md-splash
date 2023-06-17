@@ -1,0 +1,452 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>ALCOHOL/DRUG USE AND OTHER ADDICTIONS HISTORY</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="row">
+                                                    <div class="col-md-6 d-flex">
+                                                        <label class="CLIENT-LABEL">Illegal drug use/abuse past 12 months?</label>
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                             Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                             No
+                                                    </div>
+                                                    <div class="col-md-6 d-flex">
+                                                        <label class="CLIENT-LABEL">Non-prescription drug abuse past 12 months?</label>
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                             Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                             No
+                                                    </div>
+                                                    <div class="col-md-6 d-flex">
+                                                        <label class="CLIENT-LABEL">Prescription drug abuse past 12 months?</label>
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                             Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                             No
+                                                    </div>
+                                                    <div class="col-md-6 d-flex">
+                                                        <label class="CLIENT-LABEL">Alcohol abuse past 12 months?</label>
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                             Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                             No
+                                                    </div>
+                                                </div>       
+                                                <label class="CLIENT-LABEL"><b>Presenting with detox issues?</b></label>
+                                                    <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                         Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                         No
+                                                <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <div class="d-flex">
+                                                    <label class="CLIENT-LABEL">Check All That Apply
+                                                    </label>
+                                                    <input  type="checkbox" value="true" >&nbsp;<label>IV Drug User</label>&nbsp;
+                                                    <input  type="checkbox" value="true" >&nbsp;<label>Pregnant </label>&nbsp;
+                                                    <input  type="checkbox" value="true" >&nbsp;<label>Other Addictive Behaviors:</label>&nbsp;
+                                                </div>
+                                                 <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                            <table style="width:100%">
+                                                                <tr>
+                                                                  <th>Denied</th>
+                                                                  <th>Substance</th>
+                                                                  <th>Age of First Use</th>
+                                                                  <th>Date of Last Use</th>
+                                                                  <th>Frequency of Use</th>
+                                                                  <th>Amount	</th>
+                                                                  <th>Method</th>
+                                                                  <th>Symptom</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>     
+                                                                    <td></td>     
+                                                                    <td></td>    
+                                                                    <td></td>        
+                                                                    <td></td>  
+                                                                    <td>
+                                                                        <div class="margin-inputclient">
+                                                                            <!-- <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">&nbsp;
+                                                                            <label> More or Longer than Intended </label>&nbsp;<br>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">&nbsp;
+                                                                            <label>Previous Efforts to Cut Back/Quit </label>&nbsp;<br>
+                                                                            <input type="checkbox" name="harmingNo"
+                                                                            id="harmingNo" value="yes">&nbsp;
+                                                                            <label>Large amounts of time to obtain,use and recover </label>&nbsp; -->
+                                                                            <input data-val-required="The TobaccoUseMoreorLongerthanIntended field is required." id="TobaccoUseMoreorLongerthanIntended" name="TobaccoUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="TobaccoUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                            <input data-val-required="The TobaccoPreviousEffortstoCutQuit field is required." id="TobaccoPreviousEffortstoCutQuit" name="TobaccoPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="TobaccoPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                            <input data-val-required="The TobaccoLargeamountsoftimetoobtain field is required." id="TobaccoLargeamountsoftimetoobtain" name="TobaccoLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="TobaccoLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                            <input data-val-required="The TobaccoCravingUrge field is required." id="TobaccoCravingUrge" name="TobaccoCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="TobaccoCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                            <input data-val-required="The TobaccoSocialOccupation field is required." id="TobaccoSocialOccupation" name="TobaccoSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="TobaccoSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                            <input data-val-required="The TobaccoRiskySituations field is required." id="TobaccoRiskySituations" name="TobaccoRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="TobaccoRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                            <input data-val-required="The TobaccoPhysicalImpairment field is required." id="TobaccoPhysicalImpairment" name="TobaccoPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="TobaccoPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                            <input data-val-required="The TobaccoTolerance field is required." id="TobaccoTolerance" name="TobaccoTolerance" type="checkbox" value="true" spellcheck="true"><input name="TobaccoTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                            <input data-val-required="The TobaccoWithdrawal field is required." id="TobaccoWithdrawal" name="TobaccoWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="TobaccoWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                        
+                                                                        </div>
+                                                                    </td>  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Tobacco</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td> 
+                                                                    <td>
+                                                                        <input data-val-required="The AlcoholPreviousEffortstoCutQuit field is required." id="AlcoholPreviousEffortstoCutQuit" name="AlcoholPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="AlcoholPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The AlcoholUseMoreorLongerthanIntended field is required." id="AlcoholUseMoreorLongerthanIntended" name="AlcoholUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="AlcoholUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The AlcoholLargeamountsoftimetoobtain field is required." id="AlcoholLargeamountsoftimetoobtain" name="AlcoholLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="AlcoholLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The AlcoholCravingUrge field is required." id="AlcoholCravingUrge" name="AlcoholCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="AlcoholCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The AlcoholSocialOccupation field is required." id="AlcoholSocialOccupation" name="AlcoholSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="AlcoholSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The AlcoholRiskySituations field is required." id="AlcoholRiskySituations" name="AlcoholRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="AlcoholRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The AlcoholPhysicalImpairment field is required." id="AlcoholPhysicalImpairment" name="AlcoholPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="AlcoholPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The AlcoholTolerance field is required." id="AlcoholTolerance" name="AlcoholTolerance" type="checkbox" value="true" spellcheck="true"><input name="AlcoholTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The AlcoholWithdrawal field is required." id="AlcoholWithdrawal" name="AlcoholWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="AlcoholWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+
+                                                                    </td> 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Alcohol</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>    
+                                                                    <td>
+                                                                        <input  data-val-required="The CannabisUseMoreorLongerthanIntended field is required." id="CannabisUseMoreorLongerthanIntended" name="CannabisUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="CannabisUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input  data-val-required="The CannabisPreviousEffortstoCutQuit field is required." id="CannabisPreviousEffortstoCutQuit" name="CannabisPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="CannabisPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input  data-val-required="The CannabisLargeamountsoftimetoobtain field is required." id="CannabisLargeamountsoftimetoobtain" name="CannabisLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="CannabisLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input  data-val-required="The CannabisCravingUrge field is required." id="CannabisCravingUrge" name="CannabisCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="CannabisCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input  data-val-required="The CannabisSocialOccupation field is required." id="CannabisSocialOccupation" name="CannabisSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="CannabisSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input  data-val-required="The CannabisRiskySituations field is required." id="CannabisRiskySituations" name="CannabisRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="CannabisRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input  data-val-required="The CannabisPhysicalImpairment field is required." id="CannabisPhysicalImpairment" name="CannabisPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="CannabisPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input  data-val-required="The CannabisTolerance field is required." id="CannabisTolerance" name="CannabisTolerance" type="checkbox" value="true" spellcheck="true"><input name="CannabisTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input  data-val-required="The CannabisWithdrawal field is required." id="CannabisWithdrawal" name="CannabisWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="CannabisWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td> 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Cannabis</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>    
+                                                                    <td>
+                                                                        <input data-val-required="The CannabisUseMoreorLongerthanIntended field is required." id="CannabisUseMoreorLongerthanIntended" name="CannabisUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="CannabisUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The CannabisPreviousEffortstoCutQuit field is required." id="CannabisPreviousEffortstoCutQuit" name="CannabisPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="CannabisPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The CannabisLargeamountsoftimetoobtain field is required." id="CannabisLargeamountsoftimetoobtain" name="CannabisLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="CannabisLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The CannabisCravingUrge field is required." id="CannabisCravingUrge" name="CannabisCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="CannabisCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The CannabisSocialOccupation field is required." id="CannabisSocialOccupation" name="CannabisSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="CannabisSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The CannabisRiskySituations field is required." id="CannabisRiskySituations" name="CannabisRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="CannabisRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The CannabisPhysicalImpairment field is required." id="CannabisPhysicalImpairment" name="CannabisPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="CannabisPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The CannabisTolerance field is required." id="CannabisTolerance" name="CannabisTolerance" type="checkbox" value="true" spellcheck="true"><input name="CannabisTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The CannabisWithdrawal field is required." id="CannabisWithdrawal" name="CannabisWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="CannabisWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Opioids</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>   
+                                                                    <td>
+                                                                        <input data-val-required="The OpioidsUseMoreorLongerthanIntended field is required." id="OpioidsUseMoreorLongerthanIntended" name="OpioidsUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="OpioidsUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The OpioidsPreviousEffortstoCutQuit field is required." id="OpioidsPreviousEffortstoCutQuit" name="OpioidsPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="OpioidsPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The OpioidsLargeamountsoftimetoobtain field is required." id="OpioidsLargeamountsoftimetoobtain" name="OpioidsLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="OpioidsLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The OpioidsCravingUrge field is required." id="OpioidsCravingUrge" name="OpioidsCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="OpioidsCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The OpioidsSocialOccupation field is required." id="OpioidsSocialOccupation" name="OpioidsSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="OpioidsSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The OpioidsRiskySituations field is required." id="OpioidsRiskySituations" name="OpioidsRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="OpioidsRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The OpioidsPhysicalImpairment field is required." id="OpioidsPhysicalImpairment" name="OpioidsPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="OpioidsPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The OpioidsTolerance field is required." id="OpioidsTolerance" name="OpioidsTolerance" type="checkbox" value="true" spellcheck="true"><input name="OpioidsTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The OpioidsWithdrawal field is required." id="OpioidsWithdrawal" name="OpioidsWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="OpioidsWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                    
+                                                                    </td>     
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Cocaine</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>   
+                                                                    <td>
+                                                                        <input data-val-required="The CocaineUseMoreorLongerthanIntended field is required." id="CocaineUseMoreorLongerthanIntended" name="CocaineUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="CocaineUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The CocainePreviousEffortstoCutQuit field is required." id="CocainePreviousEffortstoCutQuit" name="CocainePreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="CocainePreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The CocaineLargeamountsoftimetoobtain field is required." id="CocaineLargeamountsoftimetoobtain" name="CocaineLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="CocaineLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The CocaineCravingUrge field is required." id="CocaineCravingUrge" name="CocaineCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="CocaineCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The CocaineSocialOccupation field is required." id="CocaineSocialOccupation" name="CocaineSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="CocaineSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The CocaineRiskySituations field is required." id="CocaineRiskySituations" name="CocaineRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="CocaineRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The CocainePhysicalImpairment field is required." id="CocainePhysicalImpairment" name="CocainePhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="CocainePhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The CocaineTolerance field is required." id="CocaineTolerance" name="CocaineTolerance" type="checkbox" value="true" spellcheck="true"><input name="CocaineTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The CocaineWithdrawal field is required." id="CocaineWithdrawal" name="CocaineWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="CocaineWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Sedative, Hypnotic or Anxiolytic</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>   
+                                                                    <td>
+                                                                        <input data-val-required="The SedativeUseMoreorLongerthanIntended field is required." id="SedativeUseMoreorLongerthanIntended" name="SedativeUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="SedativeUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The SedativePreviousEffortstoCutQuit field is required." id="SedativePreviousEffortstoCutQuit" name="SedativePreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="SedativePreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The SedativeLargeamountsoftimetoobtain field is required." id="SedativeLargeamountsoftimetoobtain" name="SedativeLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="SedativeLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The SedativeCravingUrge field is required." id="SedativeCravingUrge" name="SedativeCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="SedativeCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The SedativeSocialOccupation field is required." id="SedativeSocialOccupation" name="SedativeSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="SedativeSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The SedativeRiskySituations field is required." id="SedativeRiskySituations" name="SedativeRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="SedativeRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The SedativePhysicalImpairment field is required." id="SedativePhysicalImpairment" name="SedativePhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="SedativePhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The SedativeTolerance field is required." id="SedativeTolerance" name="SedativeTolerance" type="checkbox" value="true" spellcheck="true"><input name="SedativeTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The SedativeWithdrawal field is required." id="SedativeWithdrawal" name="SedativeWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="SedativeWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Stimulant</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>   
+                                                                    <td>
+                                                                        <input data-val-required="The StimulantUseMoreorLongerthanIntended field is required." id="StimulantUseMoreorLongerthanIntended" name="StimulantUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="StimulantUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The StimulantPreviousEffortstoCutQuit field is required." id="StimulantPreviousEffortstoCutQuit" name="StimulantPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="StimulantPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The StimulantLargeamountsoftimetoobtain field is required." id="StimulantLargeamountsoftimetoobtain" name="StimulantLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="StimulantLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The StimulantCravingUrge field is required." id="StimulantCravingUrge" name="StimulantCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="StimulantCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The StimulantSocialOccupation field is required." id="StimulantSocialOccupation" name="StimulantSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="StimulantSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The StimulantRiskySituations field is required." id="StimulantRiskySituations" name="StimulantRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="StimulantRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The StimulantPhysicalImpairment field is required." id="StimulantPhysicalImpairment" name="StimulantPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="StimulantPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The StimulantTolerance field is required." id="StimulantTolerance" name="StimulantTolerance" type="checkbox" value="true" spellcheck="true"><input name="StimulantTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The StimulantWithdrawal field is required." id="StimulantWithdrawal" name="StimulantWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="StimulantWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                    
+                                                                    </td>        
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Hallucinogen</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>          
+                                                                    <td>
+                                                                        <input data-val-required="The HallucinogenUseMoreorLongerthanIntended field is required." id="HallucinogenUseMoreorLongerthanIntended" name="HallucinogenUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val-required="The HallucinogenPreviousEffortstoCutQuit field is required." id="HallucinogenPreviousEffortstoCutQuit" name="HallucinogenPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val-required="The HallucinogenLargeamountsoftimetoobtain field is required." id="HallucinogenLargeamountsoftimetoobtain" name="HallucinogenLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val-required="The HallucinogenCravingUrge field is required." id="HallucinogenCravingUrge" name="HallucinogenCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val-required="The HallucinogenSocialOccupation field is required." id="HallucinogenSocialOccupation" name="HallucinogenSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val-required="The HallucinogenRiskySituations field is required." id="HallucinogenRiskySituations" name="HallucinogenRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val-required="The HallucinogenPhysicalImpairment field is required." id="HallucinogenPhysicalImpairment" name="HallucinogenPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val-required="The HallucinogenTolerance field is required." id="HallucinogenTolerance" name="HallucinogenTolerance" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val-required="The HallucinogenWithdrawal field is required." id="HallucinogenWithdrawal" name="HallucinogenWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="HallucinogenWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>    
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Inhalant</td>
+                                                                    <td>
+                                                                        <input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;">
+                                                                    </td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""style="height: 80px;"></td>  
+                                                                    <td>
+                                                                        <input data-val="true" data-val-required="The InhalantUseMoreorLongerthanIntended field is required." id="InhalantUseMoreorLongerthanIntended" name="InhalantUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="InhalantUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantPreviousEffortstoCutQuit field is required." id="InhalantPreviousEffortstoCutQuit" name="InhalantPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="InhalantPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantLargeamountsoftimetoobtain field is required." id="InhalantLargeamountsoftimetoobtain" name="InhalantLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="InhalantLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantCravingUrge field is required." id="InhalantCravingUrge" name="InhalantCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="InhalantCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantSocialOccupation field is required." id="InhalantSocialOccupation" name="InhalantSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="InhalantSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantRiskySituations field is required." id="InhalantRiskySituations" name="InhalantRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="InhalantRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantPhysicalImpairment field is required." id="InhalantPhysicalImpairment" name="InhalantPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="InhalantPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantTolerance field is required." id="InhalantTolerance" name="InhalantTolerance" type="checkbox" value="true" spellcheck="true"><input name="InhalantTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val="true" data-val-required="The InhalantWithdrawal field is required." id="InhalantWithdrawal" name="InhalantWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="InhalantWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>      
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td>Other</td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value="" style="height: 80px;"></td>  
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value="" style="height: 80px;" ></td>     
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value="" style="height: 80px;"></td>        
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""  style="height: 80px;"></td>
+                                                                    <td><input type="text" name="harmingNo" id="harmingNo" value=""   style="height: 80px;"> </td>    
+                                                                    <td>
+                                                                        <input data-val="true" data-val-required="The OtherUseMoreorLongerthanIntended field is required." id="OtherUseMoreorLongerthanIntended" name="OtherUseMoreorLongerthanIntended" type="checkbox" value="true" spellcheck="true"><input name="OtherUseMoreorLongerthanIntended" type="hidden" value="false" spellcheck="true"><label> More or Longer than Intended</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherPreviousEffortstoCutQuit field is required." id="OtherPreviousEffortstoCutQuit" name="OtherPreviousEffortstoCutQuit" type="checkbox" value="true" spellcheck="true"><input name="OtherPreviousEffortstoCutQuit" type="hidden" value="false" spellcheck="true"><label>Previous Efforts to Cut Back/Quit</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherLargeamountsoftimetoobtain field is required." id="OtherLargeamountsoftimetoobtain" name="OtherLargeamountsoftimetoobtain" type="checkbox" value="true" spellcheck="true"><input name="OtherLargeamountsoftimetoobtain" type="hidden" value="false" spellcheck="true"><label>Large amounts of time to obtain, use and recover</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherCravingUrge field is required." id="OtherCravingUrge" name="OtherCravingUrge" type="checkbox" value="true" spellcheck="true"><input name="OtherCravingUrge" type="hidden" value="false" spellcheck="true"><label>Craving / Urge to Use</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherSocialOccupation field is required." id="OtherSocialOccupation" name="OtherSocialOccupation" type="checkbox" value="true" spellcheck="true"><input name="OtherSocialOccupation" type="hidden" value="false" spellcheck="true"><label>Social, Occupation, Legal Impairment</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherRiskySituations field is required." id="OtherRiskySituations" name="OtherRiskySituations" type="checkbox" value="true" spellcheck="true"><input name="OtherRiskySituations" type="hidden" value="false" spellcheck="true"><label>Use in Risky Situations</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherPhysicalImpairment field is required." id="OtherPhysicalImpairment" name="OtherPhysicalImpairment" type="checkbox" value="true" spellcheck="true"><input name="OtherPhysicalImpairment" type="hidden" value="false" spellcheck="true"><label>Physical Impairment</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherTolerance field is required." id="OtherTolerance" name="OtherTolerance" type="checkbox" value="true" spellcheck="true"><input name="OtherTolerance" type="hidden" value="false" spellcheck="true"><label>Tolerance</label><br>
+                                                                        <input data-val="true" data-val-required="The OtherWithdrawal field is required." id="OtherWithdrawal" name="OtherWithdrawal" type="checkbox" value="true" spellcheck="true"><input name="OtherWithdrawal" type="hidden" value="false" spellcheck="true"><label>Withdrawal</label>
+                                                                    </td>       
+                                                                </tr>
+                                                                
+                                                            </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                            <label ><b>Comments</b></label>
+                                                            <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                            
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Brief Gambling Mini-Screen</label>
+                                                                <ul >
+                                                                    <li>
+                                                                        <label>In the past 12 months, would you say you have been preoccupied with gambling?</label>&nbsp;
+                                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                        Yes
+                                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                        No
+                                                                    </li>
+                                                                    <li>
+                                                                        <label>In the past 12 months, have you often gabled longer, with more money or more frequently than you intended?</label>&nbsp;
+                                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                        Yes
+                                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                        No
+                                                                    </li>
+                                                                    <li>
+                                                                        <label>In the past 12 months, have you needed to gamble with larger amounts of money to get the same feeling of excitement?
+                                                                        </label>&nbsp;
+                                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                        Yes
+                                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                        No
+                                                                    </li>
+                                                                    <li>
+                                                                        <label>In the past 12 months, have you made attempts to either cut down, control or stop gambling?</label>&nbsp;
+                                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                        Yes
+                                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                        No
+                                                                    </li>
+                                                                    <li>
+                                                                        <label>In the past 12 months, have you borrowed money or sold anything to get money to gamble?</label>&nbsp;
+                                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                        Yes
+                                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                        No
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Comments on Gambling or Other Behavioral Addictions:</label>
+                                                    <textarea name="Complaint" class="client-input"
+                                                id="Complaint" style="height: 80px;"></textarea>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>ABUSE HISTORY
+                                    (DESCRIBE IN COMMENTS SECTION EACH ELEMENT CHECKED)</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="margin-inputclient">
+                                        <div class="d-flex">
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>No Self Reported History of Abuse/Violence</label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Physical Abuse  </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Domestic Violence/Abus </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Community Violence   </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Physical Neglect </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Emotional Abuse  </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Elder Abuse  </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>Sexual Abuse/Molestation  </label>&nbsp;
+                                            <input type="checkbox" name="harmingNo"
+                                            id="harmingNo" value="yes">&nbsp;
+                                            <label>OthProblemNutritionaler :   </label>
+
+                                        </div>
+                                    </div>
+                                    <textarea name="Complaint" class="client-input col-md-12"
+                                    id="Complaint"></textarea>
+                                    <!-- #########====== -->      
+                                    <label class="CLIENT-LABEL">Comments (identify if client was/is a victim of abuse or a perpetrator or both)
+                                    </label> 
+                                    <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,277 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form>
+                <div class="all-tb">
+                    <div class="row nxtTab">
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>User Name:</label>
+                            <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>Full Name:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax">Credentials:</label>
+                            <select class="client-input" style="width: 100%;" id="ddlProcedureCode"
+                                name="ddlProcedureCode">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL">Cell Number:</label>
+                            <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL">Office:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax"><span class="text-danger">*</span>Email
+                                Address:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-12 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax"><span class="text-danger">*</span>Gender:</label>
+                            <select class="client-input">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="grp">Upload your Company Logo</label>
+                            <input class="client-input" type="file" name="Upload" id="Upload"
+                                (change)="readURL($event);">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="grp">Logo Preview</label>
+                            <img id="blah" *ngIf="imageSrc" class="logo_prev" [src]="imageSrc" alt="" width="100%"
+                                height="auto">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>Password:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax"><span class="text-danger">*</span>Re-Enter
+                                Password:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-12">
+                            <ul class="all-li-radio und_line">
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label><b>Consumer denies current thoughts and is
+                                            future-oriented</b></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="all-tb my-3">
+                    <div class="row nxtTab">
+                        <div class="col-lg-12">
+                            <ul class="all-li-radio und_line">
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Admin</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Clinical Supervisor</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Supervisor</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Doctor</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>PRP Counselor</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Therapy Provider</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Mobile Provider</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>IOP Provider</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Receptionist</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Biller</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>Crisis Provide</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label>PRP Supervisor</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 margin-inputclient my-3">
+                            <label class="CLIENT-LABEL" for="Fax">Supervisor Assigned to:</label>
+                            <select class="client-input" style="width: 100%;" id="ddlProcedureCode"
+                                name="ddlProcedureCode">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="all-tb my-3">
+                    <div class="row nxtTab">
+                        <label class="CLIENT-LABEL my-3"><b>Access To :</b></label>
+                        <div class="col-lg-5">
+                            <ul class="all-li-radio all d-block my-3">
+                            <label class="CLIENT-LABEL my-3"><b>Administration</b></label>
+                            <li>
+                                <input type="checkbox" name="harmingNo"
+                                    id="harmingNo" value="yes">
+                                <label>Users</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="harmingNo"
+                                    id="harmingNo" value="yes">
+                                <label>Settings</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="harmingNo"
+                                    id="harmingNo" value="yes">
+                                <label>Tracking</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="harmingNo"
+                                    id="harmingNo" value="yes">
+                                <label>Company Information</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="harmingNo"
+                                    id="harmingNo" value="yes">
+                                <label>Insurance Company Info</label>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <ul class="all-li-radio all d-block my-3">
+                            <label class="CLIENT-LABEL my-3"><b>Billing</b></label>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>Encounter</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>Batches</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>Fee Schedule</label>
+                                </li>
+                                </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul class="all-li-radio all d-block my-3">
+                            <label class="CLIENT-LABEL my-3"><b>Miscellaneous</b></label>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>Unlock Notes</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>View All Dashboards</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="harmingNo"
+                                        id="harmingNo" value="yes">
+                                    <label>Reports</label>
+                                </li>
+                                </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="all-tb my-3">
+                    <div class="row nxtTab">
+                        <label class="CLIENT-LABEL my-3"><b>Select users to send email</b></label>
+                        <div class="cl">
+                            <ul class="common-div-ul">
+                                <li>
+                                    <a>Nji Fru</a>
+                                </li>
+                                <li>
+                                    <a>Steven Holmes</a>
+                                </li>
+                                <li>
+                                    <a>Adaora Nnanna</a>
+                                </li>
+                                <li>
+                                    <a>Anika</a>
+                                </li>
+                                <li>
+                                    <a>amit Kamal</a>
+                                </li>
+                                <li>
+                                    <a>Amari Evans</a>
+                                </li>
+                                <li>
+                                    <a>Amanda Clark</a>
+                                </li>
+                                <li>
+                                    <a>Adaora Nnanna</a>
+                                </li>
+                                <li>
+                                    <a>Desiree Gibson</a>
+                                </li>
+                                <li>
+                                    <a>Covita Mills</a>
+                                </li>
+                                <li>
+                                    <a>Nji Fru</a>
+                                </li>
+                                <li>
+                                    <a>Steven Holmes</a>
+                                </li>
+                                <li>
+                                    <a>Adaora Nnanna</a>
+                                </li>
+                                <li>
+                                    <a>Anika</a>
+                                </li>
+                                <li>
+                                    <a>Nji Fru</a>
+                                </li>
+                                <li>
+                                    <a>Steven Holmes</a>
+                                </li>
+                                <li>
+                                    <a>Adaora Nnanna</a>
+                                </li>
+                                <li>
+                                    <a>Anika</a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

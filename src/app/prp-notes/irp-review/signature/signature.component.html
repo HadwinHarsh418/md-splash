@@ -1,0 +1,123 @@
+<div class="col-lg-12">
+    <div class="">
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6 my-3">
+                                        <div class="row">
+                                            <label for="Clinician"><b>Clinician</b></label>
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <input name="signinput1" type="text" value="TEST TEST"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-3">
+                                        <label for="Supervisor"><b>Supervisor</b></label>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <select class="client-input" name="signinput">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 my-3">
+                                        <div class="row">
+                                            <label for="Client"><b>Client</b></label>
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <input name="signinput1" type="text" value="TEST TEST"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-3">
+                                        <label for="Guardian"><b>Guardian</b></label>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <select class="client-input" name="signinput">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for=""><b>Status:Pending to send IRP Review/Treatment Plan to
+                                                client</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

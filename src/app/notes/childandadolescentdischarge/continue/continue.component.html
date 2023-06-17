@@ -1,0 +1,258 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row mar-1010 d-flex my-2">
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">6. Since the last OMS interview date have the
+                                                child/adolescent’s problems with school attendance increased, stayed the
+                                                same, or decreased?</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="WhatProblemWithSchoolAttendance"
+                                                            formControlName="WhatProblemWithSchoolAttendance"
+                                                            name="WhatProblemWithSchoolAttendance" type="radio"
+                                                            value="1">
+                                                        <label>Increased</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="WhatProblemWithSchoolAttendance"
+                                                            formControlName="WhatProblemWithSchoolAttendance"
+                                                            name="WhatProblemWithSchoolAttendance" type="radio"
+                                                            value="2">
+                                                        <label>Stayed the same</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="WhatProblemWithSchoolAttendance"
+                                                            formControlName="WhatProblemWithSchoolAttendance"
+                                                            name="WhatProblemWithSchoolAttendance" type="radio"
+                                                            value="3">
+                                                        <label>Decreased</label>
+                                                    </li><br>
+                                                </ul>
+                                            </div><br>
+                                        </div><br>
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">7. Some children and teens get suspended from
+                                                school. This would include in- and out-of-school suspensions. Since the
+                                                last OMS interview date has the child/adolescent had…</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="Suspensions" formControlName="Suspensions"
+                                                            name="Suspensions" type="radio" value="1">
+                                                        <label>No suspensions</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="Suspensions" formControlName="Suspensions"
+                                                            name="Suspensions" type="radio" value="2">
+                                                        <label>Increased suspensions</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="Suspensions" formControlName="Suspensions"
+                                                            name="Suspensions" type="radio" value="3">
+                                                        <label>The same number of suspensions</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="Suspensions" formControlName="Suspensions"
+                                                            name="Suspensions" type="radio" value="4">
+                                                        <label>Decreased suspensions</label>
+                                                    </li><br>
+                                                </ul>
+                                            </div><br>
+                                        </div>
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">8. Since the last OMS interview date has the
+                                                child/adolescent been expelled from school?</label><br>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio">
+                                                    <li class="col-md-12">
+                                                        <input id="Expelled" formControlName="Expelled" name="Expelled"
+                                                            type="radio" value="1">
+                                                        <label>No</label>
+                                                    </li><br>
+                                                    <li class="col-md-12">
+                                                        <input id="Expelled" formControlName="Expelled" name="Expelled"
+                                                            type="radio" value="2">
+                                                        <label>Yes </label>
+                                                    </li><br>
+                                                </ul>
+                                            </div><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LEGAL SYSTEM INVOLVEMENT</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">9. Since the last OMS interview date has the
+                                                    child/adolescent been arrested?</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="ChildArrested" name="ChildArrested"
+                                                                formControlName="ChildArrested" type="radio" value="1">
+                                                            <label>No </label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ChildArrested" name="ChildArrested"
+                                                                formControlName="ChildArrested" type="radio" value="2">
+                                                            <label>Yes </label>
+                                                        </li><br>
+                                                    </ul>
+                                                </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">10. Some people have had a negative
+                                                    encounter with the police, such as being arrested or hassled by
+                                                    police. Since the last OMS interview date has the child/adolescent
+                                                    had…</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="NegetiveEncounterWithPolice"
+                                                                formControlName="NegetiveEncounterWithPolice"
+                                                                name="NegetiveEncounterWithPolice" type="radio"
+                                                                value="1">
+                                                            <label>No negative encounters with police</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="NegetiveEncounterWithPolice"
+                                                                formControlName="NegetiveEncounterWithPolice"
+                                                                name="NegetiveEncounterWithPolice" type="radio"
+                                                                value="2">
+                                                            <label>Increased negative encounters</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="NegetiveEncounterWithPolice"
+                                                                formControlName="NegetiveEncounterWithPolice"
+                                                                name="NegetiveEncounterWithPolice" type="radio"
+                                                                value="3">
+                                                            <label>The same amount of negative encounters</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ClienParticipateInDischargeProcressYes"
+                                                                name="ClienParticipateInDischargeProcressYes"
+                                                                type="radio" value="4">
+                                                            <label>Decreased negative encounters</label>
+                                                        </li><br>
+                                                    </ul>
+                                                </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SOMATIC HEALTH</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">11. Does the child/adolescent smoke
+                                                    cigarettes?</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="SmokeCigarettes" name="SmokeCigarettes"
+                                                                formControlName="SmokeCigarettes" type="radio"
+                                                                value="1">
+                                                            <label>No </label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="SmokeCigarettes" name="SmokeCigarettes"
+                                                                formControlName="SmokeCigarettes" type="radio"
+                                                                value="2">
+                                                            <label>Yes </label>
+                                                        </li><br>
+                                                    </ul>
+                                                </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>DEMOGRAPHIC INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">12. How long has the child/adolescent been
+                                                    receiving services from this clinic?</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="ServicesFromClinic" name="ServicesFromClinic"
+                                                                formControlName="ServicesFromClinic" type="radio"
+                                                                value="1">
+                                                            <label>Intake</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ServicesFromClinic" name="ServicesFromClinic"
+                                                                formControlName="ServicesFromClinic" type="radio"
+                                                                value="2">
+                                                            <label>Less than one year</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ServicesFromClinic" name="ServicesFromClinic"
+                                                                formControlName="ServicesFromClinic" type="radio"
+                                                                value="3">
+                                                            <label>One year to three years </label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ServicesFromClinic" name="ServicesFromClinic"
+                                                                formControlName="ServicesFromClinic" type="radio"
+                                                                value="4">
+                                                            <label>Greater than three years </label>
+                                                        </li><br>
+                                                    </ul>
+                                                    <span
+                                                        *ngIf="genForm['ServicesFromClinic'].dirty && genForm['ServicesFromClinic'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ServicesFromClinic'].errors?.['required']">
+                                                            * Child/adolescent required</i>
+                                                    </span>
+                                                </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,931 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" (ngSubmit)="Save()">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                        <div class="arrow d-flex" (click)="back()">
+                            <label for="type ms-2">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading">Assignments</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <!-- <button class="NEW-SAVE" (click)="Save()">SAVE</button> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content">
+                        <!---------1##############--->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="note-search-bx-1">
+                                        <label>search client</label>
+                                        <div class="note-search-input">
+                                            <input type="text" id="txt_Autocomplete" style="width: auto;" spellcheck="true"
+                                                class="ui-autocomplete-input" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!------------2##############------------->
+
+                            <div class="row my-2">
+                                <div class="col-md-4">
+                                    <div class="note-row3 client-name-block-border">
+                                        <div class="client-name-block ">
+                                            <div class="cleint-left">
+                                                <div class="main-form">
+                                                    <div class="form-left">Client Name:</div>
+                                                    <div class="form-right" id="Client_Name"></div>
+                                                </div>
+                                                <div class="main-form">
+                                                    <div class="form-left">City, State, Zip:</div>
+                                                    <div class="form-right" id="Client_Name"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="cleint-left">
+                                        <div class="main-form">
+                                            <div class="form-left">Client Address:</div>
+                                            <div class="form-right" id="Client_Name"></div>
+                                        </div>
+                                        <div class="main-form">
+                                            <div class="form-left">Home Phone:</div>
+                                            <div class="form-right" id="Client_Name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="cleint-left">
+                                        <div class="main-form">
+                                            <div class="form-left">Date of Birth:</div>
+                                            <div class="form-right" id="Client_Name"></div>
+                                        </div>
+                                        <div class="main-form">
+                                            <div class="form-left">Cell Phone:</div>
+                                            <div class="form-right" id="Client_Name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--------------3################-------------------->
+                            <div class="row my-5">
+                               <div class="col-md-6">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>CLINICIAN ASSIGNMENTS</h6>
+                                    </div>
+                                    <div class="row box">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                        <input formControlName="CurrentlyAssignedto" type="text"
+                                                            class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex">
+                                                    <div class="set_assign">
+                                                        <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                            id="BtnNewAssignment" (click)="formValueChange('ShowClinican')" value="New Assignment"  >
+                                                    </div>
+                                                    <div class="set_assign" *ngIf="ShowClinican">
+                                                        <button class="SubmitClass_new" (click)="onsave()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12" *ngIf="ShowClinican">
+                                            <div class="row assignment-tblgrid">
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assigning To:</label>
+                                                    <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                        formControlName="assignedto">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option value="15">Barbara Smith</option>
+                                                        <option value="12">Breauna Carter</option>
+                                                        <option value="0">Discharge</option>
+                                                        <option value="39">Jeanni Aubee</option>
+                                                        <option value="11">Kathy Hill</option>
+                                                        <option value="10">Keiryan Bolling</option>
+                                                        <option value="19">Kelly Rice</option>
+                                                        <option value="38">Keyya Simons</option>
+                                                        <option value="9">Melanie Bowen</option>
+                                                        <option value="6">Monica Boddie</option>
+                                                        <option value="1">Psych Only</option>
+                                                        <option value="14">Renee Stokes</option>
+                                                        <option value="13">Shereen Ghori</option>
+                                                        <option value="34">test test</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assignment type:</label>
+                                                    <select id="ddlAssignmenttype" class="client-input"
+                                                        formControlName="AssignedType">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option>Assessment</option>
+                                                        <option>Clinician</option>
+                                                        <option>Clinical Manager</option>
+                                                        <option>Discharge</option>
+                                                        <option>Intake</option>
+                                                        <option>N/A</option>
+                                                        <option>PRP Counselor</option>
+                                                        <option>psych only</option>
+                                                        <option>Suspense</option>
+                                                        <option>TBA</option>
+                                                    </select>
+
+
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                    <input id="txtDateOfAssignment" type="date"
+                                                        formControlName="AssignedDate"
+                                                        class="date-picker client-input hasDatepicker">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!---table-->
+                                        <div class="col-lg-12 my-2">
+                                            <div class="CLIENT-DEMOGRAPHICS1">
+                                                <h6>PREVIOUS ASSIGNMENTS</h6>
+                                            </div>
+                                            <div class="ui-jqgrid-title">
+                                                <!-- <h3> -->
+                                                    <small>Clinician Assignment</small>
+                                                <!-- </h3> -->
+                                            </div>
+                                            <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetAssignedClinicians"
+                                                [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [loadingIndicator]="loadingIndicator"
+                                                [externalPaging]="false">
+            
+                                                <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                    <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                        ngx-datatable-cell-template>
+                                                        <a href="javascript:void(0)">{{
+                                                            AuthValue }}</a>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+            
+                                                <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                    <ng-template let-Payor="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ Payor }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                    <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ CurrentAssignName }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                    <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ AssignmentDate | date: 'mediumDate'}}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                        <div class="d-flex align-items-center">
+                                                            <div ngbDropdown container="body">
+                                                                <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                     aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                                </a>
+                                                                <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                                  
+                                                                    <a (click)="CliniciandeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                        <i class="fa fa-edit mr-2"></i> Edit
+                                                                    </a>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                            </ngx-datatable> -->
+                                        </div>
+                                    </div>
+                               </div>
+
+                               <div class="col-md-6">
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>DOCTOR ASSIGNMENTS</h6>
+                                </div>
+                                <div class="row box">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                    <input formControlName="CurrentlyAssignedto" type="text"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 d-flex">
+                                                <div class="set_assign">
+                                                    <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                        id="BtnNewAssignment" (click)="formValueChange('ShowDOCTOR')" value="New Assignment"  >
+                                                </div>
+                                                <div class="set_assign" *ngIf="ShowDOCTOR">
+                                                        <button class="SubmitClass_new" (click)="onsave()" ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" *ngIf="ShowDOCTOR">
+                                        <div class="row assignment-tblgrid">
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assigning To:</label>
+                                                <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                    formControlName="assignedto">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                    <option value="0">Discharge</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                    <option value="19">Kelly Rice</option>
+                                                    <option value="38">Keyya Simons</option>
+                                                    <option value="9">Melanie Bowen</option>
+                                                    <option value="6">Monica Boddie</option>
+                                                    <option value="1">Psych Only</option>
+                                                    <option value="14">Renee Stokes</option>
+                                                    <option value="13">Shereen Ghori</option>
+                                                    <option value="34">test test</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assignment type:</label>
+                                                <select id="ddlAssignmenttype" class="client-input"
+                                                    formControlName="AssignedType">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option>Assessment</option>
+                                                    <option>Clinician</option>
+                                                    <option>Clinical Manager</option>
+                                                    <option>Discharge</option>
+                                                    <option>Intake</option>
+                                                    <option>N/A</option>
+                                                    <option>PRP Counselor</option>
+                                                    <option>psych only</option>
+                                                    <option>Suspense</option>
+                                                    <option>TBA</option>
+                                                </select>
+
+
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                <input id="txtDateOfAssignment" type="date"
+                                                    formControlName="AssignedDate"
+                                                    class="date-picker client-input hasDatepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2">
+                                        <div class="CLIENT-DEMOGRAPHICS1">
+                                            <h6>PREVIOUS ASSIGNMENTS</h6>
+                                        </div>
+                                        <div class="ui-jqgrid-title">
+                                            <!-- <h3> -->
+                                                <small>Doctor Assignment</small>
+                                            <!-- </h3> -->
+                                        </div>
+                                        <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetAssignedDoctors"
+                                            [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                            [externalPaging]="false">
+        
+                                            <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                    ngx-datatable-cell-template>
+                                                    <a href="javascript:void(0)">{{
+                                                        AuthValue }}</a>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+        
+                                            <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                <ng-template let-Payor="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ Payor }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ CurrentAssignName }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ AssignmentDate | date: 'mediumDate'}}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                    <div class="d-flex align-items-center">
+                                                        <div ngbDropdown container="body">
+                                                            <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                 aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                            </a>
+                                                            <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                              
+                                                                <a (click)="DoctordeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                    <i class="fa fa-edit mr-2"></i> Edit
+                                                                </a>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                        </ngx-datatable> -->
+                                    </div><br>
+                                </div>
+                               </div>
+                            </div>
+
+                            <!---------4###############--->
+                            <div class="row my-5">
+                                <div class="col-md-6">
+                                     <div class="CLIENT-DEMOGRAPHICS">
+                                         <h6>Mobile Treatment Assignments</h6>
+                                     </div>
+                                     <div class="row box">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                        <input formControlName="CurrentlyAssignedto" type="text"
+                                                            class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex">
+                                                    <div class="set_assign">
+                                                        <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                            id="BtnNewAssignment" (click)="formValueChange('ShowMobile')" value="New Assignment"  >
+                                                    </div>
+                                                    <div class="set_assign" *ngIf="ShowMobile">
+                                                        <button class="SubmitClass_new" (click)="onsave()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12" *ngIf="ShowMobile">
+                                            <div class="row assignment-tblgrid">
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assigning To:</label>
+                                                    <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                        formControlName="assignedto">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option value="15">Barbara Smith</option>
+                                                        <option value="12">Breauna Carter</option>
+                                                        <option value="0">Discharge</option>
+                                                        <option value="39">Jeanni Aubee</option>
+                                                        <option value="11">Kathy Hill</option>
+                                                        <option value="10">Keiryan Bolling</option>
+                                                        <option value="19">Kelly Rice</option>
+                                                        <option value="38">Keyya Simons</option>
+                                                        <option value="9">Melanie Bowen</option>
+                                                        <option value="6">Monica Boddie</option>
+                                                        <option value="1">Psych Only</option>
+                                                        <option value="14">Renee Stokes</option>
+                                                        <option value="13">Shereen Ghori</option>
+                                                        <option value="34">test test</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assignment type:</label>
+                                                    <select id="ddlAssignmenttype" class="client-input"
+                                                        formControlName="AssignedType">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option>Assessment</option>
+                                                        <option>Clinician</option>
+                                                        <option>Clinical Manager</option>
+                                                        <option>Discharge</option>
+                                                        <option>Intake</option>
+                                                        <option>N/A</option>
+                                                        <option>PRP Counselor</option>
+                                                        <option>psych only</option>
+                                                        <option>Suspense</option>
+                                                        <option>TBA</option>
+                                                    </select>
+    
+    
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                    <input id="txtDateOfAssignment" type="date"
+                                                        formControlName="AssignedDate"
+                                                        class="date-picker client-input hasDatepicker">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 my-2">
+                                            <div class="CLIENT-DEMOGRAPHICS1">
+                                                <h6>PREVIOUS ASSIGNMENTS</h6>
+                                            </div>
+                                            <div class="ui-jqgrid-title">
+                                                <!-- <h3> -->
+                                                    <small>
+                                                        Mobile Treatment Assignment</small>
+                                                <!-- </h3> -->
+                                            </div>
+                                            <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetMobileAssignment"
+                                                [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                                [externalPaging]="false">
+            
+                                                <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                    <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                        ngx-datatable-cell-template>
+                                                        <a href="javascript:void(0)">{{
+                                                            AuthValue }}</a>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+            
+                                                <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                    <ng-template let-Payor="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ Payor }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                    <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ CurrentAssignName }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                    <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ AssignmentDate | date: 'mediumDate'}}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                        <div class="d-flex align-items-center">
+                                                            <div ngbDropdown container="body">
+                                                                <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                     aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                                </a>
+                                                                <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                                  
+                                                                    <a (click)="MobileCliniciandeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                        <i class="fa fa-edit mr-2"></i> Edit
+                                                                    </a>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                            </ngx-datatable> -->
+                                        </div><br>
+                                    </div>
+                                </div>
+ 
+                                <div class="col-md-6">
+                                 <div class="CLIENT-DEMOGRAPHICS">
+                                     <h6>IOP Assignments</h6>
+                                 </div>
+                                 <div class="row box">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                    <input formControlName="CurrentlyAssignedto" type="text"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 d-flex">
+                                                <div class="set_assign">
+                                                    <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                        id="BtnNewAssignment" (click)="formValueChange('ShowIOP')" value="New Assignment"  >
+                                                </div>
+                                                <div class="set_assign" *ngIf="ShowIOP">
+                                                    <button class="SubmitClass_new" (click)="onsave()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" *ngIf="ShowIOP">
+                                        <div class="row assignment-tblgrid">
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assigning To:</label>
+                                                <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                    formControlName="assignedto">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                    <option value="0">Discharge</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                    <option value="19">Kelly Rice</option>
+                                                    <option value="38">Keyya Simons</option>
+                                                    <option value="9">Melanie Bowen</option>
+                                                    <option value="6">Monica Boddie</option>
+                                                    <option value="1">Psych Only</option>
+                                                    <option value="14">Renee Stokes</option>
+                                                    <option value="13">Shereen Ghori</option>
+                                                    <option value="34">test test</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assignment type:</label>
+                                                <select id="ddlAssignmenttype" class="client-input"
+                                                    formControlName="AssignedType">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option>Assessment</option>
+                                                    <option>Clinician</option>
+                                                    <option>Clinical Manager</option>
+                                                    <option>Discharge</option>
+                                                    <option>Intake</option>
+                                                    <option>N/A</option>
+                                                    <option>PRP Counselor</option>
+                                                    <option>psych only</option>
+                                                    <option>Suspense</option>
+                                                    <option>TBA</option>
+                                                </select>
+
+
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                <input id="txtDateOfAssignment" type="date"
+                                                    formControlName="AssignedDate"
+                                                    class="date-picker client-input hasDatepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2">
+                                        <div class="CLIENT-DEMOGRAPHICS1">
+                                            <h6>PREVIOUS ASSIGNMENTS</h6>
+                                        </div>
+                                        <div class="ui-jqgrid-title">
+                                            <!-- <h3> -->
+                                                <small>
+                                                    IOP Assignment</small>
+                                            <!-- </h3> -->
+                                        </div>
+                                        <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetIOPAssignments"
+                                            [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                            [externalPaging]="false">
+        
+                                            <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                    ngx-datatable-cell-template>
+                                                    <a href="javascript:void(0)">{{
+                                                        AuthValue }}</a>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+        
+                                            <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                <ng-template let-Payor="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ Payor }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ CurrentAssignName }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ AssignmentDate | date: 'mediumDate'}}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                    <div class="d-flex align-items-center">
+                                                        <div ngbDropdown container="body">
+                                                            <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                 aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                            </a>
+                                                            <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                              
+                                                                <a (click)="IopdeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                    <i class="fa fa-edit mr-2"></i> Edit
+                                                                </a>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                        </ngx-datatable> -->
+                                    </div><br>
+                                </div>
+                                </div>
+                             </div>
+
+                             <!-------5############-------->
+                             <div class="row my-5">
+                                <div class="col-md-6">
+                                     <div class="CLIENT-DEMOGRAPHICS">
+                                         <h6>PRP Assignments</h6>
+                                     </div>
+                                     <div class="row box">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                        <input formControlName="CurrentlyAssignedto" type="text"
+                                                            class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 d-flex">
+                                                    <div class="set_assign">
+                                                        <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                            id="BtnNewAssignment" (click)="formValueChange('ShowPRP')" value="New Assignment"  >
+                                                    </div>
+                                                    <div class="set_assign" *ngIf="ShowPRP">
+                                                        <button class="SubmitClass_new" (click)="onsave()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12" *ngIf="ShowPRP">
+                                            <div class="row assignment-tblgrid">
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assigning To:</label>
+                                                    <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                        formControlName="assignedto">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option value="15">Barbara Smith</option>
+                                                        <option value="12">Breauna Carter</option>
+                                                        <option value="0">Discharge</option>
+                                                        <option value="39">Jeanni Aubee</option>
+                                                        <option value="11">Kathy Hill</option>
+                                                        <option value="10">Keiryan Bolling</option>
+                                                        <option value="19">Kelly Rice</option>
+                                                        <option value="38">Keyya Simons</option>
+                                                        <option value="9">Melanie Bowen</option>
+                                                        <option value="6">Monica Boddie</option>
+                                                        <option value="1">Psych Only</option>
+                                                        <option value="14">Renee Stokes</option>
+                                                        <option value="13">Shereen Ghori</option>
+                                                        <option value="34">test test</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Assignment type:</label>
+                                                    <select id="ddlAssignmenttype" class="client-input"
+                                                        formControlName="AssignedType">
+                                                        <option value="" selected="selected">--Select--</option>
+                                                        <option>Assessment</option>
+                                                        <option>Clinician</option>
+                                                        <option>Clinical Manager</option>
+                                                        <option>Discharge</option>
+                                                        <option>Intake</option>
+                                                        <option>N/A</option>
+                                                        <option>PRP Counselor</option>
+                                                        <option>psych only</option>
+                                                        <option>Suspense</option>
+                                                        <option>TBA</option>
+                                                    </select>
+    
+    
+                                                </div>
+                                                <div class="col-md-4 margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                    <input id="txtDateOfAssignment" type="date"
+                                                        formControlName="AssignedDate"
+                                                        class="date-picker client-input hasDatepicker">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 my-2">
+                                            <div class="CLIENT-DEMOGRAPHICS">
+                                                <h6>PRP PREVIOUS ASSIGNMENTS</h6>
+                                            </div>
+                                            <div class="ui-jqgrid-title">
+                                                <!-- <h3> -->
+                                                    <small>PRP Previous Assignment</small>
+                                                <!-- </h3> -->
+                                            </div>
+                                            <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetAssignedDoctors"
+                                                [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                                [externalPaging]="false">
+            
+                                                <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                    <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                        ngx-datatable-cell-template>
+                                                        <a href="javascript:void(0)">{{
+                                                            AuthValue }}</a>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+            
+                                                <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                    <ng-template let-Payor="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ Payor }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                    <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ CurrentAssignName }}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                    <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                        ngx-datatable-cell-template>
+                                                        {{ AssignmentDate | date: 'mediumDate'}}
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                                <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                        <div class="d-flex align-items-center">
+                                                            <div ngbDropdown container="body">
+                                                                <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                     aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                                </a>
+                                                                <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                                  
+                                                                    <a (click)="PRPdeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                        <i class="fa fa-edit mr-2"></i> Edit
+                                                                    </a>
+                                                                  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ngx-datatable-column>
+                                            </ngx-datatable> -->
+                                        </div><br>
+                                    </div>
+                                </div>
+ 
+                                <div class="col-md-6">
+                                 <div class="CLIENT-DEMOGRAPHICS">
+                                     <h6>Mobile Response Assignments</h6>
+                                 </div>
+                                 <div class="row box">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Currently Assigned To: </label>
+                                                    <input formControlName="CurrentlyAssignedto" type="text"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 d-flex">
+                                                <div class="set_assign">
+                                                    <input class="p-assign-btn" type="button" name="BtnNewAssignment"
+                                                        id="BtnNewAssignment" (click)="formValueChange('ShowMobileRes')" value="New Assignment"  >
+                                                </div>
+                                                <div class="set_assign" *ngIf="ShowMobileRes">
+                                                    <button class="SubmitClass_new" (click)="onsave()" ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12" *ngIf="ShowMobileRes">
+                                        <div class="row assignment-tblgrid">
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assigning To:</label>
+                                                <select id="ProviderID1" class="client-input" name="ProviderID1"
+                                                    formControlName="assignedto">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                    <option value="0">Discharge</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                    <option value="19">Kelly Rice</option>
+                                                    <option value="38">Keyya Simons</option>
+                                                    <option value="9">Melanie Bowen</option>
+                                                    <option value="6">Monica Boddie</option>
+                                                    <option value="1">Psych Only</option>
+                                                    <option value="14">Renee Stokes</option>
+                                                    <option value="13">Shereen Ghori</option>
+                                                    <option value="34">test test</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Assignment type:</label>
+                                                <select id="ddlAssignmenttype" class="client-input"
+                                                    formControlName="AssignedType">
+                                                    <option value="" selected="selected">--Select--</option>
+                                                    <option>Assessment</option>
+                                                    <option>Clinician</option>
+                                                    <option>Clinical Manager</option>
+                                                    <option>Discharge</option>
+                                                    <option>Intake</option>
+                                                    <option>N/A</option>
+                                                    <option>PRP Counselor</option>
+                                                    <option>psych only</option>
+                                                    <option>Suspense</option>
+                                                    <option>TBA</option>
+                                                </select>
+
+
+                                            </div>
+                                            <div class="col-md-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of Assignment:</label>
+                                                <input id="txtDateOfAssignment" type="date"
+                                                    formControlName="AssignedDate"
+                                                    class="date-picker client-input hasDatepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>MOBILE RES PREVIOUS ASSIGNMENTS</h6>
+                                        </div>
+                                        <div class="ui-jqgrid-title">
+                                            <!-- <h3> -->
+                                                <small>MOBILE RES Assignment</small>
+                                            <!-- </h3> -->
+                                        </div>
+                                        <!-- <ngx-datatable class="bootstrap core-bootstrap sz-1000" [rows]="GetMobileResAssignments"
+                                            [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                            [externalPaging]="false">
+        
+                                            <ngx-datatable-column name="Assigned To Name" prop="AssignedToName" [width]="80">
+                                                <ng-template let-AuthValue="value" let-expanded="expanded" let-row="row"
+                                                    ngx-datatable-cell-template>
+                                                    <a href="javascript:void(0)">{{
+                                                        AuthValue }}</a>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+        
+                                            <ngx-datatable-column name="Assignment Type" prop="AssignmentType" [width]="80">
+                                                <ng-template let-Payor="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ Payor }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Current Assign Name" prop="CurrentAssignName" [width]="80">
+                                                <ng-template let-CurrentAssignName="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ CurrentAssignName }}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Assignment Date" prop="AssignmentDate" [width]="80">
+                                                <ng-template let-AssignmentDate="value" let-expanded="expanded"
+                                                    ngx-datatable-cell-template>
+                                                    {{ AssignmentDate | date: 'mediumDate'}}
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                            <ngx-datatable-column name="Actions" prop="id" [width]="50">
+                                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                                    <div class="d-flex align-items-center">
+                                                        <div ngbDropdown container="body">
+                                                            <a ngbDropdownToggle href="javascript:void(0);" id="dropdownBrowserState"
+                                                                 aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v text-primary cursor-pointer mr-50"></i>
+                                                            </a>
+                                                            <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBrowserState">
+                                                              
+                                                                <a (click)="MobileResdeleteItem(row)" ngbDropdownItem class="d-flex align-items-center">
+                                                                    <i class="fa fa-delete mr-2"></i> Delete
+                                                                </a>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngx-datatable-column>
+                                        </ngx-datatable> -->
+                                    </div><br>
+                                </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

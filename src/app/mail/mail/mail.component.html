@@ -1,0 +1,147 @@
+<section class="tabs-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 brd-rigt">
+                <div class="tabs-admin-left">
+
+                    <div class="Compose-Message">
+                        <a (click)="composeNewMail()">Compose</a>
+                    </div>
+                    <div class="Compose-inbox">
+                        <p class="com-p">Inbox</p>
+                        <p class="com-p">1</p>
+                    </div>
+                    
+                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+                        <li ngbNavItem="1">
+                            <a class="same-in" ngbNavLink>
+                                <p class="same-in-1">Send Item</p>
+                                <p class="same-in-1">1</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="under-dta">
+                                   <p class="AllUnread">All Unread</p>
+                                    <div class="short"><a href="javascript:void(0);">By Date</a> <a href="javascript:void(0);">Newest</a></div>
+                                </div>
+                                <div class="select-bx">
+                                    <input type="checkbox"><label for="">Select All</label>
+                                </div>
+                                <div class="br-n-p d-flex justify-content-between">
+                                    <button> < Prev </button>
+                                    <button>Next ></button>
+                                </div>
+                                <div class="bor-div-1">
+                                    <div class="select-bx-1">
+                                        <div class="demo-a">
+                                            <div class="d-flex check-flex">
+                                                <input type="checkbox"><label for="">New Assignment</label>
+                                            </div>
+                                            <div class="ed-70">
+                                                <p class="m-l-0">Demitris Bradshaw</p>
+                                            </div>
+                                            <div class="del-hover">
+                                                <i class="fa-solid fa-trash"></i>
+                                                <p>Tue Apr 12 2022</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="select-bx-1">
+                                        <div class="demo-a">
+                                            <div class="d-flex check-flex">
+                                                <input type="checkbox"><label for="">New Assignment</label>
+                                            </div>
+                                            <div class="ed-70">
+                                                <p class="m-l-0">Demitris Bradshaw</p>
+                                            </div>
+                                            <div class="del-hover">
+                                                <i class="fa-solid fa-trash"></i>
+                                                <p>Tue Apr 12 2022</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="select-bx-1">
+                                        <div class="demo-a">
+                                            <div class="d-flex check-flex">
+                                                <input type="checkbox"><label for="">New Assignment</label>
+                                            </div>
+                                            <div class="ed-70">
+                                                <p class="m-l-0">Demitris Bradshaw</p>
+                                            </div>
+                                            <div class="del-hover">
+                                                <i class="fa-solid fa-trash"></i>
+                                                <p>Tue Apr 12 2022</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="2">
+                            <a class="same-in" ngbNavLink>
+                                <p class="same-in-1">Delete Item</p>
+                                <p class="same-in-1">0</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="under-dta">
+                                    <p class="AllUnread">All Unread</p>
+                                     <div class="short"><a href="javascript:void(0);">By Date</a> <a href="javascript:void(0);">Newest</a></div>
+                                 </div>
+                                 <div class="select-bx">
+                                     <input type="checkbox"><label for="">Select All</label>
+                                 </div>
+                                 <div class="br-n-p d-flex justify-content-between">
+                                     <button> < Prev</button>
+                                     <button>Next ></button>
+                                 </div>
+                            </ng-template>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div [class.col-lg-5]="newmail" [class.col-lg-10]="!newmail" class="brd-rigt">
+                <div class="serch-p">
+                    <input type="search" class="ser-br" placeholder="Search">
+                </div>
+                <div class="tabs-admin-middlle">
+                    <div [ngbNavOutlet]="nav" class="ms-mar"></div>
+                </div>
+            </div>
+            <div class="col-lg-5" *ngIf="newmail">
+                <div class="rpy-all">
+                    <ul class="rpy-ul">
+                        <li>
+                            <a href=""><i class="fa-solid fa-reply"></i> Reply</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-reply-all"></i> Reply All</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fa-solid fa-share"></i> Forward</a>
+                        </li>
+                    </ul>
+                    <div class="Subject_class d-flex">
+                        <p class="sub">Subject</p>
+                        <input type="text" class="client-input mx-2">
+                    </div>
+                    <div class="media-sub">
+                        <img src="https://thllc.splashmd.com/Content/images/profile_pic.png" alt="">
+                        <div class="right-media">
+                            <p class="right-media-p">From</p>
+                            <div class="d-flex">
+                                <p class="right-media-p my3">To</p>
+                                <input type="text" class="client-input2 mx-1" style="height: 80px;">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <input type="text" class="client-input" placeholder="Type Your Message Here" style="height: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

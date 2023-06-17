@@ -1,0 +1,339 @@
+
+<div class="col-lg-12">
+    <form [formGroup]="generalForm" >
+    <div class="col-lg-12 back_css">
+        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+      </div>
+    <div class="">
+            <div class="all-tb"> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>REFERRAL SOURCE</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Credentials </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date</label>
+                                                <input formControlName="LastName" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Phone</label>
+                                                <input formControlName="DateofBirth" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Fax </label>
+                                                <input formControlName="Rendering_ProviderID" class="client-input" type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Email</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!---2nd#######-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>CLIENT INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Intial </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <select class="client-input" formControlName="Gender">
+                                                    <option value="0" selected>Female</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Transgender</option>
+                                                    <option value="3">They</option>
+                                                    <option value="4">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient"
+                                        [class.has-error]="genForm['DOS'].dirty && genForm['DOS'].errors || genForm['DOS'].touched && genForm['DOS'].errors"
+                                        >
+                                            <label class="CLIENT-LABEL">Date of Session</label>
+                                            <input type="date" formControlName="DOS" class="client-input">
+                                            <span *ngIf="genForm['DOS'].dirty && genForm['DOS'].errors" class="has-error">
+                                                <i *ngIf="genForm['DOS'].errors?.['required']">Date of session is
+                                                    required</i>
+                                              </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                <input type="time" class="client-input" formControlName="StartTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">End Time</label>
+                                                <input type="time" class="client-input" formControlName="EndTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Duration</label>
+                                                <input type="time" class="client-input" formControlName="TotalTime1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Address</label>
+                                        <input class="client-input" type="text" name="" id="">
+                                      </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Phone(1)</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Phone(2)</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Email</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">SSN#</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Religion</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">MA Number</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Highest Grade Completed</label>
+                                      <select class="client-input" name="" id="">
+                                        <option value="" selected>--select--</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Receiving Spec. ED. Services</label>
+                                      <select class="client-input" name="" id="">
+                                        <option value="" selected>--select--</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Ethnicity</label>
+                                      <select class="client-input" name="" id="">
+                                        <option value="" selected>--select--</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex margin-inputclient">
+                                        <div class="">
+                                          <label class="CLIENT-LABEL">Client a Minor?</label>
+                                        </div>
+                                        <div class="mx-4 margin-inputclient d-flex">
+                                          <input type="radio" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">Yes</label>
+                                        </div>
+                                        <div class="mx-4 margin-inputclient d-flex">
+                                          <input type="radio" name="harmingNo" id="harmingNo" value="yes"><label class="CLIENT-LABEL">No</label>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">Resides With</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="margin-inputclient">
+                                      <label class="CLIENT-LABEL">School/Work Name & Address</label>
+                                      <input class="client-input" type="text" name="" id="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-----3rd##############-->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION DETAILS</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient"
+                                            
+                                            [class.has-error]="genForm['Rendering_Provider'].dirty && genForm['Rendering_Provider'].errors || genForm['Rendering_Provider'].touched && genForm['Rendering_Provider'].errors">
+                                                <label class="CLIENT-LABEL">Rendering Provider<span class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="Rendering_Provider">
+                                                    <option value="0"  selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['Rendering_Provider'].dirty && genForm['Rendering_Provider'].errors" class="has-error">
+                                                    <i *ngIf="genForm['Rendering_Provider'].errors?.['required']">
+                                                        required</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['proCode'].dirty && genForm['proCode'].errors || genForm['proCode'].touched && genForm['proCode'].errors"
+                                            >
+                                                <label class="CLIENT-LABEL">Procedure Code<span class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="proCode">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['proCode'].dirty && genForm['proCode'].errors" class="has-error">
+                                                    <i *ngIf="genForm['proCode'].errors?.['required']">
+                                                        required</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Location</label>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                                <select class="client-input">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['authNumber'].dirty && genForm['authNumber'].errors || genForm['authNumber'].touched && genForm['authNumber'].errors"
+                                            >
+                                                <label class="CLIENT-LABEL">Authorization Number<span class="text-danger">*</span></label>
+                                                <select class="client-input" formControlName="authNumber">
+                                                    <option value="0" selected>--select--</option>
+                                                </select>
+                                                <span *ngIf="genForm['authNumber'].dirty && genForm['authNumber'].errors" class="has-error">
+                                                    <i *ngIf="genForm['authNumber'].errors?.['required']">
+                                                        required</i>
+                                                  </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Others Present at Session (List Name(s) and Relationship(s) to the client)</label>
+                                                <input type="date" class="client-input" value="Test Test" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

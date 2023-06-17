@@ -1,0 +1,62 @@
+<section class="review-sec">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="Review-all">
+                <p class="Review-h1">Review</p>
+                <div class="Review-content">
+                    <div class="Signpost-1">
+                        <p class="Signpost-p">{{productReviews?.length}} reviews for {{ productType == staticService.productTypes.signPost ? 'Realty Signpost' : 'Payinvoice' }}</p>
+                    </div>
+                    <ul class="Mike-ul">
+                        <li *ngFor="let review of productReviews">
+                            <div class="Mike-full">
+                                <img class="pro-1-img" src="assets/images/pro-1.png" alt="">
+                                <div class="mike-left">
+                                    <ngb-rating [rate]="review.rating" [max]="5"></ngb-rating>
+                                    <!-- <ul>
+                                        <li><img src="assets/images/star-solid.png" alt=""></li>
+                                        <li><img src="assets/images/star-solid.png" alt=""></li>
+                                        <li><img src="assets/images/star-solid.png" alt=""></li>
+                                        <li><img src="assets/images/star-solid.png" alt=""></li>
+                                        <li><img src="assets/images/star-solid.png" alt=""></li>
+                                    </ul> -->
+                                    <p class="mike-left-p">{{review.user_name}}</p>
+                                    <p class="mike-left-p1">{{review.review_on | date : 'MMMM dd, YYYY'}}</p>
+                                    <p class="mike-left-p2">{{review.comment}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="Addareview" *ngIf="currentUser?.user_id">
+                        <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+                            <p class="Add-a-review-p">Add a review</p>
+                            <div class="Addareview-flex">
+                                <p class="Addareview-flex-p" [class.has-error]="f['rating'].dirty && f['rating'].errors || f['rating'].touched && f['rating'].errors">
+                                    Your rating *
+                                    <span *ngIf="f['rating'].dirty && f['rating'].errors" class="has-error">
+                                        <i *ngIf="f['rating'].errors?.['required']">required</i>
+                                    </span>
+                                </p>
+                                <ngb-rating formControlName="rating" [max]="5"></ngb-rating>
+                                <!-- <ul>
+                                    <li><img src="assets/images/star-blank.png" alt=""></li>
+                                    <li><img src="assets/images/star-blank.png" alt=""></li>
+                                    <li><img src="assets/images/star-blank.png" alt=""></li>
+                                    <li><img src="assets/images/star-blank.png" alt=""></li>
+                                    <li><img src="assets/images/star-blank.png" alt=""></li>
+                                </ul> -->
+                            </div>
+                            <div class="text-ar" [class.has-error]="f['comment'].dirty && f['comment'].errors || f['comment'].touched && f['comment'].errors">
+                                <textarea formControlName="comment" placeholder="Your review"></textarea>
+                            </div>
+                            <button class="Submit-bt-12" type="submit" [disabled]="submitting">
+                                Submit
+                                <i class="fa fa-spin fa-spinner" *ngIf="submitting"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

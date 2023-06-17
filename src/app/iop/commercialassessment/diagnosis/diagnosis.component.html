@@ -1,0 +1,48 @@
+
+<div class="all-tb">
+    <div class="row">
+        <form [formGroup]="diagnosisCommercial" >
+            <div class="content">
+                <div class="row my-4">
+                    <div class="col-md-6 d-flex">
+                        <div class="col-2">
+                            <label class="CLIENT-LABEL">Axis I<span class="text-danger">*</span>
+                            </label>
+                            <div class="d-flex">
+
+                                <label class="CLIENT-LABEL">Primary</label>
+                                <input style="margin-left: 12px;" type="checkbox" formControlName="primary"  value="yes" >
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Code
+                                </label>
+                                <select class="client-input" formControlName="code">
+                                    <option value="">--Select--</option>
+                                    <option value="1046">Z65.5,Exposure to disaster, war and other hostilities</option>
+                                    <option value="1047">Z65.8,Other specified problems related to psychosocial circumstances</option>
+                                    <option value="1048">Z65.9,Problem related to unspecified psychosocial circumstances</option>
+                                    <option value="1049">F43.81,Prolonged grief disorder</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex">
+                        <div class="col-12">
+                            <label class="CLIENT-LABEL">Description<span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="client-input" formControlName="description">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex pointer">
+                        <img [src]="imagesrc" alt="small" class="addNew">
+                        <a class="CLIENT-LABEL"><small> Add new</small></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

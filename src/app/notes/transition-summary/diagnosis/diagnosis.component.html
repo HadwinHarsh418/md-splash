@@ -1,0 +1,204 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="CLIENT-DEMOGRAPHICS">
+                    <h6 class="CLIENT-h6">Diagnosis at time of Transition</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="diagnosisForm">
+                    <div class="content">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Behavioral:</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Medical:</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Social:</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">GAF (1-100):</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 my-3">
+                                            <label class="CLIENT-LABEL">PROGNOSIS</label>
+                                            <div class="div_checkBox">
+                                                <ul class="all-li-radio my-3">
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Excellent</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Good</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Uncertain</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Variable</label>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Unknown</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Guarded</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Poor</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Grave</label>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <li>
+                                                                    <input type="radio" name="harmingNo" id="harmingNo" value="yes">
+                                                                    <label>Terminal</label>
+                                                                </li>
+                                                            </div>
+                                                            <div class="col-lg-9">
+                                                                <li class="col-lg-9 d-flex">
+                                                                    <label class="CLIENT-LABEL my-2 "><b>Others:</b></label>
+                                                                    <input type="text" class="client-input mx-2" name="harmingNo" id="harmingNo">
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Others</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Explanation of Prognosis</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Service of Support Recommendations</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Medications at Time of Transition</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Transfered To </label>
+                                                    <input  type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Relationship</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Address</label>
+                                                <textarea type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">City </label>
+                                                    <input formControlName="City" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">State</label>
+                                                    <input formControlName="State" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">ZipCode</label>
+                                                    <input formControlName="ZipCode" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Phone</label>
+                                                    <input formControlName="Phone" type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

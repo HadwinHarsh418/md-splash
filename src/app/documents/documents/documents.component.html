@@ -1,0 +1,125 @@
+<section class="notes-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="notes-td" (click)="backClicked()">
+                <img [src]="imagesrc" alt="">
+                <p>Documents</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="right-border">
+                    <div class="note-search-bx-1">
+                        <label>search client</label>
+                        <div class="note-search-input">
+                            <input type="text" id="txt_Autocomplete" style="width: auto;" spellcheck="true"
+                                class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block ">
+                            <div class="cleint-left">
+                                <div class="main-form">
+                                    <div class="form-left">Client Name:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_AddressDiv">
+                                    <div class="form-left">Client Address:</div>
+                                    <div class="form-right" id="Client_Address"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">City, State, Zip:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">Date of Birth:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_HomePhone_Div">
+                                    <div class="form-left">Home Phone:</div>
+                                    <div class="form-right" id="Client_Phone"></div>
+                                </div>
+                                <div class="main-form" id="Main_CellPhone">
+                                    <div class="form-left">Cell Phone:</div>
+                                    <div class="form-right" id="Client_MobilePhone"></div>
+                                </div>
+                            </div>
+                            <div class="client-right">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Previous Documents</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="note-right1 note-right-full-block">
+                    <div class="row my-2">
+                    <div class="CLIENT-LABEL">
+                        <h4>Upload new documents</h4>
+                    </div>
+                    </div>
+                    <form [formGroup]="docForm" (ngSubmit)="Save()">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Document Type </label>
+                                                <select class="client-input">
+                                                    <option>--select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Document Name  </label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Find File </label>
+                                                <input type="file" class="client-input1">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div><button type="submit" class="btn btn-success mx-3">Submit</button></div>
+                                            <div><button type="reset" class="btn btn-danger">Reset</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="note-right1 note-right-full-block">
+                <div class="row my-2">
+                    <div class="CLIENT-LABEL">
+                        <h4>Company Documents</h4>
+                    </div>
+                    </div>
+                <div class="col-lg-12 tbl">
+                    <table class="table" id="customers">
+                        <tr>
+                            <th>Name</th>
+                            <th>Pages</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

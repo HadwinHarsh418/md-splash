@@ -1,0 +1,289 @@
+<div class="col-lg-12">
+    <div class="row mar-1010 d-flex my-2">
+        <div class="col-lg-12 back_css">
+            <button class="NEW-SAVE" type="button" (click)="Save()">SAVE</button>
+        </div>
+    </div>
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS1">
+                                <h6>INTERVIEWER: Do not read aloud. Please remember that if the Primary Respondent (PR) is the caregiver, use “your child” as appropriate.</h6>
+                            </div>
+                            <h6>Next I will ask you to answer questions about (you/your child’s) feelings and behaviors. There is no right or wrong answer to any of the questions. Try to answer all of the questions even if you are not totally sure of how (you/your child) feel. These questions ask about how you/your child have been feeling during the past week. As I read the question to you, let me know how many days in <u>the past week</u> you/your child have been feeling that way.</h6>
+                            <h6>In the past week, on how many days … [CARD #1 with response options]</h6>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                    <th style="text-align: center;">Please note that Questions 3-24 are all <br>(Client Opinions Only)</th>
+                                    <th style="text-align: center;">Never <br>(0 days)</th>
+                                    <th style="text-align: center;">A few days <br>(1-2 days)</th>
+                                    <th style="text-align: center;">About every other day <br>(3-4 days)</th>
+                                    <th style="text-align: center;">Almost every day<br> (5-6 days)</th>
+                                    <th style="text-align: center;">Every day <br> (7 days)</th>
+                                </tr>
+                                <tr>
+                                    <td><b>3.</b> Did you have trouble falling asleep or staying asleep?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>4.</b> Did you feel depressed or sad?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>5.</b> Did you have trouble relaxing?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>6.</b> Were you nervous, uptight, or worried?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>7.</b> Did you worry about your safety?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>8.</b> Were you irritable or grouchy?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>9.</b> Did you cry a lot?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>10.</b> Were you afraid of things?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>11.</b> Did you feel like you had no energy?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>12.</b> Did you want to be by yourself instead of with others?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>13.</b> Were you happy one minute and then sad or angry the next minute?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>14.</b> Did you have stomachaches, headaches, or other aches and pains?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>15.</b> Did you think or worry about bad things that you have seen or have happened to you?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>16.</b> Did you want to hurt yourself?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>17.</b> Did you want to hurt someone else?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>18.</b> Did you have a hard time paying attention?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>19.</b> Were you angry?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>20.</b> Did you have a hard time sitting still?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>21.</b> Were you mean, threatening or bullying to others?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>22.</b> Did you get in arguments or fights?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>23.</b> Did you have trouble following rules?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!---2##########-->
+                    
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>FUNCTIONING</h6>
+                        </div>
+                        <div class="row">
+                            <h6><strong>Now I am going to read a series of statements. For each of these statements, please indicate whether (you/your child) strongly agree, agree, are undecided, disagree or strongly disagree.</strong></h6>
+                            <h6><i>[if Primary Respondent is a caregiver, read questions as “your child”]</i></h6>
+                            <h6><i>[see OMS Interview Guide for definitions of response options and “handle” (#24), “family” (#25),“cope” (#28), and “satisfied” (#29)]</i></h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                        <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                            <th style="text-align: center;">Please note that Questions 24-30 are all  <br>(Client Opinion Only)</th>
+                                            <th style="text-align: center;">Strongly Agree</th>
+                                            <th style="text-align: center;">Agree</th>
+                                            <th style="text-align: center;">Undecided</th>
+                                            <th style="text-align: center;">Disagree</th>
+                                            <th style="text-align: center;">Strongly Disagree</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>24.</b> I am able to handle daily life.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>25.</b> I get along with family members.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>26.</b> I get along with friends and other people.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>27.</b> I am doing well in school and/or work.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>28.</b> I am able to cope when things go wrong.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>29.</b> I am satisfied with our family life right now.</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>30.</b> I am able to do things I want to do (and am allowed to do).</td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                            <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

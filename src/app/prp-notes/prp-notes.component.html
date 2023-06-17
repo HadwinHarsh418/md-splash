@@ -1,0 +1,137 @@
+<section class="notes-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+
+                <div class="notes-td" (click)="backClicked()">
+                    <img [src]="imagesrc" alt="">
+                    <p>PRP Notes</p>
+                </div>
+                <div class="right-border">
+                    <div class="note-search-bx-1">
+                        <label>search client</label>
+                        <div class="note-search-input">
+                            <input type="text" id="txt_Autocomplete" style="width: auto;" spellcheck="true"
+                                class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block ">
+                            <div class="cleint-left">
+                                <div class="main-form">
+                                    <div class="form-left">Client Name:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_AddressDiv">
+                                    <div class="form-left">Client Address:</div>
+                                    <div class="form-right" id="Client_Address"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">City, State, Zip:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">Date of Birth:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_HomePhone_Div">
+                                    <div class="form-left">Home Phone:</div>
+                                    <div class="form-right" id="Client_Phone"></div>
+                                </div>
+                                <div class="main-form" id="Main_CellPhone">
+                                    <div class="form-left">Cell Phone:</div>
+                                    <div class="form-right" id="Client_MobilePhone"></div>
+                                </div>
+                            </div>
+                            <div class="client-right">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="note-search-bx-1">
+                        <label>Client Memo</label>
+                        <div class=" note-search-input">
+                            <input type="text" id="txt_Autocomplete" class="form-control" style="width: auto;"
+                                spellcheck="true" class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block " style="height: 100px;">
+                        </div>
+                    </div>
+
+                    <p>Previous Notes</p>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="note-right1 note-right-full-block">
+
+                    <div class="common-mar-1" (click)="onClickTab()">
+                        <h3><a href="javascript:void(0)">PRP Intake Documents</a></h3>
+                        <p>Client PRP Intake Forms</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="prp-contact"><a href="javascript:void(0)">Client contact Note</a></h3>
+                        <p>Enter New PRP Medical Necessity Screen Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="medicalNecessityScreenModule"><a href="javascript:void(0)">Medical Necessity Screen</a></h3>
+                        <p>Enter New PRP Medical Necessity Screen Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="monthly-summary"><a href="javascript:void(0)">Monthly Summary</a></h3>
+                        <p>Enter New PRP Medical Necessity Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="irpReview"><a href="javascript:void(0)">IRP Review/Treatment plan</a></h3>
+                        <p>Enter New PRP IRP Review Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="continuationServicesReferral"><a href="javascript:void(0)">Continuation of Services Referral</a></h3>
+                        <p>Enter New PRP Continuation of Services Referral</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="comprehensiverehabiliation"><a href="javascript:void(0)">Comprehensive Rehabilitation Assessment</a></h3>
+                        <p>Enter New PRP Comprehensive Rehabilitation Assessment</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="dcSummaryNote"><a href="javascript:void(0)">PRP Discharge Summary</a></h3>
+                        <p>Enter New PRP Discharge Summary</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="/client/notes/Transition"><a href="javascript:void(0)">PRP Transition Summary</a></h3>
+                        <p>Complete This Form When Transiting A Client From The Program</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="/client/notes/GapNotes"><a href="javascript:void(0)">Gap Note</a></h3>
+                        <p>Enter Notes For Appointments Missed</p>
+                    </div>
+                    <div class="common-mar-1" >
+                        <h3 routerLink="/client/notes/GroupNotes"><a href="javascript:void(0)">PRP Group Note</a></h3>
+                        <p>Enter New PRP Group Note</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3 routerLink="daily-living"><a href="javascript:void(0)">Daily Living Activities</a></h3>
+                        <p>Enter New Daily Living Activities</p>
+                    </div>
+                    <div class="common-mar-1" >
+                        <h3 routerLink="/client/notes/criticalincidentreport"><a href="javascript:void(0)">Critical Incident Report</a></h3>
+                        <p>Enter New Critical Incident Report</p>
+                    </div>
+                    <div class="common-mar-1" >
+                        <h3 routerLink="PRPCOLLABORATIONNOTES"><a href="javascript:void(0)">PRP collaboration</a></h3>
+                        <p>Enter New PRP collaboration Report</p>
+                    </div>
+                    <div class="common-mar-1" >
+                        <h3 routerLink="COLLATERALNOTE"><a href="javascript:void(0)">Collateral Note</a></h3>
+                        <p>Enter New Collateral Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

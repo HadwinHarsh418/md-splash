@@ -1,0 +1,142 @@
+<section class="tabs-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="arrow d-flex">
+                    <label for="type" (click)="back()">
+                        <i class="fa fa-circle-arrow-left mx-2"></i>
+                    </label>
+                    <h1 class="admin-main_heading">CONATCTS</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-lg-3">
+                <div class="tabs-admin-left">
+
+                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+                        <li ngbNavItem="1">
+                            <a ngbNavLink>
+                                <p class=" tabs-admin-p">REFERRAL SOURCES</p>
+                                <p class="tabs-admin-p-1">Listing of Referral Sources and their Contact info</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="common-div">
+                                    <ul class="common-div-ul">
+                                        <li>
+                                            <a (click)="showContactList()">Contact</a>
+                                            <span class="list_css ms-1" (click)="showContent = !showContent" >+ ADD NEW CONTACT</span> <span
+                                                class="list_css ms-1" (click)="showContent=false" >Deleted/Inactive</span>
+                                        </li>
+                                        <li>
+                                            <a (click)="showContent = !showContent">null</a>
+                                        </li>
+                                        <li>
+                                            <a (click)="showContent = !showContent">Dss</a>
+                                        </li>
+                                        <li>
+                                            <a (click)="showContent = !showContent">House of Ruth</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </ng-template>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="tabs-admin-middlle">
+                    <div [ngbNavOutlet]="nav" class="ms-mar"></div>
+                </div>
+            </div>
+            <div class="col-lg-6" *ngIf="showContent">
+                <div class="tabs-admin-right">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="client-tabs">
+                                <form [formGroup]="contactInfoData">
+                                    <div class="all-tb bd-cs">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-3 margin-inputclient">
+                                                        <label class="CLIENT-LABEL"
+                                                        [class.has-error]="f['name'].dirty && f['name'].errors || f['name'].touched && f['name'].errors"
+                                                        >Name:</label>
+                                                        <input class="client-input" type="text" name="Name" formControlName="name"
+                                                            id="Name">
+                                                            <span *ngIf="f['name'].dirty && f['name'].errors" class="has-error">
+                                                                <i *ngIf="f['name'].errors?.['required']">
+                                                                  Please enter Name</i>
+                                                              </span>
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Contact Person:</label>
+                                                        <input class="client-input" type="text" name="ContactPerson" formControlName="contactperson"
+                                                            id="ContactPerson">
+                                                    </div>
+                                                    <div class="col-lg-5 margin-inputclient"> <label
+                                                            class="CLIENT-LABEL" for="City">Customer Support
+                                                            Manager:</label>
+                                                        <select class="client-input" formControlName="customersupport">
+                                                            <option value="">--Select State--</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="grp">City</label>
+                                                        <input class="client-input" type="text" name="City" formControlName="city"
+                                                            id="City"> 
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="grp">State</label>
+                                                        <select class="client-input" formControlName="state">
+                                                            <option value="">--Select State--</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="pol">Zip</label>
+                                                        <input type="text" class="client-input" formControlName="zip">
+
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="tel">Telephone Number
+                                                        </label>
+                                                        <input class="client-input" type="number" formControlName="number" name="TelephoneNumber"
+                                                            id="TelephoneNumber">
+                                                    </div>
+                                                    <div class="col-lg-4 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="">Fax Number</label>
+                                                        <input class="client-input" type="text" name="FaxNumber" formControlName="faxnumber"
+                                                            id="FaxNumber">
+                                                    </div>
+                                                    <div class="col-lg-12 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="">Address:</label>
+                                                        <input class="client-input" type="text" name="Address" formControlName="address"
+                                                        id="Address">
+                                                    </div>
+                                                    <div class="col-lg-12 margin-inputclient">
+                                                        <label class="CLIENT-LABEL" for="">Notes:</label>
+                                                        <input class="client-input" type="text" name="Notes" formControlName="notes"
+                                                        id="Notes">
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="save-bt rem-abs back_css">
+                                                            <button class="NEW-SAVE bg-danger mx-2" (click)="showContent = !showContent">Cancel</button>
+                                                            <button class="NEW-SAVE bg-success" (click)="submitForm()">SAVE</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

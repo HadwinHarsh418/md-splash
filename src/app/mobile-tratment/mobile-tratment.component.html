@@ -1,0 +1,181 @@
+<section class="notes-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="notes-td" (click)="backClicked()">
+                    <img [src]="imagesrc" alt="">
+                    <p>MOBILE TREATMENT</p>
+                </div>
+                <div class="right-border">
+                    <div class="note-search-bx-1">
+                        <label>search client</label>
+                        <div class="note-search-input">
+                            <input type="text" id="txt_Autocomplete" style="width: auto;" spellcheck="true"
+                                class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block ">
+                            <div class="cleint-left">
+                                <div class="main-form">
+                                    <div class="form-left">Client Name:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_AddressDiv">
+                                    <div class="form-left">Client Address:</div>
+                                    <div class="form-right" id="Client_Address"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">City, State, Zip:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form">
+                                    <div class="form-left">Date of Birth:</div>
+                                    <div class="form-right" id="Client_Name"></div>
+                                </div>
+                                <div class="main-form" id="Main_HomePhone_Div">
+                                    <div class="form-left">Home Phone:</div>
+                                    <div class="form-right" id="Client_Phone"></div>
+                                </div>
+                                <div class="main-form" id="Main_CellPhone">
+                                    <div class="form-left">Cell Phone:</div>
+                                    <div class="form-right" id="Client_MobilePhone"></div>
+                                </div>
+                            </div>
+                            <div class="client-right">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="note-search-bx-1">
+                        <label>Client Memo</label>
+                        <div class=" note-search-input">
+                            <input type="text" id="txt_Autocomplete" class="form-control" style="width: auto;"
+                                spellcheck="true" class="ui-autocomplete-input" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="note-row3 client-name-block-border">
+                        <div class="client-name-block " style="height: 100px;">
+                        </div>
+                    </div>
+
+                    <p>Previous Notes</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="note-right1 note-right-full-block">
+                    <div class="common-mar-1" routerLink="initial-Clinical">
+                        <h3><a href="javascript:void(0)">Initial Clinical Form</a></h3>
+                        <p>Enter New Initial Clinical Form</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="initial-Electronic">
+                        <h3><a href="javascript:void(0)">Initial Electronic Data Entry Form</a></h3>
+                        <p>Enter New Initial Electronic Data Entry Form</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="Psychiatric-mobile">
+                        <h3><a href="javascript:void(0)">Psychiatric Assessment</a></h3>
+                        <p>Enter New Assessment For Medical Assistance Clients</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="Psychosocial-mobile">
+                        <h3><a href="javascript:void(0)">Psychosocial Assessment</a></h3>
+                        <p>Enter New Assessment For Medical Assistance Clients</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="Psychosocial-commercial">
+                        <h3><a href="javascript:void(0)">Psychosocial Assessment- Commercial</a></h3>
+                        <p>Enter New Assessment For Commercial Clients, The Shortened Form.</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-progress/Progress-notes">
+                        <h3><a href="javascript:void(0)">Mobile Progress note</a></h3>
+                        <p>Enter Notes For Each Session With Clients </p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-psychiatric-progress">
+                        <h3><a href="javascript:void(0)"> Psychiatric Progress Note</a></h3>
+                        <p>Enter Session Note by Psychiatrist</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="mobile-Gap-Notes">Gap Note</a></h3>
+                        <p>Enter Notes For Appointments Missed</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="mobile-Group-Notes">Group Note</a></h3>
+                        <p>Enter Notes For Multiple Clients</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-Individual-Treatment">
+                        <h3><a href="javascript:void(0)">Individual Treatment Plan</a></h3>
+                        <p>Enter Treatment Plan By 3rd Session For Medical Assistance Clients</p>
+                    </div>
+                    <div class="common-mar-1" (click)="show =! show ;this.show1 = false">
+                        <h3><a href="javascript:void(0)">Substance Abuse Forms</a></h3>
+                        <p>All Substance abuses</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-DischargeSummary">
+                        <h3><a href="javascript:void(0)"> Discharge Summary</a></h3>
+                        <p>Complete This Form When Discharging A Client From The Program</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-TransitionSummary">
+                        <h3><a href="javascript:void(0)">Transition Summary</a></h3>
+                        <p>Complete This Form When Transiting A Client From The Program</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-SuicideAssessment">
+                        <h3><a href="javascript:void(0)">Suicide Risk Assessment</a></h3>
+                        <p>Enter New Suicide Risk Assessment</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="criticalincidentreport">
+                        <h3><a href="javascript:void(0)">Critical Incident Report</a></h3>
+                        <p>Enter New Critical Incident Report</p>
+                    </div>
+                    <div class="common-mar-1" (click)="show1 =! show1; this.show = true">
+                        <h3><a href="javascript:void(0)">OMS Questionnaires</a></h3>
+                        <p>All OMS Questionnaires</p>
+                    </div>
+                    <div class="common-mar-1" routerLink="mobile-BehavioralHealthNursing">
+                        <h3><a href="javascript:void(0)">Behavioral Health Nursing Assessment</a></h3>
+                        <p>Behavioral Health Nursing Assessment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3" *ngIf="!show || show1">
+                <div class="note-right1 note-right-full-block col-lg-12" *ngIf="!show">
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="mobile-cageAid">Cage Aid</a></h3>
+                        <p>Complete This Form With Each Assessment For Substance Abuse Ratings</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="mobile-dast">Dast</a></h3>
+                        <p>Complete This Form With Each Assessment For Substance Abuse Ratings</p>
+                    </div>
+                </div>
+
+                <div class="note-right1 note-right-full-block col-lg-12" *ngIf="show1">
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="childAdolescentQues">Child and Adolescent
+                                Questionnaire</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="adultQues">Adult Questionnaire</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="adultDischargeForm">Adult Discharge</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="Childandadolescentdischarge">Child & Adolescent
+                                Discharge</a></h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                    <div class="common-mar-1">
+                        <h3><a href="javascript:void(0)" routerLink="dischargeInfoSheet">Discharge Information Sheet</a>
+                        </h3>
+                        <p>Complete this form with answering all questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

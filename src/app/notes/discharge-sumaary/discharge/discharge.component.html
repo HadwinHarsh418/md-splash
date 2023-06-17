@@ -1,0 +1,134 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="discharge" (ngSubmit)="Save()">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Discharge Plan</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class=" my-2 pd-2">
+                                        <div class="col-md-8">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Discharge Plan
+                                                    Did client participate in discharge process?</label><br>
+                                                        <div class="div_checkBox">
+                                                            <ul class="all-li-radio">
+                                                                <li>
+                                                                    <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1">
+                                                                    <label>Yes</label>
+                                                                </li>
+                                                                <br>
+                                                                <li>
+                                                                    <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                    <label>No</label>
+                                                                </li>
+                                                            </ul>       
+                                                        </div><br>
+                                                <label class="CLIENT-LABEL">Explain</label>
+                                                <textarea formControlName="DescHarmingYourself" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                            </div>
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Did the client receive notification of the discharge?</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li>
+                                                            <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                            <label>Yes</label>
+                                                        </li>
+                                                        <br>
+                                                        <li>
+                                                            <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                            <label>No</label>
+                                                        </li>
+                                                    </ul>       
+                                                </div><br>
+                                                <label class="CLIENT-LABEL">Explain</label>
+                                                <textarea formControlName="clientnotificatio" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="content">
+                                <div class="content">
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>Signatures</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <button class="Sign_btn" >Sign</button>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <div class="margin-inputclient">
+                                                                        <input formControlName="signinput1" type="text"
+                                                                            value="TEST TEST" class="client-input">
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <div class="col-md-12">
+                                                                    <div class="innerSignature">
+                                                                        <div class="inner-img-border">
+                                                                            <img class="img-class" src="" alt="Sign">
+                                                                            <div class="line"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                                                <div class="col-md-12">
+                                                                    <!-- <label class="CLIENT-LABEL">Received
+                                                                        Date:</label> -->
+                                                                        <img id="imgSignature1" src="/Content/Signature/no_sign.jpg" style="height:207px; width:700px">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <button class="Sign_btn">Sign</button>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <div class="margin-inputclient">
+                                                                        <select class="client-input"
+                                                                            formControlName="signinput">
+                                                                            <option *ngFor="let item of StartTimer"
+                                                                                value="{{item.Value}}">
+                                                                                {{item.Text}}</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-12">
+                                                                    <!-- <label class="CLIENT-LABEL">Entered By</label> -->
+                                                                    <img id="imgSignature1" src="/Content/Signature/no_sign.jpg" style="height:207px; width:700px">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

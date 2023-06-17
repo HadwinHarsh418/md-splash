@@ -1,0 +1,542 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                        <div class="arrow d-flex">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading ms-2">IOP MONTHLY SUMMARY <small>New</small></h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First Name</label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Middle Name </label>
+                                                <input formControlName="MiddleName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Last Name</label>
+                                                <input formControlName="LastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of birth</label>
+                                                <input formControlName="DateofBirth" type="date" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Age</label>
+                                                <input formControlName="Age" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sex</label>
+                                                <input type="radio" formControlName="Gender" iopname="Gender"
+                                                    value="1">Male
+                                                <input type="radio" formControlName="Gender" name="Gender" value="0"
+                                                    selected>Female
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient"
+                                        [class.has-error]="genForm['dateofsession'].dirty && genForm['dateofsession'].errors || genForm['dateofsession'].touched && genForm['dateofsession'].errors"   >  
+                                            <label class="CLIENT-LABEL">Date of Session</label>
+                                            <input type="dateofsession" class="client-input">
+                                            <span *ngIf="genForm['dateofsession'].dirty && genForm['dateofsession'].errors" class="has-error">
+                                                <i *ngIf="genForm['dateofsession'].errors?.['required']">
+                                                    required.</i>
+                                              </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SESSION Details</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12 my-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                    <label class="CLIENT-LABEL">Rendering Provider <span
+                                                            class="text-danger">*</span> </label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                    <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                        <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                           is required.</i>
+                                                      </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Location<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="location_required">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="d-flex">
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">IRP Start</label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">IRP End</label>
+                                                            <input type="text" class="client-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Insurance Type<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="hdnInsuranceType">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                [class.has-error]="genForm['selectAuthNumber'].dirty && genForm['selectAuthNumber'].errors || genForm['selectAuthNumber'].touched && genForm['selectAuthNumber'].errors">
+                                                    <label class="CLIENT-LABEL">Authorization Number <span
+                                                            class="text-danger">*</span> </label>
+                                                    <select class="client-input" formControlName="selectAuthNumber">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                    <span *ngIf="genForm['selectAuthNumber'].dirty && genForm['selectAuthNumber'].errors" class="has-error">
+                                                        <i *ngIf="genForm['selectAuthNumber'].errors?.['required']">
+                                                            required.</i>
+                                                      </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <div class="col-md-12">
+                                                        Others Present at Session (List Name(s) and Relationship(s) to
+                                                        the client)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient">
+                                            <textarea class="client-input client-input-textarea" name=""
+                                                formControlName="PCP_Note"></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ##########Third########### -->
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>*CLIENT PROGRESS & SERVICES NEEDED*</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12 my-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Current Goal Progress <span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Client Perception Of Goal Progress<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="location_required">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Current Barriers To Goal Progress<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="location_required">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">New Rehabilitation Needs Identified<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="hdnInsuranceType">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Justification For Continued Services
+                                                        <span class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="selectAuthNumber">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ###########fourth################## -->
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>*CLIENT PROGRESS & SERVICES NEEDED*</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12 my-2">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Agency & Contact(If Applicable): <span
+                                                            class="text-danger"></span> </label>
+                                                    <textarea class="client-input client-input-textarea" name=""
+                                                        formControlName="PCP_Note"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Referral Type <span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Referral Result<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="location_required">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date of Referral<span
+                                                            class="text-danger"></span> </label>
+                                                    <select class="client-input" formControlName="location_required">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Change in Status<span
+                                                            class="text-danger"></span> </label>
+                                                    <textarea class="client-input client-input-textarea" name=""
+                                                        formControlName="PCP_Note"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ############### -->
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>COLLABORATION WITH OTHER SERVICE PROVIDERS*</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label class="CLIENT-LABEL">COLLABORATION SOURCES (Check all that apply)</label>
+                                        <div class="margin-inputclient" style="margin: auto; padding: 10px;">
+                                            <div class="row">
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">Mental Health Therapist</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">PrimaryCareProvider</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">DSS/DJSCaseWorker</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">Psychiatrist</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">MedicalSpecialist</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">Parole/Probation Monitor
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">SchoolTherapist</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">Instructor</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 my-2">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">AddictionSponsor</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">SchoolSocialWorker</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">CommunityMentor</label>
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="d-flex">
+                                                        <input type="radio" class="client-input">
+                                                        <label class="CLIENT-LABEL">Other</label>
+                                                        <input type="text" style="width: 200px;" class="client-input">
+                                                    </div>
+                                                    <div>
+                                                        <label class="CLIENT-LABEL">Date</label>
+                                                        <input type="text" class="client-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Overview Of Collaboration(s):</label>
+                                            <textarea class="client-input client-input-textarea" style="height: 80px;"
+                                                name="" formControlName="PCP_Note"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Summary of rehabilitation services
+                                                provided:</label>
+                                            <textarea class="client-input client-input-textarea" style="height: 80px;"
+                                                name="" formControlName="PCP_Note"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Recommendations For Interventions From
+                                                Collaboration Source(s):</label>
+                                            <textarea class="client-input client-input-textarea" style="height: 80px;"
+                                                name="" formControlName="PCP_Note"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <input name="signinput1" type="text" value="TEST TEST"
+                                                        class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="CLIENT-LABEL">Received
+                                                    Date:</label>
+                                                <input type="text" class="client-input" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <button class="Sign_btn">Sign</button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="margin-inputclient">
+                                                    <select class="client-input" name="signinput">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="innerSignature">
+                                                    <div class="inner-img-border">
+                                                        <img class="img-class" src="" alt="Sign">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="CLIENT-LABEL">Entered
+                                                    By:</label>
+                                                <input type="text" class="client-input" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

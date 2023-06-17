@@ -1,0 +1,93 @@
+<section class="new-client-sec">
+    <div class="container-fluid">
+        <div class="row">
+        <!-- ####-----------form section-------------------############ -->
+            <div class="col-lg-12">
+                <div class="page-header small_fonts">
+                    <div class="page-header-content d-flex">
+                            <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        <h1 class="admin-main_heading">Comprehensive Rehabilitation <small id="EditNew">New</small></h1>
+                    </div>
+                </div>
+                <div class="partition-1">
+                    <div class="part-2">
+                        <form >
+                            <div class="client-tabs">
+                                <div class="client-tabs subTabs">
+                                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                        <li [ngbNavItem]="1">
+                                            <a ngbNavLink>General </a>
+                                            <ng-template ngbNavContent>
+                                                <app-general></app-general>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="2">
+                                            <a ngbNavLink>Diagnostic </a>
+                                            <ng-template ngbNavContent>
+                                                <app-diagnostic></app-diagnostic>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="3">
+                                            <a ngbNavLink>Entitlement </a>
+                                            <ng-template ngbNavContent>
+                                                <app-entitlement></app-entitlement>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="4">
+                                            <a ngbNavLink>Living Skills </a>
+                                            <ng-template ngbNavContent>
+                                                <app-livingskills></app-livingskills>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="5">
+                                            <a ngbNavLink>residential </a>
+                                            <ng-template ngbNavContent>
+                                                <app-residentia-l></app-residentia-l>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="6">
+                                            <a ngbNavLink>Mobility</a>
+                                            <ng-template ngbNavContent>
+                                                <app-mobility></app-mobility>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="7">
+                                            <a ngbNavLink>Psych</a>
+                                            <ng-template ngbNavContent>
+                                                <app-psych></app-psych>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="8">
+                                            <a ngbNavLink>Safety </a>
+                                            <ng-template ngbNavContent>
+                                                <app-safety></app-safety>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="9">
+                                            <a ngbNavLink>Somatic</a>
+                                            <ng-template ngbNavContent>
+                                                <app-somatic></app-somatic>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="10">
+                                            <a ngbNavLink>Rehabilitation</a>
+                                            <ng-template ngbNavContent>
+                                                <app-rehabilitation></app-rehabilitation>
+                                            </ng-template>
+                                        </li>
+                                        
+                                    </ul>
+                                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

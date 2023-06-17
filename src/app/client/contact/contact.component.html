@@ -1,0 +1,312 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="contactInfoData">
+                <div class="all-tb">
+                    <div class="row mar-1010">
+                        <div class="col-lg-6">
+                            <div class="arrow">
+                                <label for="type">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="save-bt rem-abs" style="float:right;">
+                                <button class="NEW-SAVE" (click)="submitForm()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PRIMARY CARE PHYSICIAN</h6>
+                            </div>
+                            <div class="content">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="row">
+
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name:</label>
+                                                <input class="client-input" type="text" name="PCP_Name" id="PCP_Name" formControlName="PCP_Name">
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Address:</label>
+                                                <input class="client-input" type="text" name="PCP_Address" id="PCP_Address" formControlName="PCP_Address">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 margin-inputclient"> <label class="CLIENT-LABEL"
+                                                    for="City">City</label>
+                                                <input class="client-input" type="text" name="PCP_City" id="PCP_City" formControlName="PCP_City">
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="grp">State</label>
+                                                <select class="client-input" formControlName="PCP_State">
+                                                    <option  value="">--Select State--</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="pol">Zip</label>
+                                                <input type="text" class="client-input" formControlName="PCP_Zip">
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="tel">Telephone Number
+                                                </label>
+                                                <input class="client-input" type="number" name="PCP_Tel" id="PCP_Tel" formControlName="PCP_Tel" >
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="">Fax
+                                                    Number</label>
+                                                <input class="client-input" type="text" name="PCP_Fax" id="PCP_Fax" formControlName="PCP_Fax" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 margin-inputclient">
+                                        <label class="CLIENT-LABEL" for="">Notes</label>
+                                        <textarea class="client-input client-input-textarea" name="" cols="30" formControlName="PCP_Note"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!---  2nd label starts    -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>REFERAL SOURCE</h6>
+                            </div>
+                            <div class="content">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="row">
+
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name:</label>
+                                                <input class="client-input" type="text" name="RS_Name" id="RS_Name" formControlName="RS_Name" >
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Address:</label>
+                                                <input class="client-input" type="text" name="RS_Address" id="RS_Address" formControlName="RS_Address">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 margin-inputclient"> <label class="CLIENT-LABEL"
+                                                    for="City">City</label>
+                                                <input class="client-input" type="text" name="RS_City" id="RS_City" formControlName="RS_City" >
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="grp">State</label>
+                                                <select class="client-input" formControlName="RS_State">
+                                                    <option  value="">--Select State--</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="pol">Zip</label>
+                                                <input type="text" class="client-input" formControlName="RS_Zip" >
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="tel">Telephone Number
+                                                </label>
+                                                <input class="client-input" type="number" name="RS_Tel" id="RS_Tel" formControlName="RS_Tel" >
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="">Fax
+                                                    Number</label>
+                                                <input class="client-input" type="text" name="RS_Fax" id="RS_Fax" formControlName="RS_Fax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 margin-inputclient">
+                                        <label class="CLIENT-LABEL" for="">Notes</label>
+                                        <textarea class="client-input client-input-textarea" name="RS_Note" cols="30" formControlName="RS_Note"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--- 3rd label starts    -->
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PARENT/GUARDIAN INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="col-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Parent/Guardian Name: </label>
+                                        <input type="text" class="client-input" id="PG_Name" name="PG_Name" formControlName="PG_Name" >
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Email:</label>
+                                        <input type="text" class="client-input" id="PG_Email" name="PG_Email" formControlName="PG_Email" >
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">DOB </label>
+                                        <input type="date" class="client-input" id="PG_DOB" name="PG_DOB"  formcontrolName="PG_DOB">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">City</label>
+                                            <input type="text" class="client-input" id="PG_City" name="PG_City" formControlName="PG_City" >
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">State </label>
+                                            <input class="client-input" type="text" id="PG_State" name="PG_State" formControlName="PG_State" >
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Zip </label>
+                                            <input type="text" class="client-input" id="PG_Zip" name="PG_Zip" formControlName="PG_Zip">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>EMERGENCY CONTACT</h6>
+                            </div>
+                            <div class="content row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-12 margin-inputclient">
+                                            <label class="CLIENT-LABEL">Name and Relationship to Patient:</label>
+                                            <input class="client-input" type="text" name="EC_Name" id="EC_Name" formControlName="EC_Name">
+                                        </div>
+                                        <div class="col-lg-12 margin-inputclient">
+                                            <label class="CLIENT-LABEL">Address:</label>
+                                            <input class="client-input" type="text" name="EC_Address" id="EC_Address" formControlName="EC_Address">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 margin-inputclient"> <label class="CLIENT-LABEL"
+                                                for="City">City</label>
+                                            <input class="client-input" type="text" name="EC_City" id="EC_City" formControlName="EC_City">
+
+                                        </div>
+                                        <div class="col-lg-4 margin-inputclient">
+                                            <label class="CLIENT-LABEL" for="grp">State</label>
+                                            <select class="client-input" id="EC_State" name="EC_State" formControlName="EC_State">
+                                                <option value="">--Select State--</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-lg-4 margin-inputclient">
+                                            <label class="CLIENT-LABEL" for="pol">Zip</label>
+                                            <input type="text" class="client-input" name="EC_Zip" id="EC_Zip" formControlName="EC_Zip">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 margin-inputclient">
+                                            <label class="CLIENT-LABEL" for="tel">Primary Number
+                                            </label>
+                                            <input class="client-input" type="number" name="EC_Primary_Number" id="EC_Primary_Number" formControlName="EC_Primary_Number">
+                                        </div>
+                                        <div class="col-lg-12 margin-inputclient">
+                                            <label class="CLIENT-LABEL" for="">Secondry
+                                                Number</label>
+                                            <input class="client-input" type="text" name="EC_Secondary_Number" id="EC_Secondary_Number" formControlName="EC_Secondary_Number">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL" for="">Notes</label>
+                                    <textarea class="client-input client-input-textarea" name="EC_Note" cols="30" formControlName="EC_Note"
+                                        rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="CLIENT-DEMOGRAPHICS">
+                                    <h6>OTHER CONTACTS</h6>
+                                </div>
+                                <div class="content row">
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name and Relationship to Patient:</label>
+                                                <input class="client-input" type="text" name="PD_Name" id="PD_Name" formcontrolName="PD_Name">
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL">Address:</label>
+                                                <input class="client-input" type="text" name="PD_Address" id="PD_Address" formcontrolName="PD_Address">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 margin-inputclient"> <label class="CLIENT-LABEL"
+                                                    for="City">City</label>
+                                                <input class="client-input" type="text" name="PD_City" id="PD_City" formcontrolName="PD_City">
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="grp">State</label>
+                                                <input class="client-input" type="text" name="PD_State" id="PD_State" formcontrolName="PD_State">
+
+                                            </div>
+                                            <div class="col-lg-4 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="pol">Zip</label>
+                                                <input class="client-input" type="text" name="PD_Zip" id="PD_Zip" formcontrolName="PD_Zip">
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="tel">Telephone Number:
+                                                </label>
+                                                <input class="client-input" type="number" name="PD_Tel" id="PD_Tel" formcontrolName="PD_Tel">
+                                            </div>
+                                            <div class="col-lg-12 margin-inputclient">
+                                                <label class="CLIENT-LABEL" for="">Fax Number:</label>
+                                                <input class="client-input" type="text" name="PD_Fax" id="PD_Fax" formcontrolName="PD_Fax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 margin-inputclient">
+                                        <label class="CLIENT-LABEL" for="">Notes</label>
+                                        <textarea class="client-input client-input-textarea" name="" cols="30" formcontrolName="PD_Notes"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

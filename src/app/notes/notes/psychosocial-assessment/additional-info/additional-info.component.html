@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="additionalInfoForm" (ngSubmit)="Save()">
+                <div class="all-tb">
+                    <div class="row mar-1010">
+                        <div class="col-lg-6">
+                            <div class="arrow">
+                                <label for="type" (click)="back()">
+                                    <i class="fa fa-circle-arrow-left"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="save-bt rem-abs" style="float:right;">
+                                <button class="NEW-SAVE" type="button">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>IDENTIFYING INFORMATION</h6>
+                                <div class="substance_fullwidth">
+                                    <div class="side-left margin-inputclient">
+                                        <label class="CLIENT-LABEL">Strengths</label>
+                                    </div>
+                                    <div class="sied-left">
+                                        <textarea formControlName="Strengths" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="substance_fullwidth margin-inputclient">
+                                    <div class="side-left">
+                                        <label class="CLIENT-LABEL">Client Needs</label>
+                                    </div>
+                                    <div class="sied-left">
+                                        <textarea formControlName="ClientNeeds" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="substance_fullwidth margin-inputclient">
+                                    <div class="side-left">
+                                        <label class="CLIENT-LABEL">Client Abilities</label>
+                                    </div>
+                                    <div class="sied-left">
+                                        <textarea formControlName="ClientAbilities" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="substance_fullwidth margin-inputclient">
+                                    <div class="side-left">
+                                        <label class="CLIENT-LABEL">Client Preferences</label>
+                                    </div>
+                                    <div class="sied-left">
+                                        <textarea formControlName="ClientPreferences" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+                

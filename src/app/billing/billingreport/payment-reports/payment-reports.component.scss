@@ -1,0 +1,40 @@
+.btn-save-2{
+    border: none;
+    background-color: rgb(65, 151, 226);
+    border-radius: 2px;
+    color: white;
+}
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 7px !important;
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers tr{
+    td{
+        font-size: 13px;
+        font-weight: 500;
+        color: #333;
+        padding: 10px 5px;
+        border: 1px solid #ddd !important;
+    } th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    }
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0784de;
+    color: white;
+    padding: 10px 5px;
+
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0784de;
+}

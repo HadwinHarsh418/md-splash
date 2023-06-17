@@ -1,0 +1,94 @@
+<div class="row" *ngIf="showDetails">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form>
+                <div class="all-tb">
+                    <div class="row nxtTab my-2">
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>User Name:</label>
+                            <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>Full Name:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL">Cell Number:</label>
+                            <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL">Office:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax"><span class="text-danger">*</span>Email
+                                Address:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL"><span class="text-danger">*</span>Password:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="Fax"><span class="text-danger">*</span>Re-Enter
+                                Password:</label>
+                            <input class="client-input" type="text" name="FullName" id="FullName">
+                        </div>
+                        <div class="col-lg-12">
+                            <ul class="all-li-radio und_line">
+                                <li>
+                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                    <label><b>User must change password on next login</b></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12 my-3">
+                                <button class="NEW-SAVE">UNLOCK ACCOUNT</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <div class="common-div">
+                <ul class="common-div-ul-tab">
+                    <li>
+                        <a class="text-primary mx-2">Active Clients</a> <span
+                            class="text-primary list_css ms-1">Deleted/Inactive</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="common-div my-3">
+                <div class="col-lg-12 margin-inputclient">
+                    <label class="CLIENT-LABEL"><b>Total Active Users:28</b></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="table" id="customers">
+            <tr>
+                <th>Full Name</th>
+                <th>User Name</th>
+                <th>Email Address</th>
+                <th>Cell Number</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Angelita Harrington</td>
+                <td>Angelita Harrington</td>
+                <td>angelitaharrington6@gmail.com</td>
+                <td>240-392-0389</td>
+                <td>
+                    <i class="fa fa-edit text-success" (click)="editContent()"></i>
+                    <i class="fa fa-ban text-danger mx-1"></i>
+                    <i class="fa fa-trash"></i></td>
+            </tr>
+        </table>
+    </div>
+</div>

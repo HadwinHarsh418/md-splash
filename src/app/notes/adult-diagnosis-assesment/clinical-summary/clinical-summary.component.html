@@ -1,0 +1,331 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>LEGAL HISTORY</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">This Clinical/Interpretative Summary is Based Upon Information Provided By (check all that apply)
+                                                </label>
+                                                <div class="d-flex">
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Client </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Parent(s) </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Guardian(s)  </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Family/Friend  </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Physican </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Records </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Law Enforcement  </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Service Provider </label>&nbsp;
+                                                    <input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>School Personnel </label>&nbsp;<input type="checkbox" name="harmingNo"
+                                                    id="harmingNo" value="yes">&nbsp;
+                                                    <label>Other: </label>&nbsp;
+
+                                                </div>
+                                                <textarea name="Complaint" class="client-input"
+                                                id="Complaint"></textarea>
+                                                <label class="CLIENT-LABEL"><b>Narrative Summary</b> - Include etiology of presenting problem and maintenance of the problem;
+                                                     mental health history; AoD history; severity of problem; where problem occurs 
+                                                     (functioning at home, at work, in community); onset of problem (acute vs. chronic); 
+                                                     client motivation for treatment, whether problem is known to be responsive to treatment.
+                                                    <br><b>Other Information</b></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Diagnosis: ICD-10 CM Codes (or successor) 
+                                                 </label>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                            <table style="width:100%">
+                                                                <tr>
+                                                                  <th>Check Principal</th>
+                                                                  <th>Code</th>
+                                                                  <th>Narrative Description</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>     
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>        
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>        
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>       
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="harmingNo"
+                                                                        id="harmingNo" value="yes"></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>
+                                                                    <td><textarea name="Complaint" class="client-input col-md-12"
+                                                                        id="Complaint"></textarea></td>        
+                                                                </tr>
+                                                                
+                                                            </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label >Treatment Recommendations/Assessed Needs
+                                                         </label>
+                                                         <ul>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label>
+                                                            </li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label>
+                                                            </li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label></li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label></li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label></li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label>
+                                                            </li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label></li>
+                                                            <li class="col-md-2">
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Deferred  </label>&nbsp;
+                                                                <input type="checkbox" name="harmingNo"
+                                                                    id="harmingNo" value="yes">
+                                                                <label>Referred </label></li> 
+                                                        </ul>    
+                                                    </div>
+                                                </div>
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">This Clinical/Interpretative Summary is Based Upon Information Provided By (check all that apply)
+                                                    </label>
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>None Indicated </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Psychiatric  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Psychological </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Neurological  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Medical </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Educational  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Vocational  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Visual  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Auditory   </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Nutritional  </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>AoD Assessment </label>&nbsp;
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">&nbsp;
+                                                        <label>Other: </label>&nbsp;
+    
+                                                    </div>
+                                                </div>
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>CLIENT/GUARDIAN/FAMILY PARTICIPATION IN ASSESSMENT AND RESPONSE TO RECOMMENDATIONS INCLUDE RESULTS OF OUTCOMES USED</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <textarea name="Complaint" class="client-input col-md-12" style="height: 80px;"
+                                    id="Complaint"></textarea>
+                                    <!-- #########====== -->       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>Signatures</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="CLIENT-LABEL"><b>Provider Signature</b></label>
+                                                <div class="row">
+                                                    <div class="col-md-4" >
+                                                        <input class="input-sign" id="btnsign" type="button" value="SIGN"  spellcheck="true">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                         <input type="text" class="client-input" value="Test-Test" disabled>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="innerSignature">
+                                                            <div class="inner-img-border">
+                                                                <img class="img-class" src="" alt="Sign" >
+                                                                <div class="line"></div>
+                                                            </div>
+                                                        </div>    
+                                                        <label class="CLIENT-LABEL">ProviderSignedBy</label>
+                                                    </div><br>
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">Provider Signature Date:</label>
+                                                        <input type="text" class="client-input"  disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="CLIENT-LABEL"><b>Supervisor Signature</b></label>
+                                                <div class="row">
+                                                    <div class="col-md-4" >
+                                                        <input class="input-sign" id="btnsign" type="button" value="SIGN"  spellcheck="true">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select data-val="true" class="client-input" data-val-number="The field Signature_ID must be a number." data-val-required="The Signature_ID field is required." id="Signature_ID" name="Signature_ID"  class="valid">
+                                                            <option selected="selected" value="0">--Select--</option>
+                                                            <option value="6">Monica Boddie,LCSW-C</option>
+                                                            <option value="34">test test,</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="innerSignature">
+                                                            <div class="inner-img-border">
+                                                                <img class="img-class" src="" alt="Sign" >
+                                                                <div class="line"></div>
+                                                            </div>
+                                                        </div>           
+                                                        <label class="CLIENT-LABEL">SupervisorSignedBy</label>
+                                                    </div><br>
+                                                    <div class="col-md-6">
+                                                        <label class="CLIENT-LABEL">Supervisor Signature Date:</label>
+                                                        <input type="text" class="client-input" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

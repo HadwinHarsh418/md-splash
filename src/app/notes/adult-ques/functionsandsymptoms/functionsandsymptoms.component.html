@@ -1,0 +1,311 @@
+<div class="col-lg-12">
+    <div class="col-lg-12 back_css">
+        <button class="NEW-SAVE" type="button" (click)="Save()">SAVE</button>
+    </div>
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>RECOVERY AND FUNCTIONING.</h6>
+                            </div>
+                            <h6>Now I am going to read a series of statements. As I read each statement, please indicate how much you
+                                agree with it: Not at all, A little bit, Somewhat, Quite a bit, or Very much
+                            </h6>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                    <th style="text-align: center;">Please note that Questions 3-24 are all <br>(Client Opinions Only)</th>
+                                    <th style="text-align: center;">Not at all </th>
+                                    <th style="text-align: center;">A little bit </th>
+                                    <th style="text-align: center;">Somewhat </th>
+                                    <th style="text-align: center;">Quite a bit </th>
+                                    <th style="text-align: center;">Very much </th>
+                                </tr>
+                                <tr>
+                                    <td><b>4.</b> I am confident that I can make positive changes in my life.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>5.</b>I am hopeful about the future.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>6.</b> I believe I make good choices in my life..</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>7.</b> I am able to set my own goals in life.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>8.</b>  I feel accepted as who I am.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>9.</b>I do things that are meaningful to me.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>10.</b> I am able to take care of my needs</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>11.</b>  I am able to handle things when they go wrong.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>12.</b>I am able to do things that I want to do.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><b>13.</b>. My symptoms bother me. (see OMS Interview Guide for definition of “symptoms”)</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                    <td style="text-align: center;"><input type="radio" name="" id=""></td>
+                                </tr>
+                                <label class="CLIENT_LABLE"> Items 4-8 are from the Maryland Assessment of Recovery Scale-Short Form; used with permission (Drapalski, et. al, 2012).</label>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="CLIENT-LABEL"><h6><strong>
+                                        (INTERVIEWER: Read all the answer options to the client)
+                                        </strong> 
+                                              </h6> 
+                                              <b>14. Overall, how satisfied are you with your recovery? </b>
+                                              (description of “recovery” in italics below) </label>
+                                        <div class="d-flex">
+                                          <input type="radio" name="Homeless" formControlName="Homeless"  id="Homeless" value="1"  >
+                                            <label>Not at all</label>
+                                        </div>
+                                        <div class="d-flex">
+                                                <input type="radio" name="Homeless" formControlName="Homeless"  id="Homeless" value="2" >
+                                            <label>A little bit</label>
+                                        </div>
+                                        <div class="d-flex">
+                                          <input type="radio" name="Homeless" formControlName="Homeless"  id="Homeless" value="1"  >
+                                            <label>Somewhat</label>
+                                        </div>
+                                        <div class="d-flex">
+                                                <input type="radio" name="Homeless" formControlName="Homeless"  id="Homeless" value="2" >
+                                            <label>Quite a bit</label>
+                                        </div>
+                                        <div class="d-flex">
+                                                <input type="radio" name="Homeless" formControlName="Homeless"  id="Homeless" value="2" >
+                                            <label> Very much</label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                             <div class="col-md-12">
+                                 <label class="CLIENT-LABEL"><b><strong>
+                                    [“Recovery from Mental Disorders and/or Substance Use Disorders is 
+                                    a process of change through which individuals improve their health and wellness, live a self-directed life, 
+                                    and strive to reach their full potential.” (U.S. Department of Health and Human Services, 
+                                    Substance Abuse and Mental Health Services Administration, 2011)]
+                                 </strong></b></label>
+                             </div>
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <!---2##########-->
+                    
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>PSYCHIATRIC SYMPTOMS</h6>
+                        </div>
+                        <div class="row">
+                            <h6><strong>For the next several questions, please tell me your answer based on the past MONTH.</strong></h6>
+                            <!-- <h6><i>[if Primary Respondent is a caregiver, read questions as “your child”]</i></h6>
+                            <h6><i>[see OMS Interview Guide for definitions of response options and “handle” (#24), “family” (#25),“cope” (#28), and “satisfied” (#29)]</i></h6> -->
+                            <div class="col-lg-12">
+                                <div class="cnt_divcss">
+                                    <span><b>INTERVIEWER: (do not read aloud) For items 15-38, you must either show the designated Response Card, give the 
+                                            client a copy of the questionnaire to follow along, or read all of the 
+                                            response options for each question to the client.</b>
+                                        An asterisk (*) denotes a question that is mandatory for submission.<br>
+                                        (Questionnaire Items 15-38 comprise the BASIS-24; ©McLean Hospital. Used and modified with permission.)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="CLIENT-LABEL"><b>15. Managing your day-to-day life?</b> [CARD #2 with response options] </label>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>No difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>A little difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="2" >
+                                                    <label>Moderate difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="3">
+                                                <label>Quite a bit of difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="4">
+                                                    <label>Extreme difficulty</label>
+                                            </div>
+                                        </div>
+                                       
+                                       </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="CLIENT-LABEL"><b>16. Coping with problems in your life?</b> [CARD #2] </label>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>No difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>A little difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="2" >
+                                                    <label>Moderate difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="3">
+                                                <label>Quite a bit of difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="4">
+                                                    <label>Extreme difficulty</label>
+                                            </div>   
+                                        </div>
+                                       
+                                       </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="CLIENT-LABEL"><b>17. Concentrating?</b> [CARD #2] </label>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>No difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                                <label>A little difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="2" >
+                                                    <label>Moderate difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="3">
+                                                <label>Quite a bit of difficulty</label>
+                                            </div>
+                                            <div class="d-flex">
+                                                    <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="4">
+                                                    <label>Extreme difficulty</label>
+                                            </div>   
+                                        </div>
+                                       
+                                       </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="CLIENT-LABEL">
+                                        <B> <strong>During the PAST MONTH, how much of the time did you…</strong></B>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="CLIENT-LABEL"><b>18. Get along with people in your family?</b> [CARD #3 with response options] </label>
+                                    <div class="d-flex">
+                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                        <label>None of the time </label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="1">
+                                        <label>A little of the time</label>
+                                    </div>
+                                    <div class="d-flex">
+                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="2" >
+                                            <label>Half of the time</label>
+                                    </div>
+                                    <div class="d-flex">
+                                        <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="3">
+                                        <label>Most of the time</label>
+                                    </div>
+                                    <div class="d-flex">
+                                            <input type="radio" name="Independent" formControlName="Independent"  id="Independent" value="4">
+                                            <label>All of the time</label>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

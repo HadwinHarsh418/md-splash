@@ -1,0 +1,377 @@
+
+
+ <section class="tabs-admin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="page-header small_fonts">
+                <div class="page-header-content d-flex">
+                        <div class="arrow">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                        </div>
+                    <h1 class="admin-main_heading">BILLING</h1>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="tabs-admin-left">
+                    
+                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+                        <li ngbNavItem="1">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">DASHBOARD</p>
+                                <p class="tabs-admin-p-1">Click to refresh the claims</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <app-dashboard></app-dashboard>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="2">
+                            <a ngbNavLink>
+                                <p class=" tabs-admin-p">ENCOUNTERS</p>
+                                <p class="tabs-admin-p-1">Enter encounters for each visits, this will create the corresponding note</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="common-div">
+                                    <ul class="common-div-ul">
+                                        <app-encounter></app-encounter>
+                                    </ul>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="3">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">FEE SCHEDULE</p>
+                                <p class="tabs-admin-p-1">Manage codes for insurance companies</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <section class="accordian-custom">
+                                    <img class="acc-img-2" src="images/left-image.png" alt="">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accor-cus">
+                                                    <div class="accordion" id="accordionExample">
+                                                        <div class="accordion-item">
+                                                          <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                                Regular - Fee Schedule
+                                                            </button>
+                                                          </h2>
+                                                          <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <app-regular></app-regular>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                          <h2 class="accordion-header" id="headingTwo">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                PRP - Fee Schedule
+                                                            </button>
+                                                          </h2>
+                                                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <app-prp></app-prp>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                          <h2 class="accordion-header" id="headingThree">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                Mobile Treatment - Fee Schedule
+                                                            </button>
+                                                          </h2>
+                                                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <app-mobile-treatment></app-mobile-treatment>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                          <h2 class="accordion-header" id="headingThree">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                                IOP - Fee Schedule
+                                                            </button>
+                                                          </h2>
+                                                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <app-iop></app-iop>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                          <h2 class="accordion-header" id="headingThree">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                                Case Management - Fee Schedule
+                                                            </button>
+                                                          </h2>
+                                                          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <app-case-management></app-case-management>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="4">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">PAYORS</p>
+                                <p class="tabs-admin-p-1">Manage all Payor Information</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="row">
+                                    <div class="common-div col-lg-5">
+                                        <ul class="common-div-ul">
+                                            <!-- --Select-- -->
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >BCBS</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >Beacon Health Options</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >Cigna - PPO/POS/HMO</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >Maryland Medical Care Program</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >Novitas Solutions (Medicare)</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >Optum Maryland Medicaid</a>
+                                            </li>
+                                            <li (click)="showpayor=!showpayor">
+                                                <a >UHC Dual Complete (Medicare</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-7" *ngIf="showpayor">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <label class="CLIENT-LABEL">Payor Name</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="CLIENT-LABEL">Insurance Carrier</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="CLIENT-LABEL">Payor ID</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="CLIENT-LABEL">Taxonomy Code</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">Add. Line 1</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">Add. Line 2</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">Zip</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">+4</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">City</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <label class="CLIENT-LABEL">State</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Contact Name </label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Phone</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Fax Number</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Email</label>
+                                                    <input type="text" class="client-input">
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Insurance Type</label>
+                                                    <select class="client-input" role="select" id="1_ProcedureCode" name="ProcedureCode" size="1"></select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="CLIENT-LABEL">Billing Type</label>
+                                                    <select class="client-input" role="select" id="1_ProcedureCode" name="ProcedureCode" size="1">
+                                                    <option role="option" value="42">select</option></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="5">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">THERAPY AND PSYCHIATRIC CLAIMS</p>
+                                <p class="tabs-admin-p-1"> Therapy and/or Psychiatric Claims created for submission</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <p>
+                                    <app-therapyandpsychiatric></app-therapyandpsychiatric>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="6">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">PRP CLAIMS</p>
+                                <p class="tabs-admin-p-1">PRP claims created for submission</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <p>
+                                    <app-prpclaims></app-prpclaims>
+                                </p>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="7">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">BATCH LISTING</p>
+                                <p class="tabs-admin-p-1">Lists all of the batches that have been created</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <p>
+                                    <app-batchlisting></app-batchlisting>
+                                </p>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="8">
+                            <a ngbNavLink>
+                                <!-- <p class="tabs-admin-p">retraction</p> -->
+                                <p class="tabs-admin-p">Payments</p>
+                                <p class="tabs-admin-p-1">Manage all Checks and Applied Payments</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                               <div class="row">
+                                <div class="common-div col-lg-5">
+                                    <ul class="common-div-ul">
+                                        <!-- --Select-- -->
+                                        <li (click)="changeTab(1)">
+                                            <a >Add Payments</a>
+                                        </li>
+                                        <li (click)="changeTab(2)">
+                                            <a >Add Retractions</a>
+                                        </li>
+                                        <li (click)="changeTab(3)">
+                                            <a >View All Payments</a>
+                                        </li>
+                                        <li (click)="changeTab(4)">
+                                            <a >View All Retractions</a>
+                                        </li>
+                                        <li (click)="changeTab(5)">
+                                            <a >View ERAs</a>
+                                        </li>
+                                        <li (click)="changeTab(6)">
+                                            <a >View Decoded Files</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-7">
+                                    <app-addpayment *ngIf="currentTab == 1" ></app-addpayment>
+                                    <app-addretraction *ngIf="currentTab == 2" ></app-addretraction>
+                                    <app-viewallpayments *ngIf="currentTab == 3" ></app-viewallpayments>
+                                    <app-viewallretraction *ngIf="currentTab == 4"></app-viewallretraction>
+                                    <app-viewdecodedfiles *ngIf="currentTab == 5" ></app-viewdecodedfiles>
+                                    <app-viewera *ngIf="currentTab == 6" ></app-viewera>
+                                </div>        
+                               </div> 
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem="9">
+                            <a ngbNavLink>
+                                <p class="tabs-admin-p">BILLING REPORTS</p>
+                                <p class="tabs-admin-p-1">All billing Reports</p>
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="row">
+                                    <label  class="CIENT-LABEL">Account Receivable (A/R)</label>
+                                    <div class="common-div col-lg-5">
+                                        <ul class="common-div-ul">
+                                            <!-- --Select-- -->
+                                            <li (click)="changeTab(7)">
+                                                <a >Insurance Aging Report-Providers <br>
+                                                    <b>Filterd by insurance company, provider and location</b>
+                                                </a>
+                                            </li>
+                                            <li (click)="changeTab(8)">
+                                                <a >Insurance Aging Report <br>
+                                                    <b>Filterd by insurance company and aging</b>
+                                                </a>
+                                            </li>
+                                            <li (click)="changeTab(9)">
+                                                <a >Aging Report Detail <br>
+                                                    <b>Filterd by insurance company, provider, location and aging</b>
+                                                </a>
+                                            </li>
+                                            <li (click)="changeTab(10)">
+                                                <a >Income Report Detail by Client <br>
+                                                    <b>Filterd by Insurance Compay,Provider,Location</b>
+                                                </a>
+                                            </li>
+                                            <li (click)="changeTab(11)">
+                                                <a > Income Report Detail <br>
+                                                    <b>Filterd by StartDate,EndDate,Insurance Type,Rendering Provider,Payment Type</b>
+                                                </a>
+                                            </li>
+                                            <li (click)="changeTab(12)">
+                                                <a >Payment Reports <br>
+                                                    <b>Batched v/s Received</b>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <app-insurance-aging-report-providers *ngIf="currentTab == 7" ></app-insurance-aging-report-providers>
+                                        <app-insurance-aging-report *ngIf="currentTab == 8" ></app-insurance-aging-report>
+                                        <app-aging-report-detail *ngIf="currentTab == 9" ></app-aging-report-detail>
+                                        <app-income-report-detail-by-client *ngIf="currentTab == 10"></app-income-report-detail-by-client>
+                                        <app-income-report-detail *ngIf="currentTab == 11" ></app-income-report-detail>
+                                        <app-payment-reports *ngIf="currentTab == 12" ></app-payment-reports>
+                                    </div>        
+                                   </div> 
+                            </ng-template>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="tabs-admin-middlle">
+                    <div [ngbNavOutlet]="nav" class="ms-mar"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+

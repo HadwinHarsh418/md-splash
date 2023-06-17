@@ -1,0 +1,30 @@
+<!-- <section class="header-sec"></section> -->
+<header class="header-section">
+    <nav class="navbar navbar-expand-lg">
+       <div class="container">
+         <a class="navbar-brand" href="javascript:void(0)" [routerLink]="['/member']"><img src="assets/images/SRS-Logo-Solo.png" class="img-fluid"></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+               <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/']">Home</a></li>
+               <li class="nav-item"><a class="nav-link" [routerLink]="['/PayInvoice']">Pay Invoice</a></li>
+               <li class="nav-item"><a class="nav-link " routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/order']">Order</a></li>
+               <li class="nav-item"><a class="nav-link" [routerLink]="['/faq']">FAQ</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+               <li class="nav-item"><a class="nav-link" [routerLink]="['/login']">Employee Login</a></li>
+               <li class="nav-item"><a class="nav-link" [routerLink]="['/cart']">Cart</a></li>
+               <li class="nav-item"><a class="nav-link" [routerLink]="['/checkout']">Checkout</a></li>
+               <li class="nav-item">
+                  <a class="nav-link cart-nav" [routerLink]="['/cart']">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                     <!-- <span *ngIf="cart.products?.length" class="cart-count">{{cart.products.length}}</span> -->
+                  </a>
+               </li>
+            </ul>
+         </div>
+       </div>
+     </nav>
+</header>

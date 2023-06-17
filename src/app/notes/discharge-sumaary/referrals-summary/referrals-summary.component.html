@@ -1,0 +1,237 @@
+<form [formGroup]="generalForm" (ngSubmit)="Save()">
+<div class="row p-4" >
+    <div class="col-lg-4  ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name="First_Name" id="First_Name" formControlName="First_Name" value="yes" >
+                    Individual Therapy
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient" >
+                <input type="checkbox" name="Middle_Initial" id="Middle_Initial" formControlName="Middle_Initial" value="yes" >
+                Psychiatric Services
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient" >
+                <input type="checkbox" name="Last_Name" id="Last_Name" formControlName="Last_Name" value="yes" >
+                Medication Management
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name="First_Name" id="First_Name" formControlName="First_Name" value="yes" >
+                    Family Therapy
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient" >
+                <input type="checkbox" name="Middle_Initial" id="Middle_Initial" formControlName="Middle_Initial" value="yes" >
+                Psychiatric Rehabilitation Services
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient" >
+                <input type="checkbox" name="Last_Name" id="Last_Name" formControlName="Last_Name" value="yes" >
+                Case Management
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name="First_Name" id="First_Name" formControlName="First_Name" value="yes" >
+                    Group Therapy
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4  ">
+        <div class="margin-inputclient">
+            <div class="margin-inputclient"  >
+                <input type="checkbox" name="Middle_Initial" id="Middle_Initial" formControlName="Middle_Initial" value="yes" >
+                Substance Abuse Treatement
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<div class="CLIENT-DEMOGRAPHICS">
+    <h6>IDENTIFYING INFORMATION</h6>
+</div>
+<form [formGroup]="refralForm" (ngSubmit)="Save2()">
+    <div class="row p-4" >
+        <div class="col-lg-6  ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name=" InPatientAlcoholandOtherDrugsServices" id=" InPatientAlcoholandOtherDrugsServices" formControlName="InPatientAlcoholandOtherDrugsServices" value="yes" >
+                        In Patient Alcohol and Other Drugs Services
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name=" PsychiatricServicesSpecifyphysicianname" id=" PsychiatricServicesSpecifyphysicianname" formControlName="PsychiatricServicesSpecifyphysicianname" value="yes" >
+                     Psychiatric Services. Specify physician name:
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name="CaseManagement" id="CaseManagement" formControlName="CaseManagement" value="yes" >
+                    Case Management(Adult)
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="LegalServices" id="LegalServices" formControlName="LegalServices" value="yes" >
+                        Legal Services(Juvenile Bureau, Legal Aid, ect.)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name="CaseManagementChild" id="CaseManagementChild" formControlName="CaseManagementChild" value="yes" >
+                    Case Management(Child)
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient" >
+                    <input type="checkbox" name=" ReturnToReferralSource" id=" ReturnToReferralSource" formControlName="ReturnToReferralSource" value="yes" >
+                    Return To Referral Source
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="CummunityHousingProgram" id="CummunityHousingProgram" formControlName="CummunityHousingProgram" value="yes" >
+                        Cummunity Housing Program
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient"  >
+                    <input type="checkbox" name="ReferToPrimaryPhysician" id="ReferToPrimaryPhysician" formControlName="ReferToPrimaryPhysician" value="yes" >
+                    Refer To Primary Physician
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="DomesticViolencesServices" id="DomesticViolencesServices" formControlName="DomesticViolencesServices" value="yes" >
+                        Domestic Violences Services
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient"  >
+                    <input type="checkbox" name="InpatientMental" id="InpatientMental" formControlName="InpatientMental" value="yes" >
+                    Inpatient Mental/Behavioural Health Services
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name=" CrisisInterventionServices" id=" CrisisInterventionServices" formControlName="CrisisInterventionServices" value="yes" >
+                        Crisis Intervention Services
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient"  >
+                    <input type="checkbox" name="MedicalServices" id="MedicalServices" formControlName="MedicalServices" value="yes" >
+                    Medical Services
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="services" id="services" formControlName="services" value="yes" >
+                        Placement/Community Housing/Living Program or services (e.g., shelter, group home, home health, long-term care)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="margin-inputclient">
+                <label class="CLIENT-LABEL">Other please specify:</label>
+                <textarea formControlName="inputfield1" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%; height: 80px;"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="supprthelpgroup" id="supprthelpgroup" formControlName="supprthelpgroup" value="yes" >
+                        Support/Self Help Group (e.g., AA / NA /ALA-NON, Parent Support Group, NAMI)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="margin-inputclient">
+                <label class="CLIENT-LABEL">Other please specify:</label>
+                <textarea formControlName="inputfield2" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%; height: 80px;"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="margin-inputclient">
+                <div class="margin-inputclient">
+                    <div class="margin-inputclient" >
+                        <input type="checkbox" name="MedicationManagement" id="MedicationManagement" formControlName="MedicationManagement" value="yes" >
+                        Medication Management Services. Specify physician name.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="margin-inputclient">
+                <label class="CLIENT-LABEL">Other please specify:</label>
+                <textarea formControlName="inputfield3" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%; height: 80px;"></textarea>
+            </div>
+        </div>
+    </div>
+</form>

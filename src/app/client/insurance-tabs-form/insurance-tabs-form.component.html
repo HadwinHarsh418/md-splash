@@ -1,0 +1,113 @@
+<div class="col-lg-12">
+    <div class="CLIENT-DEMOGRAPHICS">
+        <h3>AUTHORIZATION
+        </h3>
+    </div>
+    <form [formGroup]="AuthorizationsForms">
+        <div class="row">
+            <div class="col-lg-4 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Assigned to Which Insurance Policy
+                </label>
+                <select class="client-input" formControlName="InsurancePolicy">
+                    <option value="" selected>Select</option>
+                    <option value="Madicaid">Madicaid</option>
+                    <option value="Commercial">Commercial
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <div class="margin-inputclient"
+                    [class.has-error]="AuthForm['AuthNo'].dirty && AuthForm['AuthNo'].errors || AuthForm['AuthNo'].touched && AuthForm['AuthNo'].errors">
+                    <label class="CLIENT-LABEL">Authorization
+                        Number <span class="text-danger">*</span></label>
+                    <input type="number" class="client-input" formControlName="AuthNo">
+                    <span *ngIf="AuthForm['AuthNo'].dirty && AuthForm['AuthNo'].errors" class="has-error">
+                        <i *ngIf="AuthForm['AuthNo'].errors?.['required']">
+                            required</i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL">Start Date</label>
+                <input class="client-input"  type="date" name="name" id="" formControlName="StartDate">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL"> End Date</label>
+                <input class="client-input"  max="{{insuranceExpire}}" type="date" name="name" id="" formControlName="EndDate">
+            </div>
+        </div>
+        <hr>
+        <ul class="input-ul d-flex">
+            <li><input class="" type="radio" formControlName="IsVisitInUnitsSessions" name="IsVisitInUnitsSessions" value="IsVisitInUnitsSessions"
+                (change)="CheckValueVisit($event,'force')"><label for="">Visits in Units/Session</label>
+        </li>
+        <li>
+            <input class="" type="radio" (change)="CheckValueVisit($event,'force')" name="IsVisitInUnitsSessions" value="IsVisitDays"
+                formControlName="IsVisitInUnitsSessions"><label for="">Visits in Days</label>
+        </li>
+        <li><input class="" type="radio" formControlName="IsVisitInUnitsSessions" name="IsVisitInUnitsSessions" value="IsVisitAmount"
+                (change)="CheckValueVisit($event,'force')"><label for="">Visits in $ Amount</label>
+        </li>
+        </ul>
+        <br>
+        <div class="row">
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Authorized
+                </label>
+                <input class="client-input" type="number" name="UnitsSessionsAuthorized" id=""
+                    formControlName="UnitsSessionsAuthorized" (input)="CheckedValueIsVisitInUnitsSessions($event)">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Used
+                </label>
+                <input class="client-input" type="number" name="UnitSessionsUsed" id=""
+                    formControlName="UnitSessionsUsed" (input)="CheckedValueIsVisitInUnitsSessions($event)" >
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Authorized
+                </label>
+                <input class="client-input" type="number" (input)="CheckedValueIsVisitDays($event)" name="DaysAuthorized" id="" formControlName="DaysAuthorized">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Used
+                </label>
+                <input class="client-input" type="number" (input)="CheckedValueIsVisitDays($event)" name="name" id="" formControlName="DaysUsed">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Authorized
+                </label>
+                <input class="client-input" type="number" (input)="CheckedValueIsVisitAmount($event)" name="name" id="" formControlName="VisitAmountAuthorized">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Used
+                </label>
+                <input class="client-input" type="number" (input)="CheckedValueIsVisitAmount($event)" name="name" id="" formControlName="VisitAmountUsed">
+            </div>
+            <div class="col-lg-2 margin-inputclient">
+                <label class="CLIENT-LABEL" for="name">
+                    Created by
+                </label>
+                <input class="client-input" type="text" name="name" id="" formControlName="CreatedBy">
+            </div>
+        </div>
+        <label class="CLIENT-LABEL" for="name">Select Services
+            Authorized <span>(if none selected, All services
+                will be allowed)</span> </label>
+        <div class="auth_check">
+            <ul class="input-ul auth_check">
+                <li *ngFor="let item of checkedValueData let i = index">
+                    <input class="" type="checkbox" name="service_Check" (change)="changeValueData1($event,item.Value)"
+                        [checked]="AuthorizationsForms.value.InsuranceLevel.includes(item.Value)"
+                        [value]="item.Value"><label for="">{{item.Text}}</label>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

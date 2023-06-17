@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form>
+                <div class="all-tb">
+                    <div class="row nxtTab">
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL">Company Name:</label>
+                            <input class="client-input" type="text" name="CompanyName" id="CompanyName">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient">
+                            <label class="CLIENT-LABEL">Phone Number::</label>
+                            <input class="client-input" type="text" name="PhoneNumber" id="PhoneNumber">
+                        </div>
+                        <div class="col-lg-4 margin-inputclient"> <label class="CLIENT-LABEL" for="Fax">Fax:</label>
+                            <input class="client-input" type="text" name="Fax" id="Fax">
+
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="grp">Upload your Company Logo</label>
+                            <input class="client-input" type="file" name="Upload" id="Upload"
+                                (change)="readURL($event);">
+                        </div>
+                        <div class="col-lg-6 margin-inputclient">
+                            <label class="CLIENT-LABEL" for="grp">Logo Preview</label>
+                            <img id="blah" *ngIf="imageSrc" class="logo_prev" [src]="imageSrc" alt="" width="100%"
+                                height="auto">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row nxtTab">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Location 1</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Description:</label>
+                                    <input class="client-input" type="text" name="PCP_Name" id="PCP_Name">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Federal Tax ID Number:</label>
+                                    <input class="client-input" type="text" name="PCP_Address" id="PCP_Address">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">EIN?:</label>
+                                    <ul class="all-li-radio d-flex">
+                                        <li>
+                                            <input type="checkbox" name="harmingNo"
+                                                id="harmingNo" value="yes">
+                                            <label>Y</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="harmingNo"
+                                                id="harmingNo" value="yes">
+                                            <label>N</label>
+                                        </li>
+                                        </ul>
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">NPI Number:</label>
+                                    <input class="client-input" type="text" name="PCP_Name" id="PCP_Name">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Medicaid Provider ID:</label>
+                                    <input class="client-input" type="text" name="PCP_Name" id="PCP_Name">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Medicare Provider Number:</label>
+                                    <input class="client-input" type="text" name="PCP_Name" id="PCP_Name">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Street Address:</label>
+                                    <input class="client-input" type="text" name="StreetAddress" id="StreetAddress">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">City</label>
+                                    <input class="client-input" type="text" name="City" id="City">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">State</label>
+                                    <input class="client-input" type="text" name="State" id="State">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Zip +4:</label>
+                                    <input class="client-input" type="text" name="Zip" id="Zip">
+                                </div>
+                                <div class="col-lg-12 margin-inputclient">
+                                    <label class="CLIENT-LABEL my-3"><b>Facility Address/Mailing Address Box 32</b></label>
+
+                                    <label class="CLIENT-LABEL">Street Address:</label>
+                                    <input class="client-input" type="text" name="State" id="State">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">City</label>
+                                    <input class="client-input" type="text" name="City" id="City">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">State</label>
+                                    <input class="client-input" type="text" name="State" id="State">
+                                </div>
+                                <div class="col-lg-4 margin-inputclient">
+                                    <label class="CLIENT-LABEL">Zip +4:</label>
+                                    <input class="client-input" type="text" name="Zip" id="Zip">
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

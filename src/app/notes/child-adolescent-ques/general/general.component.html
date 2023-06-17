@@ -1,0 +1,265 @@
+<div class="col-lg-12">
+    <div class="row mar-1010 d-flex my-2">
+        <div class="col-lg-12 back_css">
+            <button class="NEW-SAVE" type="button" (click)="Save()">SAVE</button>
+        </div>
+    </div>
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes" >
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>IDENTIFYING INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Child First Name </label>
+                                                <input  type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Child Last Name</label>
+                                                <input  type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Interviewer Name</label> 
+                                                <select id="InterViewerName" name="InterViewerName" class="client-input">
+                                                    <option value="0">--Select--</option>
+                                                    <option value="16">Anderline Noutai</option>
+                                                    <option value="7">Arneisha Woods</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                    <option value="4">Covita Mills</option>
+                                                    <option value="21">Crevonte Hurde</option>
+                                                    <option value="43">Crystal Davis</option>
+                                                    <option value="42">Dasean Griffin</option>
+                                                    <option value="22">Dennis Wilson</option>
+                                                    <option value="25">Dy'Nasia Gross</option>
+                                                    <option value="30">Ericka Gooch</option>
+                                                    <option value="33">Espana James</option>
+                                                    <option value="18">Fatima Brown</option>
+                                                    <option value="5">Irish Smith</option>
+                                                    <option value="27">Jamie Esters</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="24">Julia Gunthrop</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                    <option value="19">Kelly Rice</option>
+                                                    <option value="38">Keyya Simons</option>
+                                                    <option value="8">Loreal Arrington</option>
+                                                    <option value="29">Marcus Scott</option>
+                                                    <option value="23">Marquis Oglesby</option>
+                                                    <option value="9">Melanie Bowen</option>
+                                                    <option value="20">Meriajah Jackson</option>
+                                                    <option value="6">Monica Boddie</option>
+                                                    <option value="26">Nayonna Wright</option>
+                                                    <option value="37">Nickitah Strickland</option>
+                                                    <option value="41">Nicole Towler</option>
+                                                    <option value="35">Oya Wilson</option>
+                                                    <option value="28">Pennye James</option>
+                                                    <option value="14">Renee Stokes</option>
+                                                    <option value="13">Shereen Ghori</option>
+                                                    <option value="17">Sirah Okoluku</option>
+                                                    <option selected="selected" value="34">test test</option>
+                                                    <option value="32">Tomas Norman</option>
+                                                    <option value="36">Valarie Matthews</option>
+                                                    <option value="40">Victorine Chi</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['DOCI'].dirty && genForm['DOCI'].errors || genForm['DOCI'].touched && genForm['DOCI'].errors">
+                                                <label class="CLIENT-LABEL">Date of Current Interview</label>
+                                                <input  type="date" formControlName="DOCI" class="client-input">
+                                                <span *ngIf="genForm['DOCI'].dirty && genForm['DOCI'].errors" class="has-error">
+                                                    <i *ngIf="genForm['DOCI'].errors?.['required']">
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"><strong>PRIMARY RESPONDENT DETERMINATION</strong></label>
+                                                <label class="CLIENT-LABEL"><strong>(person to whom questions are addressed and whose responses are recorded if there is disagreement)</strong></label>
+                                                <label class="CLIENT-LABEL">Guidelines (clinician discretion overrides):</label>
+                                                <label class="CLIENT-LABEL">Ages 6-11 : Caregiver (adjust grammar as needed)..</label>
+                                                <label class="CLIENT-LABEL">Ages 12-18 : Youth (use “you” when reading questions).</label>
+                                                <label class="CLIENT-LABEL">Please indicate below who will be the Primary Respondent for this interview:</label>
+                                                <ul class="all-li-radio" style="flex-wrap: nowrap;">
+                                                    <li class="col-md-6">
+                                                        <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                        <label>Youth (1)</label>
+                                                    </li>
+                                                    <li class="col-md-6">
+                                                        <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                        <label>Caregiver (2)</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="CLIENT-DEMOGRAPHICS1">
+                                            <h6>A companion <a href="javascript:void(0)">OMS Interview Guide</a> for this questionnaire is available at <a href="javascript:void(0)">www.maryland.valueoptions.com</a>.</h6>
+                                            <h6>The symbol denotes a client opinion only question.</h6>
+                                            <h6>An asterisk (*) denotes a question that is mandatory for submission.</h6>
+                                            <h6>Underlined questions indicate that a definition is available for a term within the questionnaire. Click on the hyperlink that appears in order to access the definition.</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LIVING SITUATION
+                                    <p>I’m Going To Ask You Some Questions Today About Different Areas Of You/Your Child’s Life, Such As School And Other Daily Activities.</p>
+                                </h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="">
+                                            <label class="CLIENT-LABEL"
+                                            [class.has-error]="genForm['dhildlivingnow'].dirty && genForm['dhildlivingnow'].errors || genForm['dhildlivingnow'].touched && genForm['dhildlivingnow'].errors"
+                                            ><span class="text-danger">*</span> 1. Where are you/your child living now? <i>(see OMS Interview Guide for more specific definitions)</i></label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio" >
+                                                        <li class="col-md-12">
+                                                            <input id="dhildlivingnow" formControlName="dhildlivingnow" name="dhildlivingnow" type="radio" value="1" >
+                                                            <label>Independent (Private Residence, Boarding House/Rooming House)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="dhildlivingnow" formControlName="dhildlivingnow" name="dhildlivingnow" type="radio" value="2">
+                                                            <label>Community (Residential Rehabilitation Program, Group Home/Therapeutic Group Home, Halfway House, Recovery Residence, School or Dormitory, Foster Home, Crisis Residence)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="dhildlivingnow" formControlName="dhildlivingnow" name="dhildlivingnow" type="radio" value="3" >
+                                                            <label>Institutional (Assisted Living, Skilled Nursing Facility, Residential Treatment Center for Children, Hospital, Jail/Correctional Facility/Detention Center)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="dhildlivingnow" formControlName="dhildlivingnow" name="dhildlivingnow" type="radio" value="4">
+                                                            <label>Homeless (Homeless or Emergency Shelter)</label>
+                                                        </li><br>
+                                                    </ul>       
+                                                    <span *ngIf="genForm['dhildlivingnow'].dirty && genForm['dhildlivingnow'].errors" class="has-error">
+                                                        <i *ngIf="genForm['dhildlivingnow'].errors?.['required']">
+                                                            </i>
+                                                    </span>
+                                                </div><br>
+                                                <label class="CLIENT-LABEL">Other Specify</label>
+                                                <textarea class="client-input"  name="Strengths" rows="4" style="width:100%;"></textarea>
+                                        </div><br>
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">2. Have you/your child been homeless at all (since last interview date/in the past six months)? <i>(see OMS Interview Guide for definition of “homeless”)</i></label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="" name="" type="radio" value="1" >
+                                                            <label>No</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="" name="" type="radio" value="2">
+                                                            <label>Yes</label>
+                                                        </li><br>
+                                                    </ul>       
+                                                </div><br>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LEGAL SYSTEM INVOLVEMENT</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">3. Since the last OMS interview date, was the client arrested?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>No</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Yes</label>
+                                                            </li>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">4. Since the last OMS interview date, was the client in either jail or prison?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>No</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Yes</label>
+                                                            </li>
+                                                             <label class="CLIENT-LABEL">Other Specify</label>
+                                                             <textarea  name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">5. Some people have had a negative encounter with the police, such as being arrested or hassled by police. <br>Since the last OMS interview date, has the client had…
+                                                </label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>No negative encounters with police</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Increased negative encounters</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>The same amount of negative encounters</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Decreased negative encounters</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Extreme difficulty</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

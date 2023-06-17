@@ -1,0 +1,303 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="diagnosisForm">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                        <!-- <div class="arrow d-flex">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading ms-2">PRP MONTHLY SUMMARY <small>New</small></h1>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-12">
+                            <div class="">
+                                <h6>Primary Behavioral Diagnoses*</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12 my-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diagnostic Category 1</label>
+                                                    <select class="client-input" formControlName="DiagnosticCategory1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diag. Code 1</label>
+                                                    <select class="client-input">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description</label>
+                                                    <input type="text" class="client-input" formControlName="Axis1Description">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diagnostic Category 2</label>
+                                                    <select class="client-input" formControlName="DiagnosticCategory2">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diag. Code 2</label>
+                                                    <select class="client-input" formControlName="Axis2">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description</label>
+                                                    <input type="text" class="client-input" formControlName="Axis2Description">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diagnostic Category 3</label>
+                                                    <select class="client-input" formControlName="DiagnosticCategory3">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diag. Code 3</label>
+                                                    <select class="client-input" formControlName="Axis3">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description
+                                                    </label>
+                                                    <input type="text" class="client-input" formControlName="Axis3Description">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="">
+                                <h6>Primary Medical Diagnoses*</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12 my-2" style="border-bottom: 3px solid black;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diagnostic Category 4</label>
+                                                    <select class="client-input" formControlName="DiagnosticCategory4">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diag. Code 4</label>
+                                                    <select class="client-input" formControlName="Axis4">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description</label>
+                                                    <input type="text" class="client-input" formControlName="Axis4Description">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diagnostic Category 5</label>
+                                                    <select class="client-input" formControlName="DiagnosticCategory5">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Diag. Code 5</label>
+                                                    <select class="client-input" formControlName="Axis5">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description</label>
+                                                    <input type="text" class="client-input" formControlName="Axis5Description">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2" style="border-bottom: 3px solid black;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">DX. Clinician Name: </label>
+                                                    <input type="text" class="client-input" formControlName="ClinicianName">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Phone: </label>
+                                                    <input type="text" class="client-input" formControlName="ClinicianPhone">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Description </label>
+                                                    <input type="text" class="client-input">
+
+                                                </div>
+                                            </div> -->
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of Most Recent Diagnosis: </label>
+                                                    <input type="text" class="client-input" formControlName="MostRecentDisgnosisDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Email:</label>
+                                                    <input type="text" class="client-input" formControlName="ClinicianEmail">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">DX Clinician Address: </label>
+                                                    <input type="text" class="client-input" formControlName="ClinicianAddress">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">TX Clinician Address: </label>
+                                                    <input type="text" class="client-input" formArrayName="TXClinicianName">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2" style="border-bottom: 3px solid black;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Domain:</label>
+                                                    <select class="client-input" formControlName="ddlDomian1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">LTG: </label>
+                                                    <textarea type="text" class="client-input" formControlName="LTG1"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">STG </label>
+                                                    <textarea type="text" class="client-input" formControlName="STG1"></textarea>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Interventions Utilized, Client
+                                                        Participation, & Intervention Changes Suggested: </label>
+                                                    <textarea type="text" class="client-input" formControlName="Interventions1"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <ul class="input-ul d-flex">
+                                                    <li class="mx-2"><label for="">Goal Progress Made:</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name="" id=""><label>Goal
+                                                            Met</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name=""
+                                                            id=""><label>Progressing W/Support</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name="" id=""><label>Minimal
+                                                            Progress</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name="" id=""><label>No
+                                                            Progress</label></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <ul class="input-ul d-flex">
+                                                    <li class="mx-2"><label for="">Goal to be Continued?:</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name=""
+                                                            id=""><label>Yes</label></li>
+                                                    <li class="mx-2"><input type="checkbox" name=""
+                                                            id=""><label>No</label></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 my-2">
+                                        <div class="row">
+                                                <div class="col-lg-12 my-2">
+                                                    <button class="location-add-btn" (click)="Save()"><i class="fa fa-plus"></i> Add another Goal</button>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Client Notes/Input (If Applicable):</label>
+                                                        <textarea type="text" class="client-input" formControlName="ClientNote"></textarea>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,321 @@
+<div class="dasboard-md">
+        <div class="top-blue col-lg-6 das-blue" style="position: relative;">
+            <h1 class="Maryland">Maryland Health Alliance Inc.</h1>
+            <a class="anchar-abs" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+    <div class="container-fluid">
+        <div class="row mar-top-less">
+            <div class="col-lg-3">
+                <div class="common-all-tabs">
+                    <div class="top-one custom_orange" routerLink="/client/dashboard">
+                        <a href="JavaScript:void(0)">
+                            <div class="dash-head-bx">
+                                <h4>Dashboard</h4>
+                            </div>
+                            <div class="dash-icon">
+                                <img src="assets/images/dashboard.png">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second custom_green" (click)="openHelpModal()">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/help.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Help</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second custom_blue" routerLink="/client/mail">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/mail.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Mail</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second custom_gray_fade" routerLink="/member/documents">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/documents.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Documents</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-one custom_blue_dark" routerLink="/client/iop">
+                        <a href="JavaScript:void(0)">
+                            <div class="dash-head-bx">
+                                <h4>IOP</h4>
+                            </div>
+                            <div class="dash-icon">
+                                <img src="assets/images/notess.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="common-all-tabs">
+                    <div class="top-second" style="background:#27b6b0"  routerLink="/client/notes">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/notes.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Notes</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#dc572e" routerLink="/client/crisismind">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/notes.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Crisis Mind</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#477CBE" routerLink="/client/prp_notes">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/WellNote.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>PRP Notes</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#aa2040" routerLink="/client/report">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/reports.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Reports</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#dc572e" routerLink="/client/assignment">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/assignmentsIcon.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Assignments</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="common-all-tabs">
+                    <div class="top-second" style="background:#27b6b0" routerLink="/client/billing">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/billing.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Billing</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#dc572e" (click)="open()" >
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/clients.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Clients</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#55429b">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/rx.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>E-Prescribe</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#20608E" routerLink="/client/contact-Info">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/to_do_list.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Contacts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#01c176" routerLink="/client/maps">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/maps.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Maps</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="common-all-tabs">
+                    <div class="top-second" style="background:#55429B" routerLink="/client/admin">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/administrator.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>Administration</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#aa2040" routerLink="/client/add-client">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/messaging1.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>New client</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-one" style="background: #02aeb8;" routerLink="/client/calendar">
+                        <a href="JavaScript:void(0)">
+                            <div class="dash-head-bx">
+                                <h4>Calendar</h4>
+                            </div>
+                            <div class="dash-icon">
+                                <img src="assets/images/scheduler.png">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="top-second" style="background:#55429b" routerLink="/client/mobileTreatment">
+                        <a href="JavaScript:void(0)" id="">
+                            <div class="dash-row">
+                                <div class="dash-col-5">
+                                    <div class="bg-white-dash">
+                                        <img src="assets/images/ClientPortal.png">
+                                    </div>
+                                </div>
+                                <div class="dash-col-7">
+                                    <div class="dash-head-right">
+                                        <h4>MOBILE TREATMENT</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #clientListing let-modal1 >    
+    <div class="modal-header">
+        <h5 class="modal-title" id="modal-basic-title">Two-Factor Authentication</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()">X</button>
+    </div>
+    <div class="modal-body">
+        </div>
+</ng-template>

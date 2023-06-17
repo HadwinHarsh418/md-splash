@@ -1,0 +1,153 @@
+.client-tabs {
+    background: #ffffff;
+    border: 1px solid #c7ced5;
+    box-shadow: 0 13px 20px #12121266;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position: relative;
+    top: 64px;
+    left: 7px;
+}
+
+.calendarStyle{
+    margin: 0px;
+}
+
+.calendarUser{
+    margin: 0 0 0 17px;
+    font-size: 17px;
+    font-family: 'FontAwesome';
+    font-weight: 400;
+}
+
+
+.common-div-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    height: 500px;
+    overflow: auto;
+}
+.common-div-ul-tab{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border:none;
+    li {
+        text-decoration: none;
+        color: #000;
+        padding: 10px 15px;
+        display: block;
+        border: none;
+        font-size: 14px;
+        a{
+            text-decoration: none;
+            font-weight: 700;
+        }
+        & a:hover{
+            cursor: pointer;
+        }
+        & span:hover{
+            cursor: pointer;
+            border: 1px dotted;
+        }
+    }
+}
+.common-div-ul li {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+}
+.common-div-ul li:last-child a,.common-div-ul li:last-child a.active {
+    border: none !important;
+}
+
+#tabs.calendar-tab-main {
+    display: inline-block;
+    width: 100% !important;
+    margin: 0px 0 0;
+}
+
+#tabs .primary_menu_list {
+    display: inline-block;
+    width: 100%;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+.primary_menu_list ul li.tab-no-margin {
+    margin: 0 4px 0 0;
+    padding: 5px;
+}
+
+.calendar-tab-main * {
+    box-sizing: border-box;
+}
+
+.primary_menu_head .tab1_head {
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0 0 3px 86px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.tab1_headsub {
+    float: left;
+    width: 100%;
+}
+
+.primary_menu_list ul li {
+    float: left;
+    padding: 0 3px;
+    margin: 34px 0 0;
+}
+
+#tabs .primary_menu_list ul li a {
+    background: #219bf3;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.tab1_headsub a {
+    width: 31%;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.primary_menu_list ul {
+    list-style: none;
+}
+
+#tabs.calendar-tab-main .header {
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+    margin: 19px 0 20px 0;
+    box-sizing: border-box;
+    background: #333;
+    padding: 10px 5px;
+    height: auto;
+    line-height: inherit;
+    text-align: center;
+}
+
+.calendar-tab-main .header span {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #fff;
+}

@@ -1,0 +1,21 @@
+.NEW-SAVE{
+    font-weight: normal !important;
+    background-color: green;
+}
+.common-div-ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border:none;
+    li {
+        text-decoration: none;
+        color: #000;
+        padding: 10px 15px;
+        display: flex;
+        border: none;
+        font-size: 14px;
+        span{
+            padding-left: 4px;
+        }
+    }
+}

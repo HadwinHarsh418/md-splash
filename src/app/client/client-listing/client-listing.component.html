@@ -1,0 +1,60 @@
+<div class="client_list">
+    <div class="row">
+        <div class="col-6 d-flex showdiv">
+            <label for="show" class="show">Show</label>
+            <select  class="num" name="" id=""
+            [(ngModel)]='showEntry' (change)="pageSize()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+            <label for="entry" class="entry">Entry</label>
+        </div>
+        <div class="col-6 d-flex+">
+            <div class="searchFilter">
+            <!-- <label for="show" class="">Search:</label> -->
+                    <input #searchStrInput type="text" placeholder="Search" (change)="searchValue($event)" />
+            </div>
+        </div>
+    </div>
+    <ngx-datatable #tablesss class="bootstrap core-bootstrap sz-1000" [rows]="rows" [columnMode]="'force'"
+                [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [externalPaging]="true" [loadingIndicator]="loadingIndicator"
+                [count]="page.totalElements" [offset]="page.pageNumber" [limit]="page.size" (page)="setPage($event)"
+                >
+               
+                <ngx-datatable-column name="LAST NAME" prop="LastName" [width]="100"> 
+                    <ng-template let-LastName="value" let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                      <a href="javascript:void(0)" [routerLink]="['insurance',row.Id]" (click)="closeTable()"> {{ LastName }} </a>
+                    </ng-template>
+                </ngx-datatable-column>
+    
+                <ngx-datatable-column name="FIRST NAME" prop="FirstName" [width]="100">
+                    <ng-template let-first_name="value" let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                        <a href="javascript:void(0)"  [routerLink]="['insurance',row.Id]" (click)="closeTable()">  {{ first_name }} </a>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="DATE OF BIRTH" prop="DOB" [width]="100">
+                    <ng-template let-dob="value" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ dob | date:'dd-MM-yyyy'}}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="TELEPHONE" prop="telephone" [width]="80">
+                    <ng-template let-phone_number="value" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ phone_number }}
+                    </ng-template>
+                </ngx-datatable-column>
+    
+                <ngx-datatable-column name="ACCOUNT STATUS" prop="AccountStatus" [width]="80">
+                    <ng-template let-positions="value" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ positions }}
+                    </ng-template>
+                </ngx-datatable-column>
+    
+                <ngx-datatable-column name="ASSIGNED TO" prop="Assigned" [width]="80">
+                    <ng-template let-start_time="value" let-expanded="expanded" ngx-datatable-cell-template>
+                        {{ start_time  }}
+                    </ng-template>
+                </ngx-datatable-column>
+    
+    </ngx-datatable>
+</div>

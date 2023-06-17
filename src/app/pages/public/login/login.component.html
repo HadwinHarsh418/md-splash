@@ -1,0 +1,59 @@
+<div class="login-md">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="center-login">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="margin-login">
+								<p class="Welcome-p">Welcome to Maryland Health Alliance Inc.</p>
+							</div>
+						</div>
+						<form [formGroup]="loginForm" (ngSubmit)="login()">
+							<div class="col-lg-12">
+								<div class="margin-login">
+									<label for="" class="lable-md">User name</label>
+									<div class="border-effect"
+										[class.has-error]="f['Username'].dirty && f['Username'].errors || f['Username'].touched && f['Username'].errors">
+										<input type="text" id="emailId" formControlName="Username" autocomplete="new-email"
+											class="form-control md-input form-control-lg" />
+											<span class="focus-border"><i></i></span>
+									</div>
+									<span *ngIf="f['Username'].dirty && f['Username'].errors" class="has-error">
+										<i *ngIf="f['Username'].errors?.['required']">Email/UserName is
+											required</i>
+									</span>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="margin-login">
+									<label for="" class="lable-md">Password</label>
+									<div class="border-effect"
+										[class.has-error]="f['Password'].dirty && f['Password'].errors || f['Password'].touched && f['Password'].errors">
+										<input type="password" id="password" formControlName="Password"
+											autocomplete="new-password" class="md-input" />
+										<span class="focus-border"><i></i></span>
+									</div>
+									<span *ngIf="f['Password'].dirty && f['Password'].errors" class="has-error">
+										<i *ngIf="f['Password'].errors?.['required']">password is
+											required</i>
+									</span>
+								</div>
+							</div>
+						</form>
+						<div class="col-lg-12">
+							<div class="margin-login m-00">
+								<ul class="bottom-ul-md">
+									<li><button type="submit" [disabled]="loading" (click)="login()" class="Login-md"><i class="fa-solid fa-right-to-bracket"></i>
+										<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+											Login</button></li>
+									<li><a class="Forgot-Password" href="">Forgot Password?</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

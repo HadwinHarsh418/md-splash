@@ -1,0 +1,701 @@
+<app-heading></app-heading>
+<section class="new-client-sec">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="left-full-wd">
+                    <img class="left-full-part-img" src="../../../assets/images/help.png" alt="">
+                    
+                    <img [src]="url ? url : ''" style="width: 190px !important;"> <br/>
+                    <input type='file' (change)="onSelectFile($event)">
+                    
+                    <div class="accountData">
+                        <div class="left-full-part icn_Sty">
+                            <p class="Reason">Reason for Account Locks</p>
+                            <i class="fa fa-print" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="accountData">
+                        <div class="left-full-part">
+                            <p class="Reason">Client Memo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="customdata">
+                        <div class="CLIENT-LABEL">
+                            <span class="client_status_head">Client Services:<span style="color: #0a2ee9;Font-weight:500">{{GetClientsStatuses?.ClientServiceType}}</span></span>
+                        </div>
+                        <div class="CLIENT-LABEL">
+                            <span class="client_status_head">Account Status: <span [ngStyle]="{ 'color': GetClientsStatuses?.Color }">{{GetClientsStatuses?.ClientStatus}}</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="partition-1">
+                    <div class="part-2">
+                        <form [formGroup]="insuranceForm">
+                            <div class="client-tabs">
+                                <div class="client-tabs subTabs">
+                                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                        <li [ngbNavItem]="1">
+                                            <a ngbNavLink>Demographics</a>
+                                            <ng-template ngbNavContent>
+                                                <app-demodraphics-details (GetClientsStatuses)="getDetails($event)"></app-demodraphics-details>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="2">
+                                            <a ngbNavLink>Contact</a>
+                                            <ng-template ngbNavContent>
+                                                <app-contact></app-contact>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="3" (click)="getInsurance()">
+                                            <a ngbNavLink>Insurance</a>
+                                            <ng-template ngbNavContent>
+                                                <div class="col-lg-12" *ngIf="!newInsurance">
+                                                    <div class="save-bt rem-abs p-2 ">
+                                                        <button class="NEW-SAVE"
+                                                            (click)="createInsurance()">NEW</button>
+                                                    </div>
+                                                </div>
+                                                <!-- <table id="customers"  class="searchable sortable" #Table cdkDropList *ngIf="!newInsurance"
+                                                [cdkDropListData]="row" (cdkDropListDropped)="drop($event)" id="dtBasicExample" class="table table-striped table-bordered table-sm" 
+                                                 cellspacing="0" width="100%">
+                                                      <tr>
+                                                        <th scope="col" >Insurance Type <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i>
+                                                        </th>
+                                                        <th scope="col">Policy Type <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i>
+                                                        </th>
+                                                        <th scope="col">Payor <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i>
+                                                        </th>
+                                                        <th scope="col">Termination Date <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i>
+                                                        </th>
+                                                        <th scope="col">Effective Date <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i>
+                                                        </th>
+                                                        
+                                                      </tr>
+                                                      <tr *ngFor="let item of insuranceData" cdkDrag [cdkDragData]>
+                                                        <td><a href="javascript:void(0)" (click)="opneInsurance(item)">{{item.InsuranceType}}</a></td>
+                                                        <td>{{item.PolicyType}}</td>
+                                                        <td>{{item.Payor}}</td>
+                                                        <td>{{item.TerminationDate | date: 'mediumDate'}}</td>
+                                                        <td>{{item.EffectiveDate  | date: 'mediumDate'}}</td>
+
+                                                      </tr>
+                                                  </table>
+                                                  <app-pagination *ngIf="!newInsurance" [totalPages]="5" [totalElements]="20" (pageChanged)="pageChanged($event)"></app-pagination> -->
+                                                  
+                                                <ngx-datatable  #Table class="bootstrap core-bootstrap sz-1000" [columnMode]="'force'" [headerHeight]="50"
+                                                [loadingIndicator]="loadingIndicator"
+                                                [footerHeight]="50" rowHeight="auto" [limit]="10"
+                                                    [rows]="insuranceData" [columnMode]="'force'" [headerHeight]="50"
+                                                    [footerHeight]="50" rowHeight="auto" [externalPaging]="false"
+                                                    *ngIf="!newInsurance" cdkDropList  
+                                                    [cdkDropListData]="insuranceData"
+                                                    (cdkDropListDropped)="drop($event)" cdkDrag [cdkDragData]
+                                                  >
+                                                    <ngx-datatable-column  name="Insurance Type" prop="InsuranceType"
+                                                        [width]="80">
+                                                        <ng-template let-InsuranceType="value" let-row="row"
+                                                            let-expanded="expanded" ngx-datatable-cell-template>
+                                                            <a href="javascript:void(0)" (click)="opneInsurance(row)">{{
+                                                                InsuranceType }}</a>
+                                                        </ng-template>
+
+                                                    </ngx-datatable-column>
+
+                                                    <ngx-datatable-column name="Policy Type" prop="PolicyType" 
+                                                        [width]="80">
+                                                        <ng-template let-PolicyType="value" let-expanded="expanded" 
+                                                            ngx-datatable-cell-template>
+                                                            {{ PolicyType }}
+                                                        </ng-template>
+                                                    </ngx-datatable-column>
+                                                    <ngx-datatable-column name="Payor" prop="Payor" [width]="80"  >
+                                                        <ng-template let-Payor="value" let-expanded="expanded" 
+                                                            ngx-datatable-cell-template>
+                                                            {{ Payor }}
+                                                        </ng-template>
+                                                    </ngx-datatable-column>
+                                                    <ngx-datatable-column name="Termination Date" prop="TerminationDate" 
+                                                        [width]="100">
+                                                        <ng-template let-TerminationDate="value" let-expanded="expanded" 
+                                                            ngx-datatable-cell-template>
+                                                            {{ TerminationDate | date: 'mediumDate'}}
+                                                        </ng-template>
+                                                    </ngx-datatable-column>
+
+                                                    <ngx-datatable-column name="Effective Date" prop="EffectiveDate" 
+                                                        [width]="80">
+                                                        <ng-template let-EffectiveDate="value" let-expanded="expanded"
+                                                            ngx-datatable-cell-template>
+                                                            {{ EffectiveDate | date: 'mediumDate'}}
+                                                        </ng-template>
+                                                    </ngx-datatable-column>
+                                                </ngx-datatable>
+
+                                                
+
+                                                <div class="row" *ngIf="newInsurance">
+                                                    <div class="col-lg-12">
+                                                        <div class="row mar-1010">
+                                                            <div class="col-lg-6">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="flexi-type">
+                                                                            <div class="arrow" (click)="back()">
+                                                                                <label for="type">
+                                                                                    <i
+                                                                                        class="fa fa-circle-arrow-left"></i>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6">
+                                                                <div class="save-bt rem-abs" *ngIf="newInsurance">
+                                                                    <button class="NEW-SAVE"
+                                                                        (click)="submitForm()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>SAVE</button>
+                                                                </div>
+                                                                <div class="save-bt rem-abs my-2" *ngIf="!newInsurance">
+                                                                    <button class="NEW-SAVE"
+                                                                        (click)="createInsurance()">NEW</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-tabs subTabs" *ngIf="insurancetabs">
+                                                            <ul ngbNav #nav="ngbNav" [(activeId)]="actived"
+                                                                class="nav-tabs">
+                                                                <li [ngbNavItem]="1" (click)="changeTab(1)"
+                                                                    [class.active]="insuranceCurrentTab == '1'">
+                                                                    <a ngbNavLink>Insurance</a>
+                                                                </li>
+                                                                <li [ngbNavItem]="2" (click)="changeTab(2)"
+                                                                    [class.active]="insuranceCurrentTab == '2'"><a
+                                                                        ngbNavLink>AUTHORIZATION</a></li>
+                                                                <li [ngbNavItem]="3" (click)="changeTab(3) "
+                                                                    [class.active]="insuranceCurrentTab == '3'"><a
+                                                                        ngbNavLink>PRP AUTHORIZATION</a></li>
+                                                                <li [ngbNavItem]="4" (click)="changeTab(4)"
+                                                                    [class.active]="insuranceCurrentTab == '4'"><a
+                                                                        ngbNavLink>MOBILE AUTHORIZATION</a></li>
+                                                                <li [ngbNavItem]="5" (click)="changeTab(5)"
+                                                                    [class.active]="insuranceCurrentTab == '5'"><a
+                                                                        ngbNavLink>IOP AUTHORIZATION</a></li>
+                                                            </ul>
+                                                            <div [ngbNavOutlet]="nav" class=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 client-tabs-ui"
+                                                        *ngIf="insuranceCurrentTab == '1' && newInsurance">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                                    <h3>Insurance</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <form [formGroup]="insuranceForm">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 margin-inputclient"
+                                                                                [class.has-error]="f['InsuranceCarrier'].dirty && f['InsuranceCarrier'].errors || f['InsuranceCarrier'].touched && f['InsuranceCarrier'].errors">
+                                                                                <label class="CLIENT-LABEL" for="name">
+                                                                                    Name of Primary Insurance Carrier
+                                                                                </label>
+                                                                                <input class="client-input" type="text"
+                                                                                    name="name" id=""
+                                                                                    formControlName="InsuranceCarrier">
+                                                                                <span
+                                                                                    *ngIf="f['InsuranceCarrier'].dirty && f['InsuranceCarrier'].errors"
+                                                                                    class="has-error">
+                                                                                    <i
+                                                                                        *ngIf="f['InsuranceCarrier'].errors?.['required']">Insurance
+                                                                                        Carrier
+                                                                                        required</i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="col-lg-4 margin-inputclient"
+                                                                                [class.has-error]="f['Payor'].dirty && f['Payor'].errors || f['Payor'].touched && f['Payor'].errors">
+                                                                                <label class="CLIENT-LABEL">Payor: <span
+                                                                                        class="text-danger">*</span></label>
+                                                                                <select class="client-input"
+                                                                                    formControlName="Payor">
+                                                                                    <!-- <option value="" selected>Select</option>
+                                                                                    <option value="0" selected>abc</option> -->
+                                                                                    <option
+                                                                                        *ngFor="let item of GetActivePayorsWithDetail"
+                                                                                        value="{{item.Value}}">
+                                                                                        {{item.Text}}</option>
+                                                                                </select>
+                                                                                <span
+                                                                                    *ngIf="f['Payor'].dirty && f['Payor'].errors"
+                                                                                    class="has-error">
+                                                                                    <i
+                                                                                        *ngIf="f['Payor'].errors?.['required']">Payor
+                                                                                        is
+                                                                                        required</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-4 margin-inputclient"
+                                                                                [class.has-error]="f['PolicyNo'].dirty && f['PolicyNo'].errors || f['PolicyNo'].touched && f['PolicyNo'].errors">
+                                                                                <label class="CLIENT-LABEL"
+                                                                                    for="policy"><span
+                                                                                        class="text-danger">*</span>Policy
+                                                                                    Number</label>
+                                                                                <input class="client-input" type="text"
+                                                                                    name="" id=""
+                                                                                    formControlName="PolicyNo">
+                                                                                <span
+                                                                                    *ngIf="f['PolicyNo'].dirty && f['PolicyNo'].errors"
+                                                                                    class="has-error">
+                                                                                    <i
+                                                                                        *ngIf="f['PolicyNo'].errors?.['required']">
+                                                                                        required</i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="col-lg-4 margin-inputclient">
+                                                                                <label class="CLIENT-LABEL"
+                                                                                    for="grp">Group
+                                                                                    Number</label>
+                                                                                <input class="client-input" type="text"
+                                                                                    name="" id=""
+                                                                                    formControlName="GroupNo">
+
+                                                                            </div>
+                                                                            <div class="col-lg-4 margin-inputclient"
+                                                                                [class.has-error]="f['PolicyHolder'].dirty && f['PolicyHolder'].errors || f['PolicyHolder'].touched && f['PolicyHolder'].errors">
+                                                                                <label class="CLIENT-LABEL"
+                                                                                    for="pol"><span
+                                                                                        class="text-danger">*</span>Policy
+                                                                                    Holder</label>
+                                                                                <select class="client-input"
+                                                                                    formControlName="PolicyHolder">
+                                                                                    <!-- <option>Select</option> -->
+                                                                                    <option
+                                                                                        *ngFor="let item of GetPolicyHolderOptions"
+                                                                                        value="{{item.Value}}">
+                                                                                        {{item.Text}}</option>
+                                                                                </select>
+                                                                                <span
+                                                                                    *ngIf="f['PolicyHolder'].dirty && f['PolicyHolder'].errors"
+                                                                                    class="has-error">
+                                                                                    <i
+                                                                                        *ngIf="f['PolicyHolder'].errors?.['required']">
+                                                                                        required</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-4 margin-inputclient">
+                                                                                <label class="CLIENT-LABEL"
+                                                                                    for="tel">Telephone Number
+                                                                                </label>
+                                                                                <input class="client-input"
+                                                                                    type="number" name="" id=""
+                                                                                    formControlName="Telephone">
+                                                                            </div>
+                                                                            <div class="col-lg-4 margin-inputclient">
+                                                                                <label class="CLIENT-LABEL" for="">Fax
+                                                                                    Number</label>
+                                                                                <input class="client-input" type="number"
+                                                                                    name="" id="" formControlName="Fax">
+                                                                            </div>
+                                                                            <div class="col-lg-4 margin-inputclient">
+                                                                                <label class="CLIENT-LABEL" for="">Type
+                                                                                    of
+                                                                                    Policy</label>
+                                                                                <select class="client-input" name=""
+                                                                                    id="" formControlName="PolicyType">
+                                                                                    <option
+                                                                                        *ngFor="let item of GetTypeOfPolicyOptions"
+                                                                                        value="{{item.Value}}">
+                                                                                        {{item.Text}}</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Notes</label>
+                                                                        <textarea
+                                                                            class="client-input client-input-textarea"
+                                                                            name="" formControlName="Notes" id=""
+                                                                            cols="30" rows="10"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                                    <h3>Insurance Benefits</h3>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="efec">Effective
+                                                                            Date</label>
+                                                                        <input class="client-input" type="date" name=""
+                                                                            id="" formControlName="EffectiveDate">
+
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Termination
+                                                                            Date</label>
+                                                                        <input class="client-input" type="date" name=""
+                                                                            id="" formControlName="TerminationDate">
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Benifits
+                                                                            Begin</label>
+                                                                        <ul class="input-ul-2">
+                                                                            <li><input type="checkbox" (change)="checkValueBtn($event)" 
+                                                                                    value="PIT_IsYearly" formControlName="PIT_IsYearly" ><label
+                                                                                    for="">Yearly,
+                                                                                    Every January</label></li>
+                                                                            <li><input type="checkbox" name="PIT_IsContract"
+                                                                                value="PIT_IsContract" formControlName="PIT_IsContract"><label
+                                                                                    for="">Contract,<i>Enter
+                                                                                        Dates</i></label></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-4 margin-inputclient"
+                                                                        [class.has-error]="f['CoPay'].dirty && f['CoPay'].errors || f['CoPay'].touched && f['CoPay'].errors">
+                                                                        <label class="CLIENT-LABEL" for=""><span
+                                                                                class="text-danger">*</span>Copay</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="CoPay" id="CoPay"
+                                                                            formControlName="CoPay">
+                                                                        <span
+                                                                            *ngIf="f['CoPay'].dirty && f['CoPay'].errors"
+                                                                            class="has-error">
+                                                                            <i *ngIf="f['CoPay'].errors?.['required']">
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL"
+                                                                            for="">Co-Insurance</label>
+                                                                        <input class="client-input" type="text" name=""
+                                                                            id="" formControlName="CoInsurance">
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Number of
+                                                                            Visits
+                                                                            Allowed</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="" id=""
+                                                                            formControlName="NoOfVisitsAllowed">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-4 margin-inputclient"
+                                                                        [class.has-error]="f['DeductibleAmount'].dirty && f['DeductibleAmount'].errors || f['DeductibleAmount'].touched && f['DeductibleAmount'].errors">
+                                                                        <label class="CLIENT-LABEL" for=""><span
+                                                                                class="text-danger-">*</span>Amount of
+                                                                            Deductible</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="" id=""
+                                                                            formControlName="DeductibleAmount">
+                                                                        <span
+                                                                            *ngIf="f['DeductibleAmount'].dirty && f['DeductibleAmount'].errors"
+                                                                            class="has-error">
+                                                                            <i
+                                                                                *ngIf="f['DeductibleAmount'].errors?.['required']">
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Deductible
+                                                                            Balance</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="" id=""
+                                                                            formControlName="DeductibleBalance">
+                                                                    </div>
+                                                                    <div class="col-lg-4 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Release of
+                                                                            Information</label>
+
+                                                                        <select class="client-input"
+                                                                            formControlName="IsInformationRelease">
+                                                                            <option value="0">Yes</option>
+                                                                            <option value="1">No</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 margin-inputclient"
+                                                                        [class.has-error]="f['OutOfPocketAmount'].dirty && f['OutOfPocketAmount'].errors || f['OutOfPocketAmount'].touched && f['OutOfPocketAmount'].errors">
+                                                                        <label class="CLIENT-LABEL" for=""><span
+                                                                                class="text-danger-">*</span>Out of
+                                                                            Pocket</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="" id=""
+                                                                            formControlName="OutOfPocketAmount">
+                                                                        <span
+                                                                            *ngIf="f['OutOfPocketAmount'].dirty && f['OutOfPocketAmount'].errors"
+                                                                            class="has-error">
+                                                                            <i
+                                                                                *ngIf="f['OutOfPocketAmount'].errors?.['required']">
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="col-lg-3 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Out Of Pocket
+                                                                            Balance</label>
+                                                                        <input class="client-input" type="number"
+                                                                            name="" id=""
+                                                                            formControlName="OutOfPocketBalance">
+                                                                    </div>
+                                                                    <div class="-lgcol-3 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Date
+                                                                            Verified</label>
+                                                                        <input class="client-input" type="date" name=""
+                                                                            formControlName="VerificationDate" id="">
+                                                                    </div>
+                                                                    <div class="-lgcol-3 margin-inputclient"
+                                                                        [class.has-error]="f['VerifiedBy'].dirty && f['VerifiedBy'].errors || f['VerifiedBy'].touched && f['VerifiedBy'].errors">
+                                                                        <label class="CLIENT-LABEL" for=""><span
+                                                                                class="text-danger">*</span>Verified
+                                                                            By</label>
+                                                                        <select class="client-input"
+                                                                            formControlName="VerifiedBy">
+                                                                            <option
+                                                                                        *ngFor="let item of verfiedByCustomerList"
+                                                                                        value="{{item.Value}}">
+                                                                                        {{item.Text}}</option>
+
+                                                                        </select>
+                                                                        <span
+                                                                            *ngIf="f['VerifiedBy'].dirty && f['VerifiedBy'].errors"
+                                                                            class="has-error">
+                                                                            <i
+                                                                                *ngIf="f['VerifiedBy'].errors?.['required']">
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Authorization
+                                                                            Required, If
+                                                                            yes from </label>
+                                                                        <div class="d-flex">
+                                                                            <div class="right-mr-10">
+                                                                                <select class="client-input" name=""
+                                                                                    formControlName="IsAuthorizationsReq"
+                                                                                    (change)="onSelectionChanged($event)">
+                                                                                    <option value="">-select-</option>
+                                                                                    <option value="0">Yes</option>
+                                                                                    <option value="1">No</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div>
+                                                                                <input [class.inputdisabled]="isDisable"
+                                                                                    class="client-input" type="text"
+                                                                                    formControlName="ReferralReqFrom"
+                                                                                    name="" id="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 margin-inputclient"
+                                                                        [class.has-error]="f['MethodOfVerification'].dirty && f['MethodOfVerification'].errors || f['MethodOfVerification'].touched && f['MethodOfVerification'].errors">
+                                                                        <label class="CLIENT-LABEL" for="met"><span
+                                                                                class="text-danger">*</span>Method of
+                                                                            Verification</label>
+                                                                        <ul class="input-ul-2">
+                                                                            <li><input type="radio"
+                                                                                    name="MethodOfVerification"
+                                                                                    formControlName="MethodOfVerification"
+                                                                                    value="Online"><label
+                                                                                    for="">Online</label></li>
+                                                                            <li><input type="radio"
+                                                                                    name="MethodOfVerification"
+                                                                                    formControlName="MethodOfVerification"
+                                                                                    value="Telephone"><label
+                                                                                    for="">Telephone(spoke
+                                                                                    with)</label></li>
+                                                                        </ul>
+                                                                        <span
+                                                                            *ngIf="f['MethodOfVerification'].dirty && f['MethodOfVerification'].errors"
+                                                                            class="has-error">
+                                                                            <i *ngIf="f['MethodOfVerification'].errors?.['required']">
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 margin-inputclient">
+                                                                        <label class="CLIENT-LABEL" for="">Referral
+                                                                            Required,If yes
+                                                                            from</label>
+                                                                        <div class="d-flex">
+                                                                            <div class="right-mr-10">
+                                                                                <select class="client-input" name=""
+                                                                                    formControlName="IsReferralReq"
+                                                                                    id=""
+                                                                                    (change)="chnageValue($event)">
+                                                                                    <option value="">--select--</option>
+                                                                                    <option value="0">Yes</option>
+                                                                                    <option value="1">No</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div [class.inputdisabled]="isDisabled">
+                                                                                <input class="client-input" type="text"
+                                                                                    name=""
+                                                                                    formControlName="AuthorizationsReqFrom"
+                                                                                    id="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <input class="client-input" type="text" name=""
+                                                                            id="">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-lg-12 client-tabs-ui mt-2"
+                                                        *ngIf="(insuranceCurrentTab == '2' || insuranceCurrentTab == '3' || insuranceCurrentTab == '4' ||insuranceCurrentTab == '5') && newInsurance">
+                                                        <div class="my-2">
+                                                            <ngx-datatable #tablesss
+                                                                class="bootstrap core-bootstrap sz-1000"
+                                                                [rows]="AuthorizationTabData"[columnMode]="'force'"
+                                                                [headerHeight]="50" [footerHeight]="50" rowHeight="auto"
+                                                                [externalPaging]="false"
+                                                                *ngIf="insuranceCurrentTab == '2' || insuranceCurrentTab == '3' || insuranceCurrentTab == '4' ||insuranceCurrentTab == '5'">
+
+                                                                <ngx-datatable-column name="AUTHORIZATION NUMBER"
+                                                                    prop="AuthNo" [width]="80">
+                                                                    <ng-template let-AuthValue="value"
+                                                                        let-expanded="expanded" let-row ="row"
+                                                                        ngx-datatable-cell-template>
+                                                                        <a href="javascript:void(0)" (click)="opneAuthorization(row)">{{
+                                                                            AuthValue }}</a>
+                                                                    </ng-template>
+                                                                </ngx-datatable-column>
+
+                                                                <ngx-datatable-column name="PAYOR"
+                                                                    prop="Payor" [width]="80">
+                                                                    <ng-template let-Payor="value"
+                                                                        let-expanded="expanded"
+                                                                        ngx-datatable-cell-template>
+                                                                        {{ Payor }}
+                                                                    </ng-template>
+                                                                </ngx-datatable-column>
+                                                                <ngx-datatable-column name="START TIME" prop="StartDate"
+                                                                    [width]="80">
+                                                                    <ng-template let-Payor="value"
+                                                                        let-expanded="expanded"
+                                                                        ngx-datatable-cell-template>
+                                                                        {{ Payor | date: 'mediumDate'}}
+                                                                    </ng-template>
+                                                                </ngx-datatable-column>
+                                                                <ngx-datatable-column name="END DATE" prop="EndDate"
+                                                                    [width]="100">
+                                                                    <ng-template let-TerminationDate="value"
+                                                                        let-expanded="expanded"
+                                                                        ngx-datatable-cell-template>
+                                                                        {{ TerminationDate | date: 'mediumDate'}}
+                                                                    </ng-template>
+                                                                </ngx-datatable-column>
+
+                                                            </ngx-datatable>
+                                                        </div>
+
+                                                        <div class="col-lg-12 Save_newBtn my-2"
+                                                            *ngIf="(insuranceCurrentTab == '2' || insuranceCurrentTab == '3' || insuranceCurrentTab == '4' ||insuranceCurrentTab == '5') && newInsurance">
+                                                            <div class="save-bt rem-abs" *ngIf="insuranceAuthorization">
+                                                                <button class="NEW-SAVE"
+                                                                    (click)="AddAuthorization()"><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Save</button>
+                                                            </div>
+                                                            <div class="save-bt rem-abs">
+                                                                <button class="NEW-SAVE"
+                                                                    (click)="createInsurance()">NEW</button>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row" *ngIf="insuranceAuthorization">
+                                                                <app-insurance-tabs-form *ngIf="insuranceCurrentTab == '2'" [formData]="tabData.tab2" [insuranceExpire]="insuranceExpireDate"></app-insurance-tabs-form>
+                                                                <app-prp-auth-form *ngIf="insuranceCurrentTab == '3'" [formData]="tabData.tab3" [insuranceExpire]="insuranceExpireDate"></app-prp-auth-form>
+                                                                <app-mobile-auth-form *ngIf="insuranceCurrentTab == '4'" [formData]="tabData.tab4" [insuranceExpire]="insuranceExpireDate"></app-mobile-auth-form>
+                                                                <app-iop-auth-form *ngIf="insuranceCurrentTab == '5'" [formData]="tabData.tab5" [insuranceExpire]="insuranceExpireDate"></app-iop-auth-form>  
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="4">
+                                            <a ngbNavLink>Assignments</a>
+                                            <ng-template ngbNavContent>
+                                                <app-assignments></app-assignments>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="5">
+                                            <a ngbNavLink>Notes</a>
+                                            <ng-template ngbNavContent>
+                                                <app-notes></app-notes>
+
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="6">
+                                            <a ngbNavLink>Appointments</a>
+                                            <ng-template ngbNavContent>
+                                                <app-appointment></app-appointment>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="7">
+                                            <a ngbNavLink>DX</a>
+                                            <ng-template ngbNavContent>
+                                                <!-- <h2 class="margin-inputclient">DX</h2> -->
+                                                <app-dx></app-dx>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="8">
+                                            <a ngbNavLink>RX</a>
+                                            <ng-template ngbNavContent>
+                                                <!-- <h2 class="margin-inputclient">RX</h2> -->
+                                                <app-rx></app-rx>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="9">
+                                            <a ngbNavLink>Documents</a>
+                                            <ng-template ngbNavContent>
+                                                <app-client-document></app-client-document>
+                                            </ng-template>
+                                        </li>
+                                        <li [ngbNavItem]="10">
+                                            <a ngbNavLink>Map</a>
+                                            <ng-template ngbNavContent>
+                                                <app-client-map></app-client-map>
+                                            </ng-template>
+                                        </li>
+
+                                    </ul>
+                                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

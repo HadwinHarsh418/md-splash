@@ -1,0 +1,1514 @@
+<section class="new-client-sec">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="back-bt">
+                    <button class="NEW-INTAKE" (click)="back()"><i class="fa-solid fa-arrow-left-long"></i> NEW INTAKE</button>
+                    <button class="NEW-SAVE" (click)="submitForm()">SAVE</button>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="client-tabs">
+                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink>Demographics</a>
+                            <ng-template ngbNavContent>
+                                <form [formGroup]="demographicDataForm">
+                                    <div class="all-tb">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Rf_Date'].dirty && f['Rf_Date'].errors || f['Rf_Date'].touched && f['Rf_Date'].errors">
+                                                    <label class="CLIENT-LABEL">Date of Referral <span class="text-danger">*</span></label>
+                                                    <input type="date" class="client-input" formControlName="Rf_Date">
+                                                    <span *ngIf="f['Rf_Date'].dirty && f['Rf_Date'].errors" class="has-error">
+                                                        <i *ngIf="f['Rf_Date'].errors?.['required']">Date Referral is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Callers_Name'].dirty && f['Callers_Name'].errors || f['Callers_Name'].touched && f['Callers_Name'].errors">
+                                                    <label class="CLIENT-LABEL">Callers Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="client-input" formControlName="Callers_Name">
+                                                    <span *ngIf="f['Callers_Name'].dirty && f['Callers_Name'].errors" class="has-error">
+                                                        <i *ngIf="f['Callers_Name'].errors?.['required']">Caller Name is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Rf_Phone'].dirty && f['Rf_Phone'].errors || f['Rf_Phone'].touched && f['Rf_Phone'].errors">
+                                                    <label class="CLIENT-LABEL">Callers Telephone <span class="text-danger">*</span></label>
+                                                    <input type="number" class="client-input" formControlName="Rf_Phone">
+                                                    <span *ngIf="f['Rf_Phone'].dirty && f['Rf_Phone'].errors" class="has-error">
+                                                        <i *ngIf="f['Rf_Phone'].errors?.['required']">Caller Telephone is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Rf_Organization'].dirty && f['Rf_Organization'].errors || f['Rf_Organization'].touched && f['Rf_Organization'].errors">
+                                                    <label class="CLIENT-LABEL">Organization, <i>If applicable</i></label>
+                                                    <select class="client-input" formControlName="Rf_Organization">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <!-- <option value="0">None</option>
+                                                        <option value="2">DSS</option>
+                                                        <option value="3">House of Ruth</option> -->
+                                                        <option *ngFor="let item of organization" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['Rf_Organization'].dirty && f['Rf_Organization'].errors" class="has-error">
+                                                        <i *ngIf="f['Rf_Organization'].errors?.['required']">Organization is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="div-full-right">
+                                                    <button class="Organization" (click)="open(content)"><i class="fa-solid fa-plus"></i> Add New Organization</button>
+                                                    <ng-template #content let-c="close" let-d="dismiss">
+                                                        <div class="modal-header CLIENT-DEMOGRAPHICS">
+                                                            <h4 class="modal-title" id="modal-basic-title">Add Organization</h4>
+                                                            <button type="button" class="" aria-label="Close" (click)="d('Cross click')" class="close-btn-clss"><i class="fa fa-close"></i></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-lg-12">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="CLIENT-LABEL">Name </div>
+                                                                        <input type="text" class="client-input" formControlName="modalName">
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="CLIENT-LABEL">Address </div>
+                                                                        <input type="text" class="client-input" formControlName="modalAddress">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-4">
+                                                                        <div class="CLIENT-LABEL">City </div>
+                                                                        <input type="text" class="client-input" formControlName="modalCity" readonly>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="CLIENT-LABEL">State: </div>
+                                                                        <input type="text" class="client-input" formControlName="modalState" readonly>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="CLIENT-LABEL">Zip: </div>
+                                                                        <input type="text" class="client-input" formControlName="modalZip"  (change)="onSelectZip3()">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="CLIENT-LABEL">Contact Person: </div>
+                                                                        <input type="text" class="client-input" formControlName="modalContactPerson">
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="CLIENT-LABEL">CSM Manager: </div>
+                                                                        <select class="client-input" formControlName="CSMmanager">
+                                                                            <option value="">select</option>
+                                                                            <option value="0">None</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="CLIENT-LABEL">Notes </div>
+                                                                    <textarea class="client-input" type="text" style="height: 80px;" formControlName="modalNotes"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="NEW-SAVE" (click)="c('Save click')">Save</button>
+                                                        </div>
+                                                    </ng-template>
+                                                    
+                                                    <!-- <button class="btn btn-lg btn-outline-primary" >Launch demo modal</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Rf_RelationToConsumer'].dirty && f['Rf_RelationToConsumer'].errors || f['Rf_RelationToConsumer'].touched && f['Rf_RelationToConsumer'].errors" >
+                                                    <label class="CLIENT-LABEL">Relation To Consumer <span class="text-danger">*</span></label>
+                                                    <input type="text" class="client-input" formControlName="Rf_RelationToConsumer">
+                                                    <span *ngIf="f['Rf_RelationToConsumer'].dirty && f['Rf_RelationToConsumer'].errors" class="has-error">
+                                                        <i *ngIf="f['Rf_RelationToConsumer'].errors?.['required']">Relation Consumer is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['CSM'].dirty && f['CSM'].errors || f['CSM'].touched && f['CSM'].errors">
+                                                    <label class="CLIENT-LABEL">CSM, <i>If applicable</i></label>
+                                                    <select class="client-input" formControlName="CSM">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <!-- <option>Select 1</option>
+                                                        <option>Select 2</option>
+                                                        <option>Select 3</option> -->
+                                                        <option *ngFor="let item of CsmData" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['CSM'].dirty && f['CSM'].errors" class="has-error">
+                                                        <i *ngIf="f['CSM'].errors?.['required']">CSM is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="div-devide">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="div-devide-left">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="margin-inputclient">
+                                                                            <p class="label-check">Which Services is the caller seeking?</p>
+                                                                            <ul class="input-ul">
+                                                                                <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="Outpatient Therapy Services"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">Outpatient Therapy
+                                                                                    Services</label></li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="Psychiatric"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">Psychiatric</label></li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="Psychiatric Rehabilitation (PRP)"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">Psychiatric
+                                                                                    Rehabilitation (PRP)</label>
+                                                                            </li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="PRP and Therapy"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">PRP and Outpatient Therapy</label>
+                                                                            </li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="Mobile Treatment"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">Mobile Treatment</label>
+                                                                            </li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="IOP"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">IOP</label></li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="Therapy and Psychiatric"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">Therapy and
+                                                                                    Psychiatric</label></li>
+                                                                            <li><input type="radio"
+                                                                                    name="service_Check"
+                                                                                    formControlName="service_Check"
+                                                                                    value="All"
+                                                                                    (click)="CheckedValue($event)"><label
+                                                                                    for="">All</label></li>                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="margin-inputclient">
+                                                                            <p class="label-check">Service Location</p>
+                                                                            <ul class="input-ul">
+                                                                                <li><input type="checkbox" formControlName="ServiceLocation" value="1"><label for="">In Office</label></li>
+                                                                                <li><input type="checkbox" formControlName="ServiceLocation" value="2"><label for="">In Home</label></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="div-devide-right">
+                                                                <div class="margin-inputclient" [class.has-error]="f['ConsumerNeeds'].dirty && f['ConsumerNeeds'].errors || f['ConsumerNeeds'].touched && f['ConsumerNeeds'].errors">
+                                                                    <label class="CLIENT-LABEL">Reason for seeking appointment( describe the callers/clients needs) <span class="text-danger">*</span></label>
+                        
+                                                                    <textarea class="client-input client-input-textarea" formControlName="ConsumerNeeds"></textarea>
+                                                                    <span *ngIf="f['ConsumerNeeds'].dirty && f['ConsumerNeeds'].errors" class="has-error">
+                                                                        <i *ngIf="f['ConsumerNeeds'].errors?.['required']">Reason of appointment is
+                                                                            required</i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                    <h3>CLIENT DEMOGRAPHICS</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Last_Name'].dirty && f['Last_Name'].errors || f['Last_Name'].touched && f['Last_Name'].errors">
+                                                    <label class="CLIENT-LABEL">Last Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="client-input" formControlName="Last_Name">
+                                                    <span *ngIf="f['Last_Name'].dirty && f['Last_Name'].errors" class="has-error">
+                                                        <i *ngIf="f['Last_Name'].errors?.['required']">Last Name is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['First_Name'].dirty && f['First_Name'].errors || f['First_Name'].touched && f['First_Name'].errors">
+                                                    <label class="CLIENT-LABEL">First Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="client-input" formControlName="First_Name">
+                                                    <span *ngIf="f['First_Name'].dirty && f['First_Name'].errors" class="has-error">
+                                                        <i *ngIf="f['First_Name'].errors?.['required']">Caller Name is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['DOB'].dirty && f['DOB'].errors || f['DOB'].touched && f['DOB'].errors">
+                                                    <label class="CLIENT-LABEL">Date of Birth <span class="text-danger">*</span></label>
+                                                    <input type="date" class="client-input" formControlName="DOB" (change)="getDate()">
+                                                    <span *ngIf="f['DOB'].dirty && f['DOB'].errors" class="has-error">
+                                                        <i *ngIf="f['DOB'].errors?.['required']">DOB is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['age'].dirty && f['age'].errors || f['age'].touched && f['age'].errors">
+                                                    <label class="CLIENT-LABEL">Age <span class="text-danger">*</span></label>
+                                                    <input type="text" class="client-input" formControlName="age">
+                                                    <span *ngIf="f['age'].dirty && f['age'].errors" class="has-error">
+                                                        <i *ngIf="f['age'].errors?.['required']">Age is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Gender'].dirty && f['Gender'].errors || f['Gender'].touched && f['Gender'].errors">
+                                                    <label class="CLIENT-LABEL">Gender <span class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="Gender">
+                                                        <!-- <option value="" selected>Select</option>
+                                                        <option value="0">Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Others</option> -->
+                                                        <option *ngFor="let item of genderData" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['Gender'].dirty && f['Gender'].errors" class="has-error">
+                                                        <i *ngIf="f['Gender'].errors?.['required']">Gender is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['SSN'].dirty && f['SSN'].errors || f['SSN'].touched && f['SSN'].errors">
+                                                    <label class="CLIENT-LABEL">Social Security Number</label>
+                                                    <input type="number" class="client-input" formControlName="SSN">
+                                                    <span *ngIf="f['SSN'].dirty && f['SSN'].errors" class="has-error">
+                                                        <i *ngIf="f['SSN'].errors?.['required']">Social Security Number is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['ddl_MaritalStatus'].dirty && f['ddl_MaritalStatus'].errors || f['ddl_MaritalStatus'].touched && f['ddl_MaritalStatus'].errors">
+                                                    <label class="CLIENT-LABEL">Marital Status</label>
+                                                    <select class="client-input" formControlName="ddl_MaritalStatus">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <!-- <option value="3">Divorced</option>
+                                                        <option value="1">Married</option>
+                                                        <option value="4">Separated</option>
+                                                        <option value="2">Single</option>
+                                                        <option value="5">Unknown/Others</option>
+                                                        <option value="6">Widow</option> -->
+                                                        <option *ngFor="let item of getAllMaritialStatus" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['ddl_MaritalStatus'].dirty && f['ddl_MaritalStatus'].errors" class="has-error">
+                                                        <i *ngIf="f['ddl_MaritalStatus'].errors?.['required']">Marital Status is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['IsPregnant'].dirty && f['IsPregnant'].errors || f['IsPregnant'].touched && f['IsPregnant'].errors">
+                                                    <label class="CLIENT-LABEL">Pregnant</label>
+                                                    <select class="client-input" formControlName="IsPregnant">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <!-- <option value="1">Yes</option>
+                                                        <option value="2">No</option>
+                                                        <option value="3">Unknown</option> -->
+                                                        <option *ngFor="let item of GetPregnancyOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['IsPregnant'].dirty && f['IsPregnant'].errors" class="has-error">
+                                                        <i *ngIf="f['IsPregnant'].errors?.['required']">Pregnant is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Employment_details'].dirty && f['Employment_details'].errors || f['Employment_details'].touched && f['Employment_details'].errors">
+                                                    <label class="CLIENT-LABEL">Employment Status</label>
+                                                    <select class="client-input" formControlName="Employment_details">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <!-- <option>Select 1</option>
+                                                        <option>Select 2</option>
+                                                        <option>Select 3</option> -->
+                                                        <option *ngFor="let item of GetEmploymentOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['Employment_details'].dirty && f['Employment_details'].errors" class="has-error">
+                                                        <i *ngIf="f['Employment_details'].errors?.['required']">Employment Status is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="margin-inputclient" [class.has-error]="f['Employment_School'].dirty && f['Employment_School'].errors || f['Employment_School'].touched && f['Employment_School'].errors">
+                                                    <label class="CLIENT-LABEL">Employer/School</label>
+                                                    <input type="number" class="client-input" formControlName="Employment_School">
+                                                    <span *ngIf="f['Employment_School'].dirty && f['Employment_School'].errors" class="has-error">
+                                                        <i *ngIf="f['Employment_School'].errors?.['required']">Employer/School is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="basix-bk">
+                                                    <p class="Contact-Information">Contact Information</p>
+                                                </div>
+                                                <div class="all-basic-str">
+                                                    <div class="row">
+                                                        <div class="col-lg-8">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['HomeAddressStreet'].dirty && f['HomeAddressStreet'].errors || f['HomeAddressStreet'].touched && f['HomeAddressStreet'].errors">
+                                                                        <label class="CLIENT-LABEL">Address, <i>include apt #if applicable</i> <span class="text-danger">*</span></label>
+                                                                        <input type="text" class="client-input" formControlName="HomeAddressStreet">
+                                                                        <span *ngIf="f['HomeAddressStreet'].dirty && f['HomeAddressStreet'].errors" class="has-error">
+                                                                            <i *ngIf="f['HomeAddressStreet'].errors?.['required']">Address is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['ZipCode'].dirty && f['ZipCode'].errors || f['ZipCode'].touched && f['ZipCode'].errors">
+                                                                        <label class="CLIENT-LABEL">Zip Code <span class="text-danger">*</span></label>
+                                                                        <input type="text" class="client-input" formControlName="ZipCode" (change)="onSelectZip()">
+                                                                        <span *ngIf="f['ZipCode'].dirty && f['ZipCode'].errors" class="has-error">
+                                                                            <i *ngIf="f['ZipCode'].errors?.['required']">Zip Code is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['State'].dirty && f['State'].errors || f['State'].touched && f['State'].errors">
+                                                                        <label class="CLIENT-LABEL">State</label>
+                                                                        <input type="text" class="client-input" formControlName="State" >
+                                                                        <span *ngIf="f['State'].dirty && f['State'].errors" class="has-error">
+                                                                            <i *ngIf="f['State'].errors?.['required']">State is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['City'].dirty && f['City'].errors || f['City'].touched && f['City'].errors">
+                                                                        <label class="CLIENT-LABEL">City</label>
+                                                                        <input type="text" class="client-input" formControlName="City">
+                                                                        <span *ngIf="f['City'].dirty && f['City'].errors" class="has-error">
+                                                                            <i *ngIf="f['City'].errors?.['required']">City is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['Phone_Home'].dirty && f['Phone_Home'].errors || f['Phone_Home'].touched && f['Phone_Home'].errors">
+                                                                        <label class="CLIENT-LABEL">Home Phone</label>
+                                                                        <input type="number" class="client-input" formControlName="Phone_Home">
+                                                                        <span *ngIf="f['Phone_Home'].dirty && f['Phone_Home'].errors" class="has-error">
+                                                                            <i *ngIf="f['Phone_Home'].errors?.['required']">Home Phone is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['Mobile_Phone'].dirty && f['Mobile_Phone'].errors || f['Mobile_Phone'].touched && f['Mobile_Phone'].errors">
+                                                                        <label class="CLIENT-LABEL">Mobile Phone</label>
+                                                                        <input type="number" class="client-input" formControlName="Mobile_Phone">
+                                                                        <span *ngIf="f['Mobile_Phone'].dirty && f['Mobile_Phone'].errors" class="has-error">
+                                                                            <i *ngIf="f['Mobile_Phone'].errors?.['required']">Mobile Phone is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['Phone'].dirty && f['Phone'].errors || f['Phone'].touched && f['Phone'].errors">
+                                                                        <label class="CLIENT-LABEL">Work </label>
+                                                                        <input type="text" class="client-input" formControlName="Phone">
+                                                                        <span *ngIf="f['Phone'].dirty && f['Phone'].errors" class="has-error">
+                                                                            <i *ngIf="f['Phone'].errors?.['required']">Work is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['Email'].dirty && f['Email'].errors || f['Email'].touched && f['Email'].errors">
+                                                                        <label class="CLIENT-LABEL">Email(Primary)</label>
+                                                                        <input type="text" class="client-input" formControlName="Email">
+                                                                        <span *ngIf="f['Email'].dirty && f['Email'].errors" class="has-error">
+                                                                            <i *ngIf="f['Email'].errors?.['required']">Email is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="margin-inputclient"[class.has-error]="f['Email_Secondary'].dirty && f['Email_Secondary'].errors || f['Email_Secondary'].touched && f['Email_Secondary'].errors">
+                                                                        <label class="CLIENT-LABEL">Email(Secondry)</label>
+                                                                        <input type="text" class="client-input" formControlName="Email_Secondary">
+                                                                        <span *ngIf="f['Email_Secondary'].dirty && f['Email_Secondary'].errors" class="has-error">
+                                                                            <i *ngIf="f['Email_Secondary'].errors?.['required']">Email is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="margin-inputclient" [class.has-error]="f['Phone_Cell'].dirty && f['Phone_Cell'].errors || f['Phone_Cell'].touched && f['Phone_Cell'].errors">
+                                                                        <label class="CLIENT-LABEL">Ext</label>
+                                                                        <input type="text" class="client-input" formControlName="Phone_Cell">
+                                                                        <span *ngIf="f['Phone_Cell'].dirty && f['Phone_Cell'].errors" class="has-error">
+                                                                            <i *ngIf="f['Phone_Cell'].errors?.['required']">Ext is
+                                                                                required</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="margin-inputclient">
+                                                                <p class="label-check">Client's Preferred Method of Contact check all that apply Any method is ok</p>
+                                                                <ul class="input-ul-1">
+                                                                    <li><input type="checkbox"><label for="">Home Phone</label></li>
+                                                                    <li><input type="checkbox"><label for="">Work</label></li>
+                                                                    <li><input type="checkbox"><label for="">Mobile Phone</label></li>
+                                                                    <li><input type="checkbox"><label for="">Other Phone</label></li>
+                                                                    <li><input type="checkbox"><label for="">Email</label></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="basix-bk">
+                                                    <p class="Contact-Information">Billing Address</p>
+                                                </div>
+                                                <div class="all-basic-str">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="margin-inputclient">
+                                                            <div class="single-label">
+                                                                    <ul class="input-ul">
+                                                                        <li><input type="checkbox" formControlName="billingCheck" (change)="checkAddress()"><label for="">Same as contact info</label></li>
+                                                                    </ul>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="margin-inputclient" [class.has-error]="f['BillingHomeAddressStreet'].dirty && f['BillingHomeAddressStreet'].errors || f['BillingHomeAddressStreet'].touched && f['BillingHomeAddressStreet'].errors">
+                                                                <label class="CLIENT-LABEL">Address,<i>include apt # if applicable</i> <span class="text-danger">*</span></label>
+                                                                <input type="text" class="client-input" formControlName="BillingHomeAddressStreet">
+                                                                <span *ngIf="f['BillingHomeAddressStreet'].dirty && f['BillingHomeAddressStreet'].errors" class="has-error">
+                                                                    <i *ngIf="f['BillingHomeAddressStreet'].errors?.['required']">Address Name is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="margin-inputclient" [class.has-error]="f['BillingZipCode'].dirty && f['BillingZipCode'].errors || f['BillingZipCode'].touched && f['BillingZipCode'].errors">
+                                                                <label class="CLIENT-LABEL">Zip Code<span class="text-danger">*</span></label>
+                                                                <input type="text" class="client-input" formControlName="BillingZipCode" (change)="onSelectZip2()">
+                                                                <span *ngIf="f['BillingZipCode'].dirty && f['BillingZipCode'].errors" class="has-error">
+                                                                    <i *ngIf="f['BillingZipCode'].errors?.['required']">Zip Code is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="margin-inputclient" [class.has-error]="f['BillingState'].dirty && f['BillingState'].errors || f['BillingState'].touched && f['BillingState'].errors">
+                                                                <label class="CLIENT-LABEL">State</label>
+                                                                <input type="text" class="client-input" formControlName="BillingState" >
+                                                                <span *ngIf="f['BillingState'].dirty && f['BillingState'].errors" class="has-error">
+                                                                    <i *ngIf="f['BillingState'].errors?.['required']">State is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="margin-inputclient" [class.has-error]="f['BillingCity'].dirty && f['BillingCity'].errors || f['BillingCity'].touched && f['BillingCity'].errors">
+                                                                <label class="CLIENT-LABEL">City</label>
+                                                                <input type="text" class="client-input" formControlName="BillingCity">
+                                                                <span *ngIf="f['BillingCity'].dirty && f['BillingCity'].errors" class="has-error">
+                                                                    <i *ngIf="f['BillingCity'].errors?.['required']">City is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="basix-bk">
+                                                    <p class="Contact-Information">Parent/Guardian</p>
+                                                </div>
+                                                <div class="all-basic-str">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <div class="margin-inputclient"[class.has-error]="f['ParentName'].dirty && f['ParentName'].errors || f['ParentName'].touched && f['ParentName'].errors">
+                                                                <label class="CLIENT-LABEL">Name</label>
+                                                                <input type="text" class="client-input" formControlName="ParentName">
+                                                                <span *ngIf="f['ParentName'].dirty && f['ParentName'].errors" class="has-error">
+                                                                    <i *ngIf="f['ParentName'].errors?.['required']">Name is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <div class="margin-inputclient" [class.has-error]="f['ParentTelNumber'].dirty && f['ParentTelNumber'].errors || f['ParentTelNumber'].touched && f['ParentTelNumber'].errors">
+                                                                <label class="CLIENT-LABEL">Telephone Number</label>
+                                                                <input type="number" class="client-input" formControlName="ParentTelNumber">
+                                                                <span *ngIf="f['ParentTelNumber'].dirty && f['ParentTelNumber'].errors" class="has-error">
+                                                                    <i *ngIf="f['ParentTelNumber'].errors?.['required']">Telephone is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <div class="margin-inputclient" [class.has-error]="f['ParentFaxNumber'].dirty && f['ParentFaxNumber'].errors || f['ParentFaxNumber'].touched && f['ParentFaxNumber'].errors">
+                                                                <label class="CLIENT-LABEL">Fax Number</label>
+                                                                <input type="text" class="client-input" formControlName="ParentFaxNumber">
+                                                                <span *ngIf="f['ParentFaxNumber'].dirty && f['ParentFaxNumber'].errors" class="has-error">
+                                                                    <i *ngIf="f['ParentFaxNumber'].errors?.['required']">Fax is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <div class="margin-inputclient" [class.has-error]="f['parentRelationConsumer'].dirty && f['parentRelationConsumer'].errors || f['parentRelationConsumer'].touched && f['parentRelationConsumer'].errors">
+                                                                <label class="CLIENT-LABEL">Relation to consumer</label>
+                                                                <input type="text" class="client-input" formControlName="parentRelationConsumer">
+                                                                <span *ngIf="f['parentRelationConsumer'].dirty && f['parentRelationConsumer'].errors" class="has-error">
+                                                                    <i *ngIf="f['parentRelationConsumer'].errors?.['required']">Relation is
+                                                                        required</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                    <h3>CLIENT DEMOGRAPHICS</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="margin-inputclient" [class.has-error]="f['ddl_AssignedTo'].dirty && f['ddl_AssignedTo'].errors || f['ddl_AssignedTo'].touched && f['ddl_AssignedTo'].errors">
+                                                    <label class="CLIENT-LABEL">Provider Assigned to: <span class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="ddl_AssignedTo">
+                                                        <!-- <option value="" selected>Select</option>
+                                                        <option>Select 1</option>
+                                                        <option>Select 2</option>
+                                                        <option>Select 3</option> -->
+                                                        <option *ngFor="let item of GetClinicianManagerOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['ddl_AssignedTo'].dirty && f['ddl_AssignedTo'].errors" class="has-error">
+                                                        <i *ngIf="f['ddl_AssignedTo'].errors?.['required']">Clinical is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="margin-inputclient" [class.has-error]="f['ddl_DoctorAssigned'].dirty && f['ddl_DoctorAssigned'].errors || f['ddl_DoctorAssigned'].touched && f['ddl_DoctorAssigned'].errors">
+                                                    <label class="CLIENT-LABEL">Doctor Assigned To:</label>
+                                                    <select class="client-input" formControlName="ddl_DoctorAssigned">
+                                                        <!-- <option value="" selected>No Doctor Assigned</option> -->
+                                                        <!-- <option>Select 1</option>
+                                                        <option>Select 2</option>
+                                                        <option>Select 3</option> -->
+                                                        <option *ngFor="let item of GetDoctors" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="f['ddl_DoctorAssigned'].dirty && f['ddl_DoctorAssigned'].errors" class="has-error">
+                                                        <i *ngIf="f['ddl_DoctorAssigned'].errors?.['required']">Doctor Assigned is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> 
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2" [class.disabledMe]="disabledTab2" [disabled]="disabledTab2">
+                            <a ngbNavLink>Medicaid</a>
+                            <ng-template ngbNavContent>
+                                <form [formGroup]="medicateDataForm" (ngSubmit)="submitForm()">
+                                    <div class="all-tb">
+                                        <div class="row">
+                                            <div class="col-12 d-flex p-2 justify-content-center">
+                                                <div>
+                                                    <label for="type">Insurance Type</label>
+                                                </div>
+                                                <div>
+                                                    <select class="form-conrol type-input" formControlName="client_commercial" (change)="CheckedValue($event)">
+                                                        <option value="">--Select--</option>
+                                                        <option value="Medicaid">Medicaid</option>
+                                                        <option value="Commercial(Aetna,BCBS,Cigna,etc">Commercial(Aetna,BCBS,Cigna,etc.)</option>
+                                                        <option value="Cash">Cash</option>
+                                                        <option value="Uninsured\Pro-Bono">Uninsured\Pro-Bono</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12" *ngIf="commercialFieds">
+                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                    <h3>MEDICAID INSURANCE INFORMATION</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" *ngIf="commercialFieds">
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="g['ConsumerMCO'].dirty && g['ConsumerMCO'].errors || g['ConsumerMCO'].touched && g['ConsumerMCO'].errors">
+                                                    <label class="CLIENT-LABEL">Name of Consumers MCO: </label>
+                                                    <select class="client-input" formControlName="ConsumerMCO">
+                                                        <!-- <option value="" selected>Select</option> -->
+                                                        <option *ngFor="let item of GetConsumersMCOOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="g['ConsumerMCO'].dirty && g['ConsumerMCO'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="g['ConsumerMCO'].errors?.['required']">Consumers MCO
+                                                            is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Social Security Number</label>
+                                                    <input type="text" class="client-input" formControlName="RepeatSSN">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="g['InsuranceID'].dirty && g['InsuranceID'].errors || g['InsuranceID'].touched && g['InsuranceID'].errors">
+                                                    <label class="CLIENT-LABEL">Consumer's 11 Digit Medicaid
+                                                        Number <span class="text-danger">*</span></label>
+                                                    <input type="number" class="client-input"
+                                                        formControlName="InsuranceID">
+                                                    <span
+                                                        *ngIf="g['InsuranceID'].dirty && g['InsuranceID'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="g['InsuranceID'].errors?.['required']">Medicaid
+                                                            Number is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="g['PayorMedicaid'].dirty && g['PayorMedicaid'].errors || g['PayorMedicaid'].touched && g['PayorMedicaid'].errors">
+                                                    <label class="CLIENT-LABEL">Payor: <span class="text-danger">*</span></label>
+                                                    <select class="client-input" formControlName="PayorMedicaid">
+                                                        <!-- <option value="" selected>Select</option>
+                                                        <option value="0" selected>abc</option> -->
+                                                        <option *ngFor="let item of GetActivePayorsWithDetail" value="{{item.Value}}">{{item.Text}}</option>
+                                                    </select>
+                                                    <span *ngIf="g['PayorMedicaid'].dirty && g['PayorMedicaid'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="g['PayorMedicaid'].errors?.['required']">Payor is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="g['Payorlevel'].dirty && g['Payorlevel'].errors || g['Payorlevel'].touched && g['Payorlevel'].errors">
+                                                    <label class="CLIENT-LABEL">Level:</label>
+                                                    <select class="client-input" formControlName="Payorlevel" (change)="CheckedValue($event)">
+                                                        <option value="" selected disabled>Select</option>
+                                                        <option value="1">Primary</option>
+                                                        <option value="2">Secondry</option>
+                                                    </select>
+                                                    <span *ngIf="g['Payorlevel'].dirty && g['Payorlevel'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="g['Payorlevel'].errors?.['required']">Level is
+                                                            required</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="div-full-right">
+                                                    <button class="Organization Organization-100"><i
+                                                            class="fa-solid fa-plus"></i> Add New Payor</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <form [formGroup]="commercialDataForm" *ngIf="!commercialFieds">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="CLIENT-DEMOGRAPHICS">
+                                                            <h3>COMMERCIAL INSURANCE INFORMATION</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient" 
+                                                        [class.has-error]="c['Plan_Name1'].dirty && c['Plan_Name1'].errors || c['Plan_Name1'].touched && c['Plan_Name1'].errors">
+                                                            <label class="CLIENT-LABEL">Plan Name <span class="text-danger">*</span></label>
+                                                            <input type="text" class="client-input" formControlName="Plan_Name1">
+                                                            <span *ngIf="c['Plan_Name1'].dirty && c['Plan_Name1'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['Plan_Name1'].errors?.['required']">Plan Name
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['InsuranceCarrier'].dirty && c['InsuranceCarrier'].errors || c['InsuranceCarrier'].touched && c['InsuranceCarrier'].errors">
+                                                            <label class="CLIENT-LABEL">Insurance Company <span class="text-danger">*</span></label>
+                                                            <input type="text" class="client-input" formControlName="InsuranceCarrier">
+                                                            <span *ngIf="c['InsuranceCarrier'].dirty && c['InsuranceCarrier'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['InsuranceCarrier'].errors?.['required']">Insurance Company
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['txtpolicynumber'].dirty && c['txtpolicynumber'].errors || c['txtpolicynumber'].touched && c['txtpolicynumber'].errors">
+                                                            <label class="CLIENT-LABEL">Policy Number <span class="text-danger">*</span></label>
+                                                            <input type="text" class="client-input" formControlName="txtpolicynumber">
+                                                            <span *ngIf="c['txtpolicynumber'].dirty && c['txtpolicynumber'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['txtpolicynumber'].errors?.['required']">Policy Number
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['GroupNumber'].dirty && c['GroupNumber'].errors || c['GroupNumber'].touched && c['GroupNumber'].errors">
+                                                            <label class="CLIENT-LABEL">Group Number <span class="text-danger">*</span></label>
+                                                            <input type="text" class="client-input" formControlName="GroupNumber">
+                                                            <span *ngIf="c['GroupNumber'].dirty && c['GroupNumber'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['GroupNumber'].errors?.['required']">Group Number
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Telephone Number</label>
+                                                            <input type="number" class="client-input" formControlName="PrimaryTel1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <div class="margin-inputclient">
+                                                            <label class="CLIENT-LABEL">Fax Number</label>
+                                                            <input type="text" class="client-input" formControlName="PrimaryTel2">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['PayorCommericalid'].dirty && c['PayorCommericalid'].errors || c['PayorCommericalid'].touched && c['PayorCommericalid'].errors">
+                                                            <label class="CLIENT-LABEL">Payor <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="PayorCommericalid">
+                                                                <!-- <option>Select</option> -->
+                                                                <option *ngFor="let item of GetActivePayorsWithDetail" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="c['PayorCommericalid'].dirty && c['PayorCommericalid'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['PayorCommericalid'].errors?.['required']">Payor
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['PayorlevelCommerical'].dirty && c['PayorlevelCommerical'].errors || c['PayorlevelCommerical'].touched && c['PayorlevelCommerical'].errors">
+                                                            <label class="CLIENT-LABEL">Level <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="PayorlevelCommerical">
+                                                                <option value="" selected>Select</option>
+                                                                <option value="primary">Primary</option>
+                                                                <option value="secondry">Secondry</option>
+                                                            </select>
+                                                            <span *ngIf="c['PayorlevelCommerical'].dirty && c['PayorlevelCommerical'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['PayorlevelCommerical'].errors?.['required']">Level
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['ddlPI_Policy'].dirty && c['ddlPI_Policy'].errors || c['ddlPI_Policy'].touched && c['ddlPI_Policy'].errors">
+                                                            <label class="CLIENT-LABEL">Policy Holder <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="ddlPI_Policy">
+                                                                <!-- <option>Select</option> -->
+                                                                <option *ngFor="let item of GetPolicyHolderOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="c['ddlPI_Policy'].dirty && c['ddlPI_Policy'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['ddlPI_Policy'].errors?.['required']">Policy Holder
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="margin-inputclient"
+                                                        [class.has-error]="c['ddlPI_PolicyType'].dirty && c['ddlPI_PolicyType'].errors || c['ddlPI_PolicyType'].touched && c['ddlPI_PolicyType'].errors">
+                                                            <label class="CLIENT-LABEL">Type of Policy <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="ddlPI_PolicyType">
+                                                                <!-- <option>Select</option> -->
+                                                                <option *ngFor="let item of GetTypeOfPolicyOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="c['ddlPI_PolicyType'].dirty && c['ddlPI_PolicyType'].errors"
+                                                            class="has-error">
+                                                            <i *ngIf="c['ddlPI_PolicyType'].errors?.['required']">Policy Type
+                                                                is
+                                                                required</i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <div class="div-full-right">
+                                                            <button class="Organization Organization-100"><i
+                                                                    class="fa-solid fa-plus"></i> Add New Payor</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" *ngIf="commercialFieds">
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check-1">Does client have another insurance policy?</p>
+                                                            <ul class="input-ul-2">
+                                                                <li><input type="radio" name="IsHurricaneVictim" formControlName="IsHurricaneVictim" value="true"><label for="">No</label></li>
+                                                                <li><input type="radio" name="IsHurricaneVictim" formControlName="IsHurricaneVictim" value="false"><label for="">Yes</label></li>
+                                                                <li>
+                                                                    <p class="indicate">if yes,indicate information below for
+                                                                        secondary policy</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                      
+                                        </form>
+                                        <div class="row" *ngIf="commercialFieds">
+                                            <div class="col-lg-12">
+                                                <div class="CLIENT-DEMOGRAPHICS">
+                                                    <h3>Additional *Required Reporting Data</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" *ngIf="commercialFieds">
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Is the consumer of Hispanic,Latina/o
+                                                                or Spanish origin? <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="languageCheck"
+                                                                                        formControlName="languageCheck" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="languageCheck"
+                                                                                        formControlName="languageCheck" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="languageCheck"
+                                                                                        formControlName="languageCheck" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['languageCheck'].dirty && g['languageCheck'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['languageCheck'].errors?.['required']">consumer Hispanic
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Is the consumer a Hurricane Victim? <span class="text-danger">*</span>
+                                                            </p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="consumerHurricane"
+                                                                                        formControlName="consumerHurricane" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="consumerHurricane"
+                                                                                        formControlName="consumerHurricane" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="consumerHurricane"
+                                                                                        formControlName="consumerHurricane" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['consumerHurricane'].dirty && g['consumerHurricane'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['consumerHurricane'].errors?.['required']">consumer Hurricane
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddl_EducationLevel'].dirty && g['ddl_EducationLevel'].errors || g['ddl_EducationLevel'].touched && g['ddl_EducationLevel'].errors">
+                                                            <p class="label-check-1">School Attendence (Adult) <span class="text-danger">*</span></p>
+                                                            <label class="CLIENT-LABEL">Highest Level of Education
+                                                                Completed</label>
+                                                            <select class="client-input"
+                                                                formControlName="ddl_EducationLevel">
+                                                                <!-- <option value="" selected>Select</option>
+                                                                <option value="0" selected>GRADE 1</option> -->
+                                                                <option *ngFor="let item of GetHighestEductaionOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span
+                                                                *ngIf="g['ddl_EducationLevel'].dirty && g['ddl_EducationLevel'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddl_EducationLevel'].errors?.['required']">Highest
+                                                                    Education is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Is consumer a Veteran? <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="consumerVeteran"
+                                                                                        formControlName="consumerVeteran" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="consumerVeteran"
+                                                                                        formControlName="consumerVeteran" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="consumerVeteran"
+                                                                                        formControlName="consumerVeteran" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['consumerVeteran'].dirty && g['consumerVeteran'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['consumerVeteran'].errors?.['required']">Veteran
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddl_War'].dirty && g['ddl_War'].errors || g['ddl_War'].touched && g['ddl_War'].errors">
+                                                            <label class="CLIENT-LABEL">which war?</label>
+                                                            <select class="client-input" formControlName="ddl_War">
+                                                                <!-- <option value="" selected>Select</option> -->
+                                                                <option *ngFor="let item of GetWarOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="g['ddl_War'].dirty && g['ddl_War'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddl_War'].errors?.['required']">War is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddl_SpeakEnglish'].dirty && g['ddl_SpeakEnglish'].errors || g['ddl_SpeakEnglish'].touched && g['ddl_SpeakEnglish'].errors">
+                                                            <p class="label-check-1">Primary Language <span class="text-danger">*</span></p>
+                                                            <label class="CLIENT-LABEL">How well does the consumer speak
+                                                                English</label>
+                                                            <select class="client-input"
+                                                                formControlName="ddl_SpeakEnglish">
+                                                                <!-- <option value="" selected>Select</option>
+                                                                <option value="0" selected>English</option> -->
+                                                                <option *ngFor="let item of GetPrimaryLangOptions" value="{{item.Value}}">{{item.Text}}</option>
+
+                                                            </select>
+                                                            <span
+                                                                *ngIf="g['ddl_SpeakEnglish'].dirty && g['ddl_SpeakEnglish'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddl_SpeakEnglish'].errors?.['required']">PrimaryLanguage
+                                                                    is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Does the consumer speak a language
+                                                                other than English at home</p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" formControlName="ConsumerspeakEnglish" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" formControlName="ConsumerspeakEnglish" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" formControlName="ConsumerspeakEnglish" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">if yes,what is this language?</p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" value="Spanish" id="Whatlanguage" formControlName="Whatlanguage">
+                                                                      <label for="html">Spanish</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" value="Other" id="Whatlanguage" formControlName="Whatlanguage">
+                                                                      <label for="html">Other</label>
+                                                                </li>
+                                                            </ul>
+                                                            <input type="text" formControlName="OtherthanEnglish">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddlRace'].dirty && g['ddlRace'].errors || g['ddlRace'].touched && g['ddlRace'].errors">
+                                                            <label class="CLIENT-LABEL">Race: <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="ddlRace">
+                                                                <!-- <option value="" selected>Select</option>
+                                                                <option value="0" selected>abc</option> -->
+                                                                <option *ngFor="let item of GetRaceOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="g['ddlRace'].dirty && g['ddlRace'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddlRace'].errors?.['required']">Race is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddl_ConsumerLiving'].dirty && g['ddl_ConsumerLiving'].errors || g['ddl_ConsumerLiving'].touched && g['ddl_ConsumerLiving'].errors">
+                                                            <label class="CLIENT-LABEL">Living Situation <span class="text-danger">*</span></label>
+                                                            <select class="client-input" formControlName="ddl_ConsumerLiving">
+                                                                <!-- <option value="" selected>Select</option>
+                                                                <option value="0" selected>Select 1</option> -->
+                                                                <option *ngFor="let item of GetLivingSituationOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span *ngIf="g['ddl_ConsumerLiving'].dirty && g['ddl_ConsumerLiving'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddl_ConsumerLiving'].errors?.['required']">Living Situation is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check-1">School Attendence (Child)</p>
+                                                            <p class="label-check">Attended School/College within past 3
+                                                                months</p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" formControlName="AttendedSchool_College" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" formControlName="AttendedSchool_College" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" formControlName="AttendedSchool_College" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddl_GradeCompleted'].dirty && g['ddl_GradeCompleted'].errors || g['ddl_GradeCompleted'].touched && g['ddl_GradeCompleted'].errors">
+                                                            <label class="CLIENT-LABEL">Most recent grade level
+                                                                completed <span class="text-danger">*</span></label>
+                                                            <select class="client-input"
+                                                                formControlName="ddl_GradeCompleted">
+                                                                <!-- <option value="" selected>Select</option>
+                                                                <option value="1" >GRADE 5</option> -->
+                                                                <option *ngFor="let item of GetHighestEductaionOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span
+                                                                *ngIf="g['ddl_GradeCompleted'].dirty && g['ddl_GradeCompleted'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddl_GradeCompleted'].errors?.['required']">Grade
+                                                                    Level is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient"
+                                                            [class.has-error]="g['ddlNumberofArrest'].dirty && g['ddlNumberofArrest'].errors || g['ddlNumberofArrest'].touched && g['ddlNumberofArrest'].errors">
+                                                            <label class="CLIENT-LABEL">Number of arrest within past 30
+                                                                days?</label>
+                                                            <select class="client-input"
+                                                                formControlName="ddlNumberofArrest">
+                                                                <!-- <option value="" selected>Select</option> -->
+                                                                <option *ngFor="let item of GetPastArrestOptions" value="{{item.Value}}">{{item.Text}}</option>
+                                                            </select>
+                                                            <span
+                                                                *ngIf="g['ddlNumberofArrest'].dirty && g['ddlNumberofArrest'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ddlNumberofArrest'].errors?.['required']">Number
+                                                                    of arrest is
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check-1">Disability Status</p>
+                                                            <p class="label-check">Is consumer deaf or do they have
+                                                                serious difficulty hearing? <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="Consumerdeaf"
+                                                                                        formControlName="Consumerdeaf" value="true" >
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="Consumerdeaf"
+                                                                                        formControlName="Consumerdeaf" value="false" >
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="Consumerdeaf"
+                                                                                        formControlName="Consumerdeaf" value="unknown" >
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['Consumerdeaf'].dirty && g['Consumerdeaf'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['Consumerdeaf'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Is the consumer blind or do they have
+                                                                seroius difficulty Seeing <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="Consumerblind"
+                                                                                        formControlName="Consumerblind" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="Consumerblind"
+                                                                                        formControlName="Consumerblind" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="Consumerblind"
+                                                                                        formControlName="Consumerblind" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['Consumerblind'].dirty && g['Consumerblind'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['Consumerblind'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Does the consumer have serious
+                                                                difficulty walking or climbing stairs? (5yrs or older) <span class="text-danger">*</span>
+                                                            </p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyWalking"
+                                                                                        formControlName="ConsumerDifficultyWalking" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyWalking"
+                                                                                        formControlName="ConsumerDifficultyWalking" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyWalking"
+                                                                                        formControlName="ConsumerDifficultyWalking" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['ConsumerDifficultyWalking'].dirty && g['ConsumerDifficultyWalking'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ConsumerDifficultyWalking'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Does the consumer have difficulty
+                                                                dressing on bathing? (5yrs or older) <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyDressing"
+                                                                                        formControlName="ConsumerDifficultyDressing" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyDressing"
+                                                                                        formControlName="ConsumerDifficultyDressing" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyDressing"
+                                                                                        formControlName="ConsumerDifficultyDressing" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['ConsumerDifficultyDressing'].dirty && g['ConsumerDifficultyDressing'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ConsumerDifficultyDressing'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Because of physical, mental or
+                                                                emotional condition, does the consumer have serious
+                                                                difficulty concentrating, remember or making decisions?
+                                                                (5 yrs or older) <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyConcentrating"
+                                                                                        formControlName="ConsumerDifficultyConcentrating" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyConcentrating"
+                                                                                        formControlName="ConsumerDifficultyConcentrating" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyConcentrating"
+                                                                                        formControlName="ConsumerDifficultyConcentrating" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['ConsumerDifficultyConcentrating'].dirty && g['ConsumerDifficultyConcentrating'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ConsumerDifficultyConcentrating'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="margin-inputclient">
+                                                            <p class="label-check">Because of physical, mental or
+                                                                emotional condition, does the consumer have difficulty
+                                                                doing errands alone such as visiting a doctors office or
+                                                                shopping? (15yrs or older) <span class="text-danger">*</span></p>
+                                                            <ul class="input-ul-radio">
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyErrands"
+                                                                                        formControlName="ConsumerDifficultyErrands" value="true">
+                                                                      <label for="html">Yes</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyErrands"
+                                                                                        formControlName="ConsumerDifficultyErrands" value="false">
+                                                                      <label for="html">No</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input type="radio" name="ConsumerDifficultyErrands"
+                                                                                        formControlName="ConsumerDifficultyErrands" value="unknown">
+                                                                      <label for="html">UnKnown</label>
+                                                                </li>
+                                                            </ul>
+                                                            <span
+                                                                *ngIf="g['ConsumerDifficultyErrands'].dirty && g['ConsumerDifficultyErrands'].errors"
+                                                                class="has-error">
+                                                                <i *ngIf="g['ConsumerDifficultyErrands'].errors?.['required']">
+                                                                    required</i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="4" [class.disabledMe]="disabledTab4" [disabled]="disabledTab4">
+                            <a ngbNavLink>PRP</a>
+                            <ng-template ngbNavContent>
+                                <form [formGroup]="prpDataForm">
+                                <div class="all-tb">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="CLIENT-DEMOGRAPHICS">
+                                                <h3>PRP CRITERIA</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <p class="label-check-1">School Attendence (Adult)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="table-scrll">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-1">1. The Consumer has a serious mental
+                                                                    health disorder</p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="radio-full">
+                                                                    <ul class="input-ul-radio">
+                                                                        <li>
+                                                                            <input type="radio" formControlName="AdultMentalHealthIssue" value="true">
+                                                                              <label for="html">Yes</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="radio" formControlName="AdultMentalHealthIssue" value="false">
+                                                                              <label for="html">No</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-1">2. The impairment results in at least
+                                                                    one of the following</p>
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-2">A. A clear, current threat of the
+                                                                    individual's ability to manage current living
+                                                                    situation</p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="check-table">
+                                                                    <input type="radio" name="ManageCurrentLivingSituation" formControlName="ManageCurrentLivingSituation">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-2">B. An inability to be employed or
+                                                                    attend school without support</p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="check-table">
+                                                                    <input type="radio" name="AttendSchoolWithoutSupport" formControlName="AttendSchoolWithoutSupport">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-2">C. An inability to manage the effects
+                                                                    of his/her mental illness</p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="check-table">
+                                                                    <input type="radio" name="UnmanageMentalIllness" formControlName="UnmanageMentalIllness">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p class="pera-1">3. The individual's condition requires
+                                                                    an integrated program of rehabilitiation services to
+                                                                    develop and restore independent living skills to
+                                                                    support the individal's recovery</p>
+                                                            </td>
+                                                            <td>
+                                                                <div class="radio-full">
+                                                                    <ul class="input-ul-radio">
+                                                                        <li>
+                                                                            <input type="radio" formControlName="SupportIndividualRecovery" value="true">
+                                                                              <label for="html">Yes</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="radio" formControlName="SupportIndividualRecovery" value="false">
+                                                                              <label for="html">No</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </ng-template>
+                        </li>
+                    </ul>
+                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

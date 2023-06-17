@@ -1,0 +1,238 @@
+.note-search-bx {
+    background: #ebebeb;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+}
+.note-search-bx label {
+    float: left;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 10px 0 0;
+    font-size: 13px;
+}
+
+.note-search-input {
+    width: 100%;
+}
+.note-search-input input[type="text"] {
+    width: 100% !important;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: inherit;
+    padding: 0 5px;
+}
+.note-row3.client-name-block-border {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.client-name-block {
+    border-right: 1px solid #ddd;
+    padding: 6px 0;
+}
+
+#notes-transition .note-right-full-block {
+    border-left: 1px solid #ddd;
+    padding: 0px 0px 0px 0;
+    width: 67.9%
+}
+.note-right1.note-right-full-block {
+    border-left: 1px solid #ddd;
+    min-height: 100vh;
+}
+.common-mar-1 {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.common-mar-1 p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.common-mar-1 h3 a {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0;
+}
+
+.common-mar-1 h3 {
+    margin: 0;
+    line-height: 24px;
+    font-size: 20px;
+}
+.notes-td p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0 15px 0;
+}
+.notes-td {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 0 0;
+}
+
+.notes-td img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.note-search-bx {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+}
+
+.note-search-bx label {
+    margin: 8px 10px 0 0;
+    min-width: 100px;
+}
+
+.client-name-block {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cleint-left {
+    border-right: 1px solid #ccc;
+}
+
+.client-name-block {
+    padding: 0 !important;
+}
+.form-right{
+    font-weight: 600;
+}
+.main-form {
+    padding: 7px 15px;
+    display: flex;
+}
+.tabs{
+    position: absolute;
+    right: 0;
+    top: 70px;
+    min-height: fit-content !important;
+}
+.search-contet{
+    border: 1px solid black;
+    width: 100% !important;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: inherit;
+    padding: 0 5px;
+    ul.Show-list li{
+        display: block;
+        list-style: none;
+        a{
+            text-decoration: none;
+        }
+    }
+
+}
+.list-group{
+    width: 69%;
+    position: absolute;
+    left: 117px;
+    top: 0px;
+    padding: 0 5px;
+    height: 130px;
+    overflow-x: auto;
+}
+.item-search{
+    position: absolute;
+    left: 13px;
+    width: 98%;
+    top: 80%;
+    height: 100px;
+    cursor: pointer;
+}
+.note-search-bx-1{
+    position: relative;
+    background: #ebebeb;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin: 15px 0 15px 0;
+    align-items: center;
+
+}
+.INTAKE_cls{
+    color:#ffffff;
+    background-color:#F80303; 
+    max-width: 59%;
+    padding: 4px;
+}
+
+.client-info-block {
+    margin: 18px 3px 17px;
+}
+.client-info-block input[type="button"] {
+    background: #0089b7;
+    border: none;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.printbtn {
+    margin-right: 7px;
+    background: #03b171;
+    border: none;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.btc_clss {
+    padding: 3px 131px;
+}
+.previousdocumentdiv-tbl {
+    max-height: 400px;
+    overflow: auto;
+    display: inline-block;
+    width: 100%;
+    text-align: justify;
+    
+}
+.previousdocumentdiv-tbl table th{
+    
+    // width: 100%;
+    color: white;
+    background: #0089b7;
+    padding: 5px 2px 6px 10px;
+}
+.previousdocumentdiv-tbl table tr{
+     
+    border: 1px solid #ccc;
+    
+}
+.previousdocumentdiv-tbl table td{
+    min-width: 30%;
+    width: 19%;   
+}
+.previousdocumentdiv-tbl table{
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

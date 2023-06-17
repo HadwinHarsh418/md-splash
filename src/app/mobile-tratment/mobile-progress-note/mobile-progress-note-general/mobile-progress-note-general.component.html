@@ -1,0 +1,656 @@
+<div class="col-lg-12">
+    <form [formGroup]="pregressNotes" >
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="CLIENT-DEMOGRAPHICS">
+                        <h6>Client Details</h6>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-8 next_Tab my-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">First </label>
+                                            <input formControlName="FirstName" type="text" class="client-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Middle Name </label>
+                                            <input formControlName="MiddleName" type="text" class="client-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Last Name</label>
+                                            <input formControlName="LastName" type="text" class="client-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Date Of birth</label>
+                                            <input formControlName="DateofBirth" type="date" class="client-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Age</label>
+                                            <input formControlName="Age" type="text" class="client-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Sex</label>
+                                            <select class="client-input" formControlName="Gender">
+                                                <option value="0" selected>Female</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Transgender</option>
+                                                <option value="3">They</option>
+                                                <option value="4">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="col-md-12">
+                                    <div class="margin-inputclient"
+                                        [class.has-error]="genForm['Dos'].dirty && genForm['Dos'].errors || genForm['Dos'].touched && genForm['Dos'].errors">
+                                        <label class="CLIENT-LABEL">Date of Session</label>
+                                        <input type="date" formControlName="Dos" class="client-input">
+                                        <span *ngIf="genForm['Dos'].dirty && genForm['Dos'].errors" class="has-error">
+                                            <i *ngIf="genForm['Dos'].errors?.['required']">
+                                                Date of Session is required.</i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex my-2">
+                                    <div class="col-md-4">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Start Time</label>
+                                            <input type="time" class="client-input" formControlName="StartTime1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ms-1">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">End Time</label>
+                                            <input type="time" class="client-input" formControlName="EndTime1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ms-1">
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">Duration</label>
+                                            <input type="time" class="client-input" formControlName="TotalTime1">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ####### second #### -->
+
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                    <label class="CLIENT-LABEL">Rendering Provider <span
+                                                            class="text-danger">*</span> </label>
+                                                    <select class="client-input" formControlName="Rendering_ProviderID">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                    <span
+                                                        *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                            required.</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient"
+                                                    [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors">
+                                                    <label class="CLIENT-LABEL">Procedure Code<span
+                                                            class="text-danger">*</span> </label>
+                                                    <select class="client-input" formControlName="ProcedureCode1">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                    <span
+                                                        *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors"
+                                                        class="has-error">
+                                                        <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">
+                                                            Code1 is required.</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="col-lg-12 d-flex my-3">
+                                                    <label class="CLIENT-LABEL">Location</label>
+                                                    <ul class="all-li-radio" style="margin-left: 10px;">
+                                                        <li>
+                                                            <input type="checkbox" name="location_required" id="location_required" formControlName="location_required">
+                                                            <label>Home</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="location_required" id="location_required" formControlName="location_required">
+                                                            <label>Office</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="location_required" id="location_required" formControlName="location_required">
+                                                            <label>Community</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label for=""><b>Notes</b></label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Situation</label>
+                                                    <input type="text" class="client-input" name="Situation" id="Situation" formControlName="Situation">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Intervention </label>
+                                                    <input type="text" class="client-input" name="Intervention" id="Intervention" formControlName="Intervention">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Response</label>
+                                                    <input type="text" class="client-input" name="Response" id="Response" formControlName="Response">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label for="">Plan</label>
+                                                    <input type="text" class="client-input" name="Plan" id="Plan" formControlName="Plan">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Others Present at Session (List
+                                                        Name(s) and Relationship(s) to the client)</label>
+                                                    <select class="client-input" formControlName="OtherPresentName">
+                                                        <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                            {{item.Text}}</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <!-- #########====== -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>Stressor(s)/Significant Changes in Client's Condition (for
+                                            face-to-face visit)</h6>
+                                    </div>
+                                    <div class="content row">
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Sleep </label>
+                                                <input type="text" class="client-input" name="Plan" id="Plan" formControlName="Plan">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Medication Compliance</label>
+                                                <input type="text" class="client-input" name="Plan" id="Plan" formControlName="Plan">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Date Of Last Substance Use</label>
+                                                <input type="text" class="client-input" name="Plan" id="Plan" formControlName="Plan">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 d-flex my-3">
+                                            <label class="CLIENT-LABEL">Any significant changes from last
+                                                visit</label>
+                                            <ul class="all-li-radio" style="margin-left: 10px;">
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                    <label>No</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <input type="text" class="client-input" formControlName="ClientSignificantChange" name="Plan" id="Plan" formControlName="Plan">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 my-3">
+                                            <label class="CLIENT-LABEL"><b>Mood/Affect:</b></label>
+                                            <ul class="all-li-radio">
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Angry</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Anxious</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Appropriate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Bland</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Blunted</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Constricted</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Depressed</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Dull</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Euphoric</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Flatten</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Hypomanic</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Inappropriate To Thought</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Increased Lability</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Irritable </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Stable</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Manic</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Volatile</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12 my-3">
+                                            <label class="CLIENT-LABEL my-2"><b>Thought Process/Orientation::</b></label>
+                                            <ul class="all-li-radio">
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Accelerated</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Blocking</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Circumstantial</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Coherent</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Compulsions</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Confused</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Delusions</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Depersonalized</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Homicidal Ideationy</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Incoherent</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Obsessions</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Oriented(x3)</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Paranoid</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Phobic </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Poverty Of Thought</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Pre-Occupation</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Suicidal Ideation</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="harmingNo" id="harmingNo">
+                                                    <label>Tangential</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="row my-4">
+                                            <div class="col-lg-6">
+                                                <label class="CLIENT-LABEL"><b>Danger to:</b></label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                        <input type="checkbox" formControlName="DangerNone" name="harmingNo"
+                                                            id="harmingNo"
+                                                            value="yes">
+                                                        <label>None</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="DangerSelf" name="harmingNo"
+                                                            id="harmingNo"
+                                                            value="yes">
+                                                        <label>Self</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="DangerOthers" name="harmingNo"
+                                                            id="harmingNo"
+                                                            value="yes">
+                                                        <label>Others</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" formControlName="DangerProperty"  name="harmingNo"
+                                                            id="harmingNo"
+                                                            value="yes">
+                                                        <label>Property</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="CLIENT-LABEL"><b>Suicide:</b></label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" formControlName="SuicidialNone"
+                                                            value="yes">
+                                                        <label>None</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" formControlName="Ideation"
+                                                            value="yes">
+                                                        <label>Ideation</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" formControlName="SuicidialPlan"
+                                                            value="yes">
+                                                        <label>Plan</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" formControlName="Intent"
+                                                            value="yes">
+                                                        <label>Intent</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo"
+                                                            id="harmingNo" formControlName="Attempt"
+                                                            value="yes">
+                                                        <label>Attempt</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="d-flex">
+                                        <div class="col-md-11 CLIENT-DEMOGRAPHICS">
+                                            <h6>Goals/Objectives</h6>
+                                        </div>
+                                        <div class="col-md-1 back_css" >
+                                            <button type="click" class="NEW-SAVE" style="background: green;"><i
+                                                    class="fa fa-plus"></i>Add ANOTHER GOAL</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Long Term Goal<span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="selectAuthNumber">
+                                                    <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Short Term Goal<span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="selectAuthNumber">
+                                                    <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Therapeutic Intervention and
+                                                    Progress Toward Goals(s)<span class="text-danger">*</span>
+                                                </label>
+                                                <textarea class="client-input"
+                                                    formControlName="selectAuthNumber"></textarea>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Recommendation and Follow Up<span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="selectAuthNumber">
+                                                    <option *ngFor="let item of StartTimer" value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row my-4">
+                                            <div class="col-lg-6">
+                                                <label class="CLIENT-LABEL">If this is end of month: </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo" id="harmingNo"
+                                                            value="yes">
+                                                        <label>No</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo" id="harmingNo"
+                                                            value="yes">
+                                                        <label>Yes</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row my-4">
+                                            <div class="row">
+                                                <div class="col-md-6 d-flex">
+                                                    <div class="col-2">
+                                                        <label class="CLIENT-LABEL">Axis I<span
+                                                                class="text-danger">*</span> </label>
+                                                    </div>
+                                                    <div class="col-md-10">
+
+                                                        <select class="client-input" formControlName="selectAuthNumber">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-flex">
+                                                    <div class="col-2">
+                                                        <label class="CLIENT-LABEL">Description<span
+                                                                class="text-danger">*</span> </label>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <select class="client-input" formControlName="selectAuthNumber">
+                                                            <option *ngFor="let item of StartTimer"
+                                                                value="{{item.Value}}">
+                                                                {{item.Text}}</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ##### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>HISTORY OF THE PROBLEM</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <button class="Sign_btn">Sign</button>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <div class="margin-inputclient">
+                                                                    <input formControlName="Age" type="text"
+                                                                        value="TEST TEST" class="client-input">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="innerSignature">
+                                                                    <div class="inner-img-border">
+                                                                        <img class="img-class" src="" alt="Sign">
+                                                                        <div class="line"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <label class="CLIENT-LABEL">Received
+                                                                    Date:</label>
+                                                                <input type="text" class="client-input" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <button class="Sign_btn">Sign</button>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <div class="margin-inputclient">
+                                                                    <select class="client-input"
+                                                                        formControlName="hdnInsuranceType">
+                                                                        <option *ngFor="let item of StartTimer"
+                                                                            value="{{item.Value}}">
+                                                                            {{item.Text}}</option>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-">
+                                                                <div class="innerSignature">
+                                                                    <div class="inner-img-border">
+                                                                        <img class="img-class" src="" alt="Sign">
+                                                                        <div class="line"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <label class="CLIENT-LABEL">Entered By</label>
+                                                                <input type="text" class="client-input">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

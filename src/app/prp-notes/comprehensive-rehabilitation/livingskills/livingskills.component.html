@@ -1,0 +1,269 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="content">
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="row mar-1010 d-flex my-2">
+                            <div class="col-lg-12 back_css">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SELF CARE / INDEPENDENT LIVING SKILLS.</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <!-- <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                    <th style="text-align: center;">Please note that Questions 3-24 are all <br>(Client Opinions Only)</th>
+                                    <th style="text-align: center;">Not at all </th>
+                                    <th style="text-align: center;">A little bit </th>
+                                    <th style="text-align: center;">Somewhat </th>
+                                </tr> -->
+                                <tr>
+                                    <td class="td_clss">
+                                        Client can independently contact emergency services</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently shop for groceries:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently manage finances:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client maintains independent bank account:.</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently organize/clean living space:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                <tr>
+                                    <td class="td_clss">Client can independently select season appropriate clothes/dress self:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently iron clothes:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently launder/wash clothes:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently shop for clothes:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently maintain bodily hygiene (bathe)</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently maintain physical hygiene (hair, teeth)</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently utilize bathroom:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently tell time:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can utilize clock to plan activities</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can identify and utilize effective time management skills:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can identify the basic food groups:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently prepare age appropriate meals/snacks:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can independently consume meals</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client has specific nutritional restrictions due to health reasons:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client adheres to specific nutritional restrictions due to health reasons:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!---2##########-->
+                    
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>MEDICATION MANAGEMENT/TREATMENT COMPLIANCE</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                    <tr>
+                                        <td class="td_clss">
+                                            Are clients finances sufficient to meet current needs?</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Is client at risk of losing any resources due to financial issues?</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Does client has sufficient child care? (if parent or guardian)</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Does financial status affect status of child care? (if parent or guardian)</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently organize/clean living space:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently select season appropriate clothes/dress self:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently iron clothes:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently launder/wash clothes:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently shop for clothes:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently maintain bodily hygiene (bathe)</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently maintain physical hygiene (hair, teeth)</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently utilize bathroom:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently tell time:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can utilize clock to plan activities</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can identify and utilize effective time management skills:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can identify the basic food groups:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently prepare age appropriate meals/snacks:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client can independently consume meals</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client has specific nutritional restrictions due to health reasons:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client adheres to specific nutritional restrictions due to health reasons:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,389 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="continueForm" (ngSubmit)="Save()">
+            <div class="all-tb"> 
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-6">
+                        <!-- <div class="arrow d-flex">
+                            <label for="type" (click)="back()">
+                                <i class="fa fa-circle-arrow-left"></i>
+                            </label>
+                            <h1 class="admin-main_heading ms-2">PRP MONTHLY SUMMARY <small>New</small></h1>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Frequency of Services Provided</label>
+                            <textarea class="client-input"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="margin-inputclient">
+                            <label class="CLIENT-LABEL">Summary of Progress Made</label>
+                            <textarea class="client-input"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>CONTINUING SERVICE RECOMMENDATIONS</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Natural/Community Supports</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL my-3"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Outpatient Individual Therapy</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL my-3"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Outpatient Family Therapy</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL my-3"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Outpatient Group Therapy</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL my-3"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Medication Management</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL my-3"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Substance Abuse Treatment</label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Yes</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>No</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> </label>
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Not Needed</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <ul class="all-li-radio">
+                                                    <li>
+                                                        <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                        <label>Other (Explain)</label>
+                                                    </li>
+                                                </ul>
+                                                <textarea class="client-input" name="" id="" cols="30" rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Name/Agency</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Summary of Transition Process</label>
+                                                <textarea class="client-input" name="" id="" cols="30" rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h6>Extent of Client Involvement in Discharge Planning</h6>
+                                            <div class="row my-1">
+                                                <ul class="all-li-radio" style="display: block;">
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Client Aware of Planned d/c & Actively Contributed to Plan</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Client Aware of Planned d/c, But Opted to not Participate in dc Planning</label>
+                                                    </li>
+                                                    <li>
+                                                      <input type="checkbox" name="harmingNo" id="harmingNo" value="yes">
+                                                      <label>Client Unable/Unavailable to Participate in d/c Planning</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <button class="Sign_btn" >Sign</button>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="margin-inputclient">
+                                                                <input type="text"
+                                                                    value="TEST TEST" class="client-input">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="innerSignature">
+                                                                <div class="inner-img-border">
+                                                                    <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                                    <div class="line"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <button class="Sign_btn">Sign</button>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="margin-inputclient">
+                                                                <select class="client-input">
+                                                                    <option 
+                                                                        value="">--Select--</option>
+        
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="innerSignature">
+                                                                <div class="inner-img-border">
+                                                                    <img class="img-class" src="/Content/Signature/no_sign.jpg" alt="Sign">
+                                                                    <div class="line"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Received Date </label>
+                                                                    <input type="text" class="client-input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="margin-inputclient">
+                                                                    <label class="CLIENT-LABEL">Entered By </label>
+                                                                    <input type="text" class="client-input">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

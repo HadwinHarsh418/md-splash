@@ -1,0 +1,337 @@
+<div class="col-lg-12">
+    <div class="">
+        <form [formGroup]="pregressNotes" (ngSubmit)="Save()">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PSYCHOEDUCATION</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <!-- <tr style="background-color: rgb(32, 143, 207);color: #fff;">
+                                    <th style="text-align: center;">Please note that Questions 3-24 are all <br>(Client Opinions Only)</th>
+                                    <th style="text-align: center;">Not at all </th>
+                                    <th style="text-align: center;">A little bit </th>
+                                    <th style="text-align: center;">Somewhat </th>
+                                </tr> -->
+                                <tr>
+                                    <td class="td_clss">Client has knowledge of current diagnosis & associated symptoms?:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can identify triggers/onset of associated symptoms?:</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client can identify effective coping skills for associated symptoms?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client interested in greater knowledge diagnosis & associated symptoms?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Client has family history of current diagnosis & associated symptoms?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                <tr>
+                                    <td class="td_clss">Client has family history of mental illness and/or associated symptoms?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!---2##########-->
+                    
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SOCIAL RELATIONSHIPS & LEISURE ACTIVITIES</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                    <tr>
+                                        <td class="td_clss">Client actively & appropriately socializes with friends/peers in school/work</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client actively & appropriately socializes with friends/peers outside school/work</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client displays/communicates issues with authority figures</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client displays/is a victim of bullying behavior</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client displays/is a victim of bullying behavior</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client actively socializes with family (immediate):</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client has positive/functional relationships with family (immediate</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client actively socializes with family (extended:</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client has positive/functional relationships with family (extended)</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client has positive/functional relationship with significant other</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client reports that they “get along” well with others</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client reports that they independently initiate conversations:	</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client reports that they can accept and process positive feedback:	</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client reports that they can accept and process negative feedback</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client participates in community based leisure activities::</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client’s immediate family members a support resource for client</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                    <tr>
+                                        <td class="td_clss">Client have support resources other than family members?</td>
+                                        <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>ALCOHOL/SUBSTANCE ABUSE HISTORY</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="td_clss">
+                                        Past / current history of substance/alcohol abuse?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Past/ current immediate family history of substance/alcohol abuse?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Exposed to drugs/alcohol in utero?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Actively in alcohol/substance abuse treatment?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Past history of alcohol/substance abuse treament?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                <tr>
+                                    <td class="td_clss">Client has family history of mental illness and/or associated symptoms?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                            <div class="col-md-12">
+                                <div class="d-flex" style="margin: auto;">
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL">If Yes, Counselor Name</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL"> Phone:</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL">Date Of Last Visit:</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="CLIENT-LABEL">Address:</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>CAGE-AID </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="CLIENT-DEMOGRAPHICS1">
+                                    <h6 style="text-align: center;">**(These questions should only be asked if the client responds “Yes” to first question above.</h6>
+                                    <h6 style="text-align: center;">One or more positive answers is considered a “positive” screen and further evaluation for treatment is warranted )*</h6>
+                                </div>
+                            </div>
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="td_clss">1. Have you ever felt like you ought to cut down on your drinking or drug used?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">2. Have people annoyed or criticized you about your drinking or drug used?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">3. Have you ever felt bad or guilty about your drinking or drug used?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">4. Have you ever had to drink or used drugs first thing in the morning to steady your nerves/to get rid of a hangover?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>"OTHER" ABUSE HISTORY </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="td_clss">Past/current history of physical abuse?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_clss">Past/current/ history of sexual abuse?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LEGAL/FORENSIC HISTORY</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-striped  table-sm " cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="td_clss"> Past / current history of incarceration/legal issues?</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">Yes</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">No</td>
+                                    <td style="text-align: center;"><input type="radio" name="" id="">N/A</td>
+                                </tr>
+                            </table>
+                            <div class="col-md-12">
+                                <div>
+                                    <label class="CLIENT-LABEL">If yes, indicate nature of issue(s), and/or charges, length of incarceration, & current probation/parole terms if applicable:</label>
+                                    <input formControlName="CounslerName" type="text" class="client-input">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="d-flex" style="margin: auto;">
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL">If Yes, Counselor Name</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL"> Phone:</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="CLIENT-LABEL">Date Of Last Visit:</label>
+                                        <input formControlName="CounslerName" type="text" class="client-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label class="CLIENT-LABEL">Agency:</label>
+                                    <input formControlName="CounslerName" type="text" class="client-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

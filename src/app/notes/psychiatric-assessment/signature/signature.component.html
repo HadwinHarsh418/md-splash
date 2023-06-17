@@ -1,0 +1,38 @@
+<form [formGroup]="signaturetransitionform">
+    <div class="row mar-1010 d-flex my-2">
+        <div class="col-lg-12 back_css">
+            <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="CLIENT-DEMOGRAPHICS text-center">
+            <h6>Doctor's Signature</h6>
+        </div>
+        <div class="content">
+            <div class="col-lg-6 d-flex Set_content">
+                <button class="Sign_btn">Sign</button>
+                <input name="signinput1" type="text" value="TEST TEST" formControlName="testtest" class="client-input">
+            </div>
+            <div class="col-lg-6 Set_content">
+                <div class="innerSignature">
+                    <div class="inner-img-border">
+                        <img class="img-class" src="" alt="Sign">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-lg-6 Set_content my-3">
+                <div class="col-lg-6">
+                    <label class="CLIENT-LABEL">Received
+                        Date:</label>
+                    <input type="text" class="client-input" disabled>
+                </div>
+                <div class="col-lg-6">
+                    <label class="CLIENT-LABEL">Entered
+                        Date:</label>
+                    <input type="text" class="client-input" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

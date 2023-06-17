@@ -1,0 +1,340 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="generalForm" >
+                <div class="all-tb">
+                    <div class="row back_css">
+                        <div class="col-lg-12 back_css">
+                            <div class="save-bt rem-abs">
+                                <button class="NEW-SAVE" Type="submit" (click)="Save()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>IDENTIFYING INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First </label>
+                                                    <input formControlName="First_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">MI </label>
+                                                    <input formControlName="Middle_Initial" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Last </label>
+                                                    <input formControlName="Last_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Home Address (include apt#, if applicable)</label>
+                                                    <input formControlName="Address" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">City </label>
+                                                    <input formControlName="City" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">State</label>
+                                                    <input formControlName="State" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">ZipCode</label>
+                                                    <input formControlName="Zip_code" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Home Phone</label>
+                                                    <input formControlName="HomePhone" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Cell/Other Phone</label>
+                                                    <input formControlName="CellPhone" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!-- ####### second #### -->
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Sex</label>
+                                                    <select class="client-input" formControlName="GenderId">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DOB" type="date" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Age</label>
+                                                    <input formControlName="Age" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Special calling instructions?</label>
+                                                    <textarea formControlName="SpecialCallingInst" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="6" style="width:100%; height: 80px;"></textarea>                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>DISCHARGE  INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+
+                                                <div class="col-lg-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors || genForm['DateOfSession'].touched && genForm['DateOfSession'].errors">
+                                                                <label class="CLIENT-LABEL">Date of Discharge <span class="text-danger">*</span></label>
+                                                                <input type="date" class="client-input" formControlName="DateOfSession">
+                                                                <span *ngIf="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['DateOfSession'].errors?.['required']">
+                                                                        Please enter Date of Discharge.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                                <label class="CLIENT-LABEL">Discharging Provider <span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="Rendering_ProviderID">
+                                                                    <option value="0" disabled selected>select</option>
+                                                                    <option value="Anderline Noutai">Anderline Noutai</option>
+                                                                    <option value="Monica Boddie">Monica Boddie</option>
+                                                                    <option value="test test">test test</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                                        Discharging Provider is Required.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Procedure code</label>
+                                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                                    <option value="0" selected>90791 - Psychiatric Assessment with Medication</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" *ngIf="showAuth">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                                                <select class="client-input" formControlName="divInsuranceType">
+                                                                    <option value="0" selected>Primary</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" *ngIf="showAuth">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors || genForm['divAuthNumber'].touched && genForm['divAuthNumber'].errors">
+                                                                <label class="CLIENT-LABEL">Authorization Number<span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="divAuthNumber">
+                                                                    <option value="0" selected>Auth No: A20221218910  Visits Remaining: 976</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['divAuthNumber'].errors?.['required']">
+                                                                        Please select Authorization Number.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>ADMISSION PROBLEMS</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Reason for Admission</label>
+                                                                <textarea formControlName="PresentingProblemDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%; height: 80px;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Date of Admission</label>
+                                                                <textarea formControlName="OtherStressDescription" class="StartSpeechRecoganisation accuratsize client-input" cols="20" id="Strengths" name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ##### -->
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>REASON FOR DISCHARGE</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient" >
+                                                                <input type="checkbox" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="yes" >Customer or parent/guardian withdrew customer from care
+                                                                <!-- <label class="CLIENT-LABEL">Customer or parent/guardian withdrew customer from care</label> -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <!-- <label class="CLIENT-LABEL"></label> -->
+                                                                <input type="checkbox" name="HarmingUrgeNo" id="harmingNo" formControlName="HarmingUrgeNo" value="yes" >Customer moved from services' area
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="WishingDeadNo" id="harmingNo" formControlName="WishingDeadNo" value="yes" >
+                                                                Customer referred to less intensive level of care
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <!-- <label class="CLIENT-LABEL">Do you currently have thoughts of harming yourself?</label>
+                                                                <label>Yes</label>
+                                                                <input type="checkbox" name="harmingNo" id="harmingNo" formControlName="harmingNo" value="yes">
+                                                                <label>No</label> -->
+                                                                <input type="checkbox" name="HarmOthersNo" id="harmingNo" formControlName="HarmOthersNo" value="yes">
+                                                                Consumer is hospitalized-physchatric
+                                                                 </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">     
+                                                                <input type="checkbox" name="PreviousTherapyCounsellingNo" id="PreviousTherapyCounsellingNo" formControlName="PreviousTherapyCounsellingNo" value="yes" >
+                                                                
+                                                                Customer referred to more intensive level of care                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="IsTreatmentHelpfulNo" id="IsTreatmentHelpfulNo" formControlName="IsTreatmentHelpfulNo" value="yes" >
+                                                                Consumer is hospitalized-Somtic
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="HospitalizedForAbuseYes" id="HospitalizedForAbuseYes" formControlName="HospitalizedForAbuseYes"  value="no" >
+                                                                Customer referred to another provider providing simmilar level of services
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <!-- <label class="CLIENT-LABEL">Have you received previous therapy/ counseling (sp) services of any kind</label> -->
+                                                                <input type="checkbox" name="Customerisinjailorprison" id="Customerisinjailorprison" formControlName="Customerisinjailorprison"  value="yes" >
+                                                                Customer is in jail or Prison
+                                                             </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <div class="d-flex">
+                                                                    <!-- <label class="CLIENT-LABEL">Have you ever been hospitalized for emotional problems?</label> -->
+                                                                    <input type="checkbox" name="Customernolongermeetsnecessarymedicalcriteria" id="Customernolongermeetsnecessarymedicalcriteria" value="yes" formControlName="Customernolongermeetsnecessarymedicalcriteria">
+                                                                    Customer no longer meets necessary medical criteria
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Customerdeceased" id="Customerdeceased" value="yes" formControlName="Customerdeceased">
+                                                                Customer deceased
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" formControlName="Consumerlackofparticipationinprogram"  >
+                                                                Consumer's lack of participation in program
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Customerisnolongereligibleforservices" id="Customerisnolongereligibleforservices" formControlName="Customerisnolongereligibleforservices" value="no" >
+                                                                Customer is no longer eligible for services (no longer has MA, no longer meets uninsured criteria, or benefits no longer cover services)</div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <div class="margin-inputclient">
+                                                                    <input type="checkbox" name="Dischargereasonunknown" id="Dischargereasonunknown" formControlName="Dischargereasonunknown">
+                                                                     Discharge reason unknown 
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="margin-inputclient">
+                                                                <input type="checkbox" name="Programsdeterminationtodiscontinueservices" id="Programsdeterminationtodiscontinueservices" formControlName="Programsdeterminationtodiscontinueservices">
+                                                                Program's determination to discontinue services (because of the customer's actions,
+                                                                 the services are not effective or the program is unable to secure the safety and welfare of the consumers and others)
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                        <hr>
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

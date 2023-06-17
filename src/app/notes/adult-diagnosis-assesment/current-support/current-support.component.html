@@ -1,0 +1,459 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-lg-12">
+                            <label class="CLIENT-LABEL">Client </label>
+                        </div>
+                        <hr>
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>SESSION INFORMATION</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-8 next_Tab my-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">First name </label>
+                                                <input formControlName="FirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> Last Name</label>
+                                                <input type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4"
+                                        [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors"
+                                        >
+                                            <label class="CLIENT-LABEL">Rendering Provider <span
+                                                    class="text-danger">*</span> </label>
+                                            <select class="client-input"
+                                                formControlName="Rendering_ProviderID">
+                                            </select>
+                                            <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">required</i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"></label>
+                                            </div> -->
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"></label>
+                                            </div> -->
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient"
+                                            [class.has-error]="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors || genForm['ProcedureCode1'].touched && genForm['ProcedureCode1'].errors"
+                                            >
+                                                <label class="CLIENT-LABEL">Procedure Code<span
+                                                        class="text-danger">*</span> </label>
+                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                    <option *ngFor="let item of StartTimer"
+                                                        value="{{item.Value}}">
+                                                        {{item.Text}}</option>
+
+                                                </select>
+                                                <span *ngIf="genForm['ProcedureCode1'].dirty && genForm['ProcedureCode1'].errors" class="has-error">
+                                                    <i *ngIf="genForm['ProcedureCode1'].errors?.['required']">required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="col-md-12">
+                                        <div class="margin-inputclient" [class.has-error]="genForm['dateofsession'].dirty && genForm['dateofsession'].errors || genForm['dateofsession'].touched && genForm['dateofsession'].errors">
+                                            <label class="CLIENT-LABEL">Date of Session</label>
+                                            <input type="date" class="client-input" formControlName="dateofsession">
+                                            <span *ngIf="genForm['dateofsession'].dirty && genForm['dateofsession'].errors" class="has-error">
+                                                <i *ngIf="genForm['dateofsession'].errors?.['required']">Please Enter Date</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex my-2">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                <input type="time" class="client-input" formControlName="StartTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">End Time</label>
+                                                <input type="time" class="client-input" formControlName="EndTime1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ms-1">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Duration</label>
+                                                <input type="time" class="client-input" formControlName="TotalTime1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>PRESENTING PROBLEM</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Note Symptoms: behavioral and functioning problems and precipitating factors; 
+                                                            indicate referral source and reason for referral;<span
+                                                                class="text-danger">*</span> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">services sought and client expectations.
+                                                            Condition/Observations:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- #########====== -->
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>CURRENT SUPPORTS AND FAMILY HISTORY</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Strengths/Capabilities/ Limitations 
+                                                            in Activities of Daily Life/ Barriers(Weaknesses: ODADAS only):</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Current Living Situation</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Primary/Family/Marital/Significant Other/Peer & Social/Community Supports
+                                                             and Meaningful Activities (Hobbies, Support Groups, AA, NA, NAMI etc.)</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Religion/Spirituality</label>
+                                                        <ul >
+                                                            <li>
+                                                                <label>Do you see yourself as a religious or spiritual person?</label>&nbsp;
+                                                                <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                Yes
+                                                                <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                No
+                                                            </li>
+                                                            <li>
+                                                                <label>Are you affiliated with a religious or spiritual denomination or community?</label>&nbsp;
+                                                                <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                Yes
+                                                                <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                No
+                                                            </li>
+                                                            <li>
+                                                                <label>Has your problem affected you religiously or spiritually?
+                                                                </label>&nbsp;
+                                                                <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                Yes
+                                                                <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                No
+                                                            </li>
+                                                            <li>
+                                                                <label>Has your religion or spirituality been involved in the way you have coped with your problem?</label>&nbsp;
+                                                                <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                                Yes
+                                                                <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                                No
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Comments:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Cultural/Ethnic Issues/Information/Concerns</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Sexual History/Concerns</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="CLIENT-DEMOGRAPHICS">
+                                            <h6>EDUCATION, EMPLOYMENT, AND MILITARY INFORMATION</h6>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Education History</label>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-lg-12 my-3">
+                                            <ul class="all-li-radio und_line">
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>GED </label>
+                                                </li>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label> HS Grad</label>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label> College Degree</label>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Other Degree :</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">History of Learning Difficulties</label>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="margin-inputclient">
+                                                <textarea name="Complaint" class="client-input"
+                                                    id="Complaint"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="margin-inputclient">
+                                            <label class="CLIENT-LABEL">(including performance/behavioral problems due to AoD use)</label>
+                                            <ul class="all-li-radio und_line">
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label> None Reported</label>
+                                                </li>
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Learning Disability/Type:</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Mental Retardation</label>
+                                                </li>
+                                                <li  >
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Special School Placement:</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Other:</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Educational Comments :</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>None Reported </label>
+                                                </li>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>TTD/TTY Device</label>
+                                                </li>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Sign Language Interprete</label>
+                                                </li>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Assistive Listening Device</label>
+                                                </li>
+                                                <li class="col-md-2">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Unable to Read or Write</label>
+                                                </li>
+                                                <li  >
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Language Interpreter:</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-12">
+                                                    <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                    <label>Other:</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label>Employment Comments:</label>
+                                                    </div>
+                                                </div>
+                                                <li class="col-md-12">
+                                                    <label>(Comments on Past/ Present Skills/ Performance and Impairments due to Mental Health or AOD symptoms)</label>
+                                                </li>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                    <div class="margin-inputclient col-md-2">
+                                                        <label>Financial concerns</label>
+                                                    </div>
+                                                    <div class="margin-inputclient col-md-1">
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                        Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                        No
+                                                    </div>
+                                                    <div class="margin-inputclient col-md-3">
+                                                        <input type="checkbox" name="harmingNo"
+                                                        id="harmingNo" value="yes">
+                                                        <label>Client expressed desire for vocational support</label>
+                                                    </div>
+                                                    <div class="margin-inputclient col-md-1">
+                                                        <input  id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="True">
+                                                        Yes
+                                                        <input checked="checked" id="religiousSpiritualperson" name="religiousSpiritualperson" type="radio" value="False">
+                                                        No
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="margin-inputclient">
+                                                    <label>Military History</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Branch of Service:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Date and Type of Discharge:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="margin-inputclient">
+                                                        <label class="CLIENT-LABEL">Pertinent Duties/Trauma/ Other Comments:</label>
+                                                        <textarea name="Complaint" class="client-input"
+                                                            id="Complaint"></textarea>
+                                                    </div>
+                                                </div>
+                                            </ul>    
+                                        </div>
+                                    </div>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

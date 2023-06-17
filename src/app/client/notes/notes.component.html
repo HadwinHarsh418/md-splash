@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-12">
+        <div class="client-tabs mt-3 card p-2">
+            <div class="card-content">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" routerLink="/client/iop">IOP Notes</button>
+                    <button class="NEW-SAVE ml-3" routerLink="/client/mobileTreatment">Mobile Treatment Notes</button>
+                    <button class="NEW-SAVE ml-3" routerLink="/client/notes">Notes</button>
+                </div>
+                <div class="UPCOMING-APPOINTMENTS">
+                    <h6>Previous Notes</h6>
+                </div>
+                <div class="col-12 client-tabs-ui mt-2">
+                <div class="my-2">
+                    <ngx-datatable #tablesss
+                        class="bootstrap core-bootstrap sz-1000" [rows]="rows"
+                        [columnMode]="'force'" [headerHeight]="50"
+                         [loadingIndicator]="loadingIndicator"
+                         [footerHeight]="50" rowHeight="auto" [limit]="10"
+                        [externalPaging]="false">
+    
+                        <ngx-datatable-column name="DATE" prop="DateofVisit" [width]="100">
+                            <ng-template let-DateofVisit="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ DateofVisit | date: 'mediumDate'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+    
+                        <ngx-datatable-column name="DOCUMENT TYPE" prop="Document_Type"
+                            [width]="100">
+                            <ng-template let-Document_Type="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ Document_Type }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="PRO CODE" prop="ProcedureCode"
+                            [width]="100">
+                            <ng-template let-ProcedureCode="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ ProcedureCode }}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="PROVIDER" prop="Rendering_Provider" [width]="100">
+                            <ng-template let-Rendering_Provider="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ Rendering_Provider}}
+                            </ng-template>
+                        </ngx-datatable-column>
+    
+                        <ngx-datatable-column name="PROVIDER SIGNED" prop="Provider_Sign"
+                            [width]="100">
+                            <ng-template let-Provider_Sign="value" let-expanded="expanded"
+                                ngx-datatable-cell-template>
+                                {{ Provider_Sign}}
+                            </ng-template>
+                        </ngx-datatable-column>
+    
+                        <ngx-datatable-column name="SUPERWISER SIGNED" prop="SuperVisor_Signature"
+                        [width]="100">
+                        <ng-template let-SuperVisor_Signature="value" let-expanded="expanded"
+                            ngx-datatable-cell-template>
+                            {{ SuperVisor_Signature}}
+                        </ng-template>
+                    </ngx-datatable-column>
+    
+                    </ngx-datatable>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+</div>

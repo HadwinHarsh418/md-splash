@@ -1,0 +1,252 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="pregressNotes">
+            <div class="all-tb">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label class="CLIENT-LABEL">
+                            This form is to be used upon discharge when the client is neither present nor participating by phone 
+                            in an OMS interview. A Discharge Information Sheet should also be completed.
+                        </label>
+                        <label class="CLIENT-LABEL">
+                            Please complete the following OMS form based on your most recent knowledge of the client’s situation.
+                            Answer those items for which you are reasonably sure of the correct answer. Others may be left blank.
+                        </label>
+                    </div>
+                </div>
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>An asterisk (*) denotes a question that is mandatory for submission</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Client First Name: </label>
+                                                <input formControlName="ChildFirstName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Client Last Name:</label>
+                                                <input formControlName="ChildLastName" type="text" class="client-input">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Interviewer Name</label> 
+                                                <select id="InterViewerName" formControlName="InterViewerName" name="InterViewerName" class="client-input">
+                                                    <option value="0">--Select--</option>
+                                                    <option value="16">Anderline Noutai</option>
+                                                    <option value="7">Arneisha Woods</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="12">Breauna Carter</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Previous OMS interview date:</label>
+                                                <input formControlName="PrevoiusInterviewDate" type="date" class="client-input">
+                                            </div>
+                                        </div><div class="col-md-4">
+                                            <div class="margin-inputclient" [class.has-error]="genForm['DateFromCompleted'].dirty && genForm['DateFromCompleted'].errors || genForm['DateFromCompleted'].touched && genForm['DateFromCompleted'].errors">
+                                                <label class="CLIENT-LABEL">Date Form Completed:</label>
+                                                <input formControlName="DateFromCompleted" type="text" class="client-input">
+                                                <span *ngIf="genForm['DateFromCompleted'].dirty && genForm['DateFromCompleted'].errors" class="has-error">
+                                                    <i *ngIf="genForm['DateFromCompleted'].errors?.['required']">is
+                                                        required</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL">Discharging Provider</label>
+                                                <select class="client-input" formControlName="ProviderId">
+                                                    <option value="16">Anderline Noutai</option>
+                                                    <option value="7">Arneisha Woods</option>
+                                                    <option value="15">Barbara Smith</option>
+                                                    <option value="39">Jeanni Aubee</option>
+                                                    <option value="11">Kathy Hill</option>
+                                                    <option value="10">Keiryan Bolling</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ####### second #### -->
+
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>LIVING SITUATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">1. Where are you living now?</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="1" >
+                                                            <label>Private residence</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="2">
+                                                            <label>Boarding/rooming house (no supervision provided)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="3" >
+                                                            <label>Residential Rehabilitation Program (RRP), Group Home/TGH</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="4">
+                                                            <label>Halfway House</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="5" >
+                                                            <label>School or Dormitory</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="6">
+                                                            <label>Foster Home</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="7" >
+                                                            <label>Assisted living</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="8">
+                                                            <label>Assisted living</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="9" >
+                                                            <label>Skilled nursing facility</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="10">
+                                                            <label>Residential Treatment Center (RTC) for Children and Adolescents</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="11" >
+                                                            <label>Hospital (inpatient psychiatric including State Hospital)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="1" >
+                                                            <label>Crisis Residence (Residential Crisis Services)</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="2">
+                                                            <label>Homeless or Emergency Shelter</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="LivingNow" name="LivingNow" formControlName="LivingNow" type="radio" value="1" >
+                                                            <label>ail/Correctional facility/Detention center</label>
+                                                        </li><br>
+                                                    </ul>       
+                                                </div><br>
+                                                <label class="CLIENT-LABEL">Other Specify</label>
+                                                <textarea  name="Strengths" rows="4" style="width:100%;"></textarea>
+                                        </div><br>
+                                        <div class="">
+                                            <label class="CLIENT-LABEL">2. Was the child/adolescent homeless since the last OMS interview date? (see OMS Interview Guide for definition of “homeless”)</label><br>
+                                                <div class="div_checkBox">
+                                                    <ul class="all-li-radio">
+                                                        <li class="col-md-12">
+                                                            <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                            <label>No</label>
+                                                        </li><br>
+                                                        <li class="col-md-12">
+                                                            <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                            <label>Yes</label>
+                                                        </li><br>
+                                                    </ul>       
+                                                </div><br>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>SCHOOL PERFORMANCE</h6>
+                            </div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">3. Does the child/adolescent attend school when it is in session, including home schooling?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>No (continue to #4)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Yes (skip to #5)</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">4. If the child/adolescent is not in school, what is the reason?</label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>Completed school/obtained GED</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Dropped Out</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="3">
+                                                                <label>Dropped Out Expelled</label>
+                                                            </li><br>
+                                                             <label class="CLIENT-LABEL">Other Specify</label>
+                                                             <textarea  name="Strengths" rows="4" style="width:100%;"></textarea>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                            <div class="">
+                                                <label class="CLIENT-LABEL">5. Since the last OMS interview date, has the child/adolescent had problems with school attendance?
+                                                </label><br>
+                                                    <div class="div_checkBox">
+                                                        <ul class="all-li-radio">
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="1" >
+                                                                <label>No (skip to #7)</label>
+                                                            </li><br>
+                                                            <li class="col-md-12">
+                                                                <input id="ClienParticipateInDischargeProcressYes" name="ClienParticipateInDischargeProcressYes" type="radio" value="2">
+                                                                <label>Yes (continue to #6)</label>
+                                                            </li><br>
+                                                        </ul>       
+                                                    </div><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

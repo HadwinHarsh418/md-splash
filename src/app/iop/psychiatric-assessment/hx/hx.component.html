@@ -1,0 +1,51 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="hxForm" >
+        <div class="all-tb">
+            <div class="row mar-1010 d-flex my-2">
+                <div class="col-lg-12 back_css">
+                    <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> <b>Social History:</b></label>
+                                                <textarea formControlName="social" type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> <b>Educational History:</b></label>
+                                                <textarea formControlName="education" type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"><b>Development History:</b></label>
+                                                <textarea formControlName="development" type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="margin-inputclient">
+                                                <label class="CLIENT-LABEL"> <b>Family Medical/Psychiatric History:</b></label>
+                                                <textarea formControlName="family" type="text" class="client-input"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

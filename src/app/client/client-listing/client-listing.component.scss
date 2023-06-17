@@ -1,0 +1,29 @@
+.client_list{
+    padding: 10px;
+}
+.showdiv{
+    select{
+        margin-top: 11px;
+        margin-left: 10px;
+        padding-top: 0px;
+        width: 100px;
+        height: 27px;
+        border: 1px solid #ccc;
+    }
+    label{
+        padding-top: 11px;
+        padding-left: 10px;
+    }
+}
+.searchFilter{
+    input{
+        margin-top: 7px;
+        margin-left: 10px;
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        border:1px solid #ccc;
+        padding: 0px 0px 2px 4px;
+    }
+}

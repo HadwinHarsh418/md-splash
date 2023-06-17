@@ -1,0 +1,120 @@
+<div class="row">
+    <div id="tabs" class="calendar-tab-main">
+            
+        <div class="primary_menu_list">
+            <ul>
+                <li class="tab-no-margin">
+                    <div class="primary_menu_head">
+                        <div class="tab1_head">VIEWS</div>
+                        <div class="tab1_headsub">
+                            <a class="" href="javascript:void(0)">Day</a>
+                            <a class="" href="javascript:void(0)">Week</a>
+                            <a class="" href="javascript:void(0)">Month</a>
+                        </div>
+                    </div>
+                </li>
+                    <li>
+
+                        <a class="" href="javascript:void(0)">Blackout Time</a>
+                    </li>
+
+                <li><a class="" href="javascript:void(0);" onclick="ShowUpcomingEvents();">Upcoming Appointments</a></li>
+                    <li><a class="" href="javascript:void(0);" onclick="ShowDaySheet()"> Day Sheet </a></li>
+                    <li><a class="" href="javascript:void(0);" onclick="FilterCal()">Filter Calendar</a></li>
+                <li><a class="" href="javascript:void(0);" onclick="downloadImg()">Print</a></li>
+                    <li><a href="javascript:void(0)" style="text-decoration:none">Reset</a></li>
+            </ul>
+        </div>
+        <div class="header" id="hd_Black"><span>DAY VIEW</span></div>
+
+    </div>
+
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="client-tabs">
+                    <!-- <div class="common-div">
+                        <ul class="common-div-ul-tab">
+                            <li>
+                                <a class="text-primary font-weight-bold">Users</a>
+                                <span class="list_css ms-4 text-secondary">+ ADD NEW CONTACT</span> <br> <span
+                                    class="list_css ms-1"><b>Deleted/Inactive</b></span>
+                            </li>
+                        </ul>    
+                    </div> -->
+                    <div class="common-div my-3">
+                        <div class="col-lg-12 margin-inputclient">
+                            <span class="calendarUser">Users</span>
+                            <!-- <label class="CLIENT-LABEL"><b>Total Active Users:28</b></label> -->
+                            <!-- <input class="client-input" type="text" name="ApiKey" id="ApiKey"> -->
+                        </div>
+                        <ul class="common-div-ul">
+                            <li>
+                                <a>Nji Fru</a>
+                            </li>
+                            <li>
+                                <a>Steven Holmes</a>
+                            </li>
+                            <li>
+                                <a>Adaora Nnanna</a>
+                            </li>
+                            <li>
+                                <a>Anika</a>
+                            </li>
+                            <li>
+                                <a>amit Kamal</a>
+                            </li>
+                            <li>
+                                <a>Amari Evans</a>
+                            </li>
+                            <li>
+                                <a>Amanda Clark</a>
+                            </li>
+                            <li>
+                                <a>Adaora Nnanna</a>
+                            </li>
+                            <li>
+                                <a>Desiree Gibson</a>
+                            </li>
+                            <li>
+                                <a>Covita Mills</a>
+                            </li>
+                            <li>
+                                <a>Nji Fru</a>
+                            </li>
+                            <li>
+                                <a>Steven Holmes</a>
+                            </li>
+                            <li>
+                                <a>Adaora Nnanna</a>
+                            </li>
+                            <li>
+                                <a>Anika</a>
+                            </li>
+                            <li>
+                                <a>Nji Fru</a>
+                            </li>
+                            <li>
+                                <a>Steven Holmes</a>
+                            </li>
+                            <li>
+                                <a>Adaora Nnanna</a>
+                            </li>
+                            <li>
+                                <a>Anika</a>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="col-lg-8">
+        <div class="calendarStyle">
+            <full-calendar *ngIf='calendarVisible' [options]="calendarOptions"></full-calendar>
+        </div>           
+    </div>
+</div>
+
+

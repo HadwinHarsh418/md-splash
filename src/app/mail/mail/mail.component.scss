@@ -1,0 +1,331 @@
+.Compose-Message a {
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    background: #07417b;
+    color: #fff;
+    padding: 0px 15px;
+    font-size: 20px;
+    margin: 0 0 0px 0;
+    font-family: Poppins;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    cursor: pointer;
+}
+.tabs-admin {
+    padding: 30px 0;
+}
+.Compose-inbox {
+    display: flex;
+    justify-content: space-between;
+}
+.com-p {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.same-in {
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.same-in:hover,a.same-in:focus,a.same-in.active {
+    color: #5a607f !important;
+    border: transparent !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: transparent !important;
+}
+.ser-br {
+    display: block;
+    margin: 0;
+    letter-spacing: -0.01px;
+    height: 40px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #d9e1ec;
+    padding: 0 15px;
+    width: 100%;
+    color: #a1a7c4;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: Poppins;
+}
+.ser-br:hover, .ser-br:focus {
+    box-shadow: none;
+    outline: 2px solid #49afcd;
+    border: 1px solid #49afcd;
+}
+.serch-p {
+    margin: 0 0 15px 0;
+}
+p.same-in-1 {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+p.AllUnread {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.short a {
+    font-family: Poppins;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+    margin: 0 0 0 10px;
+}
+
+.under-dta {
+    display: flex;
+    justify-content: space-between;
+}
+.br-n-p button {
+    background: #07417b;
+    border: none;
+    height: 35px;
+    padding: 0 15px;
+    border-radius: 6px;
+    color: #fff;
+    transition: 0.2s !important;
+    transition-timing-function: ease-in-out !important;
+    -webkit-transition: 0.2s !important;
+    -webkit-transition-timing-function: ease-in-out !important;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 10px 15px 0;
+}
+
+.select-bx label {
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    position: relative;
+    bottom: 1px;
+    margin: 0 0 0 6px;
+}
+
+.under-dta {
+    margin: 0 0 15px 0;
+}
+
+.select-bx {
+    margin: 0 0 15px 0;
+}
+
+.d-flex.check-flex label {
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    position: relative;
+    bottom: 1px;
+    margin: 0 0 0 6px;
+}
+
+.demo-a p {
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    bottom: 1px;
+    margin: 0 0 0 6px;
+}
+
+.demo-a i {
+    color: #5a607f;
+    font-size: 14px;
+    line-height: 20px;
+    bottom: 1px;
+    margin: 0 0 0 6px;
+    justify-content: flex-end;
+}
+
+.demo-a {
+    display: flex;
+    position: relative;
+}
+p.right-media-p {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+p.right-media-p1 {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 0px;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.media-sub>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 0 15px 0 0;
+}
+
+.media-sub {
+    display: flex;
+}
+
+p.sub {
+    display: block;
+    font-family: Poppins;
+    margin: 0 0 15px 0;
+    color: #5a607f;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+ul.rpy-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin: 0 0 15px 0;
+}
+
+ul.rpy-ul li a {
+    font-family: Poppins;
+    margin: 0 15px 0px 0;
+    color: #07417b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+.client-input2{
+    display: block;
+    margin: 0;
+    letter-spacing: -0.01px;
+    height: 40px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #d9e1ec;
+    padding: 0 15px;
+    width: 87%;
+    color: #a1a7c4;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 37px;
+    font-family: Poppins;
+}
+.brd-rigt{
+    border-right: 1px solid #d9e1ec;
+}
+.Subject_class{
+    margin-bottom: 15px;
+    color: #07417b;
+}
+input.client-input2.mx-1 {
+    width: 100%;
+    margin: 0 0 0 30px !important;
+}
+
+.right-media {
+    width: 100%;
+}
+.right-media-p {
+    margin: 0 0 10px 0 !important;
+}
+.bor-div-1 {
+    border-top: 1px solid #d9e1ec;
+}
+
+.select-bx-1 {
+    border-bottom: 1px solid #d9e1ec;
+    padding: 10px 0;
+}
+.m-l-0{
+    margin-left: 0 !important;
+}
+.d-flex.check-flex {
+    align-items: center;
+    padding: 0 5px;
+}
+
+.del-hover {
+    display: flex;
+    padding: 0 5px;
+    position: absolute;
+    right: 20px;
+}
+
+.select-bx-1:hover {
+    background: #d9e1ec;
+}
+
+.ed-70 {
+    padding: 0 5px;
+}
+
+.del-hover i {
+    opacity: 0;
+}
+
+.demo-a:hover .del-hover i {
+    opacity: 1;
+}
+ul.nav-pills.nav.flex-column li a:hover,ul.nav-pills.nav.flex-column li a.active,.Compose-inbox:hover,.Compose-inbox.active{
+    background: #d9e1ec !important;
+    border-radius: 5px;
+}
+ul.nav-pills.nav.flex-column li a,.Compose-inbox{
+    padding: 10px 10px;
+}
+p.m-l-0 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+input.client-input2.mx-1:hover, input.client-input2.mx-1:focus {
+    box-shadow: none;
+    outline: 2px solid #49afcd;
+    border: 1px solid #49afcd;
+}

@@ -1,0 +1,50 @@
+.CLIENT-DEMOGRAPHICS1 {
+    background: #919395;
+    color: #fff;
+    padding: 21px 12px;
+    font-size: 20px;
+    // width: fit-content;
+    margin: 0 0 15px 0;
+    font-family: Poppins;
+}
+.CLIENT-DEMOGRAPHICS2{
+    background-color: #ccc;
+    padding: 28px 12px 25px 14px;
+    margin-left: auto;
+    text-align: justify;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 900px;
+}
+.CLIENT-DEMOGRAPHICS2 label{
+    color: #fff;
+}
+.CLIENT-DEMOGRAPHICS1 h6 a{
+    color: #79e1ff;
+    font-family: Poppins;
+    text-decoration: none;
+}
+.CLIENT-DEMOGRAPHICS h3 {
+    background: #07417b;
+    color: #fff;
+    padding: 7px 15px;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-family: Poppins;
+}
+.CLIENT-DEMOGRAPHICS p {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    font-family: Poppins;
+}
+.div_checkBox .all-li-radio {
+    margin: 0 0 0 17px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}

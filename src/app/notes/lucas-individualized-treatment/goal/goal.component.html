@@ -1,0 +1,164 @@
+<div class="col-lg-12">
+    <div class="client-tabs">
+        <form [formGroup]="goalForm" (ngSubmit)="Save()">
+            <div class="all-tb">
+                <div class="row mar-1010 d-flex my-2">
+                    <div class="col-lg-12 back_css">
+                        <button class="NEW-SAVE" (click)="Save()">SAVE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="CLIENT-DEMOGRAPHICS">
+                            <h6>Goal {{tabindex}}</h6>
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">State Goal in Collaboration with
+                                            Client:</label>
+                                        <textarea class="client-input" formControlName="GOAL1StateGoalCollaboration"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">In Client words:</label>
+                                        <textarea class="client-input" formControlName="GOAL1Clientwords"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Parent/Guardian words:</label>
+                                        <textarea class="client-input" formControlName="GOAL1Guardianwords"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Clinician words:</label>
+                                        <textarea class="client-input" formControlName="GOAL1Clinicalwords"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Target Date:</label>
+                                        <textarea class="client-input" formControlName="GOAL1TargetDate"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">MH Level of Care:</label>
+                                        <textarea class="client-input" formControlName="GOAL1MHLevelCare"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">SUD Level of Care:</label>
+                                        <textarea class="client-input" formControlName="GOAL1SUDLevelCare"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Cognitive Skills/Knowledge Needed:
+                                            (executive functioning skills)</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1CognitiveKnowledge">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Objective 1:</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1Objective1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Objective 2:</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1Objective2">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Objective 3:</label>
+                                        <textarea class="client-input" formControlName="GOAL1Objective3"></textarea>
+                                    </div>
+                                </div>
+                                    <!-- <table class="tbl_service">
+                                        <tr class="head_title">
+                                            <th class="CLIENT-LABEL_for_Tbl">Service Description</th>
+                                            <th class="CLIENT-LABEL_for_Tbl">Service Description</th>
+                                            <th class="CLIENT-LABEL_for_Tbl">Service Description</th>
+                                        </tr>
+                                        <tr class="head_title">
+                                            <td><input type="text" class="client-input"></td>
+                                            <td><input type="text" class="client-input"></td>
+                                            <td><input type="text" class="client-input"></td>
+                                        </tr>
+                                    </table> -->
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Service Description</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1ServiceDescription1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Frequency:</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1Frequency1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Provider Name & Credentials</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1ProviderName1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="margin-inputclient">
+                                        <label class="CLIENT-LABEL">Goal 2:</label>
+                                        <input type="text" class="client-input" formControlName="GOAL1" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="all-li-radio und_line">
+                                      <li>
+                                        <input type="checkbox" name="harmingNo" formControlName="GOAL1Deterioration"  id="harmingNo" value="yes">
+                                        <label>Deterioration</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="harmingNo"  formControlName="GOAL1NoChange" id="harmingNo" value="yes">
+                                        <label>No Change </label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="harmingNo"  formControlName="GOAL1MildImprovement" id="harmingNo" value="yes">
+                                        <label>Moderate Improvement</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="harmingNo"  formControlName="GOAL1ModerateImprovement" id="harmingNo" value="yes">
+                                        <label>MildImprovement</label>
+                                      </li>
+                                      <li>
+                                        <input type="checkbox" name="harmingNo" formControlName="GOAL1Achieved"  id="harmingNo" value="yes">
+                                        <label>Achieved</label>
+                                      </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="all-li-radio und_line">
+                                        <li>
+                                            <input type="checkbox" name="harmingNo" formControlName="GOAL1Active"  id="harmingNo" value="yes">
+                                            <label>Active</label>
+                                          </li>
+                                          <li>
+                                            <input type="checkbox" name="harmingNo" formControlName="GOAL1Inactive"  id="harmingNo" value="yes">
+                                            <label>In-Active</label>
+                                          </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

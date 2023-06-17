@@ -1,0 +1,201 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-tabs">
+            <form [formGroup]="generalForm">
+                <div class="all-tb">
+                    <div class="row back_css">
+                        <div class="col-lg-12 back_css">
+                            <div class="save-bt rem-abs">
+                                <button class="NEW-SAVE" type="submit" (click)="Save()">SAVE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="CLIENT-DEMOGRAPHICS">
+                                <h6>IDENTIFYING INFORMATION</h6>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">First Name</label>
+                                                    <input formControlName="First_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL"> Middle </label>
+                                                    <input formControlName="Middle_Initial" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Last Name</label>
+                                                    <input formControlName="Last_Name" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Medical Record#</label>
+                                                    <input formControlName="MedicalRecord" type="text" class="client-input" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!-- ####### second #### -->
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Date Of birth</label>
+                                                    <input formControlName="DOB" type="date" class="client-input" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="margin-inputclient">
+                                                    <label class="CLIENT-LABEL">Gender</label>
+                                                    <select class="client-input" formControlName="GenderId">
+                                                        <option value="0" selected>Female</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Transgender</option>
+                                                        <option value="3">They</option>
+                                                        <option value="4">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="CLIENT-DEMOGRAPHICS">
+                                        <h6>SESSION INFORMATION</h6>
+                                    </div>
+                                    <div class="content">
+                                        <div class="row">
+
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors || genForm['DateOfSession'].touched && genForm['DateOfSession'].errors">
+                                                                <label class="CLIENT-LABEL">Date of Service <span class="text-danger">*</span></label>
+                                                                <input type="date" class="client-input" formControlName="DateOfSession">
+                                                                <span *ngIf="genForm['DateOfSession'].dirty && genForm['DateOfSession'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['DateOfSession'].errors?.['required']">
+                                                                        Please enter Date of Service.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Start Time</label>
+                                                                <input type="time" class="client-input" formControlName="StartTime">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">End Time</label>
+                                                                <input type="time" class="client-input" formControlName="EndTime">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Modifier</label>
+                                                                <input type="text" class="client-input" formControlName="Modifier">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Units</label>
+                                                                <input type="text" class="client-input" formControlName="units">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors || genForm['Rendering_ProviderID'].touched && genForm['Rendering_ProviderID'].errors">
+                                                                <label class="CLIENT-LABEL">Rendering Provider <span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="Rendering_ProviderID">
+                                                                    <option value="0" disabled selected>select</option>
+                                                                    <option value="Anderline Noutai">Anderline Noutai</option>
+                                                                    <option value="Monica Boddie">Monica Boddie</option>
+                                                                    <option value="test test">test test</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['Rendering_ProviderID'].dirty && genForm['Rendering_ProviderID'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['Rendering_ProviderID'].errors?.['required']">
+                                                                        Rendering Provider is Required.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Procedure code</label>
+                                                                <select class="client-input" formControlName="ProcedureCode1">
+                                                                    <option value="0" selected>90791 - Psychiatric Assessment with Medication</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Location</label>
+                                                                <select class="client-input" formControlName="Location">
+                                                                    <option value="11 Office" selected>11 Office</option>
+                                                                    <option value="01 Pharmacy Noutai">01 Pharmacy Noutai</option>
+                                                                    <option value="09 Prison/Correctional Facility">09 Prison/Correctional Facility</option>
+                                                                    <option value="19 Off Campus-Outpatient Hospital">19 Off Campus-Outpatient Hospital</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient">
+                                                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                                                <select class="client-input" formControlName="divInsuranceType">
+                                                                    <option value="0" selected>Primary</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="margin-inputclient"
+                                                            [class.has-error]="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors || genForm['divAuthNumber'].touched && genForm['divAuthNumber'].errors">
+                                                                <label class="CLIENT-LABEL">Authorization Number<span class="text-danger">*</span></label>
+                                                                <select class="client-input" formControlName="divAuthNumber">
+                                                                    <option value="0" selected>Auth No: A20221218910  Visits Remaining: 976</option>
+                                                                </select>
+                                                                <span *ngIf="genForm['divAuthNumber'].dirty && genForm['divAuthNumber'].errors" class="has-error">
+                                                                    <i *ngIf="genForm['divAuthNumber'].errors?.['required']">
+                                                                        Please select Authorization Number.</i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">   
+                                                        <button type="button" class="continue-btn" id="btncontinue">
+                                                            <i class="icon-save"></i>
+                                                            Continue
+                                                        </button>
+                                                    </div>
+                                                    </div>
+                                                
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

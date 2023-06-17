@@ -1,0 +1,110 @@
+<div class="row">
+    <form [formGroup]="demoforms">
+        <div class="col-lg-12">
+            <div class="client-tabs">
+                <div class="all-tb">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS flex-wrp bk-gray">
+                                <h6>Long Term Goal {{tabindex}} </h6>
+                            </div>
+                            <div class="margin-inputclient">
+                                <input type="text" formControlName="LongTermGoal" class="client-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="CLIENT-DEMOGRAPHICS flex-wrp bk-gray">
+                                <h6>Progress of Long Term Goal {{tabindex}}</h6>
+                            </div>
+                            <div class="margin-inputclient">
+                                <input type="text" class="client-input" formControlName="ProgressofLongTermGoal">
+                            </div>
+                        </div>
+                        <!-- ----------------- -->
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Date Established</label>
+                                <input  type="date" class="client-input" formControlName="dateestablished">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Target Date</label>
+                                <input  type="date" class="client-input" formControlName="targetdate">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Date Achieved</label>
+                                <input  type="date" class="client-input" formControlName="dateachieved">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Client Needs/Main Issues:</label>
+                                <textarea  class="StartSpeechRecoganisation accuratsize client-input"
+                                 id="Strengths" name="Strengths" formControlName="ClientNeedsIssues"></textarea>                              
+                            </div>
+                        </div>
+                        <!-- -------Short Term goal1--- -->
+                        <div class="CLIENT-DEMOGRAPHICS flex-wrp bk-gray">
+                            <h6>Short Term Goal {{tabindex}}</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="CLIENT-LABEL">Goal</label>
+                            <div class="margin-inputclient">
+                                <input type="text" formControlName="goal" class="client-input">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Date Established</label>
+                                <input  type="date" formControlName="dateestablished2" class="client-input" >
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Target Date</label>
+                                <input  type="date" formControlName="tagetdate2" class="client-input" >
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Date Achieved</label>
+                                <input  type="date" formControlName="dateachieved2" class="client-input" >
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="margin-inputclient">
+                                <label class="CLIENT-LABEL">Frequency</label>
+                                <div class="row_04_full" id="ShortTermFrequency11">
+                                    <select class="client-input" id="ddlFrequency11" formControlName="Frequency" name="ddlFrequency11" style="Width:95%;"><option value=""></option>
+                                        <option value="weekly">weekly</option>
+                                        <option value="bi weekly">bi weekly</option>
+                                        <option value="twice a week">twice a week</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row_04_full" id="ShortTermFrequency11">
+                            <select id="ddlFrequency11" name="ddlFrequency11" style="Width:95%;"><option value=""></option>
+                                <option value="weekly">weekly</option>
+                                <option value="bi weekly">bi weekly</option>
+                                <option value="twice a week">twice a week</option>
+                            </select>
+                            <option value="monthly">monthly</option>
+                        </div> -->
+                        <div class="col-md-2">
+                            <label class="CLIENT-LABEL">Treatment Modality</label>
+                            <div class="margin-inputclient">
+                                <input type="text" class="client-input" formControlName="tratmentmodality">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <a id="shortTermGoal1" style="color: rgb(42, 145, 230);">Please click here to enter more...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>

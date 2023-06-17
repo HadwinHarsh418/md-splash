@@ -1,0 +1,137 @@
+<div class="row">
+    <div class="container">
+        <div class="CLIENT-LABEL"><b>Client by Status</b></div>
+        <div class="clo-lg-12">
+            <div class="row">
+                <div id="Report-Content">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <label class="CLIENT-LABEL">Status</label>
+                                <select id="InsuranceType" name="InsuranceType" class="client-input">
+                                    <option value="0">ALL</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="CLIENT-LABEL">Insurance Type</label>
+                                <select id="ddlAssignedClinician" name="ddlAssignedClinician" class="client-input">
+                                    <option value="">ALL</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="CLIENT-LABEL">Clincian </label>
+                                <select id="ddlAssignedClinician" name="ddlAssignedClinician" class="client-input">
+                                    <option value="">ALL</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <label class="CLIENT-LABEL">Service Type</label>
+                                <select id="ddlAssignedClinician" name="ddlAssignedClinician" class="client-input">
+                                    <option value="">ALL</option>
+                                </select>
+                            </div>
+                            <div class=" col-lg-2">
+                                <button type="button" class="btn-cls" id="btnGetdetails" (click)="getDetail()">Get Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" *ngIf="showTable">
+                        <div class="row">
+                            <div class="my-2">
+                                <ngx-datatable #tablesss style="width: auto; overflow: auto;"
+                                    class="bootstrap core-bootstrap sz-1000" [rows]="UpcomingAppointments"
+                                    [columnMode]="'force'"
+                            [headerHeight]="50"
+                            [scrollbarV]="true"
+                            [scrollbarH]="true"
+                            [footerHeight]="50"
+                            [rowHeight]="50">
+                    
+                                    <ngx-datatable-column name="First Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Last Name" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Date Of Birth" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Address" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+
+                                    <ngx-datatable-column name="Insurance Id" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Insurance ID" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                    
+                                    <ngx-datatable-column name="Last Active Clinician" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+
+                                    <ngx-datatable-column name="Status" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+
+                                    <ngx-datatable-column name="Date of Refrral" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+
+                                    <ngx-datatable-column name="city" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+
+                                    <ngx-datatable-column name="DX" prop="InsuranceType" [width]="150">
+                                        <ng-template let-InsuranceType="value" let-expanded="expanded"
+                                            ngx-datatable-cell-template>
+                                            {{ InsuranceType }}
+                                        </ng-template>
+                                    </ngx-datatable-column>
+                                    
+                    
+                                </ngx-datatable>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
